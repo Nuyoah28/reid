@@ -1,0 +1,222 @@
+[
+  {
+    "epoch": 1,
+    "lr": 0.0003,
+    "backbone_frozen": true,
+    "train_seconds": 15.878408800001125,
+    "peak_cuda_mb": 550.55322265625,
+    "loss": 7.939087665081024,
+    "ce": 7.716293978691101,
+    "triplet": 0.44558737576007845,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0
+  },
+  {
+    "epoch": 2,
+    "lr": 0.0003,
+    "backbone_frozen": true,
+    "train_seconds": 13.446714200001225,
+    "peak_cuda_mb": 512.09130859375,
+    "loss": 7.314479702711106,
+    "ce": 7.0902455151081085,
+    "triplet": 0.4484683934599161,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0,
+    "validation": {
+      "clean": {
+        "mAP": 12.373376858708292,
+        "rank1": 25.0,
+        "rank5": 44.0,
+        "mINP": 3.2321828006633724,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.3": {
+        "mAP": 3.569833881614197,
+        "rank1": 6.0,
+        "rank5": 13.0,
+        "mINP": 1.1821837740953993,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.5": {
+        "mAP": 2.954521309892554,
+        "rank1": 4.0,
+        "rank5": 12.0,
+        "mINP": 1.1038317452792057,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      }
+    }
+  },
+  {
+    "epoch": 3,
+    "lr": 0.0002851453301853628,
+    "backbone_frozen": false,
+    "train_seconds": 30.265285599998606,
+    "peak_cuda_mb": 3114.57763671875,
+    "loss": 6.844476068019867,
+    "ce": 6.640496009588242,
+    "triplet": 0.40796011686325073,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0
+  },
+  {
+    "epoch": 4,
+    "lr": 0.00024352347027881003,
+    "backbone_frozen": false,
+    "train_seconds": 27.455676499999754,
+    "peak_cuda_mb": 2972.7421875,
+    "loss": 6.2253096342086796,
+    "ce": 6.039570933580398,
+    "triplet": 0.37147739306092264,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0,
+    "validation": {
+      "clean": {
+        "mAP": 39.555991914020915,
+        "rank1": 56.99999999999999,
+        "rank5": 78.0,
+        "mINP": 15.810951391289318,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.3": {
+        "mAP": 20.56645025114069,
+        "rank1": 25.0,
+        "rank5": 49.0,
+        "mINP": 7.450331287183046,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.5": {
+        "mAP": 8.079629001191948,
+        "rank1": 7.000000000000001,
+        "rank5": 25.0,
+        "mINP": 3.1479064554709058,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      }
+    }
+  },
+  {
+    "epoch": 5,
+    "lr": 0.00018337814009344714,
+    "backbone_frozen": false,
+    "train_seconds": 27.69991889999983,
+    "peak_cuda_mb": 2972.7421875,
+    "loss": 5.662943762540817,
+    "ce": 5.493114024400711,
+    "triplet": 0.3396594822406769,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0
+  },
+  {
+    "epoch": 6,
+    "lr": 0.00011662185990655284,
+    "backbone_frozen": false,
+    "train_seconds": 27.375836499999423,
+    "peak_cuda_mb": 2972.7421875,
+    "loss": 5.145470464229584,
+    "ce": 4.986118716001511,
+    "triplet": 0.3187034450471401,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0,
+    "validation": {
+      "clean": {
+        "mAP": 53.16987683137575,
+        "rank1": 72.0,
+        "rank5": 86.0,
+        "mINP": 24.54234910535497,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.3": {
+        "mAP": 31.69639054313487,
+        "rank1": 36.0,
+        "rank5": 66.0,
+        "mINP": 12.952440688058553,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.5": {
+        "mAP": 15.040474446119582,
+        "rank1": 19.0,
+        "rank5": 36.0,
+        "mINP": 5.934382117652166,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      }
+    }
+  },
+  {
+    "epoch": 7,
+    "lr": 5.6476529721189974e-05,
+    "backbone_frozen": false,
+    "train_seconds": 28.130886799999644,
+    "peak_cuda_mb": 2972.7421875,
+    "loss": 4.976022040843963,
+    "ce": 4.820649832487106,
+    "triplet": 0.3107444254681468,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0
+  },
+  {
+    "epoch": 8,
+    "lr": 1.4854669814637143e-05,
+    "backbone_frozen": false,
+    "train_seconds": 28.702493400000094,
+    "peak_cuda_mb": 2972.7421875,
+    "loss": 4.795390522480011,
+    "ce": 4.6391334444284436,
+    "triplet": 0.31251411978155375,
+    "calibration": 0.0,
+    "evidence": 0.0,
+    "target_mean": 0.0,
+    "validation": {
+      "clean": {
+        "mAP": 56.05229502251068,
+        "rank1": 74.0,
+        "rank5": 88.0,
+        "mINP": 27.943575257323776,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.3": {
+        "mAP": 33.911628574290205,
+        "rank1": 40.0,
+        "rank5": 70.0,
+        "mINP": 14.135406885504445,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      },
+      "synthetic_noise_0.5": {
+        "mAP": 16.233293520887305,
+        "rank1": 19.0,
+        "rank5": 42.0,
+        "mINP": 6.013477262122839,
+        "valid_queries": 100,
+        "invalid_queries": 0,
+        "gallery_size": 1476
+      }
+    }
+  }
+]

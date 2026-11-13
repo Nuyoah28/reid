@@ -1,0 +1,30 @@
+| Tag / protocol | Variant | Epochs × steps | Condition | Seeds | mAP (%) | Rank-1 (%) |
+|---|---|---|---|---|---|---|
+| calibrated / dev | aug | 8 × 80 | clean | [1] | 56.28 (single seed) | 71.00 (single seed) |
+| calibrated / dev | aug | 8 × 80 | synthetic_noise_0.3 | [1] | 34.62 (single seed) | 44.00 (single seed) |
+| calibrated / dev | aug | 8 × 80 | synthetic_noise_0.5 | [1] | 11.35 (single seed) | 16.00 (single seed) |
+| calibrated / dev | visibility | 8 × 80 | clean | [1] | 53.36 (single seed) | 69.00 (single seed) |
+| calibrated / dev | visibility | 8 × 80 | synthetic_noise_0.3 | [1] | 29.63 (single seed) | 40.00 (single seed) |
+| calibrated / dev | visibility | 8 × 80 | synthetic_noise_0.5 | [1] | 11.43 (single seed) | 14.00 (single seed) |
+| calibrated / dev | clcp | 8 × 80 | clean | [1] | 52.88 (single seed) | 74.00 (single seed) |
+| calibrated / dev | clcp | 8 × 80 | synthetic_noise_0.3 | [1] | 30.31 (single seed) | 41.00 (single seed) |
+| calibrated / dev | clcp | 8 × 80 | synthetic_noise_0.5 | [1] | 13.17 (single seed) | 16.00 (single seed) |
+| calibrated / dev | full | 8 × 80 | clean | [1] | 54.12 (single seed) | 71.00 (single seed) |
+| calibrated / dev | full | 8 × 80 | synthetic_noise_0.3 | [1] | 31.25 (single seed) | 42.00 (single seed) |
+| calibrated / dev | full | 8 × 80 | synthetic_noise_0.5 | [1] | 14.27 (single seed) | 22.00 (single seed) |
+| frozen / official | plain | 20 × 100 | clean | [1] | 55.53 (single seed) | 79.66 (single seed) |
+| frozen / official | plain | 20 × 100 | synthetic_noise_0.3 | [1] | 14.93 (single seed) | 25.00 (single seed) |
+| frozen / official | plain | 20 × 100 | synthetic_noise_0.5 | [1] | 2.99 (single seed) | 4.10 (single seed) |
+| frozen / official | plain | 20 × 100 | real_occluded_reid | [1] | 55.73 (single seed) | 62.10 (single seed) |
+| frozen / official | aug | 20 × 100 | clean | [1] | 61.18 (single seed) | 81.92 (single seed) |
+| frozen / official | aug | 20 × 100 | synthetic_noise_0.3 | [1] | 36.01 (single seed) | 54.28 (single seed) |
+| frozen / official | aug | 20 × 100 | synthetic_noise_0.5 | [1] | 16.04 (single seed) | 25.45 (single seed) |
+| frozen / official | aug | 20 × 100 | real_occluded_reid | [1] | 48.50 (single seed) | 54.80 (single seed) |
+| frozen / official | visibility | 20 × 100 | clean | [1] | 60.65 (single seed) | 81.32 (single seed) |
+| frozen / official | visibility | 20 × 100 | synthetic_noise_0.3 | [1] | 35.10 (single seed) | 53.98 (single seed) |
+| frozen / official | visibility | 20 × 100 | synthetic_noise_0.5 | [1] | 16.11 (single seed) | 25.80 (single seed) |
+| frozen / official | visibility | 20 × 100 | real_occluded_reid | [1] | 44.41 (single seed) | 50.00 (single seed) |
+| frozen / official | full | 20 × 100 | clean | [1] | 60.34 (single seed) | 81.56 (single seed) |
+| frozen / official | full | 20 × 100 | synthetic_noise_0.3 | [1] | 36.34 (single seed) | 55.08 (single seed) |
+| frozen / official | full | 20 × 100 | synthetic_noise_0.5 | [1] | 17.58 (single seed) | 30.05 (single seed) |
+| frozen / official | full | 20 × 100 | real_occluded_reid | [1] | 46.85 (single seed) | 52.00 (single seed) |

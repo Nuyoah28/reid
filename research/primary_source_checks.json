@@ -1,0 +1,19 @@
+[
+  {
+    "source": "osnet_cvf",
+    "url": "https://openaccess.thecvf.com/content_ICCV_2019/html/Zhou_Omni-Scale_Feature_Learning_for_Person_Re-Identification_ICCV_2019_paper.html",
+    "bibtex": "@InProceedings{Zhou_2019_ICCV,<br>\nauthor = {Zhou, Kaiyang and Yang, Yongxin and Cavallaro, Andrea and Xiang, Tao},<br>\ntitle = {Omni-Scale Feature Learning for Person Re-Identification},<br>\nbooktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},<br>\nmonth = {October},<br>\nyear = {2019}<br>\n}"
+  },
+  {
+    "source": "cal_cvf",
+    "url": "https://openaccess.thecvf.com/content/ICCV2021/html/Rao_Counterfactual_Attention_Learning_for_Fine-Grained_Visual_Categorization_and_Re-Identification_ICCV_2021_paper.html",
+    "bibtex": null
+  },
+  {
+    "source": "imagenet_author",
+    "url": "https://drive.usercontent.google.com/download?id=1LaG1EJpHrxdAxKnSCJ_i0u-nbxSAeiFY&export=download&confirm=t",
+    "sha256": "fe2d63f9157c28a4a8d8ca29bec12d5b2988ac0346d712025789ea9174968e79",
+    "bytes": 10910553,
+    "matches_local_checkpoint": true
+  }
+]

@@ -1,0 +1,32 @@
+{"event": "start", "variant": "visibility", "protocol": "dev", "images": 11360, "steps_per_epoch": 80, "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU", "inference_parameters": 2186309}
+{"event": "step", "epoch": 1, "step": 25, "loss": 7.94203477859497, "elapsed_seconds": 25.8}
+{"event": "step", "epoch": 1, "step": 50, "loss": 7.655904512405396, "elapsed_seconds": 32.7}
+{"event": "step", "epoch": 1, "step": 75, "loss": 7.5227976989746095, "elapsed_seconds": 39.8}
+{"event": "epoch", "epoch": 1, "lr": 0.0015, "train_seconds": 41.63673569999992, "peak_cuda_mb": 3107.318359375, "loss": 7.513066571950913, "ce": 6.97347839474678, "triplet": 0.4544253800064325, "calibration": 0.624751003086567, "evidence": 0.0, "target_mean": 0.7070299804210662}
+{"event": "step", "epoch": 2, "step": 25, "loss": 7.299928474426269, "elapsed_seconds": 20.0}
+{"event": "step", "epoch": 2, "step": 50, "loss": 7.223263826370239, "elapsed_seconds": 27.1}
+{"event": "step", "epoch": 2, "step": 75, "loss": 7.161864547729492, "elapsed_seconds": 34.2}
+{"event": "epoch", "epoch": 2, "lr": 0.0015, "train_seconds": 36.170822000000044, "peak_cuda_mb": 2968.5439453125, "loss": 7.152770692110062, "ce": 6.656561541557312, "triplet": 0.39591540209949017, "calibration": 0.5965028904378414, "evidence": 0.0, "target_mean": 0.7087155997753143}
+{"event": "step", "epoch": 3, "step": 25, "loss": 7.051405067443848, "elapsed_seconds": 20.0}
+{"event": "step", "epoch": 3, "step": 50, "loss": 7.0348872947692875, "elapsed_seconds": 27.1}
+{"event": "step", "epoch": 3, "step": 75, "loss": 7.022933921813965, "elapsed_seconds": 34.3}
+{"event": "epoch", "epoch": 3, "lr": 0.0014257266509268144, "train_seconds": 36.26729139999952, "peak_cuda_mb": 2968.5439453125, "loss": 7.016880965232849, "ce": 6.526826173067093, "triplet": 0.38281090147793295, "calibration": 0.5972985945641994, "evidence": 0.0, "target_mean": 0.7105304457247257}
+{"event": "step", "epoch": 4, "step": 25, "loss": 6.990709571838379, "elapsed_seconds": 21.4}
+{"event": "step", "epoch": 4, "step": 50, "loss": 7.0199952316284175, "elapsed_seconds": 28.7}
+{"event": "step", "epoch": 4, "step": 75, "loss": 7.009977124532064, "elapsed_seconds": 35.8}
+{"event": "epoch", "epoch": 4, "lr": 0.0012176173513940502, "train_seconds": 37.83092159999978, "peak_cuda_mb": 2968.5439453125, "loss": 7.0067009150981905, "ce": 6.51947450041771, "triplet": 0.380531145632267, "calibration": 0.593921659141779, "evidence": 0.0, "target_mean": 0.7093422926962376}
+{"event": "step", "epoch": 5, "step": 25, "loss": 6.975005187988281, "elapsed_seconds": 20.0}
+{"event": "step", "epoch": 5, "step": 50, "loss": 6.9701611423492436, "elapsed_seconds": 27.3}
+{"event": "step", "epoch": 5, "step": 75, "loss": 6.975435975392659, "elapsed_seconds": 34.4}
+{"event": "epoch", "epoch": 5, "lr": 0.0009168907004672358, "train_seconds": 36.388527400000385, "peak_cuda_mb": 2968.5439453125, "loss": 6.974647414684296, "ce": 6.502300506830215, "triplet": 0.35523138009011745, "calibration": 0.5894624419510365, "evidence": 0.0, "target_mean": 0.7105009779334068}
+{"event": "step", "epoch": 6, "step": 25, "loss": 6.949175395965576, "elapsed_seconds": 21.1}
+{"event": "step", "epoch": 6, "step": 50, "loss": 6.942292251586914, "elapsed_seconds": 28.2}
+{"event": "step", "epoch": 6, "step": 75, "loss": 6.944190921783448, "elapsed_seconds": 35.4}
+{"event": "epoch", "epoch": 6, "lr": 0.0005831092995327642, "train_seconds": 37.320165299999644, "peak_cuda_mb": 2968.5439453125, "loss": 6.9472172319889065, "ce": 6.479702186584473, "triplet": 0.3462663609534502, "calibration": 0.5887638129293918, "evidence": 0.0, "target_mean": 0.7096190951764584}
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "D:\pytorch\Anaconda3\envs\mmi-unet\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "D:\pytorch\Anaconda3\envs\mmi-unet\lib\multiprocessing\spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated

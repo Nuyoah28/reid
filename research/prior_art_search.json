@@ -1,0 +1,170 @@
+{
+  "provider": "OpenAlex public works search",
+  "queries": [
+    {
+      "query": "counterfactual occlusion person re-identification",
+      "url": "https://api.openalex.org/works?search=counterfactual+occlusion+person+re-identification&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "results": [
+        {
+          "title": "A Versatile Framework for Multi-Scene Person Re-Identification",
+          "year": 2024,
+          "doi": "https://doi.org/10.1109/tpami.2024.3381184",
+          "openalex": "https://openalex.org/W4396215111",
+          "landing_page": "https://doi.org/10.1109/tpami.2024.3381184"
+        },
+        {
+          "title": "Counterfactual Attention Learning for Fine-Grained Visual Categorization and Re-identification",
+          "year": 2021,
+          "doi": "https://doi.org/10.48550/arxiv.2108.08728",
+          "openalex": "https://openalex.org/W3202885408",
+          "landing_page": "http://arxiv.org/abs/2108.08728"
+        },
+        {
+          "title": "A survey on person and vehicle re‐identification",
+          "year": 2024,
+          "doi": "https://doi.org/10.1049/cvi2.12316",
+          "openalex": "https://openalex.org/W4403880739",
+          "landing_page": "https://doi.org/10.1049/cvi2.12316"
+        },
+        {
+          "title": "Research and Performance Analysis of Person Re-Identification Methods in Occluded Scenarios",
+          "year": 2026,
+          "doi": "https://doi.org/10.4108/eai.22-5-2026.2365361",
+          "openalex": "https://openalex.org/W7213548890",
+          "landing_page": "https://doi.org/10.4108/eai.22-5-2026.2365361"
+        },
+        {
+          "title": "An Efficient Multi-Branch Attention Network for Person Re-Identification",
+          "year": 2024,
+          "doi": "https://doi.org/10.3390/electronics13163183",
+          "openalex": "https://openalex.org/W4401512137",
+          "landing_page": "https://doi.org/10.3390/electronics13163183"
+        }
+      ]
+    },
+    {
+      "query": "occluder feature pollution person re-identification",
+      "url": "https://api.openalex.org/works?search=occluder+feature+pollution+person+re-identification&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "results": [
+        {
+          "title": "Scene-Prompt-Driven Dynamic Routing Expert Network for Open-World Person Re-Identification",
+          "year": 2026,
+          "doi": "https://doi.org/10.3390/math14152716",
+          "openalex": "https://openalex.org/W7172001710",
+          "landing_page": "https://doi.org/10.3390/math14152716"
+        },
+        {
+          "title": "Building Digital Twins: Proceedings of BDTSC 2025",
+          "year": 2025,
+          "doi": "https://doi.org/10.1007/978-3-032-09040-9",
+          "openalex": "https://openalex.org/W4415588318",
+          "landing_page": "https://doi.org/10.1007/978-3-032-09040-9"
+        },
+        {
+          "title": "Design of a Mobile Application for Eye Signs Screening",
+          "year": 2015,
+          "doi": "https://doi.org/10.5220/0005256405190524",
+          "openalex": "https://openalex.org/W2006624280",
+          "landing_page": "https://doi.org/10.5220/0005256405190524"
+        },
+        {
+          "title": "Selected Topics on Hydrogen Fuel",
+          "year": 1975,
+          "doi": "https://doi.org/10.2172/7296382",
+          "openalex": "https://openalex.org/W4386053192",
+          "landing_page": "https://doi.org/10.2172/7296382"
+        },
+        {
+          "title": "Masked emotions: Do face mask patterns and colors affect the recognition of emotions?",
+          "year": 2022,
+          "doi": "https://doi.org/10.1186/s41235-022-00380-y",
+          "openalex": "https://openalex.org/W4226027286",
+          "landing_page": "https://doi.org/10.1186/s41235-022-00380-y"
+        }
+      ]
+    },
+    {
+      "query": "occlusion invariance reliability person re-identification",
+      "url": "https://api.openalex.org/works?search=occlusion+invariance+reliability+person+re-identification&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "results": [
+        {
+          "title": "Overcoming Occlusion in Person Re-Identification: A Multi-Level Attention Transformer Approach",
+          "year": 2026,
+          "doi": "https://doi.org/10.22581/0449",
+          "openalex": "https://openalex.org/W7123501351",
+          "landing_page": "https://doi.org/10.22581/0449"
+        },
+        {
+          "title": "Tri-Invariance Contrastive Framework for Robust Unsupervised Person Re-Identification",
+          "year": 2025,
+          "doi": "https://doi.org/10.3390/math13213570",
+          "openalex": "https://openalex.org/W4415988468",
+          "landing_page": "https://doi.org/10.3390/math13213570"
+        },
+        {
+          "title": "Appearance Descriptors for Person Re-identification: a Comprehensive Review",
+          "year": 2013,
+          "doi": "https://doi.org/10.48550/arxiv.1307.5748",
+          "openalex": "https://openalex.org/W2235776288",
+          "landing_page": "http://arxiv.org/abs/1307.5748"
+        },
+        {
+          "title": "Domain Adaptive Attention Learning for Unsupervised Person Re-Identification",
+          "year": 2020,
+          "doi": "https://doi.org/10.1609/aaai.v34i07.6762",
+          "openalex": "https://openalex.org/W2996946635",
+          "landing_page": "https://doi.org/10.1609/aaai.v34i07.6762"
+        },
+        {
+          "title": "Person search: New paradigm of person re-identification: A survey and outlook of recent works",
+          "year": 2020,
+          "doi": "https://doi.org/10.1016/j.imavis.2020.103970",
+          "openalex": "https://openalex.org/W3038775078",
+          "landing_page": "https://doi.org/10.1016/j.imavis.2020.103970"
+        }
+      ]
+    },
+    {
+      "query": "occluder replacement spatial feature consistency person re-identification",
+      "url": "https://api.openalex.org/works?search=occluder+replacement+spatial+feature+consistency+person+re-identification&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "results": [
+        {
+          "title": "Diversity Feature Learning Network for Occluded Person Re-Identification",
+          "year": 2026,
+          "doi": "https://doi.org/10.3390/s26165160",
+          "openalex": "https://openalex.org/W7203500231",
+          "landing_page": "https://doi.org/10.3390/s26165160"
+        },
+        {
+          "title": "Multi-Aligned and Multi-Scale Augmentation for Occluded Person Re-Identification",
+          "year": 2025,
+          "doi": "https://doi.org/10.3390/s25196210",
+          "openalex": "https://openalex.org/W4414915268",
+          "landing_page": "https://doi.org/10.3390/s25196210"
+        },
+        {
+          "title": "Metric learning with siamese networks for re-identification and tracking",
+          "year": 2024,
+          "doi": null,
+          "openalex": "https://openalex.org/W7112195497",
+          "landing_page": "https://espace.etsmtl.ca/id/eprint/3599/1/KIRAN_Madhu.pdf"
+        },
+        {
+          "title": "Dynamic-Dark SLAM: RGB-Thermal Cooperative Robot Vision Strategy for Multi-Person Tracking in Both Well-Lit and Low-Light Scenes",
+          "year": 2025,
+          "doi": "https://doi.org/10.48550/arxiv.2503.12768",
+          "openalex": "https://openalex.org/W4417286510",
+          "landing_page": "http://arxiv.org/abs/2503.12768"
+        },
+        {
+          "title": "A Dual-Stream CLIP–ViT Framework for Open-Set Animal Re-Identification: Multi-Seed Ablation, Background-Bias Bracketing, and Query-Time Robustness Analysis",
+          "year": 2026,
+          "doi": "https://doi.org/10.3390/jimaging12080354",
+          "openalex": "https://openalex.org/W7172444563",
+          "landing_page": "https://doi.org/10.3390/jimaging12080354"
+        }
+      ]
+    }
+  ],
+  "scope": "Top 5 search results per query, a discovery audit only. Ranking/coverage is incomplete; no absence-of-prior-art claim."
+}

@@ -1,0 +1,13 @@
+﻿run,tag,protocol,variant,seed,epochs,steps,condition,mAP,rank1,rank5,mINP,valid_queries,invalid_queries,gallery_size
+calibrated_dev_aug_s1,calibrated,dev,aug,1,8,80,clean,56.283103311615946,71.0,90.0,28.546868183001877,100,0,1476
+calibrated_dev_aug_s1,calibrated,dev,aug,1,8,80,synthetic_noise_0.3,34.62464308601394,44.0,65.0,14.655390490766576,100,0,1476
+calibrated_dev_aug_s1,calibrated,dev,aug,1,8,80,synthetic_noise_0.5,11.346258286201484,16.0,28.000000000000004,4.422199400544575,100,0,1476
+calibrated_dev_clcp_s1,calibrated,dev,clcp,1,8,80,clean,52.88274781804256,74.0,88.0,23.89267916074214,100,0,1476
+calibrated_dev_clcp_s1,calibrated,dev,clcp,1,8,80,synthetic_noise_0.3,30.31486307571147,41.0,72.0,11.133212074254466,100,0,1476
+calibrated_dev_clcp_s1,calibrated,dev,clcp,1,8,80,synthetic_noise_0.5,13.17344158529191,16.0,41.0,4.458534048124083,100,0,1476
+calibrated_dev_full_s1,calibrated,dev,full,1,8,80,clean,54.11891103170481,71.0,88.0,25.43871673248382,100,0,1476
+calibrated_dev_full_s1,calibrated,dev,full,1,8,80,synthetic_noise_0.3,31.24577098214599,42.0,69.0,11.300858109215634,100,0,1476
+calibrated_dev_full_s1,calibrated,dev,full,1,8,80,synthetic_noise_0.5,14.273143790878617,22.0,42.0,4.655487422103385,100,0,1476
+calibrated_dev_visibility_s1,calibrated,dev,visibility,1,8,80,clean,53.35955104336214,69.0,84.0,24.776463487931924,100,0,1476
+calibrated_dev_visibility_s1,calibrated,dev,visibility,1,8,80,synthetic_noise_0.3,29.633254381752096,40.0,70.0,10.764262247417976,100,0,1476
+calibrated_dev_visibility_s1,calibrated,dev,visibility,1,8,80,synthetic_noise_0.5,11.432659191559432,14.000000000000002,28.999999999999996,3.7789524162997266,100,0,1476

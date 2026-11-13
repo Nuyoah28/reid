@@ -1,1 +1,10 @@
 /reference-paper
+/data/
+/weights/
+/runs/
+/tmp/
+/research/paper_text/
+__pycache__/
+*.pyc
+# Diagnostic contact sheets contain benchmark photographs; keep them local.
+/results/diagnostic_*/diagnostic.png

@@ -1,0 +1,52 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.5.0",
+  "cuda": "12.1",
+  "shape": [
+    3,
+    256,
+    128
+  ],
+  "precision": "AMP FP16",
+  "warmup": 30,
+  "iterations": 100,
+  "timing": "Python wall time with CUDA synchronization per iteration, model only; excludes preprocessing and retrieval. Run without concurrent training. Random initialized models, architecture benchmark, not accuracy evaluation.",
+  "results": [
+    {
+      "variant": "plain",
+      "batch": 1,
+      "inference_parameters": 2169508,
+      "median_batch_ms": 27.45855000011943,
+      "mean_batch_ms": 27.769143000004988,
+      "images_per_second": 36.01119415171799,
+      "peak_allocated_mb": 28.787109375
+    },
+    {
+      "variant": "plain",
+      "batch": 32,
+      "inference_parameters": 2169508,
+      "median_batch_ms": 30.884850000802544,
+      "mean_batch_ms": 29.89773100003731,
+      "images_per_second": 1070.315335968474,
+      "peak_allocated_mb": 218.16162109375
+    },
+    {
+      "variant": "full",
+      "batch": 1,
+      "inference_parameters": 2186309,
+      "median_batch_ms": 27.623850000054517,
+      "mean_batch_ms": 28.130964999945718,
+      "images_per_second": 35.54801621636263,
+      "peak_allocated_mb": 28.88720703125
+    },
+    {
+      "variant": "full",
+      "batch": 32,
+      "inference_parameters": 2186309,
+      "median_batch_ms": 31.83555000123306,
+      "mean_batch_ms": 30.31582300000082,
+      "images_per_second": 1055.554388214997,
+      "peak_allocated_mb": 218.26171875
+    }
+  ]
+}

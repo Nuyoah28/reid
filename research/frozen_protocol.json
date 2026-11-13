@@ -1,0 +1,22 @@
+{
+  "frozen_at_utc": "2026-11-13 07:35:15",
+  "frozen_before": "Any official Market test or real Occluded-REID scores from the proposed model were inspected",
+  "candidate": "full",
+  "candidate_reason": "Best proposed variant on the preregistered development mean occlusion mAP, although still worse than aug: full 22.7595 vs aug 22.9855. This is a limited hypothesis test, not a claim of established superiority.",
+  "development_scores": {"aug": 22.9854506861, "visibility": 20.5329567867, "clcp": 21.7441523305, "full": 22.7594573865},
+  "formal_variants": ["aug", "full", "visibility", "plain"],
+  "protocol": "official",
+  "epochs": 20,
+  "pk_steps_per_epoch": 100,
+  "batch_size": 24,
+  "seed": 1,
+  "initialization": "ImageNet-only OSNet x1.0",
+  "optimizer": "AMSGrad, backbone lr 0.0003, heads multiplier 5, fixed backbone 2 epochs, warmup/cosine, weight decay 0.0005",
+  "loss": "CE(label smoothing 0.1) + 0.5 normalized-feature batch-hard triplet + 0.5 calibration + 0.5 evidence when applicable",
+  "tau": 0.15,
+  "primary_external_metric": "Occluded-REID cross-dataset mAP, all 1000 occluded query and 1000 whole gallery, seed1 final checkpoint",
+  "secondary_metrics": "Occluded-REID rank1; official Market clean and synthetic query noise mAP/rank1",
+  "rules": "No early stopping, target-domain tuning, reranking, or selecting a checkpoint by official test score. Report every formal variant; no statistical significance claim from one seed.",
+  "budget_limit": "2000 updates is a pilot, not a converged reproduction of OSNet. Plain uses one view; other methods use three views.",
+  "user_scope_clarification": "Local accuracy experiments need only rough module comparisons, not full convergence. No additional convergence or multi-seed runs are required in this task."
+}

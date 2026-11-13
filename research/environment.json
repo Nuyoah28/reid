@@ -1,0 +1,14 @@
+{
+  "python_executable": "D:\\pytorch\\Anaconda3\\envs\\mmi-unet\\python.exe",
+  "python": "3.10.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.5.0",
+  "torchvision": "0.20.0",
+  "numpy": "1.26.4",
+  "pillow": "10.4.0",
+  "cuda_runtime": "12.1",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU, 592.82, 8188 MiB",
+  "conda_environment": "mmi-unet",
+  "package_changes": "None. Research runner uses the existing torch/torchvision/numpy/Pillow stack; optional upstream scipy/timm/gdown are not imported."
+}

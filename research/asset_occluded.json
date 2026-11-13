@@ -1,0 +1,8 @@
+{
+  "url": "https://raw.githubusercontent.com/tinajia2012/ICME2018_Occluded-Person-Reidentification_datasets/61e54da27fc1999dd68ce5681f251220beb0fc64/Occluded_REID.zip",
+  "sha256": "1c8854e02db775da6a51399df4b7e02c299804850dff9985451d610fc8c6d57d",
+  "upstream_revision": "61e54da27fc1999dd68ce5681f251220beb0fc64",
+  "size": 41937342,
+  "use": "academic/educational only, as stated by dataset authors",
+  "protocol": "train on Market-1501; all 200 Occluded-REID identities held out; 1000 occluded queries against 1000 whole-body gallery images"
+}

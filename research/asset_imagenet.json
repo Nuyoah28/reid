@@ -1,0 +1,10 @@
+{
+  "url": "https://huggingface.co/datasets/aveocr/Market-1501-v15.09.15.zip/resolve/b5e654a472251f193f78b6ad0af73f74e577a474/osnet_x1_0_imagenet.pth",
+  "sha256": "fe2d63f9157c28a4a8d8ca29bec12d5b2988ac0346d712025789ea9174968e79",
+  "local_path": "weights\\osnet_x1_0_imagenet.pth",
+  "author_url": "https://drive.usercontent.google.com/download?id=1LaG1EJpHrxdAxKnSCJ_i0u-nbxSAeiFY&export=download&confirm=t",
+  "author_original_sha256_verified": true,
+  "author_original_bytes": 10910553,
+  "classifier_shape": [1000, 512],
+  "verification_record": "research/primary_source_checks.json"
+}

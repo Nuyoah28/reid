@@ -1,0 +1,51 @@
+{
+  "verified_at_utc": "2026-11-13T08:35:37.696616+00:00",
+  "status": "passed",
+  "checks": [
+    {
+      "run": "frozen_official_aug_s1",
+      "status": "passed",
+      "updates": 2000,
+      "inference_parameters": 2169508,
+      "train_seconds": 731.4426642000035,
+      "peak_cuda_mb": 3116.24169921875
+    },
+    {
+      "run": "frozen_official_full_s1",
+      "status": "passed",
+      "updates": 2000,
+      "inference_parameters": 2186309,
+      "train_seconds": 686.3258313000078,
+      "peak_cuda_mb": 3116.69091796875
+    },
+    {
+      "run": "frozen_official_visibility_s1",
+      "status": "passed",
+      "updates": 2000,
+      "inference_parameters": 2186309,
+      "train_seconds": 682.0307803999985,
+      "peak_cuda_mb": 3116.69091796875
+    },
+    {
+      "run": "frozen_official_plain_s1",
+      "status": "passed",
+      "updates": 2000,
+      "inference_parameters": 2169508,
+      "train_seconds": 358.38042239999777,
+      "peak_cuda_mb": 1074.2412109375
+    }
+  ],
+  "source_sha256": {
+    "code\\reid\\__init__.py": "5c5ced2e966c8f1f2172221bf5748307cc6bc02ec218b5b18211321f19e77940",
+    "code\\reid\\data.py": "5fbe37d101686585b3dd3c5bf799d40f10552156b0f05c7d77d732780eeab89d",
+    "code\\reid\\losses.py": "dd2f50ca8b1f70f69d8103457c4320f32e1e11d774d1baf4c89003c0c4fbf5bd",
+    "code\\reid\\metrics.py": "3011709aa77996f0c84a9385cf8be13281dd6283d4566b6dfd10a6f727b22872",
+    "code\\reid\\model.py": "c23038b2a4914f553bb79b46328bb553130e158b8ae004d7a1fe9957ffb64123",
+    "code\\reid\\occlusion.py": "a43c4aec28f76871adcc2fcce936ce6a30fe19a3da6b8acd3708a56bea4c4443",
+    "code\\train.py": "308753d701852d835bd42b3eea47a5aff252fbc860a02f1263e3d170e8e8b989",
+    "code\\deep-person-reid\\torchreid\\models\\osnet.py": "887a1365a26787fcce3e5c2f69262439e7ebf47f4e454bfc2a6387b52cd56e0f"
+  },
+  "source_line_ending_only_differences": [],
+  "pretrained_sha256": "fe2d63f9157c28a4a8d8ca29bec12d5b2988ac0346d712025789ea9174968e79",
+  "scope": "Archive consistency, actual update logs, unchanged source, fixed recipe, identity split, and metric counts/ranges. Does not establish novelty, convergence, significance, or state-of-the-art performance."
+}

@@ -1,0 +1,4311 @@
+[
+  {
+    "id": "R0001",
+    "title_listed": "Active Learning for Animal Re-Identification with Ambiguity-Aware Sampling",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0001_A_2026_AAAI_Active_Learning_for_Animal_Re_Identification_with_Ambiguity_Aware_Sampling.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://sites.google.com/iiitd.ac.in/aas/"
+    ]
+  },
+  {
+    "id": "R0002",
+    "title_listed": "CKDA: Cross-modality Knowledge Disentanglement and Alignment for Visible-Infrared Lifelong Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0002_A_2026_AAAI_CKDA_Cross_modality_Knowledge_Disentanglement_and_Alignment_for_Visible_Infrared_Lifelong_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/PKU-ICST-MIPL/CKDA-AAAI2026"
+    ]
+  },
+  {
+    "id": "R0003",
+    "title_listed": "Dual-Teacher Interactive Knowledge Distillation Network for Text-to-Visible & Infrared Person Retrieval",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0003_A_2026_AAAI_Dual_Teacher_Interactive_Knowledge_Distillation_Network_for_Text_to_Visible_Infrared_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0004",
+    "title_listed": "Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0004_A_2026_AAAI_Modality_Aware_Bias_Mitigation_and_Invariance_Learning_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Terminator8758/BMIL"
+    ]
+  },
+  {
+    "id": "R0005",
+    "title_listed": "Dynamic-Static Collaboration for Unsupervised Domain Adaptive Video-Based Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0005_A_2026_AAAI_Dynamic_Static_Collaboration_for_Unsupervised_Domain_Adaptive_Video_Based_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/YwAcle/DSC"
+    ]
+  },
+  {
+    "id": "R0006",
+    "title_listed": "X-ReID: Multi-granularity Information Interaction for Video-Based Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0006_A_2026_AAAI_X_ReID_Multi_granularity_Information_Interaction_for_Video_Based_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/AsuradaYuci/X-ReID"
+    ]
+  },
+  {
+    "id": "R0007",
+    "title_listed": "PEFT-BoA: Parameter-Efficient Fine-Tuning with Bag-of-Adapters for Multi-Modal Object Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0007_A_2026_AAAI_PEFT_BoA_Parameter_Efficient_Fine_Tuning_with_Bag_of_Adapters_for_Multi_Modal_Object_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/fffunly/PEFT-BoA"
+    ]
+  },
+  {
+    "id": "R0008",
+    "title_listed": "Localization-Anchored Instance Discrimination for Domain Adaptive Person Search",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0008_A_2026_AAAI_Localization_Anchored_Instance_Discrimination_for_Domain_Adaptive_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whbdmu/LAID"
+    ]
+  },
+  {
+    "id": "R0009",
+    "title_listed": "Domain-Aware Suppression and Aggregation for Federated DG ReID",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0009_A_2026_AAAI_Domain_Aware_Suppression_and_Aggregation_for_Federated_DG_ReID.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0010",
+    "title_listed": "When Person Re-Identification Meets Event Camera: A Benchmark Dataset and an Attribute-Guided Re-Identification Framework",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0010_A_2026_AAAI_When_Person_Re_Identification_Meets_Event_Camera_A_Benchmark_Dataset_and_an_Attribute_Guided_Re_Identification_Fram.pdf",
+    "pages": 15,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0011",
+    "title_listed": "ProxyTTT: Proxy-driven Test-Time Training for Multi-modal Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0011_A_2026_AAAI_ProxyTTT_Proxy_driven_Test_Time_Training_for_Multi_modal_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0012",
+    "title_listed": "STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0012_A_2026_AAAI_STMI_Segmentation_Guided_Token_Modulation_with_Cross_Modal_Hypergraph_Interaction_for_Multi_Modal_Object_Re_Identif.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0013",
+    "title_listed": "Signal: Selective Interaction and Global-local Alignment for Multi-Modal Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0013_A_2026_AAAI_Signal_Selective_Interaction_and_Global_local_Alignment_for_Multi_Modal_Object_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/010129/Signal"
+    ]
+  },
+  {
+    "id": "R0014",
+    "title_listed": "Progressive Multi-modal Knowledge Distillation for Multi-spectral Object Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0014_A_2026_AAAI_Progressive_Multi_modal_Knowledge_Distillation_for_Multi_spectral_Object_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0015",
+    "title_listed": "Unified Representation Causal Prompt Distillation for Re-Inference-Free Lifelong Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0015_A_2026_AAAI_Unified_Representation_Causal_Prompt_Distillation_for_Re_Inference_Free_Lifelong_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/roger404com/URCPD"
+    ]
+  },
+  {
+    "id": "R0016",
+    "title_listed": "Dual-stream Relation-modeling Disentanglement for Cloth-Changing Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0016_A_2026_AAAI_Dual_stream_Relation_modeling_Disentanglement_for_Cloth_Changing_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/ShijuanHuang/DRDnet"
+    ]
+  },
+  {
+    "id": "R0017",
+    "title_listed": "Hierarchical Prompt Learning for Image- and Text-Based Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0017_A_2026_AAAI_Hierarchical_Prompt_Learning_for_Image_and_Text_Based_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/LH-Z-Ac/HPL-AAAI26"
+    ]
+  },
+  {
+    "id": "R0018",
+    "title_listed": "KPDM: Key Phrase Dynamic Masking for Robust Text-to-Image Person Retrieval",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0018_A_2026_AAAI_KPDM_Key_Phrase_Dynamic_Masking_for_Robust_Text_to_Image_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0019",
+    "title_listed": "Image-Text Knowledge Modeling for Unsupervised Multi-Scenario Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0019_A_2026_AAAI_Image_Text_Knowledge_Modeling_for_Unsupervised_Multi_Scenario_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0020",
+    "title_listed": "Text-based Aerial-Ground Person Retrieval",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0020_A_2026_AAAI_Text_based_Aerial_Ground_Person_Retrieval.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Flame-Chasers/TAG-PR"
+    ]
+  },
+  {
+    "id": "R0021",
+    "title_listed": "Semantic-Driven Visual Progressive Refinement for Aerial-Ground Person ReID: A Challenging Large-Scale Benchmark",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0021_A_2026_AAAI_Semantic_Driven_Visual_Progressive_Refinement_for_Aerial_Ground_Person_ReID_A_Challenging_Large_Scale_Benchmark.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/ahu-xhao/SVPR-ReID"
+    ]
+  },
+  {
+    "id": "R0022",
+    "title_listed": "Context-aware Dynamic Contrastive Learning Network and E-Bike Rider Benchmark for Person Search",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0022_A_2026_AAAI_Context_aware_Dynamic_Contrastive_Learning_Network_and_E_Bike_Rider_Benchmark_for_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/licc3996/CDCL"
+    ]
+  },
+  {
+    "id": "R0023",
+    "title_listed": "Skeletons Speak Louder than Text: A Motion-Aware Pretraining Paradigm for Video-Based Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0023_A_2026_AAAI_Skeletons_Speak_Louder_than_Text_A_Motion_Aware_Pretraining_Paradigm_for_Video_Based_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0024",
+    "title_listed": "Geometry-Aware Noisy Correspondence Mitigation for Cross-Modal Text-Based Person Retrieval",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0024_A_2026_AAAI_Geometry_Aware_Noisy_Correspondence_Mitigation_for_Cross_Modal_Text_Based_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0025",
+    "title_listed": "Instance-Guided Scene Adaptation for Unsupervised Person Search",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0025_A_2026_AAAI_Instance_Guided_Scene_Adaptation_for_Unsupervised_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whbdmu/IGSA"
+    ]
+  },
+  {
+    "id": "R0026",
+    "title_listed": "CIA: Cluster-Instance Alignment for Unsupervised Day-Night Vehicle Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0026_A_2026_AAAI_CIA_Cluster_Instance_Alignment_for_Unsupervised_Day_Night_Vehicle_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0027",
+    "title_listed": "A Theory-Inspired Framework for Few-Shot Cross-Modal Sketch Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0027_A_2026_AAAI_A_Theory_Inspired_Framework_for_Few_Shot_Cross_Modal_Sketch_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/"
+    ]
+  },
+  {
+    "id": "R0028",
+    "title_listed": "Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0028_A_2026_AAAI_Debiased_Dual_Invariant_Defense_for_Adversarially_Robust_Person_Re_Identification.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zchuanqi/DDDefense-ReID"
+    ]
+  },
+  {
+    "id": "R0029",
+    "title_listed": "FedARKS: Federated Aggregation via Robust and Discriminative Knowledge Selection and Integration for Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0029_A_2026_AAAI_FedARKS_Federated_Aggregation_via_Robust_and_Discriminative_Knowledge_Selection_and_Integration_for_Person_Re_ident.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0030",
+    "title_listed": "BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0030_A_2026_CVPR_BIT_Matching_based_Bi_directional_Interaction_Transformation_Network_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Xuan266/BIT"
+    ]
+  },
+  {
+    "id": "R0031",
+    "title_listed": "MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0031_A_2026_CVPR_MFEN_Multi_Frequency_Expert_Network_for_Visible_Infrared_Person_Re_ID.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0032",
+    "title_listed": "Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0032_A_2026_CVPR_Spatial_Frequency_Collaborative_Learning_for_Occluded_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0033",
+    "title_listed": "Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0033_A_2026_CVPR_Towards_Cross_Modal_Preservation_Consistency_and_Alignment_for_Privacy_Preserving_Visible_Infrared_Person_Re_Identi.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Dige945/PPA_CVPR26"
+    ]
+  },
+  {
+    "id": "R0034",
+    "title_listed": "Object-Generalized Re-Identification: A Step Towards Universal Instance Perception",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0034_A_2026_CVPR_Object_Generalized_Re_Identification_A_Step_Towards_Universal_Instance_Perception.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whucsy/OG-ReID"
+    ]
+  },
+  {
+    "id": "R0035",
+    "title_listed": "FSLoRA: Harmonizing Detection and Re-Identification via Freq-Spatial Low-Rank Adapter for One-Stage Person Search",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0035_A_2026_CVPR_FSLoRA_Harmonizing_Detection_and_Re_Identification_via_Freq_Spatial_Low_Rank_Adapter_for_One_Stage_Person_Search.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github"
+    ]
+  },
+  {
+    "id": "R0036",
+    "title_listed": "FedBPrompt: Federated Domain Generalization Person Re-Identification via Body Distribution Aware Visual Prompts",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0036_A_2026_CVPR_FedBPrompt_Federated_Domain_Generalization_Person_Re_Identification_via_Body_Distribution_Aware_Visual_Prompts.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/leavlong/FedBPrompt"
+    ]
+  },
+  {
+    "id": "R0037",
+    "title_listed": "SANER: Switchable Adapter with Non-parametric Enhanced Routing for Person De-Reidentification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0037_A_2026_CVPR_SANER_Switchable_Adapter_with_Non_parametric_Enhanced_Routing_for_Person_De_Reidentification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Yimin-Liu/SANER"
+    ]
+  },
+  {
+    "id": "R0038",
+    "title_listed": "SSM-Aware Token-Efficient VMamba via Adaptive Patch Pruning and Merging for Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0038_A_2026_CVPR_SSM_Aware_Token_Efficient_VMamba_via_Adaptive_Patch_Pruning_and_Merging_for_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "full_text",
+    "links": [
+      "https://github.com/YuanHuang0982/TE-VMamba"
+    ]
+  },
+  {
+    "id": "R0039",
+    "title_listed": "Chain-of-Thought Guided Multi-Modal Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0039_A_2026_CVPR_Chain_of_Thought_Guided_Multi_Modal_Object_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0040",
+    "title_listed": "Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0040_A_2026_CVPR_Dynamic_Magic_Unleashing_Restricted_Knowledge_for_Lifelong_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0041",
+    "title_listed": "Quota-Calibrated Fine-Grained Alignment with Context-Aware Marginals for Text-based Person Retrieval",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0041_A_2026_CVPR_Quota_Calibrated_Fine_Grained_Alignment_with_Context_Aware_Marginals_for_Text_based_Person_Retrieval.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0042",
+    "title_listed": "Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0042_A_2026_CVPR_Vision_Language_Attribute_Disentanglement_and_Reinforcement_for_Lifelong_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zhoujiahuan1991/CVPR2026-VLADR"
+    ]
+  },
+  {
+    "id": "R0043",
+    "title_listed": "Prompt-Anchored Vision-Text Distillation for Lifelong Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0043_A_2026_CVPR_Prompt_Anchored_Vision_Text_Distillation_for_Lifelong_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zu-zi/PAD"
+    ]
+  },
+  {
+    "id": "R0044",
+    "title_listed": "View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0044_A_2026_CVPR_View_Aware_Semantic_Alignment_for_Aerial_Ground_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Cat-Zero/ViSA"
+    ]
+  },
+  {
+    "id": "R0045",
+    "title_listed": "Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0045_A_2026_CVPR_Cross_modal_Fuzzy_Alignment_Network_for_Text_Aerial_Person_Retrieval_and_A_Large_scale_Benchmark.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Yifei-"
+    ]
+  },
+  {
+    "id": "R0046",
+    "title_listed": "R$^2$TUA: Reconstruction-residual Based Targeted and Untargeted Attack Against Text-Image Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0046_A_2026_CVPR_R_2_TUA_Reconstruction_residual_Based_Targeted_and_Untargeted_Attack_Against_Text_Image_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0047",
+    "title_listed": "WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0047_A_2026_CVPR_WHU_MARS_A_Multispectral_Aerial_Ground_Benchmark_Towards_Any_Scenario_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/msm8976/WHU-MARS"
+    ]
+  },
+  {
+    "id": "R0048",
+    "title_listed": "AR2-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0048_A_2026_CVPR_AR2_4FV_Anchored_Referring_and_Re_identification_for_Long_Term_Grounding_in_Fixed_View_Videos.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0049",
+    "title_listed": "MOS: Mitigating Optical-SAR Modality Gap for Cross-Modal Ship Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0049_A_2026_CVPR_MOS_Mitigating_Optical_SAR_Modality_Gap_for_Cross_Modal_Ship_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/yjzhao1019/MOS"
+    ]
+  },
+  {
+    "id": "R0050",
+    "title_listed": "Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0050_A_2026_CVPR_Tackling_Alignment_Ambiguity_in_Person_Retrieval_through_Conversational_Attribute_Mining.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/sugelamyd123/CECA"
+    ]
+  },
+  {
+    "id": "R0051",
+    "title_listed": "VRCLIP: Multimodal Canonical Correlation Alignment for CLIP-Driven Vision-Radio Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0051_A_2026_CVPR_VRCLIP_Multimodal_Canonical_Correlation_Alignment_for_CLIP_Driven_Vision_Radio_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0052",
+    "title_listed": "COPE: Consistent Occlusion and Prompt Enhancement Network for Occluded Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0052_A_2026_CVPR_COPE_Consistent_Occlusion_and_Prompt_Enhancement_Network_for_Occluded_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "full_text",
+    "links": [
+      "https://github.com/Cecoming/COPE"
+    ]
+  },
+  {
+    "id": "R0053",
+    "title_listed": "Pose-guided Enriched Feature Learning for Federated-by-camera Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0053_A_2026_CVPR_Pose_guided_Enriched_Feature_Learning_for_Federated_by_camera_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0054",
+    "title_listed": "Cross-Modal Semantic Decoupling and Transfer for Text-to-Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0054_A_2026_ICML_Cross_Modal_Semantic_Decoupling_and_Transfer_for_Text_to_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/witpol96/CSDT"
+    ]
+  },
+  {
+    "id": "R0055",
+    "title_listed": "Hyperbolic Hierarchical Alignment for Video-Based Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0055_A_2026_ICML_Hyperbolic_Hierarchical_Alignment_for_Video_Based_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 15,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Visuang/HHA"
+    ]
+  },
+  {
+    "id": "R0056",
+    "title_listed": "FUSE: Frequency-domain Unification and Spectral Energy Alignment for Multi-modal Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0056_A_2026_ICML_FUSE_Frequency_domain_Unification_and_Spectral_Energy_Alignment_for_Multi_modal_Object_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0057",
+    "title_listed": "Scale-Aware Domain Harmonization for Domain Adaptation Person Search",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0057_A_2026_ICML_Scale_Aware_Domain_Harmonization_for_Domain_Adaptation_Person_Search.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whhbdmu/SCALE"
+    ]
+  },
+  {
+    "id": "R0058",
+    "title_listed": "Correspondence Cognitive Learning for Multi-Modal Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0058_A_2026_ICML_Correspondence_Cognitive_Learning_for_Multi_Modal_Object_Re_Identification.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0059",
+    "title_listed": "Towards Realistic Lifelong Re-identification: Identity Recurrence with Changing Clothes",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0059_A_2026_ICML_Towards_Realistic_Lifelong_Re_identification_Identity_Recurrence_with_Changing_Clothes.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/joyner-7/"
+    ]
+  },
+  {
+    "id": "R0060",
+    "title_listed": "Resolution as a Direction: Vector-Panning Feature Alignment for Cross-Resolution Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0060_A_2026_ICML_Resolution_as_a_Direction_Vector_Panning_Feature_Alignment_for_Cross_Resolution_Re_Identification.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github"
+    ]
+  },
+  {
+    "id": "R0061",
+    "title_listed": "Interactive Person Retrieval via Multi-Turn Multimodal Conversation",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0061_A_2026_ICML_Interactive_Person_Retrieval_via_Multi_Turn_Multimodal_Conversation.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/"
+    ]
+  },
+  {
+    "id": "R0062",
+    "title_listed": "Learning What to Generate: A Reinforcement Learning-based Closed-Loop Augmentation Framework for Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0062_A_2026_ICML_Learning_What_to_Generate_A_Reinforcement_Learning_based_Closed_Loop_Augmentation_Framework_for_Person_Re_identific.pdf",
+    "pages": 23,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0063",
+    "title_listed": "CSOR: Coreset Selection for Object Re-identification via Class Pruning",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0063_A_2026_ICML_CSOR_Coreset_Selection_for_Object_Re_identification_via_Class_Pruning.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0064",
+    "title_listed": "Spatially-Regularized Entropy for Discriminative Token Merging in Fine-Grained Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0064_A_2026_ICML_Spatially_Regularized_Entropy_for_Discriminative_Token_Merging_in_Fine_Grained_Re_Identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0065",
+    "title_listed": "On Combining Animal Re-Identification Models to Address Small Datasets",
+    "year_listed": "2026",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0065_A_2026_IJCV_On_Combining_Animal_Re_Identification_Models_to_Address_Small_Datasets.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1007/s11263-025-02708-9"
+    ]
+  },
+  {
+    "id": "R0066",
+    "title_listed": "Recurrence over Video Frames (RoVF) for Animal Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0066_A_2026_IJCV_Recurrence_over_Video_Frames_RoVF_for_Animal_Re_identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1007/s11263-025-02709-8",
+      "https://github.com/Strong-"
+    ]
+  },
+  {
+    "id": "R0067",
+    "title_listed": "Dual-Edged Homogeneous-Modality Similarity: Towards Visible-Infrared Modality-Incomplete Person Re-Identification with Modality Adaptive Matching",
+    "year_listed": "2026",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0067_A_2026_IJCV_Dual_Edged_Homogeneous_Modality_Similarity_Towards_Visible_Infrared_Modality_Incomplete_Person_Re_Identification_wi.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0068",
+    "title_listed": "Knowing Where to Focus: Attention-Guided Alignment for Text-based Person Search",
+    "year_listed": "2026",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0068_A_2026_IJCV_Knowing_Where_to_Focus_Attention_Guided_Alignment_for_Text_based_Person_Search.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0072",
+    "title_listed": "Pretrain-then-Adapt: Uncertainty-Aware Test-Time Adaptation for Text-based Person Search",
+    "year_listed": "2026",
+    "venue_listed": "SIGIR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0072_A_2026_SIGIR_Pretrain_then_Adapt_Uncertainty_Aware_Test_Time_Adaptation_for_Text_based_Person_Search.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/3805712.3809598"
+    ]
+  },
+  {
+    "id": "R0079",
+    "title_listed": "Causal Bootstrapped Alignment for Unsupervised Video-Based Visible–Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0079_A_2026_TIFS_Causal_Bootstrapped_Alignment_for_Unsupervised_Video_Based_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0080",
+    "title_listed": "Reliable Multi-Modal Object Re-Identification via Modality-Aware Graph Reasoning",
+    "year_listed": "2026",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0080_A_2026_TIFS_Reliable_Multi_Modal_Object_Re_Identification_via_Modality_Aware_Graph_Reasoning.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0085",
+    "title_listed": "NEXT: Multi-Grained Mixture of Experts via Text-Modulation for Multi-Modal Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0085_A_2026_TIFS_NEXT_Multi_Grained_Mixture_of_Experts_via_Text_Modulation_for_Multi_Modal_Object_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0090",
+    "title_listed": "Rectifying Geometry-Induced Similarity Distortions for Real-World Aerial-Ground Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0090_A_2026_TIFS_Rectifying_Geometry_Induced_Similarity_Distortions_for_Real_World_Aerial_Ground_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/kailashhambarde/GeoReID.git"
+    ]
+  },
+  {
+    "id": "R0098",
+    "title_listed": "Hierarchical Identity Learning for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0098_A_2026_TIP_Hierarchical_Identity_Learning_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/haonanshi0125/HIL"
+    ]
+  },
+  {
+    "id": "R0108",
+    "title_listed": "Multi-Modal Object Re-Identification with Prompt-S6 and Semantic-Aware Knowledge Guidance",
+    "year_listed": "2026",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0108_A_2026_TIP_Multi_Modal_Object_Re_Identification_with_Prompt_S6_and_Semantic_Aware_Knowledge_Guidance.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zw-absin/PRISM"
+    ]
+  },
+  {
+    "id": "R0113",
+    "title_listed": "SD-ReID: View-Aware Stable Diffusion for Aerial-Ground Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0113_A_2026_TIP_SD_ReID_View_Aware_Stable_Diffusion_for_Aerial_Ground_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/924973292/SD-ReID"
+    ]
+  },
+  {
+    "id": "R0116",
+    "title_listed": "DiffReID: Discriminative Diffusion Model for Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0116_A_2026_TIP_DiffReID_Discriminative_Diffusion_Model_for_Object_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/A"
+    ]
+  },
+  {
+    "id": "R0123",
+    "title_listed": "Identity Clue Refinement and Enhancement for Visible-Infrared Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0123_A_2026_TMM_Identity_Clue_Refinement_and_Enhancement_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0131",
+    "title_listed": "Distribution-aware Forgetting Compensation for Exemplar-Free Lifelong Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0131_A_2026_TMM_Distribution_aware_Forgetting_Compensation_for_Exemplar_Free_Lifelong_Person_Re_identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0146",
+    "title_listed": "From Calibration to Refinement: Seeking Certainty via Probabilistic Evidence Propagation for Noisy-Label Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0146_A_2026_TMM_From_Calibration_to_Refinement_Seeking_Certainty_via_Probabilistic_Evidence_Propagation_for_Noisy_Label_Person_Re_I.pdf",
+    "pages": 15,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/YuanXinCherry/CARE"
+    ]
+  },
+  {
+    "id": "R0149",
+    "title_listed": "ReIDMamba: Learning Discriminative Features With Visual State Space Model for Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0149_A_2026_TMM_ReIDMamba_Learning_Discriminative_Features_With_Visual_State_Space_Model_for_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/GuHY777/ReIDMamba"
+    ]
+  },
+  {
+    "id": "R0154",
+    "title_listed": "SCING: Towards More Efficient and Robust Person Re-Identification through Selective Cross-Modal Prompt Tuning",
+    "year_listed": "2026",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0154_A_2026_TMM_SCING_Towards_More_Efficient_and_Robust_Person_Re_Identification_through_Selective_Cross_Modal_Prompt_Tuning.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/nnnnnnn.nnnnnnn"
+    ]
+  },
+  {
+    "id": "R0160",
+    "title_listed": "Achieving Text-Based Person Retrieval With Any Granularity",
+    "year_listed": "2026",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0160_A_2026_TPAMI_Achieving_Text_Based_Person_Retrieval_With_Any_Granularity.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zplusdragon/CMAM"
+    ]
+  },
+  {
+    "id": "R0161",
+    "title_listed": "Generative Retrieval for Unsupervised Text-Based Person Search",
+    "year_listed": "2026",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0161_A_2026_TPAMI_Generative_Retrieval_for_Unsupervised_Text_Based_Person_Search.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Flame-Chasers/GTR"
+    ]
+  },
+  {
+    "id": "R0167",
+    "title_listed": "Diffusion-based Synthetic Data Generation for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0167_A_2025_AAAI_Diffusion_based_Synthetic_Data_Generation_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0168",
+    "title_listed": "TokenMatcher: Diverse Tokens Matching for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0168_A_2025_AAAI_TokenMatcher_Diverse_Tokens_Matching_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/liulekai123/TokenMatcher"
+    ]
+  },
+  {
+    "id": "R0169",
+    "title_listed": "Relieving Universal Label Noise for Unsupervised Visible-Infrared Person Re-Identification by Inferring from Neighbors",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0169_A_2025_AAAI_Relieving_Universal_Label_Noise_for_Unsupervised_Visible_Infrared_Person_Re_Identification_by_Inferring_from_Neighb.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://arxiv.org/abs/2412.12220",
+      "https://github.com/tengxiao14/Neighbor-guided-"
+    ]
+  },
+  {
+    "id": "R0170",
+    "title_listed": "DASK: Distribution Rehearsing via Adaptive Style Kernel Learning for Exemplar-Free Lifelong Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0170_A_2025_AAAI_DASK_Distribution_Rehearsing_via_Adaptive_Style_Kernel_Learning_for_Exemplar_Free_Lifelong_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zhoujiahuan1991/AAAI2025-"
+    ]
+  },
+  {
+    "id": "R0171",
+    "title_listed": "Doubly Contrastive Learning for Source-Free Domain Adaptive Person Search",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0171_A_2025_AAAI_Doubly_Contrastive_Learning_for_Source_Free_Domain_Adaptive_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0172",
+    "title_listed": "NightReID: A Large-Scale Nighttime Person Re-Identification Benchmark",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0172_A_2025_AAAI_NightReID_A_Large_Scale_Nighttime_Person_Re_Identification_Benchmark.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/msm8976/NightReID"
+    ]
+  },
+  {
+    "id": "R0173",
+    "title_listed": "DeMo: Decoupled Feature-Based Mixture of Experts for Multi-Modal Object Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0173_A_2025_AAAI_DeMo_Decoupled_Feature_Based_Mixture_of_Experts_for_Multi_Modal_Object_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0174",
+    "title_listed": "MambaPro: Multi-Modal Object Re-identification with Mamba Aggregation and Synergistic Prompt",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0174_A_2025_AAAI_MambaPro_Multi_Modal_Object_Re_identification_with_Mamba_Aggregation_and_Synergistic_Prompt.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0175",
+    "title_listed": "DM-Adapter: Domain-Aware Mixture-of-Adapters for Text-Based Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0175_A_2025_AAAI_DM_Adapter_Domain_Aware_Mixture_of_Adapters_for_Text_Based_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Liu-Yating/DM-Adapter"
+    ]
+  },
+  {
+    "id": "R0176",
+    "title_listed": "Graph-Based Cross-Domain Knowledge Distillation for Cross-Dataset Text-to-Image Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0176_A_2025_AAAI_Graph_Based_Cross_Domain_Knowledge_Distillation_for_Cross_Dataset_Text_to_Image_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0177",
+    "title_listed": "Exploring the Potential of Large Vision-Language Models for Unsupervised Text-Based Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0177_A_2025_AAAI_Exploring_the_Potential_of_Large_Vision_Language_Models_for_Unsupervised_Text_Based_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0178",
+    "title_listed": "Visual Perturbation for Text-Based Person Search",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0178_A_2025_AAAI_Visual_Perturbation_for_Text_Based_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/PatrickZad/ViPer"
+    ]
+  },
+  {
+    "id": "R0179",
+    "title_listed": "CDE-Learning: Camera Deviation Elimination Learning for Unsupervised Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0179_A_2025_AAAI_CDE_Learning_Camera_Deviation_Elimination_Learning_for_Unsupervised_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zsszyx/CDE-Learning"
+    ]
+  },
+  {
+    "id": "R0180",
+    "title_listed": "Unsupervised Domain Adaptive Person Search via Dual Self-Calibration",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0180_A_2025_AAAI_Unsupervised_Domain_Adaptive_Person_Search_via_Dual_Self_Calibration.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whbdmu/DSCA"
+    ]
+  },
+  {
+    "id": "R0181",
+    "title_listed": "Optimizing Label Assignment for Weakly Supervised Person Search",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0181_A_2025_AAAI_Optimizing_Label_Assignment_for_Weakly_Supervised_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0182",
+    "title_listed": "Infer the Whole from a Glimpse of a Part: Keypoint-Based Knowledge Graph for Vehicle Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0182_A_2025_AAAI_Infer_the_Whole_from_a_Glimpse_of_a_Part_Keypoint_Based_Knowledge_Graph_for_Vehicle_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0183",
+    "title_listed": "CLIP-driven View-aware Prompt Learning for Unsupervised Vehicle Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0183_A_2025_AAAI_CLIP_driven_View_aware_Prompt_Learning_for_Unsupervised_Vehicle_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0184",
+    "title_listed": "CLIMB-ReID: A Hybrid CLIP-Mamba Framework for Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0184_A_2025_AAAI_CLIMB_ReID_A_Hybrid_CLIP_Mamba_Framework_for_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/AsuradaYuci/CLIMB-ReID"
+    ]
+  },
+  {
+    "id": "R0185",
+    "title_listed": "Motif Guided Graph Transformers with Combinatorial Skeleton Prototype Learning for Skeleton-Based Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0185_A_2025_AAAI_Motif_Guided_Graph_Transformers_with_Combinatorial_Skeleton_Prototype_Learning_for_Skeleton_Based_Person_Re_Identif.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Kali-Hac/MoCos"
+    ]
+  },
+  {
+    "id": "R0186",
+    "title_listed": "Towards Efficient Object Re-Identification with a Novel Cloud-Edge Collaborative Framework",
+    "year_listed": "2025",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0186_A_2025_AAAI_Towards_Efficient_Object_Re_Identification_with_a_Novel_Cloud_Edge_Collaborative_Framework.pdf",
+    "pages": 9,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0187",
+    "title_listed": "MetaWild: A Multimodal Dataset for Animal Re-Identification with Environmental Metadata",
+    "year_listed": "2025",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0187_A_2025_ACMMM_MetaWild_A_Multimodal_Dataset_for_Animal_Re_Identification_with_Environmental_Metadata.pdf",
+    "pages": 7,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/XXXXXXX.XXXXXXX",
+      "https://jim-lyz1024.github.io/MetaWild/"
+    ]
+  },
+  {
+    "id": "R0188",
+    "title_listed": "DINOv2 Driven Gait Representation Learning for Video-Based Visible-Infrared Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0188_A_2025_ACMMM_DINOv2_Driven_Gait_Representation_Learning_for_Video_Based_Visible_Infrared_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/3746027.3755413"
+    ]
+  },
+  {
+    "id": "R0204",
+    "title_listed": "Positive Style Accumulation: A Style Screening and Continuous Utilization Framework for Federated DG-ReID",
+    "year_listed": "2025",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0204_A_2025_ACMMM_Positive_Style_Accumulation_A_Style_Screening_and_Continuous_Utilization_Framework_for_Federated_DG_ReID.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/nnnnnnn.nnnnnnn"
+    ]
+  },
+  {
+    "id": "R0205",
+    "title_listed": "From Laboratory to Real World: A New Benchmark Towards Privacy-Preserved Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0205_A_2025_CVPR_From_Laboratory_to_Real_World_A_New_Benchmark_Towards_Privacy_Preserved_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Joey623/L2RW"
+    ]
+  },
+  {
+    "id": "R0206",
+    "title_listed": "Mixture of Submodules for Domain Adaptive Person Search",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0206_A_2025_CVPR_Mixture_of_Submodules_for_Domain_Adaptive_Person_Search.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0207",
+    "title_listed": "AirRoom: Objects Matter in Room Reidentification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0207_A_2025_CVPR_AirRoom_Objects_Matter_in_Room_Reidentification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://sairlab.org/airroom/"
+    ]
+  },
+  {
+    "id": "R0208",
+    "title_listed": "Towards All-in-One Medical Image Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0208_A_2025_CVPR_Towards_All_in_One_Medical_Image_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/tianyuan168326/All-in-"
+    ]
+  },
+  {
+    "id": "R0209",
+    "title_listed": "DKC: Differentiated Knowledge Consolidation for Cloth-Hybrid Lifelong Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0209_A_2025_CVPR_DKC_Differentiated_Knowledge_Consolidation_for_Cloth_Hybrid_Lifelong_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/PKU-ICST-MIPL/DKC-CVPR2025"
+    ]
+  },
+  {
+    "id": "R0210",
+    "title_listed": "DIFFER: Disentangling Identity Features via Semantic Cues for Clothes-Changing Person Re-ID",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0210_A_2025_CVPR_DIFFER_Disentangling_Identity_Features_via_Semantic_Cues_for_Clothes_Changing_Person_Re_ID.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0211",
+    "title_listed": "Identity-Clothing Similarity Modeling for Unsupervised Clothing Change Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0211_A_2025_CVPR_Identity_Clothing_Similarity_Modeling_for_Unsupervised_Clothing_Change_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0212",
+    "title_listed": "Chat-based Person Retrieval via Dialogue-Refined Cross-Modal Alignment",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0212_A_2025_CVPR_Chat_based_Person_Retrieval_via_Dialogue_Refined_Cross_Modal_Alignment.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Flame-Chasers/DiaNA"
+    ]
+  },
+  {
+    "id": "R0213",
+    "title_listed": "Human-centered Interactive Learning via MLLMs for Text-to-Image Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0213_A_2025_CVPR_Human_centered_Interactive_Learning_via_MLLMs_for_Text_to_Image_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/QinYang79/ICL"
+    ]
+  },
+  {
+    "id": "R0214",
+    "title_listed": "Modeling Thousands of Human Annotators for Generalizable Text-to-Image Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0214_A_2025_CVPR_Modeling_Thousands_of_Human_Annotators_for_Generalizable_Text_to_Image_Person_Re_identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/sssaury/HAM"
+    ]
+  },
+  {
+    "id": "R0215",
+    "title_listed": "IDEA: Inverted Text with Cooperative Deformable Aggregation for Multi-modal Object Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0215_A_2025_CVPR_IDEA_Inverted_Text_with_Cooperative_Deformable_Aggregation_for_Multi_modal_Object_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0216",
+    "title_listed": "SeCap: Self-Calibrating and Adaptive Prompts for Cross-view Person Re-Identification in Aerial-Ground Networks",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0216_A_2025_CVPR_SeCap_Self_Calibrating_and_Adaptive_Prompts_for_Cross_view_Person_Re_Identification_in_Aerial_Ground_Networks.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/wangshining681/SeCap-AGPReID"
+    ]
+  },
+  {
+    "id": "R0217",
+    "title_listed": "AG-VPReID: A Challenging Large-Scale Benchmark for Aerial-Ground Video-based Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0217_A_2025_CVPR_AG_VPReID_A_Challenging_Large_Scale_Benchmark_for_Aerial_Ground_Video_based_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0218",
+    "title_listed": "UCM-VeID V2: A Richer Dataset and A Pre-training Method for UAV Cross-Modality Vehicle Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0218_A_2025_CVPR_UCM_VeID_V2_A_Richer_Dataset_and_A_Pre_training_Method_for_UAV_Cross_Modality_Vehicle_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0219",
+    "title_listed": "Cheb-GR: Rethinking K-nearest Neighbor Search in Re-ranking for Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0219_A_2025_CVPR_Cheb_GR_Rethinking_K_nearest_Neighbor_Search_in_Re_ranking_for_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Jinxi-Yang-WHU/Fast-GCR.git"
+    ]
+  },
+  {
+    "id": "R0220",
+    "title_listed": "From Poses to Identity: Training-Free Person Re-Identification via Feature Centralization",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0220_A_2025_CVPR_From_Poses_to_Identity_Training_Free_Person_Re_Identification_via_Feature_Centralization.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/yuanc3/Pose2ID"
+    ]
+  },
+  {
+    "id": "R0221",
+    "title_listed": "Person De-reidentification: A Variation-guided Identity Shift Modeling",
+    "year_listed": "2025",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0221_A_2025_CVPR_Person_De_reidentification_A_Variation_guided_Identity_Shift_Modeling.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0222",
+    "title_listed": "OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0222_A_2025_ICCV_OpenAnimals_Revisiting_Person_Re_Identification_for_Animals_Towards_Better_Generalization.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github"
+    ]
+  },
+  {
+    "id": "R0223",
+    "title_listed": "Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0223_A_2025_ICCV_Weakly_Supervised_Visible_Infrared_Person_Re_Identification_via_Heterogeneous_Expert_Collaborative_Consistency_Lear.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github"
+    ]
+  },
+  {
+    "id": "R0224",
+    "title_listed": "Augmented and Softened Matching for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0224_A_2025_ICCV_Augmented_and_Softened_Matching_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0225",
+    "title_listed": "Unsupervised Visible-Infrared Person Re-identification under Unpaired Settings",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0225_A_2025_ICCV_Unsupervised_Visible_Infrared_Person_Re_identification_under_Unpaired_Settings.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/USL-VI-ReID/MCL"
+    ]
+  },
+  {
+    "id": "R0226",
+    "title_listed": "Cross-Category Subjectivity Generalization for Style-Adaptive Sketch Re-ID",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0226_A_2025_ICCV_Cross_Category_Subjectivity_Generalization_for_Style_Adaptive_Sketch_Re_ID.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0227",
+    "title_listed": "HAMoBE: Hierarchical and Adaptive Mixture of Biometric Experts for Video-based Person ReID",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0227_A_2025_ICCV_HAMoBE_Hierarchical_and_Adaptive_Mixture_of_Biometric_Experts_for_Video_based_Person_ReID.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0228",
+    "title_listed": "Multi-modal Multi-platform Person Re-Identification: Benchmark and Method",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0228_A_2025_ICCV_Multi_modal_Multi_platform_Person_Re_Identification_Benchmark_and_Method.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://mp-reid"
+    ]
+  },
+  {
+    "id": "R0229",
+    "title_listed": "Self-Reinforcing Prototype Evolution with Dual-Knowledge Cooperation for Semi-Supervised Lifelong Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0229_A_2025_ICCV_Self_Reinforcing_Prototype_Evolution_with_Dual_Knowledge_Cooperation_for_Semi_Supervised_Lifelong_Person_Re_Identif.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zhoujiahuan1991/ICCV2025-SPRED"
+    ]
+  },
+  {
+    "id": "R0230",
+    "title_listed": "Colors See Colors Ignore: Clothes Changing ReID with Color Disentanglement",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0230_A_2025_ICCV_Colors_See_Colors_Ignore_Clothes_Changing_ReID_with_Color_Disentanglement.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github",
+      "https://ucf-crcv.github.io/ReID/CSCI"
+    ]
+  },
+  {
+    "id": "R0231",
+    "title_listed": "ChatReID: Open-ended Interactive Person Retrieval via Hierarchical Progressive Tuning for Vision Language Models",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0231_A_2025_ICCV_ChatReID_Open_ended_Interactive_Person_Retrieval_via_Hierarchical_Progressive_Tuning_for_Vision_Language_Models.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0232",
+    "title_listed": "Generalizable Object Re-Identification via Visual In-Context Prompting",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0232_A_2025_ICCV_Generalizable_Object_Re_Identification_via_Visual_In_Context_Prompting.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Hzzone/VICP"
+    ]
+  },
+  {
+    "id": "R0233",
+    "title_listed": "Prompt-driven Transferable Adversarial Attack on Person Re-Identification with Attribute-aware Textual Inversion",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0233_A_2025_ICCV_Prompt_driven_Transferable_Adversarial_Attack_on_Person_Re_Identification_with_Attribute_aware_Textual_Inversion.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/yuanbianGit/AP-Attack"
+    ]
+  },
+  {
+    "id": "R0234",
+    "title_listed": "Bridging the Sky and Ground: Towards View-Invariant Feature Learning for Aerial-Ground Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0234_A_2025_ICCV_Bridging_the_Sky_and_Ground_Towards_View_Invariant_Feature_Learning_for_Aerial_Ground_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0235",
+    "title_listed": "Leveraging Prior Knowledge of Diffusion Model for Person Search",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0235_A_2025_ICCV_Leveraging_Prior_Knowledge_of_Diffusion_Model_for_Person_Search.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://perceptualai-lab.github.io/DiffPS/"
+    ]
+  },
+  {
+    "id": "R0236",
+    "title_listed": "Towards Robustness of Person Search against Corruptions",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0236_A_2025_ICCV_Towards_Robustness_of_Person_Search_against_Corruptions.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0237",
+    "title_listed": "VehicleMAE: View-asymmetry Mutual Learning for Vehicle Re-identification Pre-training via Masked AutoEncoders",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0237_A_2025_ICCV_VehicleMAE_View_asymmetry_Mutual_Learning_for_Vehicle_Re_identification_Pre_training_via_Masked_AutoEncoders.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0238",
+    "title_listed": "Cross-modal Ship Re-Identification via Optical and SAR Imagery: A Novel Dataset and Method",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0238_A_2025_ICCV_Cross_modal_Ship_Re_Identification_via_Optical_and_SAR_Imagery_A_Novel_Dataset_and_Method.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Alioth2000/Hoss-ReID"
+    ]
+  },
+  {
+    "id": "R0239",
+    "title_listed": "One-Shot Knowledge Transfer for Scalable Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0239_A_2025_ICCV_One_Shot_Knowledge_Transfer_for_Scalable_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0240",
+    "title_listed": "VIPerson: Flexibly Generating Virtual Identity for Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0240_A_2025_ICCV_VIPerson_Flexibly_Generating_Virtual_Identity_for_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://isee-laboratory.github.io/VIPerson/"
+    ]
+  },
+  {
+    "id": "R0241",
+    "title_listed": "Exploring the Camera Bias of Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "ICLR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0241_A_2025_ICLR_Exploring_the_Camera_Bias_of_Person_Re_identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0242",
+    "title_listed": "FlexiReID: Adaptive Mixture of Expert for Multi-Modal Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0242_A_2025_ICML_FlexiReID_Adaptive_Mixture_of_Expert_for_Multi_Modal_Person_Re_Identification.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0243",
+    "title_listed": "Multi-Modal Object Re-identification via Sparse Mixture-of-Experts",
+    "year_listed": "2025",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0243_A_2025_ICML_Multi_Modal_Object_Re_identification_via_Sparse_Mixture_of_Experts.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0244",
+    "title_listed": "LLaVA-ReID: Selective Multi-image Questioner for Interactive Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICML",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0244_A_2025_ICML_LLaVA_ReID_Selective_Multi_image_Questioner_for_Interactive_Person_Re_Identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/XLearning-SCU/LLaVA-ReID"
+    ]
+  },
+  {
+    "id": "R0245",
+    "title_listed": "Fusion for Visual-Infrared Person ReID in Real-World Surveillance Using Corrupted Multimodal Data",
+    "year_listed": "2025",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0245_A_2025_IJCV_Fusion_for_Visual_Infrared_Person_ReID_in_Real_World_Surveillance_Using_Corrupted_Multimodal_Data.pdf",
+    "pages": 31,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/art2611/MREiD-UCD-CCD.git"
+    ]
+  },
+  {
+    "id": "R0248",
+    "title_listed": "Semantic-Aligned Learning with Collaborative Refinement for Unsupervised VI-ReID",
+    "year_listed": "2025",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0248_A_2025_IJCV_Semantic_Aligned_Learning_with_Collaborative_Refinement_for_Unsupervised_VI_ReID.pdf",
+    "pages": 21,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/FranklinLingfeng/code-for-"
+    ]
+  },
+  {
+    "id": "R0251",
+    "title_listed": "LVLM-Driven Attribute-Aware Modeling for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0251_A_2025_NeurIPS_LVLM_Driven_Attribute_Aware_Modeling_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0252",
+    "title_listed": "Learning Source-Free Domain Adaptation for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0252_A_2025_NeurIPS_Learning_Source_Free_Domain_Adaptation_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/LYXRhythm/SVIP"
+    ]
+  },
+  {
+    "id": "R0253",
+    "title_listed": "Automatic Synthetic Data and Fine-grained Adaptive Feature Alignment for Composed Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0253_A_2025_NeurIPS_Automatic_Synthetic_Data_and_Fine_grained_Adaptive_Feature_Alignment_for_Composed_Person_Retrieval.pdf",
+    "pages": 32,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Delong-liu-bupt/Composed_Person_Retrieval"
+    ]
+  },
+  {
+    "id": "R0254",
+    "title_listed": "MDReID: Modality-Decoupled Learning for Any-to-Any Multi-Modal Object Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0254_A_2025_NeurIPS_MDReID_Modality_Decoupled_Learning_for_Any_to_Any_Multi_Modal_Object_Re_Identification.pdf",
+    "pages": 22,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/stone96123/MDReID"
+    ]
+  },
+  {
+    "id": "R0255",
+    "title_listed": "Miss-ReID: Delivering Robust Multi-Modality Object Re-Identification Despite Missing Modalities",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0255_A_2025_NeurIPS_Miss_ReID_Delivering_Robust_Multi_Modality_Object_Re_Identification_Despite_Missing_Modalities.pdf",
+    "pages": 25,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0256",
+    "title_listed": "ReID5o: Achieving Omni Multi-modal Person Re-identification in a Single Model",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0256_A_2025_NeurIPS_ReID5o_Achieving_Omni_Multi_modal_Person_Re_identification_in_a_Single_Model.pdf",
+    "pages": 24,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Zplusdragon/ReID5o_ORBench"
+    ]
+  },
+  {
+    "id": "R0257",
+    "title_listed": "UGG-ReID: Uncertainty-Guided Graph Model for Multi-Modal Object Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0257_A_2025_NeurIPS_UGG_ReID_Uncertainty_Guided_Graph_Model_for_Multi_Modal_Object_Re_Identification.pdf",
+    "pages": 24,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/wanxixi11/UGG-ReID"
+    ]
+  },
+  {
+    "id": "R0258",
+    "title_listed": "Unbiased Prototype Consistency Learning for Multi-Modal and Multi-Task Object Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0258_A_2025_NeurIPS_Unbiased_Prototype_Consistency_Learning_for_Multi_Modal_and_Multi_Task_Object_Re_Identification.pdf",
+    "pages": 21,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/ZhouZhongao/UPCL"
+    ]
+  },
+  {
+    "id": "R0259",
+    "title_listed": "GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0259_A_2025_NeurIPS_GSAlign_Geometric_and_Semantic_Alignment_Network_for_Aerial_Ground_Person_Re_Identification.pdf",
+    "pages": 21,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0260",
+    "title_listed": "BMW: Bidirectionally Memory bank reWriting for Unsupervised Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0260_A_2025_NeurIPS_BMW_Bidirectionally_Memory_bank_reWriting_for_Unsupervised_Person_Re_Identification.pdf",
+    "pages": 25,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/liu-xb/BMW"
+    ]
+  },
+  {
+    "id": "R0261",
+    "title_listed": "Spatiotemporal Consensus with Scene Prior for Unsupervised Domain Adaptive Person Search",
+    "year_listed": "2025",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0261_A_2025_NeurIPS_Spatiotemporal_Consensus_with_Scene_Prior_for_Unsupervised_Domain_Adaptive_Person_Search.pdf",
+    "pages": 19,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whbdmu/STCSP"
+    ]
+  },
+  {
+    "id": "R0264",
+    "title_listed": "Adaptive Generation of Privileged Intermediate Information for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0264_A_2025_TIFS_Adaptive_Generation_of_Privileged_Intermediate_Information_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://creativecommons.org/licenses/",
+      "https://doi.org/10.1109/TIFS.2025.3541969",
+      "https://eprints.whiterose.ac.uk",
+      "https://eprints.whiterose.ac.uk/id/eprint/239025/"
+    ]
+  },
+  {
+    "id": "R0265",
+    "title_listed": "Frequency Domain Nuances Mining for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0265_A_2025_TIFS_Frequency_Domain_Nuances_Mining_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0269",
+    "title_listed": "Video-Level Language-Driven Video-Based Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0269_A_2025_TIFS_Video_Level_Language_Driven_Video_Based_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 15,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Visuang/VLD"
+    ]
+  },
+  {
+    "id": "R0273",
+    "title_listed": "Robust Duality Learning for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0273_A_2025_TIFS_Robust_Duality_Learning_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0277",
+    "title_listed": "Nighttime Person Re-Identification via Collaborative Enhancement Network With Multi-Domain Learning",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0277_A_2025_TIFS_Nighttime_Person_Re_Identification_via_Collaborative_Enhancement_Network_With_Multi_Domain_Learning.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Alexadlu/CENet",
+      "https://github.com/mmic-lcl"
+    ]
+  },
+  {
+    "id": "R0286",
+    "title_listed": "CAMeL: Cross-Modality Adaptive Meta-Learning for Text-Based Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0286_A_2025_TIFS_CAMeL_Cross_Modality_Adaptive_Meta_Learning_for_Text_Based_Person_Retrieval.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Jahawn-Wen/CAMeL-"
+    ]
+  },
+  {
+    "id": "R0287",
+    "title_listed": "CILP-FGDI: Exploiting Vision-Language Model for Generalizable Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0287_A_2025_TIFS_CILP_FGDI_Exploiting_Vision_Language_Model_for_Generalizable_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Qi5Lei/CLIP-FGDI"
+    ]
+  },
+  {
+    "id": "R0290",
+    "title_listed": "Unleashing the Potential of Tracklets for Unsupervised Video Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0290_A_2025_TIFS_Unleashing_the_Potential_of_Tracklets_for_Unsupervised_Video_Person_Re_Identification.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Darylmeng/SSRC-Reid"
+    ]
+  },
+  {
+    "id": "R0296",
+    "title_listed": "Modality Unified Attack for Omni-Modality Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0296_A_2025_TIFS_Modality_Unified_Attack_for_Omni_Modality_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0300",
+    "title_listed": "Multiple Information Prompt Learning for Cloth-Changing Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0300_A_2025_TIP_Multiple_Information_Prompt_Learning_for_Cloth_Changing_Person_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0302",
+    "title_listed": "Image-Text-Image Knowledge Transfer for Lifelong Person Re-Identification With Hybrid Clothing States",
+    "year_listed": "2025",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0302_A_2025_TIP_Image_Text_Image_Knowledge_Transfer_for_Lifelong_Person_Re_Identification_With_Hybrid_Clothing_States.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0304",
+    "title_listed": "Semi-Supervised Text-Based Person Search",
+    "year_listed": "2025",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0304_A_2025_TIP_Semi_Supervised_Text_Based_Person_Search.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0308",
+    "title_listed": "Not Every Patch is Needed: Toward a More Efficient and Effective Backbone for Video-Based Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0308_A_2025_TIP_Not_Every_Patch_is_Needed_Toward_a_More_Efficient_and_Effective_Backbone_for_Video_Based_Person_Re_Identification.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0310",
+    "title_listed": "Learning to Learn Transferable Generative Attack for Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0310_A_2025_TIP_Learning_to_Learn_Transferable_Generative_Attack_for_Person_Re_Identification.pdf",
+    "pages": 15,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/yuanbianGit/MTGA"
+    ]
+  },
+  {
+    "id": "R0313",
+    "title_listed": "CLIP-Driven Semantic Discovery Network for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0313_A_2025_TMM_CLIP_Driven_Semantic_Discovery_Network_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/nengdong96/CSDN"
+    ]
+  },
+  {
+    "id": "R0317",
+    "title_listed": "Clothes-Changing Person Re-Identification With Feasibility-Aware Intermediary Matching",
+    "year_listed": "2025",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0317_A_2025_TMM_Clothes_Changing_Person_Re_Identification_With_Feasibility_Aware_Intermediary_Matching.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0323",
+    "title_listed": "Bi-C 2 R: Bidirectional Continual Compatible Representation for Re-Indexing Free Lifelong Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0323_A_2025_TPAMI_Bi_C_2_R_Bidirectional_Continual_Compatible_Representation_for_Re_Indexing_Free_Lifelong_Person_Re_Identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/PKU-ICST-"
+    ]
+  },
+  {
+    "id": "R0326",
+    "title_listed": "Multilingual Text-to-Image Person Retrieval via Bidirectional Relation Reasoning and Aligning",
+    "year_listed": "2025",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0326_A_2025_TPAMI_Multilingual_Text_to_Image_Person_Retrieval_via_Bidirectional_Relation_Reasoning_and_Aligning.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Flame-Chasers/Bi-IRRA"
+    ]
+  },
+  {
+    "id": "R0327",
+    "title_listed": "Instruct-ReID++: Towards Universal Purpose Instruction-Guided Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0327_A_2025_TPAMI_Instruct_ReID_Towards_Universal_Purpose_Instruction_Guided_Person_Re_Identification.pdf",
+    "pages": 19,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/hwz-zju/Instruct-ReID"
+    ]
+  },
+  {
+    "id": "R0332",
+    "title_listed": "From Data Deluge to Data Curation: A Filtering-WoRA Paradigm for Efficient Text-based Person Search",
+    "year_listed": "2025",
+    "venue_listed": "WWW",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0332_A_2025_WWW_From_Data_Deluge_to_Data_Curation_A_Filtering_WoRA_Paradigm_for_Efficient_Text_based_Person_Search.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/3696410.3714788"
+    ]
+  },
+  {
+    "id": "R0333",
+    "title_listed": "High-Order Structure Based Middle-Feature Learning for Visible-Infrared Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0333_A_2024_AAAI_High_Order_Structure_Based_Middle_Feature_Learning_for_Visible_Infrared_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://arxiv",
+      "https://github"
+    ]
+  },
+  {
+    "id": "R0334",
+    "title_listed": "Domain Generalizable Person Search Using Unreal Dataset",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0334_A_2024_AAAI_Domain_Generalizable_Person_Search_Using_Unreal_Dataset.pdf",
+    "pages": 8,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0335",
+    "title_listed": "Diversity-Authenticity Co-constrained Stylization for Federated Domain Generalization in Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0335_A_2024_AAAI_Diversity_Authenticity_Co_constrained_Stylization_for_Federated_Domain_Generalization_in_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/FlyingRoastDuck/DACS"
+    ]
+  },
+  {
+    "id": "R0336",
+    "title_listed": "Heterogeneous Test-Time Training for Multi-Modal Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0336_A_2024_AAAI_Heterogeneous_Test_Time_Training_for_Multi_Modal_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/ziwang1121/HTT"
+    ]
+  },
+  {
+    "id": "R0337",
+    "title_listed": "TOP-ReID: Multi-Spectral Object Re-identification with Token Permutation",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0337_A_2024_AAAI_TOP_ReID_Multi_Spectral_Object_Re_identification_with_Token_Permutation.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/924973292/TOP-ReID"
+    ]
+  },
+  {
+    "id": "R0338",
+    "title_listed": "Multi-Modal Disordered Representation Learning Network for Description-Based Person Search",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0338_A_2024_AAAI_Multi_Modal_Disordered_Representation_Learning_Network_for_Description_Based_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0339",
+    "title_listed": "LSTKC: Long Short-Term Knowledge Consolidation for Lifelong Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0339_A_2024_AAAI_LSTKC_Long_Short_Term_Knowledge_Consolidation_for_Lifelong_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0340",
+    "title_listed": "Causality-Inspired Invariant Representation Learning for Text-Based Person Retrieval",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0340_A_2024_AAAI_Causality_Inspired_Invariant_Representation_Learning_for_Text_Based_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0341",
+    "title_listed": "Adaptive Uncertainty-Based Learning for Text-Based Person Retrieval",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0341_A_2024_AAAI_Adaptive_Uncertainty_Based_Learning_for_Text_Based_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/CFM-MSG/Code-AUL"
+    ]
+  },
+  {
+    "id": "R0342",
+    "title_listed": "Unifying Multi-Modal Uncertainty Modeling and Semantic Alignment for Text-to-Image Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0342_A_2024_AAAI_Unifying_Multi_Modal_Uncertainty_Modeling_and_Semantic_Alignment_for_Text_to_Image_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0343",
+    "title_listed": "An Empirical Study of CLIP for Text-Based Person Search",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0343_A_2024_AAAI_An_Empirical_Study_of_CLIP_for_Text_Based_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Flame-Chasers/TBPS-CLIP"
+    ]
+  },
+  {
+    "id": "R0344",
+    "title_listed": "Diverse Person: Customize Your Own Dataset for Text-Based Person Search",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0344_A_2024_AAAI_Diverse_Person_Customize_Your_Own_Dataset_for_Text_Based_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0345",
+    "title_listed": "TF-CLIP: Learning Text-Free CLIP for Video-Based Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0345_A_2024_AAAI_TF_CLIP_Learning_Text_Free_CLIP_for_Video_Based_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0346",
+    "title_listed": "Catalyst for Clustering-Based Unsupervised Object Re-identification: Feature Calibration",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0346_A_2024_AAAI_Catalyst_for_Clustering_Based_Unsupervised_Object_Re_identification_Feature_Calibration.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/lhf12278/FCM-ReID"
+    ]
+  },
+  {
+    "id": "R0347",
+    "title_listed": "Unsupervised Group Re-identification via Adaptive Clustering-Driven Progressive Learning",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0347_A_2024_AAAI_Unsupervised_Group_Re_identification_via_Adaptive_Clustering_Driven_Progressive_Learning.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0348",
+    "title_listed": "Divide and Conquer: Hybrid Pre-training for Person Search",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0348_A_2024_AAAI_Divide_and_Conquer_Hybrid_Pre_training_for_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/personsearch/PretrainPS"
+    ]
+  },
+  {
+    "id": "R0349",
+    "title_listed": "Temporal Correlation Vision Transformer for Video Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0349_A_2024_AAAI_Temporal_Correlation_Vision_Transformer_for_Video_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0350",
+    "title_listed": "Differentiable Auxiliary Learning for Sketch Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0350_A_2024_AAAI_Differentiable_Auxiliary_Learning_for_Sketch_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0351",
+    "title_listed": "Multi-Prompts Learning with Cross-Modal Alignment for Attribute-Based Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0351_A_2024_AAAI_Multi_Prompts_Learning_with_Cross_Modal_Alignment_for_Attribute_Based_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zyj20/MPReID",
+      "https://openai.com/blog/chatgpt",
+      "https://openai.com/product/gpt-4"
+    ]
+  },
+  {
+    "id": "R0352",
+    "title_listed": "QI-IRA: Quantum-Inspired Interactive Ranking Aggregation for Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0352_A_2024_AAAI_QI_IRA_Quantum_Inspired_Interactive_Ranking_Aggregation_for_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0353",
+    "title_listed": "Attention Disturbance and Dual-Path Constraint Network for Occluded Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0353_A_2024_AAAI_Attention_Disturbance_and_Dual_Path_Constraint_Network_for_Occluded_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0354",
+    "title_listed": "Occluded Person Re-identification via Saliency-Guided Patch Transfer",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0354_A_2024_AAAI_Occluded_Person_Re_identification_via_Saliency_Guided_Patch_Transfer.pdf",
+    "pages": 9,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0355",
+    "title_listed": "Text-Based Occluded Person Re-identification via Multi-Granularity Contrastive Consistency Learning",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0355_A_2024_AAAI_Text_Based_Occluded_Person_Re_identification_via_Multi_Granularity_Contrastive_Consistency_Learning.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/littlexinyi/MGCC"
+    ]
+  },
+  {
+    "id": "R0356",
+    "title_listed": "Dynamic Feature Pruning and Consolidation for Occluded Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0356_A_2024_AAAI_Dynamic_Feature_Pruning_and_Consolidation_for_Occluded_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0359",
+    "title_listed": "Robust Pseudo-label Learning with Neighbor Relation for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0359_A_2024_ACMMM_Robust_Pseudo_label_Learning_with_Neighbor_Relation_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0360",
+    "title_listed": "Prompting Continual Person Search",
+    "year_listed": "2024",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0360_A_2024_ACMMM_Prompting_Continual_Person_Search.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/",
+      "https://doi.org/10.1145/3664647.3681240",
+      "https://github.com/PatrickZad/PoPS"
+    ]
+  },
+  {
+    "id": "R0365",
+    "title_listed": "Prototypical Prompting for Text-to-image Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0365_A_2024_ACMMM_Prototypical_Prompting_for_Text_to_image_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/3664647.3681165"
+    ]
+  },
+  {
+    "id": "R0366",
+    "title_listed": "TVPR: Text-to-Video Person Retrieval and a New Benchmark",
+    "year_listed": "2024",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0366_A_2024_ACMMM_TVPR_Text_to_Video_Person_Retrieval_and_a_New_Benchmark.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/3664647.3681715"
+    ]
+  },
+  {
+    "id": "R0368",
+    "title_listed": "PixelFade: Privacy-preserving Person Re-identification with Noise-guided Progressive Replacement",
+    "year_listed": "2024",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0368_A_2024_ACMMM_PixelFade_Privacy_preserving_Person_Re_identification_with_Noise_guided_Progressive_Replacement.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/3664647.3681262",
+      "https://github.com/iSEE-"
+    ]
+  },
+  {
+    "id": "R0369",
+    "title_listed": "ProFD: Prompt-Guided Feature Disentangling for Occluded Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "ACM MM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0369_A_2024_ACMMM_ProFD_Prompt_Guided_Feature_Disentangling_for_Occluded_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "full_text",
+    "links": [
+      "https://doi.org/10.1145/",
+      "https://doi.org/10.1145/3664647.3680958",
+      "https://github.com/Cuixxx/ProFD"
+    ]
+  },
+  {
+    "id": "R0370",
+    "title_listed": "Implicit Discriminative Knowledge Learning for Visible-Infrared Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0370_A_2024_CVPR_Implicit_Discriminative_Knowledge_Learning_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/"
+    ]
+  },
+  {
+    "id": "R0371",
+    "title_listed": "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0371_A_2024_CVPR_Shallow_Deep_Collaborative_Learning_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/yangbincv/SDCL"
+    ]
+  },
+  {
+    "id": "R0372",
+    "title_listed": "Magic Tokens: Select Diverse Tokens for Multi-modal Object Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0372_A_2024_CVPR_Magic_Tokens_Select_Diverse_Tokens_for_Multi_modal_Object_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/924973292/EDITOR"
+    ]
+  },
+  {
+    "id": "R0373",
+    "title_listed": "Distribution-aware Knowledge Prototyping for Non-exemplar Lifelong Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0373_A_2024_CVPR_Distribution_aware_Knowledge_Prototyping_for_Non_exemplar_Lifelong_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zhoujiahuan1991/CVPR2024-DKP"
+    ]
+  },
+  {
+    "id": "R0374",
+    "title_listed": "Learning Continual Compatible Representation for Re-indexing Free Lifelong Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0374_A_2024_CVPR_Learning_Continual_Compatible_Representation_for_Re_indexing_Free_Lifelong_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/PKU-ICST-MIPL/C2R"
+    ]
+  },
+  {
+    "id": "R0375",
+    "title_listed": "A Pedestrian is Worth One Prompt: Towards Language Guidance Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0375_A_2024_CVPR_A_Pedestrian_is_Worth_One_Prompt_Towards_Language_Guidance_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/"
+    ]
+  },
+  {
+    "id": "R0376",
+    "title_listed": "Harnessing the Power of MLLMs for Transferable Text-to-Image Person ReID",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0376_A_2024_CVPR_Harnessing_the_Power_of_MLLMs_for_Transferable_Text_to_Image_Person_ReID.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/WentaoTan/MLLM4Text-ReID"
+    ]
+  },
+  {
+    "id": "R0377",
+    "title_listed": "UFineBench: Towards Text-based Person Retrieval with Ultra-fine Granularity",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0377_A_2024_CVPR_UFineBench_Towards_Text_based_Person_Retrieval_with_Ultra_fine_Granularity.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Zplusdragon/UFineBench"
+    ]
+  },
+  {
+    "id": "R0378",
+    "title_listed": "Noisy-Correspondence Learning for Text-to-Image Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0378_A_2024_CVPR_Noisy_Correspondence_Learning_for_Text_to_Image_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/QinYang79/RDE"
+    ]
+  },
+  {
+    "id": "R0379",
+    "title_listed": "View-decoupled Transformer for Person Re-identification under Aerial-ground Camera Network",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0379_A_2024_CVPR_View_decoupled_Transformer_for_Person_Re_identification_under_Aerial_ground_Camera_Network.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/"
+    ]
+  },
+  {
+    "id": "R0380",
+    "title_listed": "Day-Night Cross-domain Vehicle Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0380_A_2024_CVPR_Day_Night_Cross_domain_Vehicle_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/chenjingong/DN-ReID"
+    ]
+  },
+  {
+    "id": "R0381",
+    "title_listed": "All in One Framework for Multimodal Re-identification in the Wild",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0381_A_2024_CVPR_All_in_One_Framework_for_Multimodal_Re_identification_in_the_Wild.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0382",
+    "title_listed": "Attribute-Guided Pedestrian Retrieval: Bridging Person Re-ID with Internal Attribute Variability",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0382_A_2024_CVPR_Attribute_Guided_Pedestrian_Retrieval_Bridging_Person_Re_ID_with_Internal_Attribute_Variability.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0383",
+    "title_listed": "CA-Jaccard: Camera-aware Jaccard Distance for Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0383_A_2024_CVPR_CA_Jaccard_Camera_aware_Jaccard_Distance_for_Person_Re_identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0384",
+    "title_listed": "Instruct-ReID: A Multi-purpose Person Re-identification Task with Instructions",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0384_A_2024_CVPR_Instruct_ReID_A_Multi_purpose_Person_Re_identification_Task_with_Instructions.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/hwz-zju/Instruct-ReID"
+    ]
+  },
+  {
+    "id": "R0385",
+    "title_listed": "LiDAR-based Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0385_A_2024_CVPR_LiDAR_based_Person_Re_identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/GWxuan/ReID3D"
+    ]
+  },
+  {
+    "id": "R0386",
+    "title_listed": "SEAS: ShapE-Aligned Supervision for Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "CVPR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0386_A_2024_CVPR_SEAS_ShapE_Aligned_Supervision_for_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0387",
+    "title_listed": "Alice Benchmarks: Connecting Real World Re-Identification with the Synthetic",
+    "year_listed": "2024",
+    "venue_listed": "ICLR",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0387_A_2024_ICLR_Alice_Benchmarks_Connecting_Real_World_Re_Identification_with_the_Synthetic.pdf",
+    "pages": 19,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://sites.google.com/view/alice-benchmarks"
+    ]
+  },
+  {
+    "id": "R0388",
+    "title_listed": "Species-Agnostic Patterned Animal Re-identification by Aggregating Deep Local Features",
+    "year_listed": "2024",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0388_A_2024_IJCV_Species_Agnostic_Patterned_Animal_Re_identification_by_Aggregating_Deep_Local_Features.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1007/s11263-024-02071-1"
+    ]
+  },
+  {
+    "id": "R0390",
+    "title_listed": "Exploring Homogeneous and Heterogeneous Consistent Label Associations for Unsupervised Visible-Infrared Person ReID",
+    "year_listed": "2024",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0390_A_2024_IJCV_Exploring_Homogeneous_and_Heterogeneous_Consistent_Label_Associations_for_Unsupervised_Visible_Infrared_Person_ReID.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/FranklinLingfeng/code"
+    ]
+  },
+  {
+    "id": "R0391",
+    "title_listed": "Bridging the Source-to-Target Gap for Cross-Domain Person Re-identification with Intermediate Domains",
+    "year_listed": "2024",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0391_A_2024_IJCV_Bridging_the_Source_to_Target_Gap_for_Cross_Domain_Person_Re_identification_with_Intermediate_Domains.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0394",
+    "title_listed": "Transformer for Object Re-identification: A Survey",
+    "year_listed": "2024",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0394_A_2024_IJCV_Transformer_for_Object_Re_identification_A_Survey.pdf",
+    "pages": 34,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/mangye16/"
+    ]
+  },
+  {
+    "id": "R0398",
+    "title_listed": "An Open-World, Diverse, Cross-Spatial-Temporal Benchmark for Dynamic Wild Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "IJCV",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0398_A_2024_IJCV_An_Open_World_Diverse_Cross_Spatial_Temporal_Benchmark_for_Dynamic_Wild_Person_Re_Identification.pdf",
+    "pages": 19,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0402",
+    "title_listed": "BuckTales: A multi-UAV dataset for multi-object tracking and re-identification of wild antelopes",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0402_A_2024_NeurIPS_BuckTales_A_multi_UAV_dataset_for_multi_object_tracking_and_re_identification_of_wild_antelopes.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0403",
+    "title_listed": "Empowering Visible-Infrared Person Re-Identification with Large Foundation Models",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0403_A_2024_NeurIPS_Empowering_Visible_Infrared_Person_Re_Identification_with_Large_Foundation_Models.pdf",
+    "pages": 25,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/WHU-HZY/TVI-LFM"
+    ]
+  },
+  {
+    "id": "R0404",
+    "title_listed": "RLE: A Unified Perspective of Data Augmentation for Cross-Spectral Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0404_A_2024_NeurIPS_RLE_A_Unified_Perspective_of_Data_Augmentation_for_Cross_Spectral_Re_Identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/stone96123/RLE"
+    ]
+  },
+  {
+    "id": "R0405",
+    "title_listed": "Learning Commonality, Divergence and Variety for Unsupervised Visible-Infrared Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0405_A_2024_NeurIPS_Learning_Commonality_Divergence_and_Variety_for_Unsupervised_Visible_Infrared_Person_Re_identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/shijiangming1/PCLHD"
+    ]
+  },
+  {
+    "id": "R0406",
+    "title_listed": "Feature-Level Adversarial Attacks and Ranking Disruption for Visible-Infrared Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0406_A_2024_NeurIPS_Feature_Level_Adversarial_Attacks_and_Ranking_Disruption_for_Visible_Infrared_Person_Re_identification.pdf",
+    "pages": 19,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0407",
+    "title_listed": "Generalizable Person Re-identification via Balancing Alignment and Uniformity",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0407_A_2024_NeurIPS_Generalizable_Person_Re_identification_via_Balancing_Alignment_and_Uniformity.pdf",
+    "pages": 25,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/yoonkicho/BAU"
+    ]
+  },
+  {
+    "id": "R0408",
+    "title_listed": "Optimal Transport-based Labor-free Text Prompt Modeling for Sketch Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0408_A_2024_NeurIPS_Optimal_Transport_based_Labor_free_Text_Prompt_Modeling_for_Sketch_Re_identification.pdf",
+    "pages": 29,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0409",
+    "title_listed": "Cross-video Identity Correlating for Person Re-identification Pre-training",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0409_A_2024_NeurIPS_Cross_video_Identity_Correlating_for_Person_Re_identification_Pre_training.pdf",
+    "pages": 23,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Zplusdragon/CION_ReIDZoo"
+    ]
+  },
+  {
+    "id": "R0410",
+    "title_listed": "Cross-Modality Perturbation Synergy Attack for Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "NeurIPS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0410_A_2024_NeurIPS_Cross_Modality_Perturbation_Synergy_Attack_for_Person_Re_identification.pdf",
+    "pages": 26,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0411",
+    "title_listed": "Pyramid-resolution person restoration for cross-resolution person re-identification",
+    "year_listed": "2024",
+    "venue_listed": "SCIS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0411_A_2024_SCIS_Pyramid_resolution_person_restoration_for_cross_resolution_person_re_identification.pdf",
+    "pages": 6,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0417",
+    "title_listed": "Exploring Fine-Grained Representation and Recomposition for Cloth-Changing Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0417_A_2024_TIFS_Exploring_Fine_Grained_Representation_and_Recomposition_for_Cloth_Changing_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/QizaoWang/FIRe-CCReID"
+    ]
+  },
+  {
+    "id": "R0418",
+    "title_listed": "Confidence-Guided Centroids for Unsupervised Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0418_A_2024_TIFS_Confidence_Guided_Centroids_for_Unsupervised_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0421",
+    "title_listed": "AG-ReID.v2: Bridging Aerial and Ground Views for Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0421_A_2024_TIFS_AG_ReID_v2_Bridging_Aerial_and_Ground_Views_for_Person_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/huynguyen792/AG-"
+    ]
+  },
+  {
+    "id": "R0441",
+    "title_listed": "Camera-Incremental Object Re-Identification With Identity Knowledge Evolution",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0441_A_2024_TMM_Camera_Incremental_Object_Re_Identification_With_Identity_Knowledge_Evolution.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/htyao89/Camera-Incremental-"
+    ]
+  },
+  {
+    "id": "R0442",
+    "title_listed": "Masked Attribute Description Embedding for Cloth-Changing Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0442_A_2024_TMM_Masked_Attribute_Description_Embedding_for_Cloth_Changing_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/moon-wh/MADE"
+    ]
+  },
+  {
+    "id": "R0444",
+    "title_listed": "Cross-Modal Adaptive Dual Association for Text-to-Image Person Retrieval",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0444_A_2024_TMM_Cross_Modal_Adaptive_Dual_Association_for_Text_to_Image_Person_Retrieval.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0453",
+    "title_listed": "PersonMAE: Person Re-Identification Pre-Training With Masked AutoEncoders",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0453_A_2024_TMM_PersonMAE_Person_Re_Identification_Pre_Training_With_Masked_AutoEncoders.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0454",
+    "title_listed": "Feature Completion Transformer for Occluded Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0454_A_2024_TMM_Feature_Completion_Transformer_for_Occluded_Person_Re_Identification.pdf",
+    "pages": 14,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0456",
+    "title_listed": "Mutual Distillation Learning for Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0456_A_2024_TMM_Mutual_Distillation_Learning_for_Person_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/KuilongCui/MDPR"
+    ]
+  },
+  {
+    "id": "R0459",
+    "title_listed": "Anti-Forgetting Adaptation for Unsupervised Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0459_A_2024_TPAMI_Anti_Forgetting_Adaptation_for_Unsupervised_Person_Re_Identification.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/chenhao2345/DJAA"
+    ]
+  },
+  {
+    "id": "R0462",
+    "title_listed": "A Versatile Framework for Multi-Scene Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0462_A_2024_TPAMI_A_Versatile_Framework_for_Multi_Scene_Person_Re_Identification.pdf",
+    "pages": 31,
+    "extraction_scope": "full_text",
+    "links": [
+      "https://github.com/AIZOOTech/FaceMaskDetection",
+      "https://github.com/iSEE-Laboratory/VersReID",
+      "https://huggingface.co/openai/clip-vit-large-patch14"
+    ]
+  },
+  {
+    "id": "R0463",
+    "title_listed": "Object re-identification via spatial–temporal fusion networks and causal identity matching",
+    "year_listed": "2026",
+    "venue_listed": "CVIU",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0463_B_2026_CVIU_Object_re_identification_via_spatial_temporal_fusion_networks_and_causal_identity_matching.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0465",
+    "title_listed": "CMCC-ReID: Cross-Modality Clothing-Change Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0465_B_2026_ECCV_CMCC_ReID_Cross_Modality_Clothing_Change_Person_Re_identification.pdf",
+    "pages": 19,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Xuan266/CMCC-ReID"
+    ]
+  },
+  {
+    "id": "R0467",
+    "title_listed": "SCORE: SubDistribution-Aware Collaborative Knowledge Reinforcing for Cloth-Hybrid Lifelong Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0467_B_2026_ECCV_SCORE_SubDistribution_Aware_Collaborative_Knowledge_Reinforcing_for_Cloth_Hybrid_Lifelong_Person_Re_identification.pdf",
+    "pages": 25,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zhoujiahuan1991/ECCV2026-SCORE"
+    ]
+  },
+  {
+    "id": "R0469",
+    "title_listed": "MCVL: Multi-space Cross-View Learning for Aerial-Ground Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0469_B_2026_ECCV_MCVL_Multi_space_Cross_View_Learning_for_Aerial_Ground_Person_Re_Identification.pdf",
+    "pages": 6,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0471",
+    "title_listed": "ARGOS: Who, Where, and When in Agentic Multi-camera Person Search",
+    "year_listed": "2026",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0471_B_2026_ECCV_ARGOS_Who_Where_and_When_in_Agentic_Multi_camera_Person_Search.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/gritYCDA/ARGOS"
+    ]
+  },
+  {
+    "id": "R0472",
+    "title_listed": "Incentive Noise and Structural Prior Infusion for Multi-modal Object Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0472_B_2026_ECCV_Incentive_Noise_and_Structural_Prior_Infusion_for_Multi_modal_Object_Re_Identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zw-absin/INSPI"
+    ]
+  },
+  {
+    "id": "R0473",
+    "title_listed": "Reliability-Aware 3D Geometric Injection for Universal Person Re-identification",
+    "year_listed": "2026",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0473_B_2026_ECCV_Reliability_Aware_3D_Geometric_Injection_for_Universal_Person_Re_identification.pdf",
+    "pages": 22,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/BohanSu/UniGeo"
+    ]
+  },
+  {
+    "id": "R0474",
+    "title_listed": "When Large Vision-Language Models Meet Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0474_B_2026_ICASSP_When_Large_Vision_Language_Models_Meet_Person_Re_Identification.pdf",
+    "pages": 25,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0475",
+    "title_listed": "CONQUER: Context-Aware Representation with Query Enhancement for Text-Based Person Search",
+    "year_listed": "2026",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0475_B_2026_ICASSP_CONQUER_Context_Aware_Representation_with_Query_Enhancement_for_Text_Based_Person_Search.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zqxie77/CONQUER"
+    ]
+  },
+  {
+    "id": "R0477",
+    "title_listed": "A Survey on 3D Skeleton Based Person Re-Identification: Taxonomy, Advances, Challenges, and Interdisciplinary Prospects",
+    "year_listed": "2026",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0477_B_2026_IJCAI_A_Survey_on_3D_Skeleton_Based_Person_Re_Identification_Taxonomy_Advances_Challenges_and_Interdisciplinary_Prospects.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Kali-Hac/3D-SRID-Survey"
+    ]
+  },
+  {
+    "id": "R0478",
+    "title_listed": "Dual-level modality debiasing learning for unsupervised visible-infrared person re-identification",
+    "year_listed": "2026",
+    "venue_listed": "PR",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0478_B_2026_PR_Dual_level_modality_debiasing_learning_for_unsupervised_visible_infrared_person_re_identification.pdf",
+    "pages": 33,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/priester3/DMDL"
+    ]
+  },
+  {
+    "id": "R0479",
+    "title_listed": "Domain-Shared Learning and Gradual Alignment for Unsupervised Domain Adaptation Visible–Infrared person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "PR",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0479_B_2026_PR_Domain_Shared_Learning_and_Gradual_Alignment_for_Unsupervised_Domain_Adaptation_Visible_Infrared_person_Re_Identifi.pdf",
+    "pages": 26,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0480",
+    "title_listed": "See What You Seek: Semantic Contextual Integration for Cloth-Changing Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "PR",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0480_B_2026_PR_See_What_You_Seek_Semantic_Contextual_Integration_for_Cloth_Changing_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0481",
+    "title_listed": "Harnessing Weak Pair Uncertainty for Text-based Person Search",
+    "year_listed": "2026",
+    "venue_listed": "PR",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0481_B_2026_PR_Harnessing_Weak_Pair_Uncertainty_for_Text_based_Person_Search.pdf",
+    "pages": 39,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0482",
+    "title_listed": "SCMM: Calibrating cross-modal representations for text-based person search",
+    "year_listed": "2026",
+    "venue_listed": "PR",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0482_B_2026_PR_SCMM_Calibrating_cross_modal_representations_for_text_based_person_search.pdf",
+    "pages": 35,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0486",
+    "title_listed": "Multi-Modal Object Re-Identification with Dual Semantic Guidance and Global-Local Mutual Modulation",
+    "year_listed": "2026",
+    "venue_listed": "TCSVT",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0486_B_2026_TCSVT_Multi_Modal_Object_Re_Identification_with_Dual_Semantic_Guidance_and_Global_Local_Mutual_Modulation.pdf",
+    "pages": 15,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/zw-absin/DSGM"
+    ]
+  },
+  {
+    "id": "R0487",
+    "title_listed": "DCG ReID: Disentangling Collaboration and Guidance Fusion Representations for Multi-modal Vehicle Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "TCSVT",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0487_B_2026_TCSVT_DCG_ReID_Disentangling_Collaboration_and_Guidance_Fusion_Representations_for_Multi_modal_Vehicle_Re_Identification.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0489",
+    "title_listed": "Cross-Modal Full-Mode Fine-Grained Alignment for Text-to-Image Person Retrieval",
+    "year_listed": "2026",
+    "venue_listed": "TOMM",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0489_B_2026_TOMM_Cross_Modal_Full_Mode_Fine_Grained_Alignment_for_Text_to_Image_Person_Retrieval.pdf",
+    "pages": 22,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1145/3786798",
+      "https://github.com/yinhao1102/FMFA"
+    ]
+  },
+  {
+    "id": "R0491",
+    "title_listed": "Lifelong visible–infrared person re-identification via replay samples domain-modality-mix reconstruction and cross-domain cognitive network",
+    "year_listed": "2025",
+    "venue_listed": "CVIU",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0491_B_2025_CVIU_Lifelong_visible_infrared_person_re_identification_via_replay_samples_domain_modality_mix_reconstruction_and_cross_.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1016/j.cviu.2025.104328",
+      "https://github.com/SWU-CS-MediaLab/DMM-CDCN",
+      "https://hdl.handle.net/1887/4284223"
+    ]
+  },
+  {
+    "id": "R0492",
+    "title_listed": "Prototype-Driven Multi-Feature Generation for Visible-Infrared Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0492_B_2025_ICASSP_Prototype_Driven_Multi_Feature_Generation_for_Visible_Infrared_Person_Re_identification.pdf",
+    "pages": 7,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/mmunhappy/ICASSP2025-"
+    ]
+  },
+  {
+    "id": "R0493",
+    "title_listed": "Spectral Enhancement and Pseudo-Anchor Guidance for Infrared-Visible Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0493_B_2025_ICASSP_Spectral_Enhancement_and_Pseudo_Anchor_Guidance_for_Infrared_Visible_Person_Re_Identification.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/1024AILab/ReID-"
+    ]
+  },
+  {
+    "id": "R0495",
+    "title_listed": "Identity-aware Feature Decoupling Learning for Clothing-change Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0495_B_2025_ICASSP_Identity_aware_Feature_Decoupling_Learning_for_Clothing_change_Person_Re_identification.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0496",
+    "title_listed": "Content and Salient Semantics Collaboration for Cloth-Changing Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0496_B_2025_ICASSP_Content_and_Salient_Semantics_Collaboration_for_Cloth_Changing_Person_Re_Identification.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/QizaoWang/CSSC-CCReID"
+    ]
+  },
+  {
+    "id": "R0497",
+    "title_listed": "AMNS: Attention-Weighted Selective Mask and Noise Label Suppression for Text-to-Image Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0497_B_2025_ICASSP_AMNS_Attention_Weighted_Selective_Mask_and_Noise_Label_Suppression_for_Text_to_Image_Person_Retrieval.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0498",
+    "title_listed": "LKA-ReID:Vehicle Re-Identification with Large Kernel Attention",
+    "year_listed": "2025",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0498_B_2025_ICASSP_LKA_ReID_Vehicle_Re_Identification_with_Large_Kernel_Attention.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0499",
+    "title_listed": "Adaptive Aspect Ratios with Patch-Mixup-ViT-based Vehicle ReID",
+    "year_listed": "2025",
+    "venue_listed": "ICASSP",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0499_B_2025_ICASSP_Adaptive_Aspect_Ratios_with_Patch_Mixup_ViT_based_Vehicle_ReID.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0500",
+    "title_listed": "CCUP: A Controllable Synthetic Data Generation Pipeline for Pretraining Cloth-Changing Person Re-Identification Models",
+    "year_listed": "2025",
+    "venue_listed": "ICME",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0500_B_2025_ICME_CCUP_A_Controllable_Synthetic_Data_Generation_Pipeline_for_Pretraining_Cloth_Changing_Person_Re_Identification_Mode.pdf",
+    "pages": 6,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/yjzhao1019/CCUP"
+    ]
+  },
+  {
+    "id": "R0501",
+    "title_listed": "Exploring Part-Informed Visual-Language Learning for Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "ICME",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0501_B_2025_ICME_Exploring_Part_Informed_Visual_Language_Learning_for_Person_Re_Identification.pdf",
+    "pages": 6,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0504",
+    "title_listed": "DAPL: Integration of Positive and Negative Descriptions in Text-Based Person Search",
+    "year_listed": "2025",
+    "venue_listed": "ICME",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0504_B_2025_ICME_DAPL_Integration_of_Positive_and_Negative_Descriptions_in_Text_Based_Person_Search.pdf",
+    "pages": 7,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0508",
+    "title_listed": "Base-Detail Feature Learning Framework for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0508_B_2025_IJCAI_Base_Detail_Feature_Learning_Framework_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0509",
+    "title_listed": "Richer Semantics, Better Alignment: Aligning Visual Features with Explicit and Enriched Semantics for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0509_B_2025_IJCAI_Richer_Semantics_Better_Alignment_Aligning_Visual_Features_with_Explicit_and_Enriched_Semantics_for_Visible_Infrare.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0510",
+    "title_listed": "Prototype-guided Knowledge Propagation with Adaptive Learning for Lifelong Person Re-identification",
+    "year_listed": "2025",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0510_B_2025_IJCAI_Prototype_guided_Knowledge_Propagation_with_Adaptive_Learning_for_Lifelong_Person_Re_identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/joyner-7/IJCAI2025-PKA"
+    ]
+  },
+  {
+    "id": "R0511",
+    "title_listed": "Towards Anytime Retrieval: A Benchmark for Anytime Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0511_B_2025_IJCAI_Towards_Anytime_Retrieval_A_Benchmark_for_Anytime_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/kw66/AT-ReID"
+    ]
+  },
+  {
+    "id": "R0512",
+    "title_listed": "Cross-modal Collaborative Representation Learning for Text-to-Image Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0512_B_2025_IJCAI_Cross_modal_Collaborative_Representation_Learning_for_Text_to_Image_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0513",
+    "title_listed": "Categorical Attention: Fine-grained Language-guided Noise Filtering Network for Occluded Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0513_B_2025_IJCAI_Categorical_Attention_Fine_grained_Language_guided_Noise_Filtering_Network_for_Occluded_Person_Re_Identification.pdf",
+    "pages": 9,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0515",
+    "title_listed": "Distribution aligned semantics adaption for lifelong person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "Machine Learning",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0515_B_2025_MachineLearnin_Distribution_aligned_semantics_adaption_for_lifelong_person_re_identification.pdf",
+    "pages": 22,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/QizaoWang/DASA-LReID"
+    ]
+  },
+  {
+    "id": "R0516",
+    "title_listed": "Synthesizing efficient data with diffusion models for person re-identification pre-training",
+    "year_listed": "2025",
+    "venue_listed": "Machine Learning",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0516_B_2025_MachineLearnin_Synthesizing_efficient_data_with_diffusion_models_for_person_re_identification_pre_training.pdf",
+    "pages": 21,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/KeNiu042/Diffusion-ReID"
+    ]
+  },
+  {
+    "id": "R0523",
+    "title_listed": "Shape-centered representation learning for visible–infrared person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "PR",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0523_B_2025_PR_Shape_centered_representation_learning_for_visible_infrared_person_re_identification.pdf",
+    "pages": 33,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Visuang/ScRL"
+    ]
+  },
+  {
+    "id": "R0528",
+    "title_listed": "HOH-Net: High-Order Hierarchical Middle-Feature Learning Network for Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TCSVT",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0528_B_2025_TCSVT_HOH_Net_High_Order_Hierarchical_Middle_Feature_Learning_Network_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Jaulaucoeng/HOS-Net"
+    ]
+  },
+  {
+    "id": "R0533",
+    "title_listed": "Domain Consistency Representation Learning for Lifelong Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TCSVT",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0533_B_2025_TCSVT_Domain_Consistency_Representation_Learning_for_Lifelong_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/LiuShiBen/DCR"
+    ]
+  },
+  {
+    "id": "R0537",
+    "title_listed": "UP-Person: Unified Parameter-Efficient Transfer Learning for Text-Based Person Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "TCSVT",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0537_B_2025_TCSVT_UP_Person_Unified_Parameter_Efficient_Transfer_Learning_for_Text_Based_Person_Retrieval.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Liu-"
+    ]
+  },
+  {
+    "id": "R0539",
+    "title_listed": "CLIP-SENet: CLIP-Based Semantic Enhancement Network for Vehicle Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TITS",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0539_B_2025_TITS_CLIP_SENet_CLIP_Based_Semantic_Enhancement_Network_for_Vehicle_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0540",
+    "title_listed": "Unity Is Strength: Unifying Convolutional and Transformeral Features for Better Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TITS",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0540_B_2025_TITS_Unity_Is_Strength_Unifying_Convolutional_and_Transformeral_Features_for_Better_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/924973292/FusionReID"
+    ]
+  },
+  {
+    "id": "R0541",
+    "title_listed": "Dynamic Modality–Camera-Invariant Clustering for Unsupervised Visible–Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "TNNLS",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0541_B_2025_TNNLS_Dynamic_Modality_Camera_Invariant_Clustering_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0542",
+    "title_listed": "Unsupervised Visible–Infrared ReID via Pseudo-Label Correction and Modality-Level Alignment",
+    "year_listed": "2025",
+    "venue_listed": "TNNLS",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0542_B_2025_TNNLS_Unsupervised_Visible_Infrared_ReID_via_Pseudo_Label_Correction_and_Modality_Level_Alignment.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0549",
+    "title_listed": "MARS: Paying More Attention to Visual Attributes for Text-Based Person Search",
+    "year_listed": "2025",
+    "venue_listed": "TOMM",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0549_B_2025_TOMM_MARS_Paying_More_Attention_to_Visual_Attributes_for_Text_Based_Person_Search.pdf",
+    "pages": 21,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10",
+      "https://doi.org/10.1145/nnnnnnn.nnnnnnn",
+      "https://github.com/ErgastiAlex/MARS"
+    ]
+  },
+  {
+    "id": "R0551",
+    "title_listed": "Mix-Modality Person Re-Identification: A New and Practical Paradigm",
+    "year_listed": "2025",
+    "venue_listed": "TOMM",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0551_B_2025_TOMM_Mix_Modality_Person_Re_Identification_A_New_and_Practical_Paradigm.pdf",
+    "pages": 21,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/XXXXXXX.XXXXXXX"
+    ]
+  },
+  {
+    "id": "R0552",
+    "title_listed": "Clean Sample Selection and Noisy Sample Rematching for Text-Based Pedestrian Retrieval",
+    "year_listed": "2025",
+    "venue_listed": "BMVC",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0552_C_2025_BMVC_Clean_Sample_Selection_and_Noisy_Sample_Rematching_for_Text_Based_Pedestrian_Retrieval.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0554",
+    "title_listed": "Multi‐Grained Vision–Language Alignment for Domain Generalised Person Re‐Identification",
+    "year_listed": "2026",
+    "venue_listed": "IET-CVI",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0554_C_2026_IETCVI_Multi_Grained_Vision_Language_Alignment_for_Domain_Generalised_Person_Re_Identification.pdf",
+    "pages": 20,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/RikoLi/MUVA"
+    ]
+  },
+  {
+    "id": "R0556",
+    "title_listed": "DiCo: Disentangled concept representation for text-to-image person re-identification",
+    "year_listed": "2026",
+    "venue_listed": "Neurocomputing",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0556_C_2026_Neurocomputing_DiCo_Disentangled_concept_representation_for_text_to_image_person_re_identification.pdf",
+    "pages": 30,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0558",
+    "title_listed": "From detection to identity preservation: A pipeline–scenario–protocol–readiness review of datasets for visual multi-person tracking and re-identification",
+    "year_listed": "2026",
+    "venue_listed": "TVC",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0558_C_2026_TVC_From_detection_to_identity_preservation_A_pipeline_scenario_protocol_readiness_review_of_datasets_for_visual_multi_.pdf",
+    "pages": 31,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1007/s00371-026-04700-x",
+      "https://doi.org/10.5281/zenodo.20823270",
+      "https://github.com/ssbilakeri/pspr-mpt-"
+    ]
+  },
+  {
+    "id": "R0559",
+    "title_listed": "Domain-adaptive person re-identification without cross-camera paired samples",
+    "year_listed": "2025",
+    "venue_listed": "EAAI",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0559_C_2025_EAAI_Domain_adaptive_person_re_identification_without_cross_camera_paired_samples.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0560",
+    "title_listed": "A culturally-aware benchmark for Person Re-Identification in modest attire",
+    "year_listed": "2025",
+    "venue_listed": "EAAI",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0560_C_2025_EAAI_A_culturally_aware_benchmark_for_Person_Re_Identification_in_modest_attire.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://computervisioniust.github.io/IUST"
+    ]
+  },
+  {
+    "id": "R0570",
+    "title_listed": "Spatial cascaded clustering and weighted memory for unsupervised person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "IVC",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0570_C_2025_IVC_Spatial_cascaded_clustering_and_weighted_memory_for_unsupervised_person_re_identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0572",
+    "title_listed": "Attribute-Aware Implicit Modality Alignment for Text Attribute Person Search",
+    "year_listed": "2025",
+    "venue_listed": "KBS",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0572_C_2025_KBS_Attribute_Aware_Implicit_Modality_Alignment_for_Text_Attribute_Person_Search.pdf",
+    "pages": 30,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0574",
+    "title_listed": "Dynamic patch-aware enrichment transformer for occluded person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "KBS",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0574_C_2025_KBS_Dynamic_patch_aware_enrichment_transformer_for_occluded_person_re_identification.pdf",
+    "pages": 12,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0575",
+    "title_listed": "Visual-textual adversarial learning for person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "MS",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0575_C_2025_MS_Visual_textual_adversarial_learning_for_person_re_identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1007/s00530-024-01648-7",
+      "https://doi.org/10.21203/rs.3.rs-5257618/v1"
+    ]
+  },
+  {
+    "id": "R0576",
+    "title_listed": "Exploring Stronger Transformer Representation Learning for Occluded Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "MS",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0576_C_2025_MS_Exploring_Stronger_Transformer_Representation_Learning_for_Occluded_Person_Re_Identification.pdf",
+    "pages": 10,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0578",
+    "title_listed": "Personvit: large-scale self-supervised vision transformer for person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "Machine Vision and Applications",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0578_C_2025_MachineVisiona_Personvit_large_scale_self_supervised_vision_transformer_for_person_re_identification.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/hustvl/PersonViT"
+    ]
+  },
+  {
+    "id": "R0579",
+    "title_listed": "DynaMix: Generalizable person re-identification via dynamic relabeling and mixed data sampling",
+    "year_listed": "2025",
+    "venue_listed": "Neurocomputing",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0579_C_2025_Neurocomputing_DynaMix_Generalizable_person_re_identification_via_dynamic_relabeling_and_mixed_data_sampling.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0580",
+    "title_listed": "Domain generalization for person re-identification: A survey towards domain-agnostic person matching",
+    "year_listed": "2025",
+    "venue_listed": "Neurocomputing",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0580_C_2025_Neurocomputing_Domain_generalization_for_person_re_identification_A_survey_towards_domain_agnostic_person_matching.pdf",
+    "pages": 62,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/PerceptualAI-Lab/Awesome-Domain-Generalizable-"
+    ]
+  },
+  {
+    "id": "R0581",
+    "title_listed": "3C: Confidence-guided clustering and contrastive learning for unsupervised person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "Neurocomputing",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0581_C_2025_Neurocomputing_3C_Confidence_guided_clustering_and_contrastive_learning_for_unsupervised_person_re_identification.pdf",
+    "pages": 15,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/stone5265/3C-reid"
+    ]
+  },
+  {
+    "id": "R0582",
+    "title_listed": "Coarse Attribute Prediction with Task Agnostic Distillation for Real World Clothes Changing ReID",
+    "year_listed": "2025",
+    "venue_listed": "BMVC",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0582_C_2025_BMVC_Coarse_Attribute_Prediction_with_Task_Agnostic_Distillation_for_Real_World_Clothes_Changing_ReID.pdf",
+    "pages": 16,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/ppriyank/RLQ-CGAL-UBD"
+    ]
+  },
+  {
+    "id": "R0585",
+    "title_listed": "Extended Cross-Modality United Learning for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2025",
+    "venue_listed": "SPL",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0585_C_2025_SPL_Extended_Cross_Modality_United_Learning_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 5,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0587",
+    "title_listed": "Learn from restoration: exploiting task-oriented knowledge distillation in self-supervised person re-identification",
+    "year_listed": "2025",
+    "venue_listed": "TVC",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0587_C_2025_TVC_Learn_from_restoration_exploiting_task_oriented_knowledge_distillation_in_self_supervised_person_re_identification.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1007/s00371-024-03788-3",
+      "https://github.com/ICT-CVlab/Oriented-KD-SSL"
+    ]
+  },
+  {
+    "id": "R0588",
+    "title_listed": "Cross-Modality Complementary Learning for Video-Based Cloth-Changing Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "ACCV",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0588_C_2024_ACCV_Cross_Modality_Complementary_Learning_for_Video_Based_Cloth_Changing_Person_Re_identification.pdf",
+    "pages": 4,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0590",
+    "title_listed": "Implicit Modality Knowledge Alignment and Uncertainty Estimation for visible-infrared person re-identification",
+    "year_listed": "2024",
+    "venue_listed": "ESWA",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0590_C_2024_ESWA_Implicit_Modality_Knowledge_Alignment_and_Uncertainty_Estimation_for_visible_infrared_person_re_identification.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://doi.org/10.1016/j.eswa.2024.125291",
+      "https://github.com/SWU-CS-MediaLab/IMKA-UE",
+      "https://hdl.handle.net/1887/4252583"
+    ]
+  },
+  {
+    "id": "R0591",
+    "title_listed": "Cerberus: Attribute-based person re-identification using semantic IDs",
+    "year_listed": "2024",
+    "venue_listed": "ESWA",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0591_C_2024_ESWA_Cerberus_Attribute_based_person_re_identification_using_semantic_IDs.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0592",
+    "title_listed": "Test-time Similarity Modification for Person Re-identification toward Temporal Distribution Shift",
+    "year_listed": "2024",
+    "venue_listed": "IJCNN",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0592_C_2024_IJCNN_Test_time_Similarity_Modification_for_Person_Re_identification_toward_Temporal_Distribution_Shift.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0593",
+    "title_listed": "Part-Attention Based Model Make Occluded Person Re-Identification Stronger",
+    "year_listed": "2024",
+    "venue_listed": "IJCNN",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0593_C_2024_IJCNN_Part_Attention_Based_Model_Make_Occluded_Person_Re_Identification_Stronger.pdf",
+    "pages": 10,
+    "extraction_scope": "full_text",
+    "links": [
+      "http://arxiv.org/ps/2404.03443v4"
+    ]
+  },
+  {
+    "id": "R0594",
+    "title_listed": "Robust Ensemble Person Re-Identification via Orthogonal Fusion with Occlusion Handling",
+    "year_listed": "2024",
+    "venue_listed": "IVC",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0594_C_2024_IVC_Robust_Ensemble_Person_Re_Identification_via_Orthogonal_Fusion_with_Occlusion_Handling.pdf",
+    "pages": 48,
+    "extraction_scope": "full_text",
+    "links": []
+  },
+  {
+    "id": "R0595",
+    "title_listed": "Local-aware global attention network for person re-identification based on body and hand images",
+    "year_listed": "2024",
+    "venue_listed": "JVCIR",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0595_C_2024_JVCIR_Local_aware_global_attention_network_for_person_re_identification_based_on_body_and_hand_images.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0596",
+    "title_listed": "Enhancing person re-identification via Uncertainty Feature Fusion Method and Auto-weighted Measure Combination",
+    "year_listed": "2024",
+    "venue_listed": "KBS",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0596_C_2024_KBS_Enhancing_person_re_identification_via_Uncertainty_Feature_Fusion_Method_and_Auto_weighted_Measure_Combination.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/"
+    ]
+  },
+  {
+    "id": "R0597",
+    "title_listed": "A review of recent techniques for person re-identification",
+    "year_listed": "2024",
+    "venue_listed": "Machine Vision and Applications",
+    "ccf_listed": "C",
+    "pdf": "reference-paper\\R0597_C_2024_MachineVisiona_A_review_of_recent_techniques_for_person_re_identification.pdf",
+    "pages": 41,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0598",
+    "title_listed": "Adaptive High-Frequency Transformer for Diverse Wildlife Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0598_B_2024_ECCV_Adaptive_High_Frequency_Transformer_for_Diverse_Wildlife_Re_Identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github"
+    ]
+  },
+  {
+    "id": "R0599",
+    "title_listed": "WRIM-Net: Wide-Ranging Information Mining Network for Visible-Infrared Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0599_B_2024_ECCV_WRIM_Net_Wide_Ranging_Information_Mining_Network_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0600",
+    "title_listed": "Multi-Memory Matching for Unsupervised Visible-Infrared Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0600_B_2024_ECCV_Multi_Memory_Matching_for_Unsupervised_Visible_Infrared_Person_Re_Identification.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/shijiangming1/MMM"
+    ]
+  },
+  {
+    "id": "R0601",
+    "title_listed": "Domain Shifting: A Generalized Solution for Heterogeneous Cross-Modality Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0601_B_2024_ECCV_Domain_Shifting_A_Generalized_Solution_for_Heterogeneous_Cross_Modality_Person_Re_Identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0602",
+    "title_listed": "Rethinking Normalization Layers for Domain Generalizable Person Re-identification",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0602_B_2024_ECCV_Rethinking_Normalization_Layers_for_Domain_Generalizable_Person_Re_identification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/3699nr/ReNorm"
+    ]
+  },
+  {
+    "id": "R0603",
+    "title_listed": "Privacy-Preserving Adaptive Re-Identification without Image Transfer",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0603_B_2024_ECCV_Privacy_Preserving_Adaptive_Re_Identification_without_Image_Transfer.pdf",
+    "pages": 22,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0604",
+    "title_listed": "PLOT: Text-based Person Search with Part Slot Attention for Corresponding Part Discovery",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0604_B_2024_ECCV_PLOT_Text_based_Person_Search_with_Part_Slot_Attention_for_Corresponding_Part_Discovery.pdf",
+    "pages": 17,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://cvlab.postech.ac.kr/research/PLOT"
+    ]
+  },
+  {
+    "id": "R0605",
+    "title_listed": "Cross-Platform Video Person ReID: A New Benchmark Dataset and Adaptation Approach",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0605_B_2024_ECCV_Cross_Platform_Video_Person_ReID_A_New_Benchmark_Dataset_and_Adaptation_Approach.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/FHR-L/VSLA-CLIP"
+    ]
+  },
+  {
+    "id": "R0606",
+    "title_listed": "Human-in-the-Loop Visual Re-ID for Population Size Estimation",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0606_B_2024_ECCV_Human_in_the_Loop_Visual_Re_ID_for_Population_Size_Estimation.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/cvl-umass/counting-clusters"
+    ]
+  },
+  {
+    "id": "R0607",
+    "title_listed": "Keypoint Promptable Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "ECCV",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0607_B_2024_ECCV_Keypoint_Promptable_Re_Identification.pdf",
+    "pages": 19,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/"
+    ]
+  },
+  {
+    "id": "R0608",
+    "title_listed": "Scene-Adaptive Person Search via Bilateral Modulations",
+    "year_listed": "2024",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0608_B_2024_IJCAI_Scene_Adaptive_Person_Search_via_Bilateral_Modulations.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whbdmu/SEAS"
+    ]
+  },
+  {
+    "id": "R0609",
+    "title_listed": "Cross-modal Generation and Alignment via Attribute-guided Prompt for Unsupervised Text-based Person Retrieval",
+    "year_listed": "2024",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0609_B_2024_IJCAI_Cross_modal_Generation_and_Alignment_via_Attribute_guided_Prompt_for_Unsupervised_Text_based_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0610",
+    "title_listed": "Enhancing Cross-modal Completion and Alignment for Unsupervised Incomplete Text-to-Image Person Retrieval",
+    "year_listed": "2024",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0610_B_2024_IJCAI_Enhancing_Cross_modal_Completion_and_Alignment_for_Unsupervised_Incomplete_Text_to_Image_Person_Retrieval.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0611",
+    "title_listed": "Fast One-Stage Unsupervised Domain Adaptive Person Search",
+    "year_listed": "2024",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0611_B_2024_IJCAI_Fast_One_Stage_Unsupervised_Domain_Adaptive_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/whbdmu/FOUS"
+    ]
+  },
+  {
+    "id": "R0612",
+    "title_listed": "Multi-Granularity Graph-Convolution-Based Method for Weakly Supervised Person Search",
+    "year_listed": "2024",
+    "venue_listed": "IJCAI",
+    "ccf_listed": "B",
+    "pdf": "reference-paper\\R0612_B_2024_IJCAI_Multi_Granularity_Graph_Convolution_Based_Method_for_Weakly_Supervised_Person_Search.pdf",
+    "pages": 9,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0613",
+    "title_listed": "Revisiting Attention in the Dark for Low-Light Person Re-Identification",
+    "year_listed": "2026",
+    "venue_listed": "AAAI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0613_A_2026_AAAI_Revisiting_Attention_in_the_Dark_for_Low_Light_Person_Re_Identiffcation.pdf",
+    "pages": 10,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/nanqiaobei/NRSRD"
+    ]
+  },
+  {
+    "id": "R0623",
+    "title_listed": "Invisible Backdoor Attack With Dynamic Triggers Against Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0623_A_2024_TIFS_Invisible_Backdoor_Attack_With_Dynamic_Triggers_Against_Person_Re_Identification.pdf",
+    "pages": 11,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0624",
+    "title_listed": "Region Generation and Assessment Network for Occluded Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0624_A_2024_TIFS_Region_Generation_and_Assessment_Network_for_Occluded_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "full_text",
+    "links": [
+      "http://pytorch.org"
+    ]
+  },
+  {
+    "id": "R0625",
+    "title_listed": "Video-Based Visible-Infrared Person Re-Identification With Auxiliary Samples",
+    "year_listed": "2024",
+    "venue_listed": "TIFS",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0625_A_2024_TIFS_Video_Based_Visible_Infrared_Person_Re_Identification_With_Auxiliary_Samples.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/dyhBUPT/BUPTCampus"
+    ]
+  },
+  {
+    "id": "R0627",
+    "title_listed": "VGSG: Vision-Guided Semantic-Group Network for Text-Based Person Search",
+    "year_listed": "2024",
+    "venue_listed": "TIP",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0627_A_2024_TIP_VGSG_Vision_Guided_Semantic_Group_Network_for_Text_Based_Person_Search.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0635",
+    "title_listed": "Illumination Distillation Framework for Nighttime Person Re-Identification and a New Benchmark",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0635_A_2024_TMM_Illumination_Distillation_Framework_for_Nighttime_Person_Re_Identification_and_a_New_Benchmark.pdf",
+    "pages": 14,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/Alexadlu/IDF"
+    ]
+  },
+  {
+    "id": "R0644",
+    "title_listed": "Style Interleaved Learning for Generalizable Person Re-Identification",
+    "year_listed": "2024",
+    "venue_listed": "TMM",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0644_A_2024_TMM_Style_Interleaved_Learning_for_Generalizable_Person_Re_Identification.pdf",
+    "pages": 12,
+    "extraction_scope": "first_2_pages",
+    "links": [
+      "https://github.com/WentaoTan/Interleaved-Learning"
+    ]
+  },
+  {
+    "id": "R0649",
+    "title_listed": "Deeply Unsupervised Patch Re-Identification for Pre-Training Object Detectors",
+    "year_listed": "2024",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0649_A_2024_TPAMI_Deeply_Unsupervised_Patch_Re_Identification_for_Pre_Training_Object_Detectors.pdf",
+    "pages": 13,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  },
+  {
+    "id": "R0651",
+    "title_listed": "Identity-Guided Collaborative Learning for Cloth-Changing Person Reidentification",
+    "year_listed": "2024",
+    "venue_listed": "TPAMI",
+    "ccf_listed": "A",
+    "pdf": "reference-paper\\R0651_A_2024_TPAMI_Identity_Guided_Collaborative_Learning_for_Cloth_Changing_Person_Reidentification.pdf",
+    "pages": 18,
+    "extraction_scope": "first_2_pages",
+    "links": []
+  }
+]

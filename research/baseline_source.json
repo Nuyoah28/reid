@@ -1,0 +1,15 @@
+{
+  "paper": "Omni-Scale Feature Learning for Person Re-Identification",
+  "authors": "Kaiyang Zhou, Yongxin Yang, Andrea Cavallaro, Tao Xiang",
+  "venue": "ICCV 2019",
+  "paper_url": "https://arxiv.org/abs/1905.00953",
+  "repository": "https://github.com/KaiyangZhou/deep-person-reid",
+  "revision": "f8cd150fdf77e8d9e1ed143b7f308c2c609ded50",
+  "clone_command": "git clone --depth 1 https://github.com/KaiyangZhou/deep-person-reid.git code/deep-person-reid",
+  "local_copy": "code/deep-person-reid",
+  "license": "MIT; upstream LICENSE retained",
+  "vendoring": "Full source files retained, not a submodule. Nested .git moved to ignored tmp/upstream-osnet.git for preservation before parent repository commit.",
+  "modifications": "Upstream files unmodified. New code/reid/model.py subclasses the official OSNet implementation and imports only osnet.py to avoid unused optional dependencies.",
+  "weight_use": "ImageNet initialization only. No Market-trained or combined-ReID checkpoint used. Local SHA256 matches a fresh download from the author's original Google Drive link, see primary_source_checks.json.",
+  "reproduction_scope": "Official architecture, custom Windows-compatible training engine. Not a reproduction of the original paper's exact optimizer/schedule or published scores."
+}

@@ -1,0 +1,8 @@
+# Existing mmi-unet versions used in this project. No packages were changed.
+# CUDA-enabled torch/torchvision must be selected from the appropriate PyTorch index.
+torch==2.5.0
+torchvision==0.20.0
+numpy==1.26.4
+pillow==10.4.0
+matplotlib==3.10.9
+# pypdf/pypdfium2 are only needed for the separate literature tools, not training.

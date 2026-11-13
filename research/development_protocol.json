@@ -1,0 +1,11 @@
+{
+  "registered_at": "2026-11-13",
+  "registered_before": "calibrated_dev_aug_s1 completed; no calibrated-series results inspected",
+  "split": "Market training identities: fixed 651 train / 100 validation, split seed 2026",
+  "training": "8 epochs, 80 PK batches/epoch, seed 1, recipe_version 2; all four methods see clean + two occluded views",
+  "variants": ["aug", "visibility", "clcp", "full"],
+  "primary_development_score": "mean of mAP on synthetic_noise_0.3 and synthetic_noise_0.5",
+  "secondary_development_metrics": ["clean mAP", "rank1 for all conditions"],
+  "selection": "Compare the candidate CLCP variants to both aug and geometric visibility. Keep all results, including negative ones. Freeze candidate and formal training budget before inspecting official Market or Occluded-REID results.",
+  "scope": "A short-budget feasibility screen, not a converged paper comparison. Synthetic development masks differ from real occlusions. No target-domain tuning."
+}

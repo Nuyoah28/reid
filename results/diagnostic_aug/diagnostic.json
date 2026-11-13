@@ -1,0 +1,11 @@
+{
+  "protocol": "Development held-out training identities; fixed two-donor interventions; eval mode, no BN updates",
+  "samples": 192,
+  "fully_visible_feature_cells": 15250,
+  "outside_rectangle_cosine_drift_mean": 0.08233175421542809,
+  "outside_rectangle_cosine_drift_median": 0.04671353101730347,
+  "fraction_visible_cells_drift_gt_0_05": 0.4735081967213115,
+  "visible_cell_target_mean": 0.6628184457742609,
+  "reliability_target_mae_all_cells": null,
+  "interpretation": "Feature sensitivity under synthetic donor replacement, not a ground-truth human visibility annotation or proof of causal identifiability."
+}

@@ -1,0 +1,17 @@
+test_average_precision_and_invalid_query (test_research.ResearchTests) ... ok
+test_calibration_isolates_backbone_but_retrieval_can_train_it (test_research.ResearchTests) ... ok
+test_cross_camera_filter_and_junk (test_research.ResearchTests) ... ok
+test_evidence_ignores_regions_without_support (test_research.ResearchTests) ... ok
+test_evidence_teacher_detached (test_research.ResearchTests) ... ok
+test_identical_intervention_reduces_to_geometry (test_research.ResearchTests) ... ok
+test_occlusion_target_detects_pollution_outside_mask (test_research.ResearchTests) ... ok
+test_paired_intervention_preserves_visible_pixels (test_research.ResearchTests) ... ok
+test_pk_positive_negative_composition (test_research.ResearchTests) ... ok
+test_pooling_matches_official_when_disabled (test_research.ResearchTests) ... ok
+test_triplet_separates_ids (test_research.ResearchTests) ... ok
+test_zero_evidence_is_finite (test_research.ResearchTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.566s
+
+OK

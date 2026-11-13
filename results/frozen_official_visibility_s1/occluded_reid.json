@@ -1,0 +1,18 @@
+{
+  "dataset": "Occluded-REID",
+  "protocol": "Market-trained cross-dataset; 200 held-out IDs; all 1000 occluded queries vs all 1000 whole gallery; no target tuning; no reranking",
+  "checkpoint": "E:\\\u8bba\u6587\\runs\\frozen_official_visibility_s1\\last.pt",
+  "variant": "visibility",
+  "train_protocol": "official",
+  "epochs": 20,
+  "seed": 1,
+  "evaluation": {
+    "mAP": 44.40984494902084,
+    "rank1": 50.0,
+    "rank5": 65.9,
+    "mINP": 29.649075368255335,
+    "valid_queries": 1000,
+    "invalid_queries": 0,
+    "gallery_size": 1000
+  }
+}

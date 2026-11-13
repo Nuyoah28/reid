@@ -1,0 +1,10 @@
+data/
+weights/
+runs/
+tmp/
+code/upstream/
+research/paper_text/
+*.pth
+*.pt
+*.zip
+__pycache__/

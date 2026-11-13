@@ -1,0 +1,806 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AGW 与 BCRT · 红外多模态网络图谱</title>
+    <style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f0f5f8;color:#18344b;font:16px/1.7 'Microsoft YaHei',sans-serif}header,main{max-width:1564px;margin:auto;padding:30px 32px}header{padding-top:45px}h1{font-size:34px;line-height:1.4;margin:0 0 12px}h2{font-size:26px;margin:0 0 12px}h3{margin:28px 0 14px}p{margin:8px 0 15px}.kicker{color:#215da8;font-size:13px;letter-spacing:2px;font-weight:bold}nav{position:sticky;top:0;z-index:10;background:#fff;border-block:1px solid #d6e2eb;padding:13px 25px;display:flex;gap:23px;flex-wrap:wrap}a{color:#215da8;text-decoration:none}a:hover{text-decoration:underline}section{scroll-margin-top:90px;margin-bottom:30px}.panel{background:white;border:1px solid #d9e4ec;border-radius:14px;padding:26px}.figure{border:1px solid #cddce7;border-radius:14px;overflow:hidden;background:#fff}.figurebar{display:flex;gap:16px;padding:12px 20px;align-items:center;font-size:14px}.viewport{overflow:auto}.viewport svg{display:block;width:100%;height:auto;max-width:none}.figurebar button{border:1px solid #ccdce7;background:#f7fafc;padding:7px 13px;border-radius:6px;cursor:pointer;color:#18344b}.blocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.block{border:1px solid #d9e4ec;border-left:4px solid #215da8;border-radius:8px;padding:18px 20px;background:#fafcfe;overflow-x:auto}.blockflow{width:100%;min-width:700px;height:auto;display:block;margin:4px 0}.block h4{margin:0 0 8px;font-size:19px}.block code{font-size:13px;margin-left:12px}.shape{color:#167d79;font-weight:600}.small{font-size:13px;color:#567083}li{margin:4px 0}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #dde6ed;padding:12px}th{background:#eef4f8}code{font:13px/1.6 Consolas,monospace;overflow-wrap:anywhere}.tablewrap{overflow:auto}.callout{border-left:4px solid #bf5b19;background:#fff6ed;padding:16px 20px;border-radius:7px}.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}.metric{font-size:30px;font-weight:bold}input[type=range]{width:100%}.toy{background:#f5f9fc;border-radius:10px;padding:18px}summary{cursor:pointer;font-weight:700}#traceSearch{padding:10px;border:1px solid #bccfdd;border-radius:6px;width:100%;margin:15px 0}.pill{display:inline-block;padding:4px 10px;background:#e6f3f1;border-radius:20px;font-size:13px;color:#167d79}footer{padding:30px;color:#52697b;text-align:center}@media(max-width:850px){header,main{padding:20px 14px}.blocks,.two{grid-template-columns:1fr}h1{font-size:27px}.panel{padding:18px}.viewport svg{min-width:1100px}nav{gap:12px;font-size:14px}}
+    </style><header><p class="kicker">VISIBLE–INFRARED PERSON RE-IDENTIFICATION / 2026</p><h1>AGW 与 BCRT：从整网到每个卷积块</h1><p>具体方向：监督式可见光—红外行人重识别；以不增加推理分支的身份边界约束特征增强为研究候选。</p><span class="pill">RTX 4060 · mmi-unet</span> <span class="pill">两模态 · 单个 2048 维检索向量</span></header>
+    <nav><a href="#baseline">Baseline</a><a href="#bcrt">改进模型</a><a href="#bottleneck">卷积与捷径</a><a href="#nonlocal">Non-local</a><a href="#transport">BCRT 细节</a><a href="#every-block">16 块逐层表</a><a href="#sources">出处</a><a href="#trace">运行层记录</a></nav><main>
+    <section class="panel"><h2>如何阅读</h2><p>两张整网图共用完全相同的图像编码器。蓝色框来自既有论文与 AGW 实现；橙色框为本项目训练阶段的候选机制。下采样仅出现在 stem、Stage2 首块和 Stage3 首块；本网络没有上采样。各图可放大、横向滚动或单独下载 SVG。</p><div class="callout">“自行设计”描述代码和推导来源，不等于已证明学术首创。特征生成、跨模态中心和原型监督均有已有工作。BCRT 的可检验主张是：从其他身份借用残差时，通过解析步长减少当前 batch 中固定身份原型的间隔破坏。实测结论见 <a href="../实验记录.md">实验记录</a>。</div></section><section id="baseline" class="figure"><div class="figurebar"><a href="baseline.svg" download>下载 SVG</a><button onclick="zoom(this,1.2)">放大</button><button onclick="zoom(this,0.833333)">缩小</button><button onclick="resetZoom(this)">适应宽度</button></div><div class="viewport"><svg xmlns="http://www.w3.org/2000/svg" width="1500" height="830" viewBox="0 0 1500 830" role="img" aria-label="01 / Baseline：AGW 可见光—红外双流网络">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+        <style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#18344b}.title{font-size:28px;font-weight:700}.sub{font-size:16px;fill:#52697b}.label{font-size:18px;font-weight:700}.line{font-size:15px}.src{font-size:13px;fill:#52697b}.wire{fill:none;stroke:#60758a;stroke-width:2;marker-end:url(#arr)}</style>
+        <rect width="1500" height="830" fill="#f7fafc"/>
+        <text x="42" y="50" class="title">01 / Baseline：AGW 可见光—红外双流网络</text><text x="42" y="80" class="sub">蓝色：复用的图像编码路径　橙色：本项目新增训练计算　虚线：训练损失分支；形状省略 batch 维</text>
+<g data-box="42,120,235,125">
+<rect x="42" y="120" width="235" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="132" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="58" y="149" class="label">可见光 VIS</text>
+<text x="58" y="174" class="line">3 × 288 × 144</text>
+<text x="58" y="198" class="line">RGB 图像；独立 stem</text>
+<text x="58" y="232" class="src">训练 8 张 / 推理按模态输入</text>
+</g>
+<g data-box="42,280,235,125">
+<rect x="42" y="280" width="235" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="292" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="58" y="309" class="label">红外 IR</text>
+<text x="58" y="334" class="line">3 × 288 × 144</text>
+<text x="58" y="358" class="line">读取后转换为 3 通道</text>
+<text x="58" y="392" class="src">训练 8 张；非像素配对</text>
+</g>
+<g data-box="325,120,390,125">
+<rect x="325" y="120" width="390" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="325" y="132" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="341" y="149" class="label">VIS stem：模态独立参数</text>
+<text x="341" y="174" class="line">Conv 7×7, 3→64, s2, p3 → BN → ReLU</text>
+<text x="341" y="198" class="line">MaxPool 3×3, s2, p1 → 64×72×36</text>
+<text x="341" y="232" class="src">ResNet [S1]；双流结构 [S7]；AGW [S5]</text>
+</g>
+<polyline points="277,183 325,183" class="wire"/>
+<g data-box="325,280,390,125">
+<rect x="325" y="280" width="390" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="325" y="292" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="341" y="309" class="label">IR stem：模态独立参数</text>
+<text x="341" y="334" class="line">Conv 7×7, 3→64, s2, p3 → BN → ReLU</text>
+<text x="341" y="358" class="line">MaxPool 3×3, s2, p1 → 64×72×36</text>
+<text x="341" y="392" class="src">ResNet [S1]；双流结构 [S7]；AGW [S5]</text>
+</g>
+<polyline points="277,343 325,343" class="wire"/>
+<g data-box="785,202,660,120">
+<rect x="785" y="202" width="660" height="120" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="785" y="214" width="5" height="96" rx="2" fill="#215da8"/>
+<text x="801" y="231" class="label">按 batch 拼接 → 后续所有层共享参数</text>
+<text x="801" y="256" class="line">训练：8 VIS + 8 IR；按相同身份采样 P=4, K=2/模态</text>
+<text x="801" y="280" class="line">没有 VIS/IR 图像通道拼接；推理只编码当前输入模态</text>
+<text x="801" y="309" class="src">双流共享骨干是 AGW 基线的一部分 [S5,S7]</text>
+</g>
+<polyline points="715,182 750,182 750,245 785,245" class="wire"/>
+<polyline points="715,342 750,342 750,280 785,280" class="wire"/>
+<g data-box="42,455,328,143">
+<rect x="42" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="58" y="484" class="label">Stage 1 · 3 blocks</text>
+<text x="58" y="509" class="line">64 → 256 × 72 × 36</text>
+<text x="58" y="533" class="line">B1 投影捷径；B2–B3 恒等捷径</text>
+<text x="58" y="557" class="line">无 Non-local</text>
+<text x="58" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="370,523 400,523" class="wire"/>
+<g data-box="400,455,328,143">
+<rect x="400" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="400" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="416" y="484" class="label">Stage 2 · 4 blocks</text>
+<text x="416" y="509" class="line">256 → 512 × 36 × 18</text>
+<text x="416" y="533" class="line">B1 的 Conv3×3 stride=2</text>
+<text x="416" y="557" class="line">B3、B4 后各一个 Non-local</text>
+<text x="416" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="728,523 758,523" class="wire"/>
+<g data-box="758,455,328,143">
+<rect x="758" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="758" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="774" y="484" class="label">Stage 3 · 6 blocks</text>
+<text x="774" y="509" class="line">512 → 1024 × 18 × 9</text>
+<text x="774" y="533" class="line">B1 的 Conv3×3 stride=2</text>
+<text x="774" y="557" class="line">B4、B5、B6 后各一个 Non-local</text>
+<text x="774" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="1086,523 1116,523" class="wire"/>
+<g data-box="1116,455,328,143">
+<rect x="1116" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="1116" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="1132" y="484" class="label">Stage 4 · 3 blocks</text>
+<text x="1132" y="509" class="line">1024 → 2048 × 18 × 9</text>
+<text x="1132" y="533" class="line">B1 stride=1；保留较高分辨率</text>
+<text x="1132" y="557" class="line">无 Non-local</text>
+<text x="1132" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="1115,322 1115,425 205,425 205,455" class="wire"/>
+<g data-box="42,652,390,126">
+<rect x="42" y="652" width="390" height="126" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="664" width="5" height="102" rx="2" fill="#215da8"/>
+<text x="58" y="681" class="label">GeM 全局池化 → f ∈ R²⁰⁴⁸</text>
+<text x="58" y="706" class="line">max(x,0)³ → 空间均值 → 立方根</text>
+<text x="58" y="730" class="line">固定 p=3；FP32 计算避免 AMP 溢出</text>
+<text x="58" y="765" class="src">GeM [S3]；AGW 固定幂实现 [S5]</text>
+</g>
+<polyline points="1280,598 1280,624 237,624 237,652" class="wire"/>
+<g data-box="500,652,390,126">
+<rect x="500" y="652" width="390" height="126" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="500" y="664" width="5" height="102" rx="2" fill="#215da8"/>
+<text x="516" y="681" class="label">BNNeck → h ∈ R²⁰⁴⁸</text>
+<text x="516" y="706" class="line">BatchNorm1d(2048)，bias 冻结</text>
+<text x="516" y="730" class="line">推理：L2(h) → 2048 维检索向量</text>
+<text x="516" y="765" class="src">BNNeck [S4]；AGW [S5]</text>
+</g>
+<polyline points="432,711 500,711" class="wire"/>
+<g data-box="958,652,487,126">
+<rect x="958" y="652" width="487" height="126" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="958" y="664" width="5" height="102" rx="2" fill="#215da8"/>
+<text x="974" y="681" class="label">训练：ID 分类 + 加权正则 Triplet</text>
+<text x="974" y="706" class="line">Linear 2048→N_id，无 bias → CE</text>
+<text x="974" y="730" class="line">WRT 使用池化特征 f；推理为余弦相似度</text>
+<text x="974" y="765" class="src">CE：通用目标；WRT / AGW [S5]</text>
+</g>
+<polyline points="890,690 958,690" class="wire" stroke-dasharray="7 5"/>
+<polyline points="432,752 466,752 466,797 1200,797 1200,778" class="wire" stroke-dasharray="7 5"/><text x="42" y="810" class="src">实现依据：code/model.py · code/objectives.py · 实测尺寸见 layer_trace.json ｜ 2026-11-13</text></svg></div></section><section id="bcrt" class="figure"><div class="figurebar"><a href="bcrt.svg" download>下载 SVG</a><button onclick="zoom(this,1.2)">放大</button><button onclick="zoom(this,0.833333)">缩小</button><button onclick="resetZoom(this)">适应宽度</button></div><div class="viewport"><svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1080" viewBox="0 0 1500 1080" role="img" aria-label="02 / AGW + BCRT：仅在训练阶段增加受约束特征增强">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+        <style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#18344b}.title{font-size:28px;font-weight:700}.sub{font-size:16px;fill:#52697b}.label{font-size:18px;font-weight:700}.line{font-size:15px}.src{font-size:13px;fill:#52697b}.wire{fill:none;stroke:#60758a;stroke-width:2;marker-end:url(#arr)}</style>
+        <rect width="1500" height="1080" fill="#f7fafc"/>
+        <text x="42" y="50" class="title">02 / AGW + BCRT：仅在训练阶段增加受约束特征增强</text><text x="42" y="80" class="sub">蓝色：复用的图像编码路径　橙色：本项目新增训练计算　虚线：训练损失分支；形状省略 batch 维</text>
+<g data-box="42,120,235,125">
+<rect x="42" y="120" width="235" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="132" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="58" y="149" class="label">可见光 VIS</text>
+<text x="58" y="174" class="line">3 × 288 × 144</text>
+<text x="58" y="198" class="line">RGB 图像；独立 stem</text>
+<text x="58" y="232" class="src">训练 8 张 / 推理按模态输入</text>
+</g>
+<g data-box="42,280,235,125">
+<rect x="42" y="280" width="235" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="292" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="58" y="309" class="label">红外 IR</text>
+<text x="58" y="334" class="line">3 × 288 × 144</text>
+<text x="58" y="358" class="line">读取后转换为 3 通道</text>
+<text x="58" y="392" class="src">训练 8 张；非像素配对</text>
+</g>
+<g data-box="325,120,390,125">
+<rect x="325" y="120" width="390" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="325" y="132" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="341" y="149" class="label">VIS stem：模态独立参数</text>
+<text x="341" y="174" class="line">Conv 7×7, 3→64, s2, p3 → BN → ReLU</text>
+<text x="341" y="198" class="line">MaxPool 3×3, s2, p1 → 64×72×36</text>
+<text x="341" y="232" class="src">ResNet [S1]；双流结构 [S7]；AGW [S5]</text>
+</g>
+<polyline points="277,183 325,183" class="wire"/>
+<g data-box="325,280,390,125">
+<rect x="325" y="280" width="390" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="325" y="292" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="341" y="309" class="label">IR stem：模态独立参数</text>
+<text x="341" y="334" class="line">Conv 7×7, 3→64, s2, p3 → BN → ReLU</text>
+<text x="341" y="358" class="line">MaxPool 3×3, s2, p1 → 64×72×36</text>
+<text x="341" y="392" class="src">ResNet [S1]；双流结构 [S7]；AGW [S5]</text>
+</g>
+<polyline points="277,343 325,343" class="wire"/>
+<g data-box="785,202,660,120">
+<rect x="785" y="202" width="660" height="120" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="785" y="214" width="5" height="96" rx="2" fill="#215da8"/>
+<text x="801" y="231" class="label">按 batch 拼接 → 后续所有层共享参数</text>
+<text x="801" y="256" class="line">训练：8 VIS + 8 IR；按相同身份采样 P=4, K=2/模态</text>
+<text x="801" y="280" class="line">没有 VIS/IR 图像通道拼接；推理只编码当前输入模态</text>
+<text x="801" y="309" class="src">双流共享骨干是 AGW 基线的一部分 [S5,S7]</text>
+</g>
+<polyline points="715,182 750,182 750,245 785,245" class="wire"/>
+<polyline points="715,342 750,342 750,280 785,280" class="wire"/>
+<g data-box="42,455,328,143">
+<rect x="42" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="58" y="484" class="label">Stage 1 · 3 blocks</text>
+<text x="58" y="509" class="line">64 → 256 × 72 × 36</text>
+<text x="58" y="533" class="line">B1 投影捷径；B2–B3 恒等捷径</text>
+<text x="58" y="557" class="line">无 Non-local</text>
+<text x="58" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="370,523 400,523" class="wire"/>
+<g data-box="400,455,328,143">
+<rect x="400" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="400" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="416" y="484" class="label">Stage 2 · 4 blocks</text>
+<text x="416" y="509" class="line">256 → 512 × 36 × 18</text>
+<text x="416" y="533" class="line">B1 的 Conv3×3 stride=2</text>
+<text x="416" y="557" class="line">B3、B4 后各一个 Non-local</text>
+<text x="416" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="728,523 758,523" class="wire"/>
+<g data-box="758,455,328,143">
+<rect x="758" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="758" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="774" y="484" class="label">Stage 3 · 6 blocks</text>
+<text x="774" y="509" class="line">512 → 1024 × 18 × 9</text>
+<text x="774" y="533" class="line">B1 的 Conv3×3 stride=2</text>
+<text x="774" y="557" class="line">B4、B5、B6 后各一个 Non-local</text>
+<text x="774" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="1086,523 1116,523" class="wire"/>
+<g data-box="1116,455,328,143">
+<rect x="1116" y="455" width="328" height="143" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="1116" y="467" width="5" height="119" rx="2" fill="#215da8"/>
+<text x="1132" y="484" class="label">Stage 4 · 3 blocks</text>
+<text x="1132" y="509" class="line">1024 → 2048 × 18 × 9</text>
+<text x="1132" y="533" class="line">B1 stride=1；保留较高分辨率</text>
+<text x="1132" y="557" class="line">无 Non-local</text>
+<text x="1132" y="585" class="src">ResNet-50 [S1]；Non-local [S2,S5]</text>
+</g>
+<polyline points="1115,322 1115,425 205,425 205,455" class="wire"/>
+<g data-box="42,652,390,126">
+<rect x="42" y="652" width="390" height="126" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="664" width="5" height="102" rx="2" fill="#215da8"/>
+<text x="58" y="681" class="label">GeM 全局池化 → f ∈ R²⁰⁴⁸</text>
+<text x="58" y="706" class="line">max(x,0)³ → 空间均值 → 立方根</text>
+<text x="58" y="730" class="line">固定 p=3；FP32 计算避免 AMP 溢出</text>
+<text x="58" y="765" class="src">GeM [S3]；AGW 固定幂实现 [S5]</text>
+</g>
+<polyline points="1280,598 1280,624 237,624 237,652" class="wire"/>
+<g data-box="500,652,390,126">
+<rect x="500" y="652" width="390" height="126" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="500" y="664" width="5" height="102" rx="2" fill="#215da8"/>
+<text x="516" y="681" class="label">BNNeck → h ∈ R²⁰⁴⁸</text>
+<text x="516" y="706" class="line">BatchNorm1d(2048)，bias 冻结</text>
+<text x="516" y="730" class="line">推理：L2(h) → 2048 维检索向量</text>
+<text x="516" y="765" class="src">BNNeck [S4]；AGW [S5]</text>
+</g>
+<polyline points="432,711 500,711" class="wire"/>
+<g data-box="958,652,487,126">
+<rect x="958" y="652" width="487" height="126" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="958" y="664" width="5" height="102" rx="2" fill="#215da8"/>
+<text x="974" y="681" class="label">训练：ID 分类 + 加权正则 Triplet</text>
+<text x="974" y="706" class="line">Linear 2048→N_id，无 bias → CE</text>
+<text x="974" y="730" class="line">WRT 使用池化特征 f；推理为余弦相似度</text>
+<text x="974" y="765" class="src">CE：通用目标；WRT / AGW [S5]</text>
+</g>
+<polyline points="890,690 958,690" class="wire" stroke-dasharray="7 5"/>
+<polyline points="432,752 466,752 466,797 1200,797 1200,778" class="wire" stroke-dasharray="7 5"/>
+<g data-box="42,857,390,140">
+<rect x="42" y="857" width="390" height="140" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="42" y="869" width="5" height="116" rx="2" fill="#bf5b19"/>
+<text x="58" y="886" class="label">新增：跨身份残差供体</text>
+<text x="58" y="911" class="line">z=L2(f)；每身份 VIS / IR 均值</text>
+<text x="58" y="935" class="line">δ_j = cᵀ_j − cⱽ_j；供体 j ≠ y</text>
+<text x="58" y="959" class="line">δ 和原型停止梯度</text>
+<text x="58" y="984" class="src">本项目组合设计 BCRT [S6]，训练专用</text>
+</g>
+<g data-box="500,857,390,140">
+<rect x="500" y="857" width="390" height="140" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="500" y="869" width="5" height="116" rx="2" fill="#bf5b19"/>
+<text x="516" y="886" class="label">新增：解析计算可行步长</text>
+<text x="516" y="911" class="line">针对当前 batch 中每个异身份原型</text>
+<text x="516" y="935" class="line">保留至少 ρ=0.5 的初始欧式间隔</text>
+<text x="516" y="959" class="line">t=min(α=0.5, 所有有效边界上限)</text>
+<text x="516" y="984" class="src">本项目推导与实现 [S6]，非泛化证明</text>
+</g>
+<g data-box="958,857,487,140">
+<rect x="958" y="857" width="487" height="140" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="958" y="869" width="5" height="116" rx="2" fill="#bf5b19"/>
+<text x="974" y="886" class="label">新增：虚拟特征的原型监督</text>
+<text x="974" y="911" class="line">v=L2(z+t·d) → 原型余弦 logits</text>
+<text x="974" y="935" class="line">温度 T=0.1 → CE_virtual</text>
+<text x="974" y="959" class="line">总损失 CE + WRT + 0.2 CE_virtual</text>
+<text x="974" y="984" class="src">前 5 epoch 辅助权重为 0；无新增推理参数</text>
+</g>
+<polyline points="235,778 235,857" class="wire" stroke-dasharray="7 5"/>
+<polyline points="432,921 500,921" class="wire" stroke-dasharray="7 5"/>
+<polyline points="890,921 958,921" class="wire" stroke-dasharray="7 5"/>
+<text x="42" y="1033" class="sub">BCRT 是待验证的研究候选；“残差生成/原型监督”已有前人研究，创新主张限定为跨身份供体与身份间隔约束的结合。</text><text x="42" y="1060" class="src">实现依据：code/model.py · code/objectives.py · 实测尺寸见 layer_trace.json ｜ 2026-11-13</text></svg></div></section><section id="bottleneck" class="figure"><div class="figurebar"><a href="bottleneck.svg" download>下载 SVG</a><button onclick="zoom(this,1.2)">放大</button><button onclick="zoom(this,0.833333)">缩小</button><button onclick="resetZoom(this)">适应宽度</button></div><div class="viewport"><svg xmlns="http://www.w3.org/2000/svg" width="1500" height="690" viewBox="0 0 1500 690" role="img" aria-label="03 / ResNet Bottleneck：每个卷积与捷径">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+        <style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#18344b}.title{font-size:28px;font-weight:700}.sub{font-size:16px;fill:#52697b}.label{font-size:18px;font-weight:700}.line{font-size:15px}.src{font-size:13px;fill:#52697b}.wire{fill:none;stroke:#60758a;stroke-width:2;marker-end:url(#arr)}</style>
+        <rect width="1500" height="690" fill="#f7fafc"/>
+        <text x="42" y="50" class="title">03 / ResNet Bottleneck：每个卷积与捷径</text><text x="42" y="80" class="sub">16 个块均遵循此结构；下方网页逐块列出输入通道、stride、输出尺寸与 Non-local 插入位置。</text>
+<g data-box="42,155,215,115">
+<rect x="42" y="155" width="215" height="115" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="167" width="5" height="91" rx="2" fill="#215da8"/>
+<text x="58" y="184" class="label">输入 X</text>
+<text x="58" y="209" class="line">C_in × H × W</text>
+<text x="58" y="257" class="src">ResNet-50 [S1]</text>
+</g>
+<g data-box="310,155,265,115">
+<rect x="310" y="155" width="265" height="115" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="310" y="167" width="5" height="91" rx="2" fill="#215da8"/>
+<text x="326" y="184" class="label">Conv 1×1 → BN → ReLU</text>
+<text x="326" y="209" class="line">C_in → C_mid</text>
+<text x="326" y="233" class="line">stride=1，padding=0</text>
+<text x="326" y="257" class="src">降维；bias=False</text>
+</g>
+<g data-box="625,155,265,115">
+<rect x="625" y="155" width="265" height="115" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="625" y="167" width="5" height="91" rx="2" fill="#215da8"/>
+<text x="641" y="184" class="label">Conv 3×3 → BN → ReLU</text>
+<text x="641" y="209" class="line">C_mid → C_mid</text>
+<text x="641" y="233" class="line">stride=s，padding=1</text>
+<text x="641" y="257" class="src">提取空间特征；bias=False</text>
+</g>
+<g data-box="940,155,265,115">
+<rect x="940" y="155" width="265" height="115" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="940" y="167" width="5" height="91" rx="2" fill="#215da8"/>
+<text x="956" y="184" class="label">Conv 1×1 → BN</text>
+<text x="956" y="209" class="line">C_mid → 4 C_mid</text>
+<text x="956" y="233" class="line">stride=1，padding=0</text>
+<text x="956" y="257" class="src">升维；这里不先做 ReLU</text>
+</g>
+<g data-box="1260,155,198,115">
+<rect x="1260" y="155" width="198" height="115" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="1260" y="167" width="5" height="91" rx="2" fill="#215da8"/>
+<text x="1276" y="184" class="label">Add → ReLU</text>
+<text x="1276" y="209" class="line">与捷径逐元素相加</text>
+<text x="1276" y="233" class="line">输出 C_out</text>
+<text x="1276" y="257" class="src">C_out=4 C_mid</text>
+</g>
+<polyline points="257,210 310,210" class="wire"/>
+<polyline points="575,210 625,210" class="wire"/>
+<polyline points="890,210 940,210" class="wire"/>
+<polyline points="1205,210 1260,210" class="wire"/>
+<g data-box="460,340,650,123">
+<rect x="460" y="340" width="650" height="123" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="460" y="352" width="5" height="99" rx="2" fill="#215da8"/>
+<text x="476" y="369" class="label">捷径分支</text>
+<text x="476" y="394" class="line">每个 stage 的 B1：Conv 1×1, C_in→C_out, stride=s → BN</text>
+<text x="476" y="418" class="line">其余块：Identity；输出与主分支形状相同</text>
+<text x="476" y="450" class="src">投影也使用 bias=False；即使 s=1，通道改变仍需投影</text>
+</g>
+<polyline points="150,270 150,400 460,400" class="wire"/>
+<polyline points="1110,400 1355,400 1355,270" class="wire"/>
+<g data-box="42,510,1416,116">
+<rect x="42" y="510" width="1416" height="116" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="522" width="5" height="92" rx="2" fill="#215da8"/>
+<text x="58" y="539" class="label">本项目实际 stride / 通道配置</text>
+<text x="58" y="564" class="line">Stage1: C_mid=64, 3 blocks, s=1；Stage2: C_mid=128, 4 blocks, 首块 s=2；Stage3: C_mid=256, 6 blocks, 首块 s=2</text>
+<text x="58" y="588" class="line">Stage4: C_mid=512, 3 blocks, 首块 s=1。没有上采样、解码器或转置卷积；最大空间下采样倍数为 16。</text>
+<text x="58" y="613" class="src">详细模块名对应 stages.0–3；stages.s.b 内含 conv1/bn1/conv2/bn2/conv3/bn3/relu/downsample</text>
+</g><text x="42" y="670" class="src">实现依据：code/model.py · code/objectives.py · 实测尺寸见 layer_trace.json ｜ 2026-11-13</text></svg></div></section><section id="nonlocal" class="figure"><div class="figurebar"><a href="nonlocal.svg" download>下载 SVG</a><button onclick="zoom(this,1.2)">放大</button><button onclick="zoom(this,0.833333)">缩小</button><button onclick="resetZoom(this)">适应宽度</button></div><div class="viewport"><svg xmlns="http://www.w3.org/2000/svg" width="1500" height="850" viewBox="0 0 1500 850" role="img" aria-label="04 / Non-local：保留官方 AGW 的窄通道实现">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+        <style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#18344b}.title{font-size:28px;font-weight:700}.sub{font-size:16px;fill:#52697b}.label{font-size:18px;font-weight:700}.line{font-size:15px}.src{font-size:13px;fill:#52697b}.wire{fill:none;stroke:#60758a;stroke-width:2;marker-end:url(#arr)}</style>
+        <rect width="1500" height="850" fill="#f7fafc"/>
+        <text x="42" y="50" class="title">04 / Non-local：保留官方 AGW 的窄通道实现</text><text x="42" y="80" class="sub">来源：Wang et al., Non-local Neural Networks, CVPR 2018；实际公式与通道数按 AGW commit e817a267。</text>
+<g data-box="42,170,215,120">
+<rect x="42" y="170" width="215" height="120" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="182" width="5" height="96" rx="2" fill="#215da8"/>
+<text x="58" y="199" class="label">输入 X</text>
+<text x="58" y="224" class="line">B × C × H × W</text>
+<text x="58" y="248" class="line">N = H·W</text>
+<text x="58" y="277" class="src">C=512 或 1024 [S2,S5]</text>
+</g>
+<g data-box="335,120,290,120">
+<rect x="335" y="120" width="290" height="120" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="335" y="132" width="5" height="96" rx="2" fill="#215da8"/>
+<text x="351" y="149" class="label">θ: Conv 1×1, C→1</text>
+<text x="351" y="174" class="line">stride=1, bias=True</text>
+<text x="351" y="198" class="line">展平 / 转置 → B × N × 1</text>
+<text x="351" y="227" class="src">AGW 代码中 inter_channels=1</text>
+</g>
+<polyline points="257,225 290,225 290,180 335,180" class="wire"/>
+<g data-box="335,285,290,120">
+<rect x="335" y="285" width="290" height="120" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="335" y="297" width="5" height="96" rx="2" fill="#215da8"/>
+<text x="351" y="314" class="label">φ: Conv 1×1, C→1</text>
+<text x="351" y="339" class="line">stride=1, bias=True</text>
+<text x="351" y="363" class="line">展平 / 转置 → B × 1 × N</text>
+<text x="351" y="392" class="src">AGW 代码中 inter_channels=1</text>
+</g>
+<polyline points="257,225 290,225 290,345 335,345" class="wire"/>
+<g data-box="335,450,290,120">
+<rect x="335" y="450" width="290" height="120" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="335" y="462" width="5" height="96" rx="2" fill="#215da8"/>
+<text x="351" y="479" class="label">g: Conv 1×1, C→1</text>
+<text x="351" y="504" class="line">stride=1, bias=True</text>
+<text x="351" y="528" class="line">展平 / 转置 → B × N × 1</text>
+<text x="351" y="557" class="src">AGW 代码中 inter_channels=1</text>
+</g>
+<polyline points="257,225 290,225 290,510 335,510" class="wire"/>
+<g data-box="720,193,350,130">
+<rect x="720" y="193" width="350" height="130" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="720" y="205" width="5" height="106" rx="2" fill="#215da8"/>
+<text x="736" y="222" class="label">A = (θ(X) @ φ(X)) / N</text>
+<text x="736" y="247" class="line">形状 B × N × N</text>
+<text x="736" y="271" class="line">点积后除以位置数 N；没有 softmax</text>
+<text x="736" y="310" class="src">S2: N=648；S3: N=162</text>
+</g>
+<polyline points="625,180 670,180 670,230 720,230" class="wire"/>
+<polyline points="625,345 670,345 670,285 720,285" class="wire"/>
+<g data-box="1140,380,310,140">
+<rect x="1140" y="380" width="310" height="140" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="1140" y="392" width="5" height="116" rx="2" fill="#215da8"/>
+<text x="1156" y="409" class="label">A @ g(X) → reshape</text>
+<text x="1156" y="434" class="line">B × N × 1</text>
+<text x="1156" y="458" class="line">重排成 B × 1 × H × W</text>
+<text x="1156" y="507" class="src">聚合全图上下文</text>
+</g>
+<polyline points="1070,260 1290,260 1290,380" class="wire"/>
+<polyline points="625,510 1010,510 1010,450 1140,450" class="wire"/>
+<g data-box="720,630,370,125">
+<rect x="720" y="630" width="370" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="720" y="642" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="736" y="659" class="label">输出投影：Conv 1×1, 1→C</text>
+<text x="736" y="684" class="line">bias=True → BN2d(C)</text>
+<text x="736" y="708" class="line">BN 的 γ、β 均以 0 初始化</text>
+<text x="736" y="742" class="src">因此初始时残差支路为 0</text>
+</g>
+<g data-box="310,630,340,125">
+<rect x="310" y="630" width="340" height="125" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="310" y="642" width="5" height="101" rx="2" fill="#215da8"/>
+<text x="326" y="659" class="label">Add：X + projected context</text>
+<text x="326" y="684" class="line">输出 B × C × H × W</text>
+<text x="326" y="708" class="line">没有额外 ReLU 或空间采样</text>
+<text x="326" y="742" class="src">位置：S2B3/B4；S3B4/B5/B6</text>
+</g>
+<polyline points="1290,520 1290,690 1090,690" class="wire"/>
+<polyline points="720,690 650,690" class="wire"/>
+<polyline points="150,290 150,690 310,690" class="wire"/>
+<text x="42" y="802" class="sub">注意：此处的 1 通道不是通行的 C/2 配置；为了可核对地复用 AGW，本项目保留上游行为并提供数值等价测试。</text><text x="42" y="830" class="src">实现依据：code/model.py · code/objectives.py · 实测尺寸见 layer_trace.json ｜ 2026-11-13</text></svg></div></section><section id="transport" class="figure"><div class="figurebar"><a href="transport.svg" download>下载 SVG</a><button onclick="zoom(this,1.2)">放大</button><button onclick="zoom(this,0.833333)">缩小</button><button onclick="resetZoom(this)">适应宽度</button></div><div class="viewport"><svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1070" viewBox="0 0 1500 1070" role="img" aria-label="05 / BCRT：供体残差 → 身份间隔 → 安全步长 → 训练监督">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+        <style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#18344b}.title{font-size:28px;font-weight:700}.sub{font-size:16px;fill:#52697b}.label{font-size:18px;font-weight:700}.line{font-size:15px}.src{font-size:13px;fill:#52697b}.wire{fill:none;stroke:#60758a;stroke-width:2;marker-end:url(#arr)}</style>
+        <rect width="1500" height="1070" fill="#f7fafc"/>
+        <text x="42" y="50" class="title">05 / BCRT：供体残差 → 身份间隔 → 安全步长 → 训练监督</text><text x="42" y="80" class="sub">本项目候选机制（2026）；固定 prototype 的欧式几何有解析约束，后续归一化余弦 CE 和泛化没有该保证。</text>
+<g data-box="42,125,425,160">
+<rect x="42" y="125" width="425" height="160" rx="12" fill="white" stroke="#167d79" stroke-width="1.7"/><rect x="42" y="137" width="5" height="136" rx="2" fill="#167d79"/>
+<text x="58" y="154" class="label">① 采样与特征归一化</text>
+<text x="58" y="179" class="line">4 个身份 × 每模态 2 张 = 16 张</text>
+<text x="58" y="203" class="line">共享图像编码只执行一次</text>
+<text x="58" y="227" class="line">z_i=L2(f_i)；无额外图像前向</text>
+<text x="58" y="272" class="src">输入来自 baseline 的 GeM 输出</text>
+</g>
+<g data-box="538,125,425,160">
+<rect x="538" y="125" width="425" height="160" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="538" y="137" width="5" height="136" rx="2" fill="#bf5b19"/>
+<text x="554" y="154" class="label">② 估计模态中心与原型</text>
+<text x="554" y="179" class="line">cⱽ_j=mean(z of VIS identity j)</text>
+<text x="554" y="203" class="line">cᵀ_j=mean(z of IR identity j)</text>
+<text x="554" y="227" class="line">p_j=stopgrad((cⱽ_j+cᵀ_j)/2)</text>
+<text x="554" y="272" class="src">batch 局部原型；不跨 batch 存储</text>
+</g>
+<g data-box="1030,125,420,160">
+<rect x="1030" y="125" width="420" height="160" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="1030" y="137" width="5" height="136" rx="2" fill="#bf5b19"/>
+<text x="1046" y="154" class="label">③ 选择所有其他身份供体</text>
+<text x="1046" y="179" class="line">δ_j=stopgrad(cᵀ_j−cⱽ_j), j≠y_i</text>
+<text x="1046" y="203" class="line">VIS 锚点：d=+δ_j；IR 锚点：d=−δ_j</text>
+<text x="1046" y="227" class="line">16 × (4−1) = 48 个候选虚拟对</text>
+<text x="1046" y="272" class="src">排除同一身份以减少标签专属残差捷径</text>
+</g>
+<polyline points="467,205 538,205" class="wire"/>
+<polyline points="963,205 1030,205" class="wire"/>
+<g data-box="42,365,675,178">
+<rect x="42" y="365" width="675" height="178" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="42" y="377" width="5" height="154" rx="2" fill="#bf5b19"/>
+<text x="58" y="394" class="label">④ 对每个异身份 k 计算欧式间隔</text>
+<text x="58" y="419" class="line">g_k(0) = ||z−p_k||² − ||z−p_y||²</text>
+<text x="58" y="443" class="line">a_k = 2 d · (p_y−p_k)</text>
+<text x="58" y="467" class="line">g_k(t) = g_k(0) + t a_k</text>
+<text x="58" y="491" class="line">任一初始间隔 ≤ 1e−6：该锚点不参与辅助损失</text>
+<text x="58" y="530" class="src">原型 / 方向 / 步长停止梯度；当前 z 保留梯度</text>
+</g>
+<g data-box="785,365,665,178">
+<rect x="785" y="365" width="665" height="178" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="785" y="377" width="5" height="154" rx="2" fill="#bf5b19"/>
+<text x="801" y="394" class="label">⑤ 解析求可行上限，不增加可学习参数</text>
+<text x="801" y="419" class="line">要求 g_k(t) ≥ ρ g_k(0)，ρ=0.5</text>
+<text x="801" y="443" class="line">仅 a_k &lt; −1e−8 时产生上界：</text>
+<text x="801" y="467" class="line">u_k = (1−ρ) g_k(0) / (−a_k)</text>
+<text x="801" y="491" class="line">t = clip(min_k u_k, 0, α=0.5)；无上界时 t=α</text>
+<text x="801" y="530" class="src">约束对象是未归一化的 z+t·d 与固定原型</text>
+</g>
+<polyline points="1240,285 1240,325 375,325 375,365" class="wire"/>
+<polyline points="717,450 785,450" class="wire"/>
+<g data-box="42,620,675,153">
+<rect x="42" y="620" width="675" height="153" rx="12" fill="white" stroke="#bf5b19" stroke-width="1.7"/><rect x="42" y="632" width="5" height="129" rx="2" fill="#bf5b19"/>
+<text x="58" y="649" class="label">⑥ 虚拟特征监督</text>
+<text x="58" y="674" class="line">v=L2(z+t·d)</text>
+<text x="58" y="698" class="line">logits=v · L2(p)ᵀ / T，T=0.1</text>
+<text x="58" y="722" class="line">L_virtual=mean(CE(logits,y))，只计 eligible 对</text>
+<text x="58" y="760" class="src">反向传播到当前锚点及编码网络；供体与原型为常量目标</text>
+</g>
+<g data-box="785,620,665,153">
+<rect x="785" y="620" width="665" height="153" rx="12" fill="white" stroke="#167d79" stroke-width="1.7"/><rect x="785" y="632" width="5" height="129" rx="2" fill="#167d79"/>
+<text x="801" y="649" class="label">⑦ 总损失与推理</text>
+<text x="801" y="674" class="line">L = L_CE + L_WRT + λ L_virtual</text>
+<text x="801" y="698" class="line">λ=0（前 5 epoch），之后 λ=0.2</text>
+<text x="801" y="722" class="line">推理丢弃整个 BCRT 计算；仍为 L2(BNNeck(f))</text>
+<text x="801" y="760" class="src">改进只发生在训练目标中；额外推理参数数目=0</text>
+</g>
+<polyline points="1110,543 1110,580 375,580 375,620" class="wire"/>
+<polyline points="717,694 785,694" class="wire"/>
+<g data-box="42,850,1408,147">
+<rect x="42" y="850" width="1408" height="147" rx="12" fill="white" stroke="#215da8" stroke-width="1.7"/><rect x="42" y="862" width="5" height="123" rx="2" fill="#215da8"/>
+<text x="58" y="879" class="label">四组消融各自回答什么问题</text>
+<text x="58" y="904" class="line">AGW：原基线 CE+WRT。Center：加普通跨模态中心 L2，检验简单对齐是否已足够。</text>
+<text x="58" y="928" class="line">Unbounded：相同供体 / eligible 掩码 / 虚拟 CE，但 t 恒为 α。BCRT：仅将 t 改为解析受约束步长。</text>
+<text x="58" y="952" class="line">报告 capped_fraction、eligible_fraction、间隔违反数及 Rank-1 / mAP；若约束几乎不触发或精度不升，必须如实报告。</text>
+<text x="58" y="984" class="src">特征生成与原型学习不是本项目首创：相关工作 PDM / ICASSP 2025；这里未复制其模块或代码</text>
+</g><text x="42" y="1050" class="src">实现依据：code/model.py · code/objectives.py · 实测尺寸见 layer_trace.json ｜ 2026-11-13</text></svg></div></section>
+    <section id="every-block" class="panel"><h2>06 / 16 个 Bottleneck 完整展开</h2><p>张量格式为 C×H×W。每个 stage 首块都有投影捷径；S1B1 和 S4B1 虽然 stride=1，仍因通道变化使用投影。Non-local 紧接该块最终 ReLU 之后。</p><h3>Stage 1 · 3 个块</h3><div class="blocks"><article class="block"><h4>S1B1 <code>stages.0.0</code></h4>
+            <p class="shape">输入 64×72×36 → 输出 256×72×36</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S1B1 逐卷积结构">
+              <defs><marker id="arr1_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr1_1)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">64×72×36</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">64→64 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">64→64 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">64→256 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Conv1×1 64→256, s1 → BN · bias=False</text>
+              <text x="12" y="179" class="bf">输出 256×72×36</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S1B1 窄屏逐卷积结构">
+              <defs><marker id="marr1_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr1_1)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 64×72×36</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">64→64 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">64→64 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">64→256 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H14 V389 H25" class="ma"/><path d="M335 389 H344 V315 H242" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：投影 1×1, s1, p=0, 64→256 → BN</text><text x="180" y="403" text-anchor="middle" class="mf">输出 256×72×36</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S1B2 <code>stages.0.1</code></h4>
+            <p class="shape">输入 256×72×36 → 输出 256×72×36</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S1B2 逐卷积结构">
+              <defs><marker id="arr1_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr1_2)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">256×72×36</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">256→64 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">64→64 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">64→256 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 256×72×36</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S1B2 窄屏逐卷积结构">
+              <defs><marker id="marr1_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr1_2)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 256×72×36</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">256→64 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">64→64 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">64→256 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 256×72×36</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S1B3 <code>stages.0.2</code></h4>
+            <p class="shape">输入 256×72×36 → 输出 256×72×36</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S1B3 逐卷积结构">
+              <defs><marker id="arr1_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr1_3)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">256×72×36</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">256→64 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">64→64 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">64→256 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 256×72×36</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S1B3 窄屏逐卷积结构">
+              <defs><marker id="marr1_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr1_3)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 256×72×36</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">256→64 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">64→64 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">64→256 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 256×72×36</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article></div><h3>Stage 2 · 4 个块</h3><div class="blocks"><article class="block"><h4>S2B1 <code>stages.1.0</code></h4>
+            <p class="shape">输入 256×72×36 → 输出 512×36×18</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S2B1 逐卷积结构">
+              <defs><marker id="arr2_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr2_1)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">256×72×36</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">256→128 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=2 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">128→128 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">128→512 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Conv1×1 256→512, s2 → BN · bias=False</text>
+              <text x="12" y="179" class="bf">输出 512×36×18</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S2B1 窄屏逐卷积结构">
+              <defs><marker id="marr2_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr2_1)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 256×72×36</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">256→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=2 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">128→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">128→512 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H14 V389 H25" class="ma"/><path d="M335 389 H344 V315 H242" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：投影 1×1, s2, p=0, 256→512 → BN</text><text x="180" y="403" text-anchor="middle" class="mf">输出 512×36×18</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S2B2 <code>stages.1.1</code></h4>
+            <p class="shape">输入 512×36×18 → 输出 512×36×18</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S2B2 逐卷积结构">
+              <defs><marker id="arr2_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr2_2)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">512×36×18</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">512→128 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">128→128 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">128→512 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 512×36×18</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S2B2 窄屏逐卷积结构">
+              <defs><marker id="marr2_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr2_2)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 512×36×18</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">512→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">128→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">128→512 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 512×36×18</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S2B3 <code>stages.1.2</code></h4>
+            <p class="shape">输入 512×36×18 → 输出 512×36×18</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S2B3 逐卷积结构">
+              <defs><marker id="arr2_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr2_3)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">512×36×18</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">512→128 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">128→128 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">128→512 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 512×36×18 · Non-local 紧随此块</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S2B3 窄屏逐卷积结构">
+              <defs><marker id="marr2_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr2_3)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 512×36×18</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">512→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">128→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">128→512 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 512×36×18</text>
+              </svg><p class="small">来源 [S1] + [S2,S5]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S2B4 <code>stages.1.3</code></h4>
+            <p class="shape">输入 512×36×18 → 输出 512×36×18</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S2B4 逐卷积结构">
+              <defs><marker id="arr2_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr2_4)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">512×36×18</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">512→128 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">128→128 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">128→512 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 512×36×18 · Non-local 紧随此块</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S2B4 窄屏逐卷积结构">
+              <defs><marker id="marr2_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr2_4)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 512×36×18</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">512→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">128→128 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">128→512 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 512×36×18</text>
+              </svg><p class="small">来源 [S1] + [S2,S5]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article></div><h3>Stage 3 · 6 个块</h3><div class="blocks"><article class="block"><h4>S3B1 <code>stages.2.0</code></h4>
+            <p class="shape">输入 512×36×18 → 输出 1024×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S3B1 逐卷积结构">
+              <defs><marker id="arr3_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr3_1)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">512×36×18</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">512→256 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=2 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">256→256 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">256→1024 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Conv1×1 512→1024, s2 → BN · bias=False</text>
+              <text x="12" y="179" class="bf">输出 1024×18×9</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S3B1 窄屏逐卷积结构">
+              <defs><marker id="marr3_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr3_1)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 512×36×18</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">512→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=2 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">256→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">256→1024 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H14 V389 H25" class="ma"/><path d="M335 389 H344 V315 H242" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：投影 1×1, s2, p=0, 512→1024 → BN</text><text x="180" y="403" text-anchor="middle" class="mf">输出 1024×18×9</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S3B2 <code>stages.2.1</code></h4>
+            <p class="shape">输入 1024×18×9 → 输出 1024×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S3B2 逐卷积结构">
+              <defs><marker id="arr3_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr3_2)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">1024×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">1024→256 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">256→256 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">256→1024 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 1024×18×9</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S3B2 窄屏逐卷积结构">
+              <defs><marker id="marr3_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr3_2)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 1024×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">1024→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">256→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">256→1024 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 1024×18×9</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S3B3 <code>stages.2.2</code></h4>
+            <p class="shape">输入 1024×18×9 → 输出 1024×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S3B3 逐卷积结构">
+              <defs><marker id="arr3_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr3_3)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">1024×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">1024→256 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">256→256 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">256→1024 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 1024×18×9</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S3B3 窄屏逐卷积结构">
+              <defs><marker id="marr3_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr3_3)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 1024×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">1024→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">256→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">256→1024 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 1024×18×9</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S3B4 <code>stages.2.3</code></h4>
+            <p class="shape">输入 1024×18×9 → 输出 1024×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S3B4 逐卷积结构">
+              <defs><marker id="arr3_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr3_4)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">1024×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">1024→256 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">256→256 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">256→1024 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 1024×18×9 · Non-local 紧随此块</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S3B4 窄屏逐卷积结构">
+              <defs><marker id="marr3_4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr3_4)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 1024×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">1024→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">256→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">256→1024 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 1024×18×9</text>
+              </svg><p class="small">来源 [S1] + [S2,S5]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S3B5 <code>stages.2.4</code></h4>
+            <p class="shape">输入 1024×18×9 → 输出 1024×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S3B5 逐卷积结构">
+              <defs><marker id="arr3_5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr3_5)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">1024×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">1024→256 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">256→256 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">256→1024 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 1024×18×9 · Non-local 紧随此块</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S3B5 窄屏逐卷积结构">
+              <defs><marker id="marr3_5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr3_5)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 1024×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">1024→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">256→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">256→1024 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 1024×18×9</text>
+              </svg><p class="small">来源 [S1] + [S2,S5]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S3B6 <code>stages.2.5</code></h4>
+            <p class="shape">输入 1024×18×9 → 输出 1024×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S3B6 逐卷积结构">
+              <defs><marker id="arr3_6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr3_6)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">1024×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">1024→256 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">256→256 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">256→1024 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 1024×18×9 · Non-local 紧随此块</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S3B6 窄屏逐卷积结构">
+              <defs><marker id="marr3_6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr3_6)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 1024×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">1024→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">256→256 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">256→1024 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 1024×18×9</text>
+              </svg><p class="small">来源 [S1] + [S2,S5]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article></div><h3>Stage 4 · 3 个块</h3><div class="blocks"><article class="block"><h4>S4B1 <code>stages.3.0</code></h4>
+            <p class="shape">输入 1024×18×9 → 输出 2048×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S4B1 逐卷积结构">
+              <defs><marker id="arr4_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr4_1)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">1024×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">1024→512 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">512→512 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">512→2048 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Conv1×1 1024→2048, s1 → BN · bias=False</text>
+              <text x="12" y="179" class="bf">输出 2048×18×9</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S4B1 窄屏逐卷积结构">
+              <defs><marker id="marr4_1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr4_1)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 1024×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">1024→512 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">512→512 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">512→2048 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H14 V389 H25" class="ma"/><path d="M335 389 H344 V315 H242" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：投影 1×1, s1, p=0, 1024→2048 → BN</text><text x="180" y="403" text-anchor="middle" class="mf">输出 2048×18×9</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S4B2 <code>stages.3.1</code></h4>
+            <p class="shape">输入 2048×18×9 → 输出 2048×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S4B2 逐卷积结构">
+              <defs><marker id="arr4_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr4_2)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">2048×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">2048→512 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">512→512 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">512→2048 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 2048×18×9</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S4B2 窄屏逐卷积结构">
+              <defs><marker id="marr4_2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr4_2)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 2048×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">2048→512 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">512→512 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">512→2048 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 2048×18×9</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article><article class="block"><h4>S4B3 <code>stages.3.2</code></h4>
+            <p class="shape">输入 2048×18×9 → 输出 2048×18×9</p><svg class="blockflow" viewBox="0 0 760 188" role="img" aria-label="S4B3 逐卷积结构">
+              <defs><marker id="arr4_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.bf{font:13px 'Microsoft YaHei',sans-serif;fill:#18344b}.bt{font:700 13px 'Microsoft YaHei',sans-serif;fill:#18344b}.ba{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#arr4_3)}.bb{fill:#fff;stroke:#215da8;stroke-width:1.3}.bs{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="5" y="48" width="77" height="52" rx="6" class="bb"/><text x="43" y="68" text-anchor="middle" class="bt">输入</text><text x="43" y="87" text-anchor="middle" class="bf">2048×18×9</text>
+              <rect x="111" y="38" width="145" height="70" rx="6" class="bb"/><text x="183" y="59" text-anchor="middle" class="bt">Conv1 + BN + ReLU</text><text x="183" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="183" y="98" text-anchor="middle" class="bf">2048→512 通道</text>
+              <rect x="287" y="38" width="145" height="70" rx="6" class="bb"/><text x="359" y="59" text-anchor="middle" class="bt">Conv2 + BN + ReLU</text><text x="359" y="79" text-anchor="middle" class="bf">3×3 / s=1 / p=1</text><text x="359" y="98" text-anchor="middle" class="bf">512→512 通道</text>
+              <rect x="463" y="38" width="145" height="70" rx="6" class="bb"/><text x="535" y="59" text-anchor="middle" class="bt">Conv3 + BN</text><text x="535" y="79" text-anchor="middle" class="bf">1×1 / s=1 / p=0</text><text x="535" y="98" text-anchor="middle" class="bf">512→2048 通道</text>
+              <rect x="661" y="42" width="94" height="62" rx="6" class="bb"/><text x="708" y="64" text-anchor="middle" class="bt">Add</text><text x="708" y="83" text-anchor="middle" class="bf">ReLU</text>
+              <path d="M82 74 H111 M256 74 H287 M432 74 H463 M608 74 H661" class="ba"/>
+              <path d="M43 100 V146 H245" class="ba"/><path d="M550 146 H708 V105" class="ba"/><rect x="245" y="126" width="305" height="40" rx="5" class="bs"/><text x="397" y="150" text-anchor="middle" class="bf">捷径：Identity（恒等映射）</text>
+              <text x="12" y="179" class="bf">输出 2048×18×9</text></svg><svg class="blockflow-mobile" viewBox="0 0 360 440" role="img" aria-label="S4B3 窄屏逐卷积结构">
+              <defs><marker id="marr4_3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10" fill="#60758a"/></marker></defs>
+              <style>.mf{font:12px 'Microsoft YaHei',sans-serif;fill:#18344b}.mt{font:700 12px 'Microsoft YaHei',sans-serif;fill:#18344b}.ma{fill:none;stroke:#60758a;stroke-width:1.7;marker-end:url(#marr4_3)}.mb{fill:#fff;stroke:#215da8;stroke-width:1.3}.ms{fill:#fff7ef;stroke:#bf5b19;stroke-width:1.3}</style>
+              <rect x="100" y="5" width="160" height="48" rx="6" class="mb"/><text x="180" y="25" text-anchor="middle" class="mt">输入 2048×18×9</text><text x="180" y="43" text-anchor="middle" class="mf">进入主支路与捷径</text>
+              <rect x="42" y="77" width="276" height="54" rx="6" class="mb"/><text x="180" y="97" text-anchor="middle" class="mt">Conv1 1×1 / stride=1 / padding=0</text><text x="180" y="118" text-anchor="middle" class="mf">2048→512 · BN · ReLU · bias=False</text>
+              <rect x="42" y="146" width="276" height="54" rx="6" class="mb"/><text x="180" y="166" text-anchor="middle" class="mt">Conv2 3×3 / stride=1 / padding=1</text><text x="180" y="187" text-anchor="middle" class="mf">512→512 · BN · ReLU · bias=False</text>
+              <rect x="42" y="215" width="276" height="54" rx="6" class="mb"/><text x="180" y="235" text-anchor="middle" class="mt">Conv3 1×1 / stride=1 / padding=0</text><text x="180" y="256" text-anchor="middle" class="mf">512→2048 · BN · bias=False</text>
+              <rect x="118" y="292" width="124" height="47" rx="6" class="mb"/><text x="180" y="312" text-anchor="middle" class="mt">残差相加</text><text x="180" y="330" text-anchor="middle" class="mf">Add · ReLU</text>
+              <path d="M180 53 V77 M180 131 V146 M180 200 V215 M180 269 V292" class="ma"/>
+              <path d="M100 29 H18 V315 H118" class="ma"/>
+              <rect x="25" y="365" width="310" height="48" rx="5" class="ms"/><text x="180" y="385" text-anchor="middle" class="mt">捷径：Identity（恒等映射，无参数）</text><text x="180" y="403" text-anchor="middle" class="mf">输出 2048×18×9</text>
+              </svg><p class="small">来源 [S1]。卷积均 bias=False；BN eps=1e−5, momentum=0.1。</p></article></div></section>
+    <section class="panel"><h2>07 / 身份间隔约束的可交互例子</h2><p>一维演示：当前特征 x=0.2，本身份原型 p₀=0，异身份原型 p₁=1，方向 d=2。此例仅说明几何机制，不能作为检索精度结果。</p><div class="two"><div class="toy"><label>候选步长 α：<b id="alphaText"></b><input id="alpha" type="range" min="0" max="0.6" step="0.005" value="0.5"></label><label>间隔保留比例 ρ：<b id="rhoText"></b><input id="rho" type="range" min="0" max="1" step="0.01" value="0.5"></label><p id="toyFormula"></p></div><div class="toy"><p>未约束 / 受约束移动后的欧式间隔</p><div class="metric" id="toyResult"></div><p id="toyExplanation"></p></div></div><p class="small">在真实训练中，约束同时面对 batch 内所有异身份原型；用最小上限得到可行步长。后续特征与原型归一化会改变决策几何，因此不宣称此间隔保证自动延伸到余弦分类器。</p></section>
+    <section id="sources" class="panel"><h2>08 / 模块出处、年份与复用性质</h2><div class="tablewrap"><table><thead><tr><th>编号 / 模块</th><th>出处与时间</th><th>本项目中的作用与归属</th></tr></thead><tbody><tr id="S1"><td>S1<br><b>ResNet-50 / Bottleneck</b></td><td><a href="https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html">He et al. · Deep Residual Learning for Image Recognition · CVPR 2016</a></td><td>复用：16 个瓶颈块与投影捷径；AGW 将最后 stage 首块 stride 改为 1。</td></tr><tr id="S2"><td>S2<br><b>Non-local</b></td><td><a href="https://openaccess.thecvf.com/content_cvpr_2018/html/Wang_Non-Local_Neural_Networks_CVPR_2018_paper.html">Wang et al. · Non-local Neural Networks · CVPR 2018</a></td><td>复用：长程关系聚合。以 AGW 实际实现为准，C→1、除 N、无 softmax。</td></tr><tr id="S3"><td>S3<br><b>GeM</b></td><td><a href="https://doi.org/10.1109/TPAMI.2018.2846566">Radenović et al. · Fine-Tuning CNN Image Retrieval with No Human Annotation · TPAMI online 2018 / 卷期 2019</a></td><td>复用池化思想；AGW 固定 p=3；FP32 是本项目数值稳定性适配，不算研究创新。</td></tr><tr id="S4"><td>S4<br><b>BNNeck</b></td><td><a href="https://openaccess.thecvf.com/content_CVPRW_2019/html/TRMTMCT/Luo_Bag_of_Tricks_and_a_Strong_Baseline_for_Deep_Person_CVPRW_2019_paper.html">Luo et al. · Bag of Tricks and a Strong Baseline for Deep Person Re-identification · CVPRW 2019</a></td><td>复用：区分分类/度量使用的特征；2048 维 BN 归一化。</td></tr><tr id="S5"><td>S5<br><b>AGW baseline / WRT</b></td><td><a href="https://github.com/mangye16/Cross-Modal-Re-ID-baseline">Ye et al. · Deep Learning for Person Re-identification: A Survey and Outlook · arXiv 2020 / TPAMI online 2021 / 卷期 2022</a></td><td>完整基线选择，固定 commit e817a2672c1e14e8802617acb980a79520ef9545，保留 MIT。</td></tr><tr id="S6"><td>S6<br><b>BCRT 研究候选</b></td><td><a href="../创新来源与推导.md">本项目 · 2026-11-13 · 尚无已发表论文</a></td><td>自行推导并实现供体排除、方向符号、所有原型间隔上限及相同 eligible 对照；不能称已证实新颖或有效。</td></tr><tr id="S7"><td>S7<br><b>可见光 / 红外双流设计</b></td><td><a href="https://doi.org/10.1109/TIFS.2018.2885254">Ye et al. · Bi-directional Center-Constrained Top-Ranking for Visible Thermal Person Re-Identification · TIFS 2019</a></td><td>AGW 官方 README 引用的双流结构来源；本项目通过 AGW 继承，并非新增贡献。</td></tr><tr id="S8"><td>S8<br><b>相关工作：PDM</b></td><td><a href="https://arxiv.org/abs/2409.05642">Prototype-Driven Multi-Feature Generation for Visible-Infrared Person Re-identification · ICASSP 2025（预印本 2024）</a></td><td>特征生成、原型对齐已有先例；用于界定创新边界，未复制 PDM 模块。</td></tr></tbody></table></div><p>普通 center 消融只是均值中心的 L2 对齐，不是对某篇 Hetero-center Triplet 论文的完整复现。BatchNorm、ReLU、SGD、交叉熵、L2 归一化是常用运算，不计入创新贡献。</p></section>
+    <section id="trace" class="panel"><h2>09 / 真实前向运行的全部叶子层记录</h2><p>输入为各一张 VIS/IR，即拼接后 B=2；下表直接来自 layer_trace.json。重复的 ReLU 是同一模块在瓶颈内被调用多次。函数运算 cat、残差 add、GeM 的 pow/mean、矩阵乘法与 normalize 已在上方图中补全。</p><details><summary>展开 187 次叶子模块调用（可搜索）</summary><input id="traceSearch" placeholder="筛选，例如 stages.2.3 或 Conv2d" oninput="filterTrace()"><div class="tablewrap"><table id="traceTable"><thead><tr><th>#</th><th>模块路径</th><th>类型</th><th>卷积 / BN / Pool 参数</th><th>输出形状</th></tr></thead><tbody><tr><td>1</td><td><code>visible.0</code></td><td>Conv2d</td><td>3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False</td><td>[1, 64, 144, 72]</td></tr><tr><td>2</td><td><code>visible.1</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[1, 64, 144, 72]</td></tr><tr><td>3</td><td><code>visible.2</code></td><td>ReLU</td><td>inplace=True</td><td>[1, 64, 144, 72]</td></tr><tr><td>4</td><td><code>visible.3</code></td><td>MaxPool2d</td><td>kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False</td><td>[1, 64, 72, 36]</td></tr><tr><td>5</td><td><code>thermal.0</code></td><td>Conv2d</td><td>3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False</td><td>[1, 64, 144, 72]</td></tr><tr><td>6</td><td><code>thermal.1</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[1, 64, 144, 72]</td></tr><tr><td>7</td><td><code>thermal.2</code></td><td>ReLU</td><td>inplace=True</td><td>[1, 64, 144, 72]</td></tr><tr><td>8</td><td><code>thermal.3</code></td><td>MaxPool2d</td><td>kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False</td><td>[1, 64, 72, 36]</td></tr><tr><td>9</td><td><code>stages.0.0.conv1</code></td><td>Conv2d</td><td>64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 64, 72, 36]</td></tr><tr><td>10</td><td><code>stages.0.0.bn1</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>11</td><td><code>stages.0.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>12</td><td><code>stages.0.0.conv2</code></td><td>Conv2d</td><td>64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 64, 72, 36]</td></tr><tr><td>13</td><td><code>stages.0.0.bn2</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>14</td><td><code>stages.0.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>15</td><td><code>stages.0.0.conv3</code></td><td>Conv2d</td><td>64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 72, 36]</td></tr><tr><td>16</td><td><code>stages.0.0.bn3</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 72, 36]</td></tr><tr><td>17</td><td><code>stages.0.0.downsample.0</code></td><td>Conv2d</td><td>64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 72, 36]</td></tr><tr><td>18</td><td><code>stages.0.0.downsample.1</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 72, 36]</td></tr><tr><td>19</td><td><code>stages.0.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 72, 36]</td></tr><tr><td>20</td><td><code>stages.0.1.conv1</code></td><td>Conv2d</td><td>256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 64, 72, 36]</td></tr><tr><td>21</td><td><code>stages.0.1.bn1</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>22</td><td><code>stages.0.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>23</td><td><code>stages.0.1.conv2</code></td><td>Conv2d</td><td>64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 64, 72, 36]</td></tr><tr><td>24</td><td><code>stages.0.1.bn2</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>25</td><td><code>stages.0.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>26</td><td><code>stages.0.1.conv3</code></td><td>Conv2d</td><td>64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 72, 36]</td></tr><tr><td>27</td><td><code>stages.0.1.bn3</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 72, 36]</td></tr><tr><td>28</td><td><code>stages.0.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 72, 36]</td></tr><tr><td>29</td><td><code>stages.0.2.conv1</code></td><td>Conv2d</td><td>256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 64, 72, 36]</td></tr><tr><td>30</td><td><code>stages.0.2.bn1</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>31</td><td><code>stages.0.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>32</td><td><code>stages.0.2.conv2</code></td><td>Conv2d</td><td>64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 64, 72, 36]</td></tr><tr><td>33</td><td><code>stages.0.2.bn2</code></td><td>BatchNorm2d</td><td>64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>34</td><td><code>stages.0.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 64, 72, 36]</td></tr><tr><td>35</td><td><code>stages.0.2.conv3</code></td><td>Conv2d</td><td>64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 72, 36]</td></tr><tr><td>36</td><td><code>stages.0.2.bn3</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 72, 36]</td></tr><tr><td>37</td><td><code>stages.0.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 72, 36]</td></tr><tr><td>38</td><td><code>stages.1.0.conv1</code></td><td>Conv2d</td><td>256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 128, 72, 36]</td></tr><tr><td>39</td><td><code>stages.1.0.bn1</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 72, 36]</td></tr><tr><td>40</td><td><code>stages.1.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 72, 36]</td></tr><tr><td>41</td><td><code>stages.1.0.conv2</code></td><td>Conv2d</td><td>128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False</td><td>[2, 128, 36, 18]</td></tr><tr><td>42</td><td><code>stages.1.0.bn2</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>43</td><td><code>stages.1.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>44</td><td><code>stages.1.0.conv3</code></td><td>Conv2d</td><td>128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 512, 36, 18]</td></tr><tr><td>45</td><td><code>stages.1.0.bn3</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>46</td><td><code>stages.1.0.downsample.0</code></td><td>Conv2d</td><td>256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False</td><td>[2, 512, 36, 18]</td></tr><tr><td>47</td><td><code>stages.1.0.downsample.1</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>48</td><td><code>stages.1.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>49</td><td><code>stages.1.1.conv1</code></td><td>Conv2d</td><td>512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 128, 36, 18]</td></tr><tr><td>50</td><td><code>stages.1.1.bn1</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>51</td><td><code>stages.1.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>52</td><td><code>stages.1.1.conv2</code></td><td>Conv2d</td><td>128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 128, 36, 18]</td></tr><tr><td>53</td><td><code>stages.1.1.bn2</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>54</td><td><code>stages.1.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>55</td><td><code>stages.1.1.conv3</code></td><td>Conv2d</td><td>128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 512, 36, 18]</td></tr><tr><td>56</td><td><code>stages.1.1.bn3</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>57</td><td><code>stages.1.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>58</td><td><code>stages.1.2.conv1</code></td><td>Conv2d</td><td>512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 128, 36, 18]</td></tr><tr><td>59</td><td><code>stages.1.2.bn1</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>60</td><td><code>stages.1.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>61</td><td><code>stages.1.2.conv2</code></td><td>Conv2d</td><td>128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 128, 36, 18]</td></tr><tr><td>62</td><td><code>stages.1.2.bn2</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>63</td><td><code>stages.1.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>64</td><td><code>stages.1.2.conv3</code></td><td>Conv2d</td><td>128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 512, 36, 18]</td></tr><tr><td>65</td><td><code>stages.1.2.bn3</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>66</td><td><code>stages.1.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>67</td><td><code>nonlocal_blocks.s2b3.theta</code></td><td>Conv2d</td><td>512, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 36, 18]</td></tr><tr><td>68</td><td><code>nonlocal_blocks.s2b3.phi</code></td><td>Conv2d</td><td>512, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 36, 18]</td></tr><tr><td>69</td><td><code>nonlocal_blocks.s2b3.g</code></td><td>Conv2d</td><td>512, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 36, 18]</td></tr><tr><td>70</td><td><code>nonlocal_blocks.s2b3.out.0</code></td><td>Conv2d</td><td>1, 512, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 512, 36, 18]</td></tr><tr><td>71</td><td><code>nonlocal_blocks.s2b3.out.1</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>72</td><td><code>stages.1.3.conv1</code></td><td>Conv2d</td><td>512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 128, 36, 18]</td></tr><tr><td>73</td><td><code>stages.1.3.bn1</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>74</td><td><code>stages.1.3.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>75</td><td><code>stages.1.3.conv2</code></td><td>Conv2d</td><td>128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 128, 36, 18]</td></tr><tr><td>76</td><td><code>stages.1.3.bn2</code></td><td>BatchNorm2d</td><td>128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>77</td><td><code>stages.1.3.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 128, 36, 18]</td></tr><tr><td>78</td><td><code>stages.1.3.conv3</code></td><td>Conv2d</td><td>128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 512, 36, 18]</td></tr><tr><td>79</td><td><code>stages.1.3.bn3</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>80</td><td><code>stages.1.3.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>81</td><td><code>nonlocal_blocks.s2b4.theta</code></td><td>Conv2d</td><td>512, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 36, 18]</td></tr><tr><td>82</td><td><code>nonlocal_blocks.s2b4.phi</code></td><td>Conv2d</td><td>512, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 36, 18]</td></tr><tr><td>83</td><td><code>nonlocal_blocks.s2b4.g</code></td><td>Conv2d</td><td>512, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 36, 18]</td></tr><tr><td>84</td><td><code>nonlocal_blocks.s2b4.out.0</code></td><td>Conv2d</td><td>1, 512, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 512, 36, 18]</td></tr><tr><td>85</td><td><code>nonlocal_blocks.s2b4.out.1</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 36, 18]</td></tr><tr><td>86</td><td><code>stages.2.0.conv1</code></td><td>Conv2d</td><td>512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 36, 18]</td></tr><tr><td>87</td><td><code>stages.2.0.bn1</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 36, 18]</td></tr><tr><td>88</td><td><code>stages.2.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 36, 18]</td></tr><tr><td>89</td><td><code>stages.2.0.conv2</code></td><td>Conv2d</td><td>256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>90</td><td><code>stages.2.0.bn2</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>91</td><td><code>stages.2.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>92</td><td><code>stages.2.0.conv3</code></td><td>Conv2d</td><td>256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 1024, 18, 9]</td></tr><tr><td>93</td><td><code>stages.2.0.bn3</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>94</td><td><code>stages.2.0.downsample.0</code></td><td>Conv2d</td><td>512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False</td><td>[2, 1024, 18, 9]</td></tr><tr><td>95</td><td><code>stages.2.0.downsample.1</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>96</td><td><code>stages.2.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>97</td><td><code>stages.2.1.conv1</code></td><td>Conv2d</td><td>1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>98</td><td><code>stages.2.1.bn1</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>99</td><td><code>stages.2.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>100</td><td><code>stages.2.1.conv2</code></td><td>Conv2d</td><td>256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>101</td><td><code>stages.2.1.bn2</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>102</td><td><code>stages.2.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>103</td><td><code>stages.2.1.conv3</code></td><td>Conv2d</td><td>256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 1024, 18, 9]</td></tr><tr><td>104</td><td><code>stages.2.1.bn3</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>105</td><td><code>stages.2.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>106</td><td><code>stages.2.2.conv1</code></td><td>Conv2d</td><td>1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>107</td><td><code>stages.2.2.bn1</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>108</td><td><code>stages.2.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>109</td><td><code>stages.2.2.conv2</code></td><td>Conv2d</td><td>256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>110</td><td><code>stages.2.2.bn2</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>111</td><td><code>stages.2.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>112</td><td><code>stages.2.2.conv3</code></td><td>Conv2d</td><td>256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 1024, 18, 9]</td></tr><tr><td>113</td><td><code>stages.2.2.bn3</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>114</td><td><code>stages.2.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>115</td><td><code>stages.2.3.conv1</code></td><td>Conv2d</td><td>1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>116</td><td><code>stages.2.3.bn1</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>117</td><td><code>stages.2.3.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>118</td><td><code>stages.2.3.conv2</code></td><td>Conv2d</td><td>256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>119</td><td><code>stages.2.3.bn2</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>120</td><td><code>stages.2.3.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>121</td><td><code>stages.2.3.conv3</code></td><td>Conv2d</td><td>256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 1024, 18, 9]</td></tr><tr><td>122</td><td><code>stages.2.3.bn3</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>123</td><td><code>stages.2.3.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>124</td><td><code>nonlocal_blocks.s3b4.theta</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>125</td><td><code>nonlocal_blocks.s3b4.phi</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>126</td><td><code>nonlocal_blocks.s3b4.g</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>127</td><td><code>nonlocal_blocks.s3b4.out.0</code></td><td>Conv2d</td><td>1, 1024, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1024, 18, 9]</td></tr><tr><td>128</td><td><code>nonlocal_blocks.s3b4.out.1</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>129</td><td><code>stages.2.4.conv1</code></td><td>Conv2d</td><td>1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>130</td><td><code>stages.2.4.bn1</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>131</td><td><code>stages.2.4.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>132</td><td><code>stages.2.4.conv2</code></td><td>Conv2d</td><td>256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>133</td><td><code>stages.2.4.bn2</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>134</td><td><code>stages.2.4.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>135</td><td><code>stages.2.4.conv3</code></td><td>Conv2d</td><td>256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 1024, 18, 9]</td></tr><tr><td>136</td><td><code>stages.2.4.bn3</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>137</td><td><code>stages.2.4.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>138</td><td><code>nonlocal_blocks.s3b5.theta</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>139</td><td><code>nonlocal_blocks.s3b5.phi</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>140</td><td><code>nonlocal_blocks.s3b5.g</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>141</td><td><code>nonlocal_blocks.s3b5.out.0</code></td><td>Conv2d</td><td>1, 1024, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1024, 18, 9]</td></tr><tr><td>142</td><td><code>nonlocal_blocks.s3b5.out.1</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>143</td><td><code>stages.2.5.conv1</code></td><td>Conv2d</td><td>1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>144</td><td><code>stages.2.5.bn1</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>145</td><td><code>stages.2.5.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>146</td><td><code>stages.2.5.conv2</code></td><td>Conv2d</td><td>256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 256, 18, 9]</td></tr><tr><td>147</td><td><code>stages.2.5.bn2</code></td><td>BatchNorm2d</td><td>256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>148</td><td><code>stages.2.5.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 256, 18, 9]</td></tr><tr><td>149</td><td><code>stages.2.5.conv3</code></td><td>Conv2d</td><td>256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 1024, 18, 9]</td></tr><tr><td>150</td><td><code>stages.2.5.bn3</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>151</td><td><code>stages.2.5.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>152</td><td><code>nonlocal_blocks.s3b6.theta</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>153</td><td><code>nonlocal_blocks.s3b6.phi</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>154</td><td><code>nonlocal_blocks.s3b6.g</code></td><td>Conv2d</td><td>1024, 1, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1, 18, 9]</td></tr><tr><td>155</td><td><code>nonlocal_blocks.s3b6.out.0</code></td><td>Conv2d</td><td>1, 1024, kernel_size=(1, 1), stride=(1, 1)</td><td>[2, 1024, 18, 9]</td></tr><tr><td>156</td><td><code>nonlocal_blocks.s3b6.out.1</code></td><td>BatchNorm2d</td><td>1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 1024, 18, 9]</td></tr><tr><td>157</td><td><code>stages.3.0.conv1</code></td><td>Conv2d</td><td>1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 512, 18, 9]</td></tr><tr><td>158</td><td><code>stages.3.0.bn1</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>159</td><td><code>stages.3.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>160</td><td><code>stages.3.0.conv2</code></td><td>Conv2d</td><td>512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 512, 18, 9]</td></tr><tr><td>161</td><td><code>stages.3.0.bn2</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>162</td><td><code>stages.3.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>163</td><td><code>stages.3.0.conv3</code></td><td>Conv2d</td><td>512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 2048, 18, 9]</td></tr><tr><td>164</td><td><code>stages.3.0.bn3</code></td><td>BatchNorm2d</td><td>2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 2048, 18, 9]</td></tr><tr><td>165</td><td><code>stages.3.0.downsample.0</code></td><td>Conv2d</td><td>1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 2048, 18, 9]</td></tr><tr><td>166</td><td><code>stages.3.0.downsample.1</code></td><td>BatchNorm2d</td><td>2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 2048, 18, 9]</td></tr><tr><td>167</td><td><code>stages.3.0.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 2048, 18, 9]</td></tr><tr><td>168</td><td><code>stages.3.1.conv1</code></td><td>Conv2d</td><td>2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 512, 18, 9]</td></tr><tr><td>169</td><td><code>stages.3.1.bn1</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>170</td><td><code>stages.3.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>171</td><td><code>stages.3.1.conv2</code></td><td>Conv2d</td><td>512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 512, 18, 9]</td></tr><tr><td>172</td><td><code>stages.3.1.bn2</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>173</td><td><code>stages.3.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>174</td><td><code>stages.3.1.conv3</code></td><td>Conv2d</td><td>512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 2048, 18, 9]</td></tr><tr><td>175</td><td><code>stages.3.1.bn3</code></td><td>BatchNorm2d</td><td>2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 2048, 18, 9]</td></tr><tr><td>176</td><td><code>stages.3.1.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 2048, 18, 9]</td></tr><tr><td>177</td><td><code>stages.3.2.conv1</code></td><td>Conv2d</td><td>2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 512, 18, 9]</td></tr><tr><td>178</td><td><code>stages.3.2.bn1</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>179</td><td><code>stages.3.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>180</td><td><code>stages.3.2.conv2</code></td><td>Conv2d</td><td>512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False</td><td>[2, 512, 18, 9]</td></tr><tr><td>181</td><td><code>stages.3.2.bn2</code></td><td>BatchNorm2d</td><td>512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>182</td><td><code>stages.3.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 512, 18, 9]</td></tr><tr><td>183</td><td><code>stages.3.2.conv3</code></td><td>Conv2d</td><td>512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False</td><td>[2, 2048, 18, 9]</td></tr><tr><td>184</td><td><code>stages.3.2.bn3</code></td><td>BatchNorm2d</td><td>2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 2048, 18, 9]</td></tr><tr><td>185</td><td><code>stages.3.2.relu</code></td><td>ReLU</td><td>inplace=True</td><td>[2, 2048, 18, 9]</td></tr><tr><td>186</td><td><code>neck</code></td><td>BatchNorm1d</td><td>2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True</td><td>[2, 2048]</td></tr><tr><td>187</td><td><code>classifier</code></td><td>Linear</td><td>in_features=2048, out_features=206, bias=False</td><td>[2, 206]</td></tr></tbody></table></div></details></section>
+    </main><footer>本地可复查图谱 · 图由 tools/generate_atlas.py 生成 · 不依赖外部脚本或网络服务</footer><style>.blockflow-mobile{display:none}@media(min-width:851px){.blockflow{min-width:0}}@media(max-width:850px){.blockflow{display:none}.blockflow-mobile{display:block;width:100%;height:auto;min-width:0}}</style><script>
+    function zoom(btn,f){const v=btn.closest('.figure').querySelector('svg');const n=(+(v.dataset.zoom||1))*f;v.dataset.zoom=n;v.style.width=(100*n)+'%'}function resetZoom(btn){const v=btn.closest('.figure').querySelector('svg');v.dataset.zoom=1;v.style.width='100%'}
+    function toy(){const a=+document.querySelector('#alpha').value,r=+document.querySelector('#rho').value,t=Math.min(a,(1-r)*0.6/4);document.querySelector('#alphaText').textContent=a.toFixed(3);document.querySelector('#rhoText').textContent=r.toFixed(2);document.querySelector('#toyFormula').textContent='g(t)=0.6−4t；t=min(α, (1−ρ)×0.6/4)='+t.toFixed(4);document.querySelector('#toyResult').textContent=(.6-4*a).toFixed(3)+' / '+(.6-4*t).toFixed(3);document.querySelector('#toyExplanation').textContent='目标至少保留 '+(.6*r).toFixed(3)+' 间隔。'+(a>t?'当前约束触发，缩短移动步长。':'当前方向与候选步长无需截断。')};document.querySelector('#alpha').addEventListener('input',toy);document.querySelector('#rho').addEventListener('input',toy);toy();function filterTrace(){const q=document.querySelector('#traceSearch').value.toLowerCase();document.querySelectorAll('#traceTable tbody tr').forEach(r=>r.hidden=!r.textContent.toLowerCase().includes(q))}
+    </script></html>

@@ -1,0 +1,15 @@
+{
+  "errors": [],
+  "boxTextOverflow": [],
+  "perBlockTextOverflow": [],
+  "perBlockDrawings": 16,
+  "mobileBlockDrawings": 16,
+  "mobileBlockFlow": {
+    "width": 279,
+    "scrollWidth": 279,
+    "container": 319
+  },
+  "filteredConvCalls": 74,
+  "mobileBodyOverflow": false,
+  "geometryControl": "0.200 / 0.300"
+}

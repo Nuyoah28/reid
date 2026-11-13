@@ -1,0 +1,420 @@
+{
+  "kind": "SHORT_BUDGET_OFFICIAL_PROTOCOL_PILOT_NOT_FULL_REPRODUCTION",
+  "units": "percent",
+  "audit_passed": true,
+  "notes": [
+    "Matched finite training histories; zero skipped updates; disjoint train/test identities; current source hashes match all archived configurations.",
+    "Single-seed short pilots do not establish significance, novelty or a complete AGW reproduction.",
+    "Boundary diagnostics certify fixed batch Euclidean prototypes only, not retrieval generalization."
+  ],
+  "runs": [
+    {
+      "archive": "results\\official_pilot_v1_regdb_official_agw_t1_s1",
+      "dataset": "regdb",
+      "variant": "agw",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 206,
+      "training_images": 4120,
+      "metrics_percent": {
+        "visible_to_infrared": {
+          "rank1": 46.019417475728154,
+          "rank5": 59.56310679611651,
+          "rank10": 66.79611650485437,
+          "mAP": 39.39795250653263,
+          "mINP": 25.344301791598074
+        },
+        "infrared_to_visible": {
+          "rank1": 43.398058252427184,
+          "rank5": 58.349514563106794,
+          "rank10": 65.92233009708738,
+          "mAP": 37.060902386072705,
+          "mINP": 23.004130127376737
+        },
+        "bidirectional_mean": {
+          "rank1": 44.70873786407767,
+          "rank5": 58.95631067961165,
+          "rank10": 66.35922330097088,
+          "mAP": 38.229427446302665,
+          "mINP": 24.174215959487405
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 8.073335100001714,
+        "peak_cuda_mib": 1118.7236328125,
+        "ce": 0.8574993832153268,
+        "wrt": 0.3076626114547253,
+        "extra": 0.0,
+        "total": 1.1651619993150235
+      },
+      "artifact_sha256": {
+        "config.json": "5bba15afd5197a2f7012e438b770c0b72364de20913c80f187229a96d4faed93",
+        "evaluation.json": "c76416c58480d28e150a7fd2b5171ce473abaf087be472ac6b6b973cbf94d83c",
+        "history.json": "116dec372f7f81a3a131ec687e611a449c931815e9499253bc82b47299cf90ef"
+      },
+      "local_checkpoint_sha256": "8f0d3bc6de5a1e6f19d39f8521d8201477db5d9b5c7b359b48ef1f79bb683d32"
+    },
+    {
+      "archive": "results\\official_pilot_v1_regdb_official_center_t1_s1",
+      "dataset": "regdb",
+      "variant": "center",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 206,
+      "training_images": 4120,
+      "metrics_percent": {
+        "visible_to_infrared": {
+          "rank1": 43.592233009708735,
+          "rank5": 58.009708737864074,
+          "rank10": 65.48543689320388,
+          "mAP": 38.5069103276195,
+          "mINP": 24.912306400774103
+        },
+        "infrared_to_visible": {
+          "rank1": 44.07766990291262,
+          "rank5": 59.126213592233015,
+          "rank10": 66.99029126213593,
+          "mAP": 38.256132440778174,
+          "mINP": 23.723335781815653
+        },
+        "bidirectional_mean": {
+          "rank1": 43.83495145631068,
+          "rank5": 58.567961165048544,
+          "rank10": 66.23786407766991,
+          "mAP": 38.381521384198834,
+          "mINP": 24.317821091294878
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 8.116893700000219,
+        "peak_cuda_mib": 1118.7236328125,
+        "ce": 0.9765575419762171,
+        "wrt": 0.28422081731259824,
+        "extra": 0.050909547600895166,
+        "total": 1.2709602750837803
+      },
+      "artifact_sha256": {
+        "config.json": "8c1c92aa70b0ba83419c32d832ea93fd7e4393badcbcc785db04b37bff08c3b5",
+        "evaluation.json": "7dbc6fb08c79d3bde3203b9b3728c128b6d251823cebfb3ad722e20e93fa819f",
+        "history.json": "2c660ff75d201cd768cf33ca9381b483895fc3916807a62b07bf8b950702a380"
+      },
+      "local_checkpoint_sha256": "d68e28292a62b64de8172d00b5cbde0c2222ee231f852c1a787eb0621e2ea24c"
+    },
+    {
+      "archive": "results\\official_pilot_v1_regdb_official_unbounded_t1_s1",
+      "dataset": "regdb",
+      "variant": "unbounded",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 206,
+      "training_images": 4120,
+      "metrics_percent": {
+        "visible_to_infrared": {
+          "rank1": 41.699029126213595,
+          "rank5": 56.26213592233009,
+          "rank10": 62.86407766990292,
+          "mAP": 37.62177741093479,
+          "mINP": 25.071214250223427
+        },
+        "infrared_to_visible": {
+          "rank1": 44.6116504854369,
+          "rank5": 56.84466019417476,
+          "rank10": 62.81553398058253,
+          "mAP": 38.69837174111108,
+          "mINP": 25.76812438201226
+        },
+        "bidirectional_mean": {
+          "rank1": 43.15533980582525,
+          "rank5": 56.55339805825243,
+          "rank10": 62.83980582524272,
+          "mAP": 38.160074576022936,
+          "mINP": 25.419669316117844
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 8.590421900000365,
+        "peak_cuda_mib": 1118.7236328125,
+        "ce": 0.9283594524487853,
+        "wrt": 0.276505084708333,
+        "extra": 1.1587122321128844,
+        "total": 1.4366070002317428,
+        "eligible_fraction": 1.0,
+        "mean_step": 0.5,
+        "capped_fraction": 0.0015625,
+        "boundary_violations": 0.075,
+        "virtual_pairs": 48.0
+      },
+      "artifact_sha256": {
+        "config.json": "c2898e0cdb587201e8561baa56d31c895759b2d5b13b6c30a3f7e3797c61e18e",
+        "evaluation.json": "ac8a1ee0f8cb0eff907244e96df740648bf20decd12a0b023458d116333d25ef",
+        "history.json": "87af82fbbba8d89b32b5767173d5178cba76e81e877804ab709c63ca2ed5d069"
+      },
+      "local_checkpoint_sha256": "ac2a15f3cafe86bac23473881ad292d08ec5f1a2d11f9634abff51e6c91beb4b"
+    },
+    {
+      "archive": "results\\official_pilot_v1_regdb_official_bcrt_t1_s1",
+      "dataset": "regdb",
+      "variant": "bcrt",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 206,
+      "training_images": 4120,
+      "metrics_percent": {
+        "visible_to_infrared": {
+          "rank1": 49.22330097087379,
+          "rank5": 63.398058252427184,
+          "rank10": 70.14563106796116,
+          "mAP": 42.56162843629795,
+          "mINP": 27.330417417037644
+        },
+        "infrared_to_visible": {
+          "rank1": 49.41747572815534,
+          "rank5": 64.32038834951457,
+          "rank10": 71.79611650485437,
+          "mAP": 42.2489807272303,
+          "mINP": 25.374124647377368
+        },
+        "bidirectional_mean": {
+          "rank1": 49.32038834951456,
+          "rank5": 63.85922330097088,
+          "rank10": 70.97087378640776,
+          "mAP": 42.40530458176413,
+          "mINP": 26.352271032207504
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 8.221850599999016,
+        "peak_cuda_mib": 1118.7236328125,
+        "ce": 1.1146523399627768,
+        "wrt": 0.2595732700079679,
+        "extra": 1.164960303902626,
+        "total": 1.6072176791727544,
+        "eligible_fraction": 1.0,
+        "mean_step": 0.49999976679682734,
+        "capped_fraction": 0.0005208333333333333,
+        "boundary_violations": 0.0,
+        "virtual_pairs": 48.0
+      },
+      "artifact_sha256": {
+        "config.json": "ecfc0fa9be5f3f7630ecde921d270d02da5e5796d983aa0059443c93e6bea13e",
+        "evaluation.json": "805313adac00a01c0fb9cd5d99ed45a656f4631243f89405508103df3e540013",
+        "history.json": "b56a6c5529747628758fb72ec0b62047e6d844389ec650cace39cf3ec5db04de"
+      },
+      "local_checkpoint_sha256": "06319d3c63474a467a6abff0c236316b86419ed1491c9bfcd97d2d30ec56a8be"
+    },
+    {
+      "archive": "results\\official_pilot_v1_sysu_official_agw_t1_s1",
+      "dataset": "sysu",
+      "variant": "agw",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 395,
+      "training_images": 34167,
+      "metrics_percent": {
+        "all_single_shot": {
+          "rank1": 5.082829345253748,
+          "rank5": 15.984748882461213,
+          "rank10": 25.59032342887194,
+          "mAP": 6.360714281510253,
+          "mINP": 2.59041425503758
+        },
+        "indoor_single_shot": {
+          "rank1": 7.151268115942029,
+          "rank5": 21.834239130434778,
+          "rank10": 34.52445652173913,
+          "mAP": 13.775501142653134,
+          "mINP": 11.361889324488235
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 8.062870999998268,
+        "peak_cuda_mib": 1124.7841796875,
+        "ce": 5.316230297088623,
+        "wrt": 0.6246659830212593,
+        "extra": 0.0,
+        "total": 5.940896290540695
+      },
+      "artifact_sha256": {
+        "config.json": "66217139aa9f0395d23fca78a9f1dc8aedaa3b8e74cf4f35e795baf91f43f16c",
+        "evaluation.json": "dd660139a80e5fe4bc732f75412f12c1feaf3064b115f3cc058f2687e2d23ab4",
+        "history.json": "99aa2232ff1981689fa46b23682e5846e3b373bfb10357ff03209ba44a3c1fe8"
+      },
+      "local_checkpoint_sha256": "1cd1ffdd46e1ee8d07d9e80629712d678da43976aef24c9c767462fd29146005"
+    },
+    {
+      "archive": "results\\official_pilot_v1_sysu_official_center_t1_s1",
+      "dataset": "sysu",
+      "variant": "center",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 395,
+      "training_images": 34167,
+      "metrics_percent": {
+        "all_single_shot": {
+          "rank1": 6.870891401525111,
+          "rank5": 20.144622666316064,
+          "rank10": 30.565343150144624,
+          "mAP": 7.957522327104942,
+          "mINP": 3.249352393529141
+        },
+        "indoor_single_shot": {
+          "rank1": 9.08514492753623,
+          "rank5": 25.91938405797102,
+          "rank10": 39.451992753623195,
+          "mAP": 16.214805862862598,
+          "mINP": 13.530300605114137
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 9.089760200000455,
+        "peak_cuda_mib": 1124.7841796875,
+        "ce": 5.290863931179047,
+        "wrt": 0.6269533485174179,
+        "extra": 0.020814525475725532,
+        "total": 5.921980202198029
+      },
+      "artifact_sha256": {
+        "config.json": "dbf3608666f322fe018f7f462cff923bb8d83fa5cdacb7b8e1fb0aa5260f5534",
+        "evaluation.json": "dfa123fa3a8e600dcde1b05054709d52300596a50624a1c0b2de83e6145229de",
+        "history.json": "d6b8017b9aae51b47b7743989c960882150b2fe3f2bac5c888a1c1ae6acdd245"
+      },
+      "local_checkpoint_sha256": "8b91733d7a72eedb186d54818e5971da02cf3dbb4f100352aed66f498ff773f2"
+    },
+    {
+      "archive": "results\\official_pilot_v1_sysu_official_unbounded_t1_s1",
+      "dataset": "sysu",
+      "variant": "unbounded",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 395,
+      "training_images": 34167,
+      "metrics_percent": {
+        "all_single_shot": {
+          "rank1": 6.481724953983696,
+          "rank5": 19.421509334735735,
+          "rank10": 30.226137260057843,
+          "mAP": 7.7970259115964575,
+          "mINP": 3.251875411788549
+        },
+        "indoor_single_shot": {
+          "rank1": 8.740942028985508,
+          "rank5": 25.16304347826087,
+          "rank10": 39.28442028985507,
+          "mAP": 15.755391946725,
+          "mINP": 13.049251336335328
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 8.224195100003271,
+        "peak_cuda_mib": 1124.7841796875,
+        "ce": 5.3376994132995605,
+        "wrt": 0.6262760266661644,
+        "extra": 1.3350392788648606,
+        "total": 6.23098326921463,
+        "eligible_fraction": 0.9984375,
+        "mean_step": 0.5,
+        "capped_fraction": 0.01979166666666667,
+        "boundary_violations": 1.2,
+        "virtual_pairs": 48.0
+      },
+      "artifact_sha256": {
+        "config.json": "78ca934adc9f490500785c9fb9238b3234b6ca4c91d591c74171151aabe5c131",
+        "evaluation.json": "8f70683392a28e6f910478bbb0a204a293f3b077a54d4cb6911be5d0e8f49986",
+        "history.json": "f43827fc80bbac1fa22331634de73ed70037fc0372a656ab3cc6b850af5bbbc9"
+      },
+      "local_checkpoint_sha256": "9e2a51a43baa6c8fda3c258a5b2295f54ea1a24f1451d26526b61402fd1caa4f"
+    },
+    {
+      "archive": "results\\official_pilot_v1_sysu_official_bcrt_t1_s1",
+      "dataset": "sysu",
+      "variant": "bcrt",
+      "epochs": 20,
+      "steps_per_epoch": 40,
+      "optimizer_updates": 800,
+      "training_ids": 395,
+      "training_images": 34167,
+      "metrics_percent": {
+        "all_single_shot": {
+          "rank1": 6.66841966868262,
+          "rank5": 20.71785432553247,
+          "rank10": 32.43491980015777,
+          "mAP": 8.091284301546073,
+          "mINP": 3.282475043128249
+        },
+        "indoor_single_shot": {
+          "rank1": 7.019927536231885,
+          "rank5": 22.622282608695656,
+          "rank10": 36.403985507246375,
+          "mAP": 14.109887503453594,
+          "mINP": 11.814712175206916
+        }
+      },
+      "last_epoch": {
+        "epoch": 20,
+        "steps": 40,
+        "lr_head": 0.02,
+        "skipped_updates": 0,
+        "amp_scale": 128.0,
+        "seconds": 8.45560530000148,
+        "peak_cuda_mib": 1124.7841796875,
+        "ce": 5.338851201534271,
+        "wrt": 0.6358134761452675,
+        "extra": 1.3368963092565536,
+        "total": 6.242043912410736,
+        "eligible_fraction": 0.9984375,
+        "mean_step": 0.49800716862082484,
+        "capped_fraction": 0.018263888888888892,
+        "boundary_violations": 0.0,
+        "virtual_pairs": 48.0
+      },
+      "artifact_sha256": {
+        "config.json": "aaa69d9778a968be9b1040f819d3b5484af1cb333142a69078679e565d9463d7",
+        "evaluation.json": "0d1fea5c33c3254d0d55b87a616362b6056f6b6243d552c4d399214adc9c3c85",
+        "history.json": "42cb85a27c36a38ae3ad1969f0ba2d87cfd09c7980820a2e9d1ae535bd2a1e63"
+      },
+      "local_checkpoint_sha256": "700f7ad886cd529e0762e5a550c1f176299765bda9c37ce9108a1620094e8c5f"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "archive": "RegDB数据集 (1).zip",
+    "archive_sha256": "b910cf626bdcccbbe3192d7e769aa7087952c601d34d0252c0c6fdf38b818e68",
+    "files": 9117,
+    "destination": "E:\\论文\\infrared_multimodal\\data\\regdb_archive",
+    "zip_crc": "passed",
+    "provenance": "User-provided local archive; not redistributed."
+  },
+  {
+    "archive": "SYSU-MM01.zip",
+    "archive_sha256": "413fbadcaffe5d03c07adcef8fc9a3def73b5fa395a17587774367abf6ec3d17",
+    "files": 48176,
+    "destination": "E:\\论文\\infrared_multimodal\\data\\sysu_archive",
+    "zip_crc": "passed",
+    "provenance": "User-provided local archive; not redistributed."
+  }
+]

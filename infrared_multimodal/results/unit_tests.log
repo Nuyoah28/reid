@@ -1,0 +1,45 @@
+test_forward_matches_active_upstream_layers (test_research.BaselineTests) ... ok
+
+test_triplet_matches_upstream (test_research.BaselineTests) ... E:\论文\infrared_multimodal\code\vendor\agw\loss.py:122: UserWarning: This overload of addmm_ is deprecated:
+
+	addmm_(Number beta, Number alpha, Tensor mat1, Tensor mat2)
+
+Consider using one of the following signatures instead:
+
+	addmm_(Tensor mat1, Tensor mat2, *, Number beta = 1, Number alpha = 1) (Triggered internally at C:\cb\pytorch_1000000000000\work\torch\csrc\utils\python_arg_parser.cpp:1642.)
+
+  dist_mtx = dist_mtx.addmm_(1, -2, emb1, emb2.t())
+
+ok
+
+test_exact_cap_and_margin_retention (test_research.GeometryTests) ... ok
+
+test_ineligible_and_safe_directions (test_research.GeometryTests) ... ok
+
+test_many_random_nonspherical_constraints (test_research.GeometryTests) ... ok
+
+test_no_eligible_samples_stays_finite (test_research.GeometryTests) ... ok
+
+test_paired_ids_required (test_research.GeometryTests) ... ok
+
+test_zero_residual_and_gradients (test_research.GeometryTests) ... ok
+
+test_identity_holdout (test_research.ProtocolTests) ... ok
+
+test_known_metrics_and_sysu_exclusion (test_research.ProtocolTests) ... ok
+
+test_metrics_equal_upstream (test_research.ProtocolTests) ... ok
+
+test_pk_order_and_determinism (test_research.ProtocolTests) ... ok
+
+test_regdb_independent_split_labels_use_original_identities (test_research.ProtocolTests) ... ok
+
+
+
+----------------------------------------------------------------------
+
+Ran 13 tests in 2.090s
+
+
+
+OK

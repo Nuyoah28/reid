@@ -1,0 +1,112 @@
+[
+  {
+    "编号": "R0030",
+    "标题": "BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification",
+    "年份": "2026",
+    "来源": "CVPR",
+    "CCF2026": "A",
+    "DOI": "10.48550/arxiv.2603.14243",
+    "PDF文件名": "R0030_A_2026_CVPR_BIT_Matching_based_Bi_directional_Interaction_Transformation_Network_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://openaccess.thecvf.com/content/CVPR2026/papers/Xu_BIT_Matching-based_Bi-directional_Interaction_Transformation_Network_for_Visible-Infrared_Person_Re-Identification_CVPR_2026_paper.pdf"
+  },
+  {
+    "编号": "R0031",
+    "标题": "MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID",
+    "年份": "2026",
+    "来源": "CVPR",
+    "CCF2026": "A",
+    "DOI": "",
+    "PDF文件名": "R0031_A_2026_CVPR_MFEN_Multi_Frequency_Expert_Network_for_Visible_Infrared_Person_Re_ID.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://openaccess.thecvf.com/content/CVPR2026/papers/Li_MFEN_Multi-Frequency_Expert_Network_for_Visible-Infrared_Person_Re-ID_CVPR_2026_paper.pdf"
+  },
+  {
+    "编号": "R0032",
+    "标题": "Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification",
+    "年份": "2026",
+    "来源": "CVPR",
+    "CCF2026": "A",
+    "DOI": "",
+    "PDF文件名": "R0032_A_2026_CVPR_Spatial_Frequency_Collaborative_Learning_for_Occluded_Visible_Infrared_Person_Re_Identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://openaccess.thecvf.com/content/CVPR2026/papers/Yu_Spatial-Frequency_Collaborative_Learning_for_Occluded_Visible-Infrared_Person_Re-Identification_CVPR_2026_paper.pdf"
+  },
+  {
+    "编号": "R0265",
+    "标题": "Frequency Domain Nuances Mining for Visible-Infrared Person Re-Identification",
+    "年份": "2025",
+    "来源": "TIFS",
+    "CCF2026": "A",
+    "DOI": "10.1109/tifs.2025.3569176",
+    "PDF文件名": "R0265_A_2025_TIFS_Frequency_Domain_Nuances_Mining_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://arxiv.org/pdf/2401.02162"
+  },
+  {
+    "编号": "R0370",
+    "标题": "Implicit Discriminative Knowledge Learning for Visible-Infrared Person Re-Identification",
+    "年份": "2024",
+    "来源": "CVPR",
+    "CCF2026": "A",
+    "DOI": "10.1109/cvpr52733.2024.00045",
+    "PDF文件名": "R0370_A_2024_CVPR_Implicit_Discriminative_Knowledge_Learning_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://openaccess.thecvf.com/content/CVPR2024/papers/Ren_Implicit_Discriminative_Knowledge_Learning_for_Visible-Infrared_Person_Re-Identification_CVPR_2024_paper.pdf"
+  },
+  {
+    "编号": "R0492",
+    "标题": "Prototype-Driven Multi-Feature Generation for Visible-Infrared Person Re-identification",
+    "年份": "2025",
+    "来源": "ICASSP",
+    "CCF2026": "B",
+    "DOI": "10.1109/icassp49660.2025.10889917",
+    "PDF文件名": "R0492_B_2025_ICASSP_Prototype_Driven_Multi_Feature_Generation_for_Visible_Infrared_Person_Re_identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://arxiv.org/pdf/2409.05642"
+  },
+  {
+    "编号": "R0493",
+    "标题": "Spectral Enhancement and Pseudo-Anchor Guidance for Infrared-Visible Person Re-Identification",
+    "年份": "2025",
+    "来源": "ICASSP",
+    "CCF2026": "B",
+    "DOI": "10.1109/icassp49660.2025.10890763",
+    "PDF文件名": "R0493_B_2025_ICASSP_Spectral_Enhancement_and_Pseudo_Anchor_Guidance_for_Infrared_Visible_Person_Re_Identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://arxiv.org/pdf/2412.19111"
+  },
+  {
+    "编号": "R0508",
+    "标题": "Base-Detail Feature Learning Framework for Visible-Infrared Person Re-Identification",
+    "年份": "2025",
+    "来源": "IJCAI",
+    "CCF2026": "B",
+    "DOI": "10.24963/ijcai.2025/116",
+    "PDF文件名": "R0508_B_2025_IJCAI_Base_Detail_Feature_Learning_Framework_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://ijcai.org/proceedings/2025/0116.pdf"
+  },
+  {
+    "编号": "R0590",
+    "标题": "Implicit Modality Knowledge Alignment and Uncertainty Estimation for visible-infrared person re-identification",
+    "年份": "2024",
+    "来源": "ESWA",
+    "CCF2026": "C",
+    "DOI": "10.1016/j.eswa.2024.125291",
+    "PDF文件名": "R0590_C_2024_ESWA_Implicit_Modality_Knowledge_Alignment_and_Uncertainty_Estimation_for_visible_infrared_person_re_identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://eu-st01.ext.exlibrisgroup.com/31UKB_LEU/storage/alma/70/69/79/BD/B4/56/EF/66/66/B5/BE/93/56/3B/56/68/1887_4252583_01.pdf?AccessRightAllowDownload=true&Expires=1793333522&Signature=DPpeX464bT3loDxPX1oL8WvhKgRhppqCIxC1JYO3eYgUb8bEDlXd~21kE1-DzQEkLjzCqFSzgD1wpWYY~I9ELzthg6Kdd0ilHu0EpdpU1eb14iNuxfvO8-Hc-5yBrQnPwkhC6FN7v7A2okuixFSFkTWFOEwIxTOMIakuiv2hq85lvoBQf6x-FqLke-RMpHMWinW0TiYAMVNdH0J7vyxnCxWMW~asvmZGA2lzERkfFGGhhGhpGm3Y-Yo5pNN3m34XZJZ97bEu6QkWUBvgBiEs~YxJ-mwt-6XFri2~8Yy1E6flst8MqLJq994AHPZuhvOqR56Kd7FDg1TL~F5sK5Hg-w__&Key-Pair-Id=APKAJ72OZCZ36VGVASIA"
+  },
+  {
+    "编号": "R0599",
+    "标题": "WRIM-Net: Wide-Ranging Information Mining Network for Visible-Infrared Person Re-Identification",
+    "年份": "2024",
+    "来源": "ECCV",
+    "CCF2026": "B",
+    "DOI": "10.1007/978-3-031-73668-1_4",
+    "PDF文件名": "R0599_B_2024_ECCV_WRIM_Net_Wide_Ranging_Information_Mining_Network_for_Visible_Infrared_Person_Re_Identification.pdf",
+    "状态": "已下载",
+    "PDF下载来源": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/06947.pdf"
+  }
+]

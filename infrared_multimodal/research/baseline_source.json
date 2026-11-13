@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/mangye16/Cross-Modal-Re-ID-baseline",
+  "commit": "e817a2672c1e14e8802617acb980a79520ef9545",
+  "local_clone": "code/upstream/agw",
+  "tracked_vendor_copy": "code/vendor/agw",
+  "license": "MIT",
+  "scope": "Active AGW model, ResNet-50 bottleneck, training/evaluation/loss/data utilities; full upstream clone retained locally but ignored as a nested Git checkout.",
+  "adaptations": [
+    "Removed unused duplicate ResNet-50 model instances while keeping active modules and state mapping.",
+    "Adapted raw-image RegDB and SYSU-MM01 loaders and official evaluation protocols.",
+    "Kept both independent visible/infrared stems and shared stages, all five active non-local blocks, and upstream inter_channels=1.",
+    "Reproduced AGW weighted regularized triplet, including its 1e-6 softmax denominator.",
+    "Added deterministic P-K sampling, identity-disjoint development split, AMP, checkpoint resume and BCRT research variants."
+  ],
+  "verification": "Numerical model outputs, pool features, AGW weighted triplet and retrieval metrics checked against vendored upstream implementation; see code/tests/test_research.py.",
+  "upstream_reference_results": {
+    "sysu_all_rank1_map_percent": [47.50, 47.65],
+    "sysu_indoor_rank1_map_percent": [54.17, 62.97],
+    "regdb_visible_to_infrared_rank1_map_percent": [70.05, 66.37],
+    "regdb_infrared_to_visible_rank1_map_percent": [70.49, 65.90]
+  },
+  "reference_note": "Reported in the upstream README and MFEN CVPR 2026 Table 1; not a claim that the present short-run implementation reproduces them."
+}

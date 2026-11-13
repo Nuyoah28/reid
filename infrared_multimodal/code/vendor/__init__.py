@@ -1,0 +1,1 @@
+"""Pinned, licensed upstream snapshots."""

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "R0030",
+    "title_catalogue": "BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification",
+    "pages": 11,
+    "pdf_sha256": "33890212659e66fb62e4888a6e5f6eddc804db39ad3efb2bd2061b109f155995",
+    "scope": "full text",
+    "filename": "R0030_A_2026_CVPR_BIT_Matching_based_Bi_directional_Interaction_Transformation_Network_for_Visible_Infrared_Person_Re_Identification.pdf"
+  },
+  {
+    "id": "R0031",
+    "title_catalogue": "MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID",
+    "pages": 10,
+    "pdf_sha256": "a1d11400af44c7a2bf4108850a8dfdf3a1ab80b33ab33f5c0d8a438fcff057b7",
+    "scope": "full text",
+    "filename": "R0031_A_2026_CVPR_MFEN_Multi_Frequency_Expert_Network_for_Visible_Infrared_Person_Re_ID.pdf"
+  },
+  {
+    "id": "R0032",
+    "title_catalogue": "Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification",
+    "pages": 10,
+    "pdf_sha256": "316ac4fb54b5ad3641bdbc59bf08038cbf5630f78a57d43a54326e0b8a7aff5d",
+    "scope": "full text",
+    "filename": "R0032_A_2026_CVPR_Spatial_Frequency_Collaborative_Learning_for_Occluded_Visible_Infrared_Person_Re_Identification.pdf"
+  },
+  {
+    "id": "R0265",
+    "title_catalogue": "Frequency Domain Nuances Mining for Visible-Infrared Person Re-Identification",
+    "pages": 13,
+    "pdf_sha256": "9e0652c852b425e633db3245e6a60ef97b7e9bb1c332f2a9bc275733e524c4eb",
+    "scope": "full text",
+    "filename": "R0265_A_2025_TIFS_Frequency_Domain_Nuances_Mining_for_Visible_Infrared_Person_Re_Identification.pdf"
+  },
+  {
+    "id": "R0370",
+    "title_catalogue": "Implicit Discriminative Knowledge Learning for Visible-Infrared Person Re-Identification",
+    "pages": 10,
+    "pdf_sha256": "9ade2336c18191f6b4472e58f553e366937e59bea75ed9070ebf38ee332ded71",
+    "scope": "full text",
+    "filename": "R0370_A_2024_CVPR_Implicit_Discriminative_Knowledge_Learning_for_Visible_Infrared_Person_Re_Identification.pdf"
+  },
+  {
+    "id": "R0492",
+    "title_catalogue": "Prototype-Driven Multi-Feature Generation for Visible-Infrared Person Re-identification",
+    "pages": 7,
+    "pdf_sha256": "57ea9859a8a538f0cb89729dab5767f4890a4c16e0aa0a27d191b0b64f332140",
+    "scope": "full text",
+    "filename": "R0492_B_2025_ICASSP_Prototype_Driven_Multi_Feature_Generation_for_Visible_Infrared_Person_Re_identification.pdf"
+  },
+  {
+    "id": "R0493",
+    "title_catalogue": "Spectral Enhancement and Pseudo-Anchor Guidance for Infrared-Visible Person Re-Identification",
+    "pages": 5,
+    "pdf_sha256": "d22b62f5814d1e4cfed06aacb14879ff7f075330285efc771d658aba648e9b8a",
+    "scope": "full text",
+    "filename": "R0493_B_2025_ICASSP_Spectral_Enhancement_and_Pseudo_Anchor_Guidance_for_Infrared_Visible_Person_Re_Identification.pdf"
+  },
+  {
+    "id": "R0508",
+    "title_catalogue": "Base-Detail Feature Learning Framework for Visible-Infrared Person Re-Identification",
+    "pages": 9,
+    "pdf_sha256": "c19f97121239b52ec88b0b2b7fc8250431bbac79294bd1651546cfde20a2de63",
+    "scope": "full text",
+    "filename": "R0508_B_2025_IJCAI_Base_Detail_Feature_Learning_Framework_for_Visible_Infrared_Person_Re_Identification.pdf"
+  },
+  {
+    "id": "R0590",
+    "title_catalogue": "Implicit Modality Knowledge Alignment and Uncertainty Estimation for visible-infrared person re-identification",
+    "pages": 14,
+    "pdf_sha256": "f785bbc763762c3ed13640eb70ce52bc1334ed19a989b091068b72974d00e31e",
+    "scope": "full text",
+    "filename": "R0590_C_2024_ESWA_Implicit_Modality_Knowledge_Alignment_and_Uncertainty_Estimation_for_visible_infrared_person_re_identification.pdf"
+  },
+  {
+    "id": "R0599",
+    "title_catalogue": "WRIM-Net: Wide-Ranging Information Mining Network for Visible-Infrared Person Re-Identification",
+    "pages": 18,
+    "pdf_sha256": "efe50078ac30dac15821403d31dc5fd5fbb30c16aa9d53de7b87ae70b070e221",
+    "scope": "full text",
+    "filename": "R0599_B_2024_ECCV_WRIM_Net_Wide_Ranging_Information_Mining_Network_for_Visible_Infrared_Person_Re_Identification.pdf"
+  }
+]

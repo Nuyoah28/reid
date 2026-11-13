@@ -1,0 +1,33 @@
+{
+  "checkpoint": "E:\\\u8bba\u6587\\infrared_multimodal\\runs\\official_pilot_v1_regdb_official_bcrt_t1_s1\\last.pt",
+  "epoch": 20,
+  "dataset": "regdb",
+  "protocol": "official",
+  "trial": 1,
+  "feature": "L2 normalized BNNeck, cosine",
+  "reranking": false,
+  "test_flip": false,
+  "units": "fractions (multiply by 100 for percentage)",
+  "results": {
+    "visible_to_infrared": {
+      "rank1": 0.49223300970873785,
+      "rank5": 0.6339805825242718,
+      "rank10": 0.7014563106796117,
+      "mAP": 0.4256162843629795,
+      "mINP": 0.27330417417037645,
+      "queries": 2060,
+      "valid_queries": 2060,
+      "gallery": 2060
+    },
+    "infrared_to_visible": {
+      "rank1": 0.4941747572815534,
+      "rank5": 0.6432038834951457,
+      "rank10": 0.7179611650485437,
+      "mAP": 0.42248980727230295,
+      "mINP": 0.25374124647377366,
+      "queries": 2060,
+      "valid_queries": 2060,
+      "gallery": 2060
+    }
+  }
+}

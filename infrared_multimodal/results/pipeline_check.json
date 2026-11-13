@@ -1,0 +1,175 @@
+{
+  "kind": "SYNTHETIC_PIPELINE_CHECK_NOT_BENCHMARK",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "input": [
+    16,
+    3,
+    288,
+    144
+  ],
+  "P": 4,
+  "K_per_modality": 2,
+  "variants": {
+    "agw": {
+      "steps": [
+        {
+          "ce": 5.315149307250977,
+          "wrt": 0.844707727432251,
+          "extra": 0.0,
+          "total": 6.159856796264648
+        },
+        {
+          "ce": 5.306906700134277,
+          "wrt": 0.7113490700721741,
+          "extra": 0.0,
+          "total": 6.018255710601807
+        },
+        {
+          "ce": 5.293827533721924,
+          "wrt": 0.6946138143539429,
+          "extra": 0.0,
+          "total": 5.988441467285156
+        }
+      ],
+      "finite_gradients": true,
+      "parameters_changed": true,
+      "seconds_3_steps": 2.100399399998423,
+      "peak_allocated_mib": 1028.7255859375,
+      "parameters_with_206_classes": 23972239
+    },
+    "center": {
+      "steps": [
+        {
+          "ce": 5.315149307250977,
+          "wrt": 0.844707727432251,
+          "extra": 0.006148010026663542,
+          "total": 6.161086559295654
+        },
+        {
+          "ce": 5.306331157684326,
+          "wrt": 0.7118874788284302,
+          "extra": 0.005900089163333178,
+          "total": 6.0193986892700195
+        },
+        {
+          "ce": 5.284524917602539,
+          "wrt": 0.7649627923965454,
+          "extra": 0.006044479086995125,
+          "total": 6.05069637298584
+        }
+      ],
+      "finite_gradients": true,
+      "parameters_changed": true,
+      "seconds_3_steps": 0.9017133000015747,
+      "peak_allocated_mib": 1028.3583984375,
+      "parameters_with_206_classes": 23972239
+    },
+    "unbounded": {
+      "steps": [
+        {
+          "ce": 5.315149307250977,
+          "wrt": 0.844707727432251,
+          "extra": 1.3743510246276855,
+          "total": 6.434727191925049,
+          "eligible_fraction": 1.0,
+          "mean_step": 0.5,
+          "capped_fraction": 0.0,
+          "boundary_violations": 0.0,
+          "virtual_pairs": 48
+        },
+        {
+          "ce": 5.306095600128174,
+          "wrt": 0.7165039777755737,
+          "extra": 1.3744850158691406,
+          "total": 6.297496795654297,
+          "eligible_fraction": 1.0,
+          "mean_step": 0.5,
+          "capped_fraction": 0.0,
+          "boundary_violations": 0.0,
+          "virtual_pairs": 48
+        },
+        {
+          "ce": 5.289017677307129,
+          "wrt": 0.7858569025993347,
+          "extra": 1.3748153448104858,
+          "total": 6.349837303161621,
+          "eligible_fraction": 1.0,
+          "mean_step": 0.5,
+          "capped_fraction": 0.0,
+          "boundary_violations": 0.0,
+          "virtual_pairs": 48
+        }
+      ],
+      "finite_gradients": true,
+      "parameters_changed": true,
+      "seconds_3_steps": 0.7382066999998642,
+      "peak_allocated_mib": 1026.3583984375,
+      "parameters_with_206_classes": 23972239
+    },
+    "bcrt": {
+      "steps": [
+        {
+          "ce": 5.315149307250977,
+          "wrt": 0.844707727432251,
+          "extra": 1.3743510246276855,
+          "total": 6.434727191925049,
+          "eligible_fraction": 1.0,
+          "mean_step": 0.5,
+          "capped_fraction": 0.0,
+          "boundary_violations": 0.0,
+          "virtual_pairs": 48
+        },
+        {
+          "ce": 5.306095600128174,
+          "wrt": 0.7165039777755737,
+          "extra": 1.3744850158691406,
+          "total": 6.297496795654297,
+          "eligible_fraction": 1.0,
+          "mean_step": 0.5,
+          "capped_fraction": 0.0,
+          "boundary_violations": 0.0,
+          "virtual_pairs": 48
+        },
+        {
+          "ce": 5.289017677307129,
+          "wrt": 0.7858569025993347,
+          "extra": 1.3748153448104858,
+          "total": 6.349837303161621,
+          "eligible_fraction": 1.0,
+          "mean_step": 0.5,
+          "capped_fraction": 0.0,
+          "boundary_violations": 0.0,
+          "virtual_pairs": 48
+        }
+      ],
+      "finite_gradients": true,
+      "parameters_changed": true,
+      "seconds_3_steps": 0.7312970999992103,
+      "peak_allocated_mib": 1027.8037109375,
+      "parameters_with_206_classes": 23972239
+    }
+  },
+  "inference": {
+    "batch": 1,
+    "amp_fp16": true,
+    "iterations": 80,
+    "mean_ms": 17.082983750015046,
+    "excludes": "image I/O and retrieval; random initialization; no accuracy meaning"
+  },
+  "analytic_case": {
+    "initial_margin": 0.6,
+    "unbounded_step": 0.5,
+    "unbounded_margin": -1.4,
+    "bounded_step": 0.07500000298023224,
+    "bounded_margin": 0.3,
+    "scope": "Fixed unnormalized Euclidean prototypes only; no classifier/generalization guarantee."
+  },
+  "source_hashes": {
+    "code\\data.py": "a7001100a753c607dd664e9a4c0e0b6362e84ff222b1dbc7e98dc416c22313e4",
+    "code\\evaluate.py": "05aaa2656953e99da9e4327ca2c201648713404e05314bb34d99ab147754fb3e",
+    "code\\metrics.py": "1431c8029f9fd956882a546617874363f5bc7bed074c8a21f9d07a12fd8f7ed4",
+    "code\\model.py": "5ed70c84b92f73c7d36d6941a0181a962a37a3f24e9ac8a97a224560dcb1b925",
+    "code\\objectives.py": "5475aa09cf64ba6507ea2aef86fbbaa73cd53040f2ec8b2594be03b48add8d99",
+    "code\\train.py": "fe87510dfac6d9b6af63713c73424c00e531457ef9bb1012f626cf3ff332b5ee"
+  }
+}

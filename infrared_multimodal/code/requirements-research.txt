@@ -1,0 +1,5 @@
+# Existing mmi-unet packages; do not reinstall the upstream requirements wholesale.
+torch==2.5.0
+torchvision==0.20.0
+numpy==1.26.4
+Pillow==10.4.0

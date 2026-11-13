@@ -1,0 +1,3547 @@
+[
+  {
+    "module": "visible.0",
+    "type": "Conv2d",
+    "spec": "3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False",
+    "input": [
+      [
+        1,
+        3,
+        288,
+        144
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      144,
+      72
+    ]
+  },
+  {
+    "module": "visible.1",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        1,
+        64,
+        144,
+        72
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      144,
+      72
+    ]
+  },
+  {
+    "module": "visible.2",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        1,
+        64,
+        144,
+        72
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      144,
+      72
+    ]
+  },
+  {
+    "module": "visible.3",
+    "type": "MaxPool2d",
+    "spec": "kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False",
+    "input": [
+      [
+        1,
+        64,
+        144,
+        72
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "thermal.0",
+    "type": "Conv2d",
+    "spec": "3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False",
+    "input": [
+      [
+        1,
+        3,
+        288,
+        144
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      144,
+      72
+    ]
+  },
+  {
+    "module": "thermal.1",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        1,
+        64,
+        144,
+        72
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      144,
+      72
+    ]
+  },
+  {
+    "module": "thermal.2",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        1,
+        64,
+        144,
+        72
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      144,
+      72
+    ]
+  },
+  {
+    "module": "thermal.3",
+    "type": "MaxPool2d",
+    "spec": "kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False",
+    "input": [
+      [
+        1,
+        64,
+        144,
+        72
+      ]
+    ],
+    "output": [
+      1,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.conv1",
+    "type": "Conv2d",
+    "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.bn1",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.conv2",
+    "type": "Conv2d",
+    "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.bn2",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.conv3",
+    "type": "Conv2d",
+    "spec": "64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.bn3",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.downsample.0",
+    "type": "Conv2d",
+    "spec": "64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.downsample.1",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.conv1",
+    "type": "Conv2d",
+    "spec": "256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.bn1",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.conv2",
+    "type": "Conv2d",
+    "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.bn2",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.conv3",
+    "type": "Conv2d",
+    "spec": "64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.bn3",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.conv1",
+    "type": "Conv2d",
+    "spec": "256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.bn1",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.conv2",
+    "type": "Conv2d",
+    "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.bn2",
+    "type": "BatchNorm2d",
+    "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      64,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.conv3",
+    "type": "Conv2d",
+    "spec": "64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        64,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.bn3",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.0.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.1.0.conv1",
+    "type": "Conv2d",
+    "spec": "256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.1.0.bn1",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.1.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      72,
+      36
+    ]
+  },
+  {
+    "module": "stages.1.0.conv2",
+    "type": "Conv2d",
+    "spec": "128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.0.bn2",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.0.conv3",
+    "type": "Conv2d",
+    "spec": "128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.0.bn3",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.0.downsample.0",
+    "type": "Conv2d",
+    "spec": "256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        72,
+        36
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.0.downsample.1",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.conv1",
+    "type": "Conv2d",
+    "spec": "512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.bn1",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.conv2",
+    "type": "Conv2d",
+    "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.bn2",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.conv3",
+    "type": "Conv2d",
+    "spec": "128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.bn3",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.conv1",
+    "type": "Conv2d",
+    "spec": "512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.bn1",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.conv2",
+    "type": "Conv2d",
+    "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.bn2",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.conv3",
+    "type": "Conv2d",
+    "spec": "128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.bn3",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b3.theta",
+    "type": "Conv2d",
+    "spec": "512, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b3.phi",
+    "type": "Conv2d",
+    "spec": "512, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b3.g",
+    "type": "Conv2d",
+    "spec": "512, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b3.out.0",
+    "type": "Conv2d",
+    "spec": "1, 512, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b3.out.1",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.conv1",
+    "type": "Conv2d",
+    "spec": "512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.bn1",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.conv2",
+    "type": "Conv2d",
+    "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.bn2",
+    "type": "BatchNorm2d",
+    "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      128,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.conv3",
+    "type": "Conv2d",
+    "spec": "128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        128,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.bn3",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.1.3.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b4.theta",
+    "type": "Conv2d",
+    "spec": "512, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b4.phi",
+    "type": "Conv2d",
+    "spec": "512, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b4.g",
+    "type": "Conv2d",
+    "spec": "512, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b4.out.0",
+    "type": "Conv2d",
+    "spec": "1, 512, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s2b4.out.1",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.2.0.conv1",
+    "type": "Conv2d",
+    "spec": "512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.2.0.bn1",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.2.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      36,
+      18
+    ]
+  },
+  {
+    "module": "stages.2.0.conv2",
+    "type": "Conv2d",
+    "spec": "256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.0.bn2",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.0.conv3",
+    "type": "Conv2d",
+    "spec": "256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.0.bn3",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.0.downsample.0",
+    "type": "Conv2d",
+    "spec": "512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        36,
+        18
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.0.downsample.1",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.conv1",
+    "type": "Conv2d",
+    "spec": "1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.bn1",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.conv2",
+    "type": "Conv2d",
+    "spec": "256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.bn2",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.conv3",
+    "type": "Conv2d",
+    "spec": "256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.bn3",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.conv1",
+    "type": "Conv2d",
+    "spec": "1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.bn1",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.conv2",
+    "type": "Conv2d",
+    "spec": "256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.bn2",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.conv3",
+    "type": "Conv2d",
+    "spec": "256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.bn3",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.conv1",
+    "type": "Conv2d",
+    "spec": "1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.bn1",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.conv2",
+    "type": "Conv2d",
+    "spec": "256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.bn2",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.conv3",
+    "type": "Conv2d",
+    "spec": "256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.bn3",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.3.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b4.theta",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b4.phi",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b4.g",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b4.out.0",
+    "type": "Conv2d",
+    "spec": "1, 1024, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b4.out.1",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.conv1",
+    "type": "Conv2d",
+    "spec": "1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.bn1",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.conv2",
+    "type": "Conv2d",
+    "spec": "256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.bn2",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.conv3",
+    "type": "Conv2d",
+    "spec": "256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.bn3",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.4.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b5.theta",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b5.phi",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b5.g",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b5.out.0",
+    "type": "Conv2d",
+    "spec": "1, 1024, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b5.out.1",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.conv1",
+    "type": "Conv2d",
+    "spec": "1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.bn1",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.conv2",
+    "type": "Conv2d",
+    "spec": "256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.bn2",
+    "type": "BatchNorm2d",
+    "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      256,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.conv3",
+    "type": "Conv2d",
+    "spec": "256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        256,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.bn3",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.2.5.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b6.theta",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b6.phi",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b6.g",
+    "type": "Conv2d",
+    "spec": "1024, 1, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b6.out.0",
+    "type": "Conv2d",
+    "spec": "1, 1024, kernel_size=(1, 1), stride=(1, 1)",
+    "input": [
+      [
+        2,
+        1,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "nonlocal_blocks.s3b6.out.1",
+    "type": "BatchNorm2d",
+    "spec": "1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      1024,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.conv1",
+    "type": "Conv2d",
+    "spec": "1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.bn1",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.conv2",
+    "type": "Conv2d",
+    "spec": "512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.bn2",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.conv3",
+    "type": "Conv2d",
+    "spec": "512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.bn3",
+    "type": "BatchNorm2d",
+    "spec": "2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.downsample.0",
+    "type": "Conv2d",
+    "spec": "1024, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        1024,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.downsample.1",
+    "type": "BatchNorm2d",
+    "spec": "2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.0.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.conv1",
+    "type": "Conv2d",
+    "spec": "2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.bn1",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.conv2",
+    "type": "Conv2d",
+    "spec": "512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.bn2",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.conv3",
+    "type": "Conv2d",
+    "spec": "512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.bn3",
+    "type": "BatchNorm2d",
+    "spec": "2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.1.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.conv1",
+    "type": "Conv2d",
+    "spec": "2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.bn1",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.conv2",
+    "type": "Conv2d",
+    "spec": "512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.bn2",
+    "type": "BatchNorm2d",
+    "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      512,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.conv3",
+    "type": "Conv2d",
+    "spec": "512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False",
+    "input": [
+      [
+        2,
+        512,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.bn3",
+    "type": "BatchNorm2d",
+    "spec": "2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "stages.3.2.relu",
+    "type": "ReLU",
+    "spec": "inplace=True",
+    "input": [
+      [
+        2,
+        2048,
+        18,
+        9
+      ]
+    ],
+    "output": [
+      2,
+      2048,
+      18,
+      9
+    ]
+  },
+  {
+    "module": "neck",
+    "type": "BatchNorm1d",
+    "spec": "2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+    "input": [
+      [
+        2,
+        2048
+      ]
+    ],
+    "output": [
+      2,
+      2048
+    ]
+  },
+  {
+    "module": "classifier",
+    "type": "Linear",
+    "spec": "in_features=2048, out_features=206, bias=False",
+    "input": [
+      [
+        2,
+        2048
+      ]
+    ],
+    "output": [
+      2,
+      206
+    ]
+  }
+]

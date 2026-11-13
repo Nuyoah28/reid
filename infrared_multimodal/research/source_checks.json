@@ -1,0 +1,57 @@
+[
+  {
+    "source": "R0030_cvf",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xu_BIT_Matching-based_Bi-directional_Interaction_Transformation_Network_for_Visible-Infrared_Person_Re-Identification_CVPR_2026_paper.html",
+    "status": 200,
+    "bytes": 6359,
+    "sha256": "91f49f0d37e1a5c24e5f94e318c6742506583042074a91c4e8d6ea08f464e137",
+    "title": "CVPR 2026 Open Access Repository",
+    "checked_utc": "2026-11-13T12:06:06.334527+00:00"
+  },
+  {
+    "source": "R0031_cvf",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Li_MFEN_Multi-Frequency_Expert_Network_for_Visible-Infrared_Person_Re-ID_CVPR_2026_paper.html",
+    "status": 200,
+    "bytes": 6385,
+    "sha256": "670ec0ebaa5bee6428d0b31951772b50172d6487a4686528ed077452186954f0",
+    "title": "CVPR 2026 Open Access Repository",
+    "checked_utc": "2026-11-13T12:06:08.480623+00:00"
+  },
+  {
+    "source": "R0032_cvf",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Yu_Spatial-Frequency_Collaborative_Learning_for_Occluded_Visible-Infrared_Person_Re-Identification_CVPR_2026_paper.html",
+    "status": 200,
+    "bytes": 6692,
+    "sha256": "c7bc70407810deb3a9190001ebb8c64186ac72ae362e415d197e219dfafadb44",
+    "title": "CVPR 2026 Open Access Repository",
+    "checked_utc": "2026-11-13T12:06:07.253756+00:00"
+  },
+  {
+    "source": "AGW_abstract",
+    "url": "https://arxiv.org/abs/2001.04193",
+    "status": 200,
+    "bytes": 43545,
+    "sha256": "bf1c7fbf68e07341a1e23dbde985ffc889633b7a15971120408b1b1227d4be74",
+    "title": "[2001.04193] Deep Learning for Person Re-identification: A Survey and Outlook",
+    "checked_utc": "2026-11-13T12:06:09.035652+00:00"
+  },
+  {
+    "source": "AGW_paper",
+    "url": "https://arxiv.org/pdf/2001.04193",
+    "error": "The read operation timed out"
+  },
+  {
+    "source": "SYSU_official",
+    "url": "https://isee-ai.cn/project/RGBIRReID.html",
+    "status": 200,
+    "bytes": 9292,
+    "sha256": "dacc7ebd10deb5a75e090189f6dcba82fa684c731d45cc08ddb76209765d5c7d",
+    "title": "Project RGB-IR Re-ID",
+    "checked_utc": "2026-11-13T12:06:06.641557+00:00"
+  },
+  {
+    "source": "RegDB_official",
+    "url": "https://dm.dongguk.edu/link.html",
+    "error": "<urlopen error [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。>"
+  }
+]

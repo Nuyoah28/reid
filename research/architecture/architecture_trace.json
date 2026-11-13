@@ -1,0 +1,8672 @@
+{
+  "variant": "full",
+  "input": [
+    1,
+    3,
+    256,
+    128
+  ],
+  "classes": 751,
+  "trace_mode": "CPU eval + inference_mode, details=True, no weights loaded",
+  "note": "Classifier is called by details=True for training details, but not by the deployed normalized-embedding forward. Leaf module hooks omit functional ops. ChannelGate is shared across four branches within each OSBlock; calls repeat without new weights.",
+  "source_sha256": {
+    "code\\reid\\model.py": "c23038b2a4914f553bb79b46328bb553130e158b8ae004d7a1fe9957ffb64123",
+    "code\\reid\\occlusion.py": "a43c4aec28f76871adcc2fcce936ce6a30fe19a3da6b8acd3708a56bea4c4443",
+    "code\\train.py": "308753d701852d835bd42b3eea47a5aff252fbc860a02f1263e3d170e8e8b989",
+    "code\\reid\\data.py": "5fbe37d101686585b3dd3c5bf799d40f10552156b0f05c7d77d732780eeab89d",
+    "code\\reid\\losses.py": "dd2f50ca8b1f70f69d8103457c4320f32e1e11d774d1baf4c89003c0c4fbf5bd",
+    "code\\deep-person-reid\\torchreid\\models\\osnet.py": "887a1365a26787fcce3e5c2f69262439e7ebf47f4e454bfc2a6387b52cd56e0f"
+  },
+  "parameters": {
+    "including_classifier": 2571572,
+    "classifier": 385263,
+    "inference": 2186309,
+    "reliability_head": 16801
+  },
+  "stored_module_types": {
+    "OcclusionOSNet": 1,
+    "ConvLayer": 1,
+    "Conv2d": 154,
+    "BatchNorm2d": 79,
+    "ReLU": 77,
+    "MaxPool2d": 1,
+    "Sequential": 25,
+    "OSBlock": 6,
+    "Conv1x1": 9,
+    "LightConv3x3": 60,
+    "ChannelGate": 6,
+    "AdaptiveAvgPool2d": 7,
+    "Sigmoid": 6,
+    "Conv1x1Linear": 9,
+    "AvgPool2d": 2,
+    "Linear": 2,
+    "BatchNorm1d": 1,
+    "GroupNorm": 1,
+    "SiLU": 2
+  },
+  "executed_leaf_types": {
+    "Conv2d": 190,
+    "BatchNorm2d": 79,
+    "ReLU": 95,
+    "MaxPool2d": 1,
+    "AdaptiveAvgPool2d": 24,
+    "Sigmoid": 24,
+    "AvgPool2d": 2,
+    "GroupNorm": 1,
+    "SiLU": 2,
+    "Linear": 2,
+    "BatchNorm1d": 1
+  },
+  "stages": [
+    {
+      "module": "conv1",
+      "type": "ConvLayer",
+      "spec": "",
+      "input": [
+        [
+          1,
+          3,
+          256,
+          128
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        128,
+        64
+      ],
+      "parameters": 9536
+    },
+    {
+      "module": "maxpool",
+      "type": "MaxPool2d",
+      "spec": "kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False",
+      "input": [
+        [
+          1,
+          64,
+          128,
+          64
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2",
+      "type": "Sequential",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        32,
+        16
+      ],
+      "parameters": 234632
+    },
+    {
+      "module": "conv3",
+      "type": "Sequential",
+      "spec": "",
+      "input": [
+        [
+          1,
+          256,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        16,
+        8
+      ],
+      "parameters": 592332
+    },
+    {
+      "module": "conv4",
+      "type": "Sequential",
+      "spec": "",
+      "input": [
+        [
+          1,
+          384,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 806160
+    },
+    {
+      "module": "conv5",
+      "type": "Conv1x1",
+      "spec": "",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 263168
+    },
+    {
+      "module": "reliability",
+      "type": "Sequential",
+      "spec": "",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "parameters": 16801
+    },
+    {
+      "module": "fc",
+      "type": "Sequential",
+      "spec": "",
+      "input": [
+        [
+          1,
+          512
+        ]
+      ],
+      "output": [
+        1,
+        512
+      ],
+      "parameters": 263680
+    },
+    {
+      "module": "classifier",
+      "type": "Linear",
+      "spec": "in_features=512, out_features=751, bias=True",
+      "input": [
+        [
+          1,
+          512
+        ]
+      ],
+      "output": [
+        1,
+        751
+      ],
+      "parameters": 385263
+    }
+  ],
+  "outputs": {
+    "maps": [
+      1,
+      512,
+      16,
+      8
+    ],
+    "raw": [
+      1,
+      512
+    ],
+    "features": [
+      1,
+      512
+    ],
+    "logits": [
+      1,
+      751
+    ],
+    "reliability_logits": [
+      1,
+      1,
+      16,
+      8
+    ],
+    "weights": [
+      1,
+      1,
+      16,
+      8
+    ]
+  },
+  "leaf_calls": [
+    {
+      "module": "conv1.conv",
+      "type": "Conv2d",
+      "spec": "3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False",
+      "input": [
+        [
+          1,
+          3,
+          256,
+          128
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        128,
+        64
+      ],
+      "parameters": 9408
+    },
+    {
+      "module": "conv1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          128,
+          64
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        128,
+        64
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          128,
+          64
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        128,
+        64
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "maxpool",
+      "type": "MaxPool2d",
+      "spec": "kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False",
+      "input": [
+        [
+          1,
+          64,
+          128,
+          64
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv1.conv",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2a.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2a.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2a.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2a.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2b.0.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2b.0.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2b.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2b.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2b.1.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2b.1.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2b.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2b.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2c.0.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2c.0.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2c.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2c.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2c.1.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2c.1.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2c.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2c.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2c.2.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2c.2.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2c.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2c.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2d.0.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2d.0.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2d.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2d.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2d.1.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2d.1.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2d.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2d.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2d.2.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2d.2.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2d.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2d.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv2d.3.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.0.conv2d.3.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.0.conv2d.3.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.0.conv2d.3.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.0.conv3.conv",
+      "type": "Conv2d",
+      "spec": "64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv2.0.conv3.bn",
+      "type": "BatchNorm2d",
+      "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 512
+    },
+    {
+      "module": "conv2.0.downsample.conv",
+      "type": "Conv2d",
+      "spec": "64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv2.0.downsample.bn",
+      "type": "BatchNorm2d",
+      "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 512
+    },
+    {
+      "module": "conv2.1.conv1.conv",
+      "type": "Conv2d",
+      "spec": "256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv2.1.conv1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2a.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2a.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2a.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2a.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2b.0.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2b.0.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2b.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2b.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2b.1.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2b.1.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2b.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2b.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2c.0.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2c.0.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2c.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2c.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2c.1.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2c.1.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2c.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2c.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2c.2.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2c.2.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2c.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2c.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2d.0.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2d.0.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2d.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2d.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2d.1.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2d.1.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2d.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2d.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2d.2.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2d.2.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2d.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2d.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv2d.3.conv1",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 4096
+    },
+    {
+      "module": "conv2.1.conv2d.3.conv2",
+      "type": "Conv2d",
+      "spec": "64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=64, bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 576
+    },
+    {
+      "module": "conv2.1.conv2d.3.bn",
+      "type": "BatchNorm2d",
+      "spec": "64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 128
+    },
+    {
+      "module": "conv2.1.conv2d.3.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "64, 4, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 260
+    },
+    {
+      "module": "conv2.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        4,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "4, 64, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          4,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "conv2.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          64,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        64,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.1.conv3.conv",
+      "type": "Conv2d",
+      "spec": "64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          64,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv2.1.conv3.bn",
+      "type": "BatchNorm2d",
+      "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 512
+    },
+    {
+      "module": "conv2.2.0.conv",
+      "type": "Conv2d",
+      "spec": "256, 256, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 65536
+    },
+    {
+      "module": "conv2.2.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 512
+    },
+    {
+      "module": "conv2.2.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        64,
+        32
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv2.2.1",
+      "type": "AvgPool2d",
+      "spec": "kernel_size=2, stride=2, padding=0",
+      "input": [
+        [
+          1,
+          256,
+          64,
+          32
+        ]
+      ],
+      "output": [
+        1,
+        256,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv1.conv",
+      "type": "Conv2d",
+      "spec": "256, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          256,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 24576
+    },
+    {
+      "module": "conv3.0.conv1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2a.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2a.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2a.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2a.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2b.0.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2b.0.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2b.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2b.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2b.1.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2b.1.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2b.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2b.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2c.0.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2c.0.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2c.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2c.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2c.1.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2c.1.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2c.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2c.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2c.2.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2c.2.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2c.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2c.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2d.0.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2d.0.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2d.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2d.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2d.1.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2d.1.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2d.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2d.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2d.2.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2d.2.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2d.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2d.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv2d.3.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.0.conv2d.3.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.0.conv2d.3.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.0.conv2d.3.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.0.conv3.conv",
+      "type": "Conv2d",
+      "spec": "96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 36864
+    },
+    {
+      "module": "conv3.0.conv3.bn",
+      "type": "BatchNorm2d",
+      "spec": "384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 768
+    },
+    {
+      "module": "conv3.0.downsample.conv",
+      "type": "Conv2d",
+      "spec": "256, 384, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          256,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 98304
+    },
+    {
+      "module": "conv3.0.downsample.bn",
+      "type": "BatchNorm2d",
+      "spec": "384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 768
+    },
+    {
+      "module": "conv3.1.conv1.conv",
+      "type": "Conv2d",
+      "spec": "384, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 36864
+    },
+    {
+      "module": "conv3.1.conv1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2a.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2a.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2a.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2a.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2b.0.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2b.0.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2b.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2b.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2b.1.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2b.1.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2b.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2b.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2c.0.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2c.0.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2c.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2c.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2c.1.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2c.1.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2c.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2c.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2c.2.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2c.2.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2c.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2c.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2d.0.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2d.0.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2d.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2d.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2d.1.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2d.1.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2d.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2d.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2d.2.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2d.2.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2d.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2d.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv2d.3.conv1",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 9216
+    },
+    {
+      "module": "conv3.1.conv2d.3.conv2",
+      "type": "Conv2d",
+      "spec": "96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=96, bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 864
+    },
+    {
+      "module": "conv3.1.conv2d.3.bn",
+      "type": "BatchNorm2d",
+      "spec": "96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 192
+    },
+    {
+      "module": "conv3.1.conv2d.3.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "96, 6, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 582
+    },
+    {
+      "module": "conv3.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        6,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "6, 96, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          6,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 672
+    },
+    {
+      "module": "conv3.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          96,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        96,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.1.conv3.conv",
+      "type": "Conv2d",
+      "spec": "96, 384, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          96,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 36864
+    },
+    {
+      "module": "conv3.1.conv3.bn",
+      "type": "BatchNorm2d",
+      "spec": "384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 768
+    },
+    {
+      "module": "conv3.2.0.conv",
+      "type": "Conv2d",
+      "spec": "384, 384, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 147456
+    },
+    {
+      "module": "conv3.2.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 768
+    },
+    {
+      "module": "conv3.2.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        32,
+        16
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv3.2.1",
+      "type": "AvgPool2d",
+      "spec": "kernel_size=2, stride=2, padding=0",
+      "input": [
+        [
+          1,
+          384,
+          32,
+          16
+        ]
+      ],
+      "output": [
+        1,
+        384,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv1.conv",
+      "type": "Conv2d",
+      "spec": "384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          384,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 49152
+    },
+    {
+      "module": "conv4.0.conv1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2a.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2a.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2a.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2a.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2b.0.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2b.0.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2b.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2b.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2b.1.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2b.1.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2b.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2b.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2c.0.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2c.0.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2c.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2c.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2c.1.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2c.1.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2c.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2c.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2c.2.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2c.2.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2c.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2c.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2d.0.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2d.0.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2d.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2d.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2d.1.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2d.1.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2d.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2d.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2d.2.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2d.2.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2d.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2d.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv2d.3.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.0.conv2d.3.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.conv2d.3.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.0.conv2d.3.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.0.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.0.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.0.conv3.conv",
+      "type": "Conv2d",
+      "spec": "128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 65536
+    },
+    {
+      "module": "conv4.0.conv3.bn",
+      "type": "BatchNorm2d",
+      "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 1024
+    },
+    {
+      "module": "conv4.0.downsample.conv",
+      "type": "Conv2d",
+      "spec": "384, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          384,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 196608
+    },
+    {
+      "module": "conv4.0.downsample.bn",
+      "type": "BatchNorm2d",
+      "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 1024
+    },
+    {
+      "module": "conv4.1.conv1.conv",
+      "type": "Conv2d",
+      "spec": "512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 65536
+    },
+    {
+      "module": "conv4.1.conv1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2a.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2a.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2a.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2a.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2b.0.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2b.0.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2b.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2b.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2b.1.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2b.1.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2b.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2b.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2c.0.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2c.0.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2c.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2c.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2c.1.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2c.1.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2c.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2c.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2c.2.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2c.2.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2c.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2c.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2d.0.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2d.0.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2d.0.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2d.0.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2d.1.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2d.1.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2d.1.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2d.1.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2d.2.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2d.2.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2d.2.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2d.2.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv2d.3.conv1",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "conv4.1.conv2d.3.conv2",
+      "type": "Conv2d",
+      "spec": "128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=128, bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.conv2d.3.bn",
+      "type": "BatchNorm2d",
+      "spec": "128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 256
+    },
+    {
+      "module": "conv4.1.conv2d.3.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.global_avgpool",
+      "type": "AdaptiveAvgPool2d",
+      "spec": "output_size=1",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc1",
+      "type": "Conv2d",
+      "spec": "128, 8, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 1032
+    },
+    {
+      "module": "conv4.1.gate.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        8,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.gate.fc2",
+      "type": "Conv2d",
+      "spec": "8, 128, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          8,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 1152
+    },
+    {
+      "module": "conv4.1.gate.gate_activation",
+      "type": "Sigmoid",
+      "spec": "",
+      "input": [
+        [
+          1,
+          128,
+          1,
+          1
+        ]
+      ],
+      "output": [
+        1,
+        128,
+        1,
+        1
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "conv4.1.conv3.conv",
+      "type": "Conv2d",
+      "spec": "128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          128,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 65536
+    },
+    {
+      "module": "conv4.1.conv3.bn",
+      "type": "BatchNorm2d",
+      "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 1024
+    },
+    {
+      "module": "conv5.conv",
+      "type": "Conv2d",
+      "spec": "512, 512, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 262144
+    },
+    {
+      "module": "conv5.bn",
+      "type": "BatchNorm2d",
+      "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 1024
+    },
+    {
+      "module": "conv5.relu",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        512,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "reliability.0",
+      "type": "Conv2d",
+      "spec": "512, 32, kernel_size=(1, 1), stride=(1, 1), bias=False",
+      "input": [
+        [
+          1,
+          512,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        32,
+        16,
+        8
+      ],
+      "parameters": 16384
+    },
+    {
+      "module": "reliability.1",
+      "type": "GroupNorm",
+      "spec": "4, 32, eps=1e-05, affine=True",
+      "input": [
+        [
+          1,
+          32,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        32,
+        16,
+        8
+      ],
+      "parameters": 64
+    },
+    {
+      "module": "reliability.2",
+      "type": "SiLU",
+      "spec": "",
+      "input": [
+        [
+          1,
+          32,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        32,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "reliability.3",
+      "type": "Conv2d",
+      "spec": "32, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=32",
+      "input": [
+        [
+          1,
+          32,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        32,
+        16,
+        8
+      ],
+      "parameters": 320
+    },
+    {
+      "module": "reliability.4",
+      "type": "SiLU",
+      "spec": "",
+      "input": [
+        [
+          1,
+          32,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        32,
+        16,
+        8
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "reliability.5",
+      "type": "Conv2d",
+      "spec": "32, 1, kernel_size=(1, 1), stride=(1, 1)",
+      "input": [
+        [
+          1,
+          32,
+          16,
+          8
+        ]
+      ],
+      "output": [
+        1,
+        1,
+        16,
+        8
+      ],
+      "parameters": 33
+    },
+    {
+      "module": "fc.0",
+      "type": "Linear",
+      "spec": "in_features=512, out_features=512, bias=True",
+      "input": [
+        [
+          1,
+          512
+        ]
+      ],
+      "output": [
+        1,
+        512
+      ],
+      "parameters": 262656
+    },
+    {
+      "module": "fc.1",
+      "type": "BatchNorm1d",
+      "spec": "512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True",
+      "input": [
+        [
+          1,
+          512
+        ]
+      ],
+      "output": [
+        1,
+        512
+      ],
+      "parameters": 1024
+    },
+    {
+      "module": "fc.2",
+      "type": "ReLU",
+      "spec": "inplace=True",
+      "input": [
+        [
+          1,
+          512
+        ]
+      ],
+      "output": [
+        1,
+        512
+      ],
+      "parameters": 0
+    },
+    {
+      "module": "classifier",
+      "type": "Linear",
+      "spec": "in_features=512, out_features=751, bias=True",
+      "input": [
+        [
+          1,
+          512
+        ]
+      ],
+      "output": [
+        1,
+        751
+      ],
+      "parameters": 385263
+    }
+  ]
+}

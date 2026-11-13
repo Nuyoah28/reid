@@ -7,6 +7,7 @@
 - [研究方案与文献依据](research/研究方案.md)
 - [创新与复用来源清单](research/创新来源清单.md)
 - [本轮交付清单与文件入口](research/交付清单.md)
+- [OSNet baseline 与当前模型网络结构图谱](research/architecture/网络结构图谱.html)
 - [实验记录](research/实验记录.md)
 - [下一步研究决策](research/下一步研究决策.md)
 - [Baseline 来源和固定版本](research/baseline_source.json)

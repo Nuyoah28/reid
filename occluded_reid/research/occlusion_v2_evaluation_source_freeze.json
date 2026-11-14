@@ -1,0 +1,11 @@
+{
+  "recorded_at_utc": "2026-11-14T14:59:11.677861+00:00",
+  "stage": "v2 training ongoing; before any v2 external evaluation",
+  "sources": {
+    "code/evaluate_occlusion_v2.py": "562be1f585b14a2d2254afd3c818c43d24bf11104b2c7236ad25983634a401f9",
+    "tools/run_occlusion_v2.py": "0341febc24a1e65382f16b5c56cf5a9258bce59204234beea4093b4abb0c7b70",
+    "code/reid/metrics.py": "3011709aa77996f0c84a9385cf8be13281dd6283d4566b6dfd10a6f727b22872",
+    "code/reid/data.py": "5fbe37d101686585b3dd3c5bf799d40f10552156b0f05c7d77d732780eeab89d"
+  },
+  "note": "Supplement to checkpoint source hashes; no change to registered formula or recipe."
+}

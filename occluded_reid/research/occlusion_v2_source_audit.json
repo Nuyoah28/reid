@@ -1,0 +1,286 @@
+{
+  "checked_at_utc": "2026-11-14T14:47:26.618851+00:00",
+  "local_primary_documents": [
+    {
+      "id": "R0353",
+      "title_listed": "Attention Disturbance and Dual-Path Constraint Network for Occluded Person Re-identification",
+      "doi_listed": "10.1609/aaai.v38i6.28437",
+      "pdf_exists": true,
+      "pdf_sha256": "3326d0ecccc9ec332927ec4b415f4f5840c147a36e5cd0bf3469d9d6784147b4",
+      "extracted_full_text_exists": true,
+      "text_sha256": "2e7a5696867a8ca0bb7f9c69cd2578f642eef3876da895a966dfa3e08e8dd6d5"
+    },
+    {
+      "id": "R0354",
+      "title_listed": "Occluded Person Re-identification via Saliency-Guided Patch Transfer",
+      "doi_listed": "10.1609/aaai.v38i5.28312",
+      "pdf_exists": true,
+      "pdf_sha256": "4271580dfde999f589fb66e1b004271f9845000e34b0e8af7469e262a303254b",
+      "extracted_full_text_exists": true,
+      "text_sha256": "4c0ce208dbc7ac2c191e7383cc8da5c8f003731364f0df48aeada11dcd015773"
+    },
+    {
+      "id": "R0369",
+      "title_listed": "ProFD: Prompt-Guided Feature Disentangling for Occluded Person Re-Identification",
+      "doi_listed": "10.1145/3664647.3680958",
+      "pdf_exists": true,
+      "pdf_sha256": "3b01b2ec44558e02f9002aa552f2ed114bc59a8777808f93266c5e9bb6cbe1ef",
+      "extracted_full_text_exists": true,
+      "text_sha256": "9eebc9801ed3d665f43591c01064d945342652fa61a3386f8208cf946d5eb6cb"
+    },
+    {
+      "id": "R0624",
+      "title_listed": "Region Generation and Assessment Network for Occluded Person Re-Identification",
+      "doi_listed": "10.1109/tifs.2023.3318956",
+      "pdf_exists": true,
+      "pdf_sha256": "52fb873a083a8311e3d617bdb343a4dc22ffa6c68d0123b7f5f4b928c5de5db7",
+      "extracted_full_text_exists": true,
+      "text_sha256": "7911076d56ecbb601770813638d5e0edf2970752a7cd93d842cce615315e9dd0"
+    }
+  ],
+  "online": [
+    {
+      "kind": "openalex_discovery",
+      "query": "\"occluded person\" \"prototype\" \"mask\"",
+      "url": "https://api.openalex.org/works?search=%22occluded+person%22+%22prototype%22+%22mask%22&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "status": 200,
+      "bytes": 7629,
+      "sha256": "715ff47734c719a186c5e9cb9abb5f8ae572660616c06938292f40eee877068b",
+      "results": [
+        {
+          "title": "Dynamic Prototype Mask for Occluded Person Re-Identification",
+          "year": 2022,
+          "doi": "https://doi.org/10.1145/3503161.3547764",
+          "landing_page": "https://doi.org/10.1145/3503161.3547764"
+        },
+        {
+          "title": "Text-Guided Prototype Generation for Occluded Person Re-Identification",
+          "year": 2024,
+          "doi": "https://doi.org/10.1109/lsp.2024.3456007",
+          "landing_page": "https://doi.org/10.1109/lsp.2024.3456007"
+        },
+        {
+          "title": "Instant pose extraction based on mask transformer for occluded person re-identification",
+          "year": 2024,
+          "doi": "https://doi.org/10.1016/j.patcog.2024.111082",
+          "landing_page": "https://doi.org/10.1016/j.patcog.2024.111082"
+        },
+        {
+          "title": "Diverse Part Discovery: Occluded Person Re-identification with Part-Aware Transformer",
+          "year": 2021,
+          "doi": "https://doi.org/10.1109/cvpr46437.2021.00292",
+          "landing_page": "https://doi.org/10.1109/cvpr46437.2021.00292"
+        },
+        {
+          "title": "Feature Erasing and Diffusion Network for Occluded Person Re-Identification",
+          "year": 2022,
+          "doi": "https://doi.org/10.1109/cvpr52688.2022.00471",
+          "landing_page": "https://doi.org/10.1109/cvpr52688.2022.00471"
+        }
+      ]
+    },
+    {
+      "kind": "openalex_discovery",
+      "query": "\"occluded person\" \"leave-one-out\"",
+      "url": "https://api.openalex.org/works?search=%22occluded+person%22+%22leave-one-out%22&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "status": 200,
+      "bytes": 7222,
+      "sha256": "d48637f1a75ec16256ab1eb8d8af891cb04e711b2eeccd5012140b42d7031da9",
+      "results": [
+        {
+          "title": "Semi-Supervised Domain Generalizable Person Re-Identification",
+          "year": 2021,
+          "doi": "https://doi.org/10.48550/arxiv.2108.05045",
+          "landing_page": "http://arxiv.org/abs/2108.05045"
+        },
+        {
+          "title": "Employing Shadows for Multi-Person Tracking Based on a Single RGB-D Camera",
+          "year": 2020,
+          "doi": "https://doi.org/10.3390/s20041056",
+          "landing_page": "http://dx.doi.org/10.3390/s20041056"
+        },
+        {
+          "title": "Identity-Seeking Self-Supervised Representation Learning for Generalizable Person Re-identification",
+          "year": 2023,
+          "doi": "https://doi.org/10.1109/iccv51070.2023.01452",
+          "landing_page": "https://doi.org/10.1109/iccv51070.2023.01452"
+        },
+        {
+          "title": "Center Prediction Loss for Re-identification",
+          "year": 2022,
+          "doi": "https://doi.org/10.1016/j.patcog.2022.108949",
+          "landing_page": "https://doi.org/10.1016/j.patcog.2022.108949"
+        },
+        {
+          "title": "Deep Frequency Filtering for Domain Generalization",
+          "year": 2023,
+          "doi": "https://doi.org/10.1109/cvpr52729.2023.01135",
+          "landing_page": "https://doi.org/10.1109/cvpr52729.2023.01135"
+        }
+      ]
+    },
+    {
+      "kind": "openalex_discovery",
+      "query": "\"occluded person\" \"reliability\" \"discriminative\"",
+      "url": "https://api.openalex.org/works?search=%22occluded+person%22+%22reliability%22+%22discriminative%22&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "status": 200,
+      "bytes": 7612,
+      "sha256": "fe47f830cd62376c7449bb9477964dadb5a05131aa0622c4e416ce8aa6475748",
+      "results": [
+        {
+          "title": "Feature Completion for Occluded Person Re-Identification",
+          "year": 2021,
+          "doi": "https://doi.org/10.1109/tpami.2021.3079910",
+          "landing_page": "https://doi.org/10.1109/tpami.2021.3079910"
+        },
+        {
+          "title": "Multi-view Information Integration and Propagation for occluded person re-identification",
+          "year": 2023,
+          "doi": "https://doi.org/10.1016/j.inffus.2023.102201",
+          "landing_page": "https://doi.org/10.1016/j.inffus.2023.102201"
+        },
+        {
+          "title": "Occluded person re-identification with deep learning: A survey and perspectives",
+          "year": 2023,
+          "doi": "https://doi.org/10.1016/j.eswa.2023.122419",
+          "landing_page": "https://doi.org/10.1016/j.eswa.2023.122419"
+        },
+        {
+          "title": "Quality-Aware Part Models for Occluded Person Re-Identification",
+          "year": 2022,
+          "doi": "https://doi.org/10.1109/tmm.2022.3156282",
+          "landing_page": "https://doi.org/10.1109/tmm.2022.3156282"
+        },
+        {
+          "title": "Occ-MoE: Occlusion-Aware Mixture of Experts for Occluded Person Re-Identification",
+          "year": 2026,
+          "doi": "https://doi.org/10.1142/s0218001426500199",
+          "landing_page": "https://doi.org/10.1142/s0218001426500199"
+        }
+      ]
+    },
+    {
+      "kind": "openalex_discovery",
+      "query": "\"person re-identification\" \"counterfactual\" \"occlusion\"",
+      "url": "https://api.openalex.org/works?search=%22person+re-identification%22+%22counterfactual%22+%22occlusion%22&per-page=5&select=id%2Cdoi%2Ctitle%2Cpublication_year%2Cprimary_location",
+      "status": 200,
+      "bytes": 7939,
+      "sha256": "46db738646e0e6e4b736d1c93ea9076c71e9cbcaa80295a8ff8f8b6936407ef0",
+      "results": [
+        {
+          "title": "A Versatile Framework for Multi-Scene Person Re-Identification",
+          "year": 2024,
+          "doi": "https://doi.org/10.1109/tpami.2024.3381184",
+          "landing_page": "https://doi.org/10.1109/tpami.2024.3381184"
+        },
+        {
+          "title": "An Efficient Multi-Branch Attention Network for Person Re-Identification",
+          "year": 2024,
+          "doi": "https://doi.org/10.3390/electronics13163183",
+          "landing_page": "https://doi.org/10.3390/electronics13163183"
+        },
+        {
+          "title": "Research and Performance Analysis of Person Re-Identification Methods in Occluded Scenarios",
+          "year": 2026,
+          "doi": "https://doi.org/10.4108/eai.22-5-2026.2365361",
+          "landing_page": "https://doi.org/10.4108/eai.22-5-2026.2365361"
+        },
+        {
+          "title": "An efficient multi-scale channel attention network for person re-identification",
+          "year": 2023,
+          "doi": "https://doi.org/10.1007/s00371-023-03049-9",
+          "landing_page": "https://doi.org/10.1007/s00371-023-03049-9"
+        },
+        {
+          "title": "From Poses to Identity: Training-Free Person Re-Identification via Feature Centralization",
+          "year": 2025,
+          "doi": "https://doi.org/10.1109/cvpr52734.2025.02273",
+          "landing_page": "https://doi.org/10.1109/cvpr52734.2025.02273"
+        }
+      ]
+    },
+    {
+      "kind": "crossref_primary_metadata",
+      "url": "https://api.crossref.org/works/10.1109/TIFS.2023.3318956",
+      "status": 200,
+      "bytes": 10836,
+      "sha256": "9fe613aaaa83b87b89fcfe99b4ee6527cdccbe041c87fdfd4eb1ce86cb9bad9b",
+      "metadata": {
+        "title": [
+          "Region Generation and Assessment Network for Occluded Person Re-Identification"
+        ],
+        "container-title": [
+          "IEEE Transactions on Information Forensics and Security"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "published-online": null,
+        "published-print": {
+          "date-parts": [
+            [
+              2024
+            ]
+          ]
+        },
+        "DOI": "10.1109/tifs.2023.3318956",
+        "URL": "https://doi.org/10.1109/tifs.2023.3318956"
+      }
+    },
+    {
+      "kind": "crossref_primary_metadata",
+      "url": "https://api.crossref.org/works/10.1145/3664647.3680958",
+      "status": 200,
+      "bytes": 21391,
+      "sha256": "7a82d6a206fb08223c8db537b55a4650cdcd525f598c0d2d70330284be6c4f63",
+      "metadata": {
+        "title": [
+          "ProFD: Prompt-Guided Feature Disentangling for Occluded Person Re-Identification"
+        ],
+        "container-title": [
+          "Proceedings of the 32nd ACM International Conference on Multimedia"
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              28
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              28
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2024,
+              10,
+              28
+            ]
+          ]
+        },
+        "DOI": "10.1145/3664647.3680958",
+        "URL": "https://doi.org/10.1145/3664647.3680958"
+      }
+    }
+  ],
+  "reviewed_scope": {
+    "RGANet": "Full method: RGM and RAM, especially equations 4-10, local PDF pages 4-6; discriminative FC indicator and body-part-category memory-bank invariance already exist.",
+    "ProFD": "Prompt guidance, noisy segmentation alignment, hybrid attention and memory-based self-distillation; do not claim prompts/visibility/distillation as new.",
+    "SPT": "Data-driven saliency-guided patch transfer is prior art. The project rectangle pasting does not reproduce its saliency/OIoU/mask rolling.",
+    "DPM_2022": "Found in SPT/ProFD bibliographies only. Full paper not yet read; prototype-mask prior art remains an open novelty risk."
+  },
+  "claim_boundary": "Focused audit, not exhaustive novelty search. Missing/failed web requests are recorded explicitly. No latest-SOTA or first-ever claim."
+}

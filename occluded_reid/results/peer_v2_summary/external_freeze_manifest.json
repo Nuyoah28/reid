@@ -1,0 +1,103 @@
+{
+  "frozen_at_utc": "2026-11-14T15:38:47.614590+00:00",
+  "registered_protocol_sha256": "541f5ee13f3db5f2f309d8ec1b1968a4f93b5eb55c8772f060bf034785067a1f",
+  "runs": [
+    {
+      "run": "peer_v2_repeat3_s1",
+      "variant": "repeat3",
+      "seed": 1,
+      "checkpoint": "runs/peer_v2_repeat3_s1/last.pt",
+      "checkpoint_sha256": "265b5069471ee29d3f31f68c8eef1f46bb890f2090fc13f741b582f056957afb",
+      "development_result_sha256": "d2eb3d698ab44a9caac50e59f4f34704480c3b2a8943488a3c6a7f6ce1ac5ff1"
+    },
+    {
+      "run": "peer_v2_paste3_s1",
+      "variant": "paste3",
+      "seed": 1,
+      "checkpoint": "runs/peer_v2_paste3_s1/last.pt",
+      "checkpoint_sha256": "5860221df119b3aa541f2145592e8dc1e5ee7bc95b15bc0a9550bfc1a50c735b",
+      "development_result_sha256": "81609cde8e7e288211a187373ce3fe103d3823cc63be127aadd42cd43b77ffdb"
+    },
+    {
+      "run": "peer_v2_stability_s1",
+      "variant": "stability",
+      "seed": 1,
+      "checkpoint": "runs/peer_v2_stability_s1/last.pt",
+      "checkpoint_sha256": "a586406de4312aff641d62fc10f172306e49e660b8e13f30b3d4387e527338f7",
+      "development_result_sha256": "7d6e688fe1135a9dcc20ccf869a38ff930da8dab80a3d62c02bfa78c221780d3"
+    },
+    {
+      "run": "peer_v2_peer_s1",
+      "variant": "peer",
+      "seed": 1,
+      "checkpoint": "runs/peer_v2_peer_s1/last.pt",
+      "checkpoint_sha256": "7c1da167dd3de0e2f49a028314a1d66ca68d0da59aad4f352a1b157a52a35427",
+      "development_result_sha256": "cf5f1c86e1a6b63e65b1452a9d5903a778a208d929d967f0b18fdc639ea5ded0"
+    },
+    {
+      "run": "peer_v2_peer_stability_s1",
+      "variant": "peer_stability",
+      "seed": 1,
+      "checkpoint": "runs/peer_v2_peer_stability_s1/last.pt",
+      "checkpoint_sha256": "e1065680cf503f86e3a7c1361516e085b53cfb96b2489f8d38409d98d7da33d0",
+      "development_result_sha256": "92a95886045ad74bc7dada8b1907c8667b1af960ca04c4096519a76fca0fcdf9"
+    },
+    {
+      "run": "peer_v2_peer_evidence_s1",
+      "variant": "peer_evidence",
+      "seed": 1,
+      "checkpoint": "runs/peer_v2_peer_evidence_s1/last.pt",
+      "checkpoint_sha256": "9288b77b07ffa6426e142ea352abe76b6406ea0b1bce9fc6fd9fc6faf6f9ac6e",
+      "development_result_sha256": "1e345779b761f565a47a779ff121e1d98a8f858ff762345816ff88bf48971b4b"
+    },
+    {
+      "run": "peer_v2_repeat3_s2",
+      "variant": "repeat3",
+      "seed": 2,
+      "checkpoint": "runs/peer_v2_repeat3_s2/last.pt",
+      "checkpoint_sha256": "af03d3189cb73e3e36a6860a5d7fec2ce7e8802699affea73a996db95b3c382e",
+      "development_result_sha256": "9b7b42669e8766d36ce86d9807407fd005e714e5233301cd636af5a851f12511"
+    },
+    {
+      "run": "peer_v2_paste3_s2",
+      "variant": "paste3",
+      "seed": 2,
+      "checkpoint": "runs/peer_v2_paste3_s2/last.pt",
+      "checkpoint_sha256": "7857b02ec36bfcf05d5c5286e5c80d1a3fffd5dad8f572b936d70a265e450f53",
+      "development_result_sha256": "ecb38a452c407eb8aac94ade871f15924f180a83e03423dbb61a4a4b53c586c3"
+    },
+    {
+      "run": "peer_v2_stability_s2",
+      "variant": "stability",
+      "seed": 2,
+      "checkpoint": "runs/peer_v2_stability_s2/last.pt",
+      "checkpoint_sha256": "c3e75be737d59acc3836e8e9928fc010e406529acafa50a678d8d0ba4ea0f6b1",
+      "development_result_sha256": "fd5c5b2dbc8c58ca334bf5362e2627b63ccc26bad1e832e21086e6c9744ba2b2"
+    },
+    {
+      "run": "peer_v2_peer_s2",
+      "variant": "peer",
+      "seed": 2,
+      "checkpoint": "runs/peer_v2_peer_s2/last.pt",
+      "checkpoint_sha256": "e29d469837f5dfd3946aeaa7329fb15cb72e309fbff3d0c742a93189141ae486",
+      "development_result_sha256": "a3be7a9fb36c3e5801ce68d61460c7b0043f32ce9ff8bfdbef0e65bfe6047c7a"
+    },
+    {
+      "run": "peer_v2_peer_stability_s2",
+      "variant": "peer_stability",
+      "seed": 2,
+      "checkpoint": "runs/peer_v2_peer_stability_s2/last.pt",
+      "checkpoint_sha256": "8a1ca376ae0e5834ba86f080ae5ac005dab071bea1ba457fa7132e2063459e96",
+      "development_result_sha256": "68e764c8050232a89aab34a7153663db19a8b63814737bd583dae08fd8e488be"
+    },
+    {
+      "run": "peer_v2_peer_evidence_s2",
+      "variant": "peer_evidence",
+      "seed": 2,
+      "checkpoint": "runs/peer_v2_peer_evidence_s2/last.pt",
+      "checkpoint_sha256": "da505bd76c4c6c6f77aa9c90d280ed41bedafff855156ee656a7128b6bd2fafb",
+      "development_result_sha256": "d3a802e6ef17ed3b103efcfd555c62d52c52f6e613aec412febfd0932eee6d48"
+    }
+  ],
+  "rule": "All registered development runs finished before any v2 external evaluation. Evaluate every frozen run; do not tune against target results."
+}

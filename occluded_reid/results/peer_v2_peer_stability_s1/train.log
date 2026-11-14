@@ -1,0 +1,42 @@
+{"event": "start", "variant": "peer_stability", "seed": 1, "epochs": 8, "steps": 80, "resume_epoch": 0, "views": 3, "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"}
+{"event": "step", "epoch": 1, "step": 20, "loss": 9.029584693908692, "elapsed_seconds": 6.416349700000865}
+{"event": "step", "epoch": 1, "step": 40, "loss": 8.95366051197052, "elapsed_seconds": 10.298444500000187}
+{"event": "step", "epoch": 1, "step": 60, "loss": 8.713817024230957, "elapsed_seconds": 14.245065999999497}
+{"event": "step", "epoch": 1, "step": 80, "loss": 8.498105025291443, "elapsed_seconds": 18.250844599999255}
+{"event": "epoch", "epoch": 1, "lr": 0.0003, "backbone_frozen": true, "train_seconds": 18.251108100001147, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 550.6201171875, "loss": 8.498105025291443, "ce": 7.70041925907135, "triplet": 0.44281416572630405, "calibration": 1.1525573942810297, "evidence": 0.0, "target_mean": 0.16410264279693365, "identity_mean": 0.4119720458984375, "margin_mean": -0.03695526123046875, "calibration_mae": 0.5086985969915986}
+{"event": "step", "epoch": 2, "step": 20, "loss": 7.75059494972229, "elapsed_seconds": 4.110559599997941}
+{"event": "step", "epoch": 2, "step": 40, "loss": 7.638808870315552, "elapsed_seconds": 8.087332099999912}
+{"event": "step", "epoch": 2, "step": 60, "loss": 7.487561376889547, "elapsed_seconds": 12.042445099999895}
+{"event": "step", "epoch": 2, "step": 80, "loss": 7.467060673236847, "elapsed_seconds": 16.068872199997713}
+{"event": "epoch", "epoch": 2, "lr": 0.0003, "backbone_frozen": true, "train_seconds": 16.069125599999097, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 512.46435546875, "loss": 7.467060673236847, "ce": 7.001566243171692, "triplet": 0.462131467834115, "calibration": 0.46885738968849183, "evidence": 0.0, "target_mean": 0.16686868350952863, "identity_mean": 0.4128173828125, "margin_mean": -0.036566543579101565, "calibration_mae": 0.1437506515532732}
+{"event": "step", "epoch": 3, "step": 20, "loss": 7.322153234481812, "elapsed_seconds": 9.512038499997288}
+{"event": "step", "epoch": 3, "step": 40, "loss": 7.217251801490784, "elapsed_seconds": 16.8066762999988}
+{"event": "step", "epoch": 3, "step": 60, "loss": 7.177393730481466, "elapsed_seconds": 24.02680159999727}
+{"event": "step", "epoch": 3, "step": 80, "loss": 7.073723191022873, "elapsed_seconds": 31.42861599999742}
+{"event": "epoch", "epoch": 3, "lr": 0.0002851453301853628, "backbone_frozen": false, "train_seconds": 31.428857699997025, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 3116.74951171875, "loss": 7.073723191022873, "ce": 6.6619591295719145, "triplet": 0.4146099701523781, "calibration": 0.40891812443733216, "evidence": 0.0, "target_mean": 0.11477120956405998, "identity_mean": 0.4185577392578125, "margin_mean": -0.03422489166259766, "calibration_mae": 0.1427494934760034}
+{"event": "step", "epoch": 4, "step": 20, "loss": 6.6964452266693115, "elapsed_seconds": 7.308206400000927}
+{"event": "step", "epoch": 4, "step": 40, "loss": 6.684944808483124, "elapsed_seconds": 14.344762600001559}
+{"event": "step", "epoch": 4, "step": 60, "loss": 6.5855999946594235, "elapsed_seconds": 21.467387799999415}
+{"event": "step", "epoch": 4, "step": 80, "loss": 6.437585890293121, "elapsed_seconds": 28.839066299999104}
+{"event": "epoch", "epoch": 4, "lr": 0.00024352347027881003, "backbone_frozen": false, "train_seconds": 28.839406800001598, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 2980.6494140625, "loss": 6.437585890293121, "ce": 6.039919131994248, "triplet": 0.3795828506350517, "calibration": 0.41575070656836033, "evidence": 0.0, "target_mean": 0.14392800899222494, "identity_mean": 0.41688232421875, "margin_mean": -0.03540477752685547, "calibration_mae": 0.12956890063360332}
+{"event": "step", "epoch": 5, "step": 20, "loss": 5.988456749916077, "elapsed_seconds": 7.600531299998693}
+{"event": "step", "epoch": 5, "step": 40, "loss": 5.909194433689118, "elapsed_seconds": 14.721385000000737}
+{"event": "step", "epoch": 5, "step": 60, "loss": 5.890997314453125, "elapsed_seconds": 21.91305409999768}
+{"event": "step", "epoch": 5, "step": 80, "loss": 5.836403793096542, "elapsed_seconds": 29.138690799998585}
+{"event": "epoch", "epoch": 5, "lr": 0.00018337814009344714, "backbone_frozen": false, "train_seconds": 29.1389405000009, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 2980.6494140625, "loss": 5.836403793096542, "ce": 5.445544791221619, "triplet": 0.3496601155027747, "calibration": 0.43205788619816304, "evidence": 0.0, "target_mean": 0.16074573267251252, "identity_mean": 0.4185211181640625, "margin_mean": -0.03481578826904297, "calibration_mae": 0.13175911791622638}
+{"event": "step", "epoch": 6, "step": 20, "loss": 5.666435742378235, "elapsed_seconds": 7.322275499998796}
+{"event": "step", "epoch": 6, "step": 40, "loss": 5.553884720802307, "elapsed_seconds": 14.276282800001354}
+{"event": "step", "epoch": 6, "step": 60, "loss": 5.502939732869466, "elapsed_seconds": 21.28793610000139}
+{"event": "step", "epoch": 6, "step": 80, "loss": 5.46456698179245, "elapsed_seconds": 28.44912249999834}
+{"event": "epoch", "epoch": 6, "lr": 0.00011662185990655284, "backbone_frozen": false, "train_seconds": 28.449357400000736, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 2980.6494140625, "loss": 5.46456698179245, "ce": 5.079303443431854, "triplet": 0.33154742419719696, "calibration": 0.4389796633273363, "evidence": 0.0, "target_mean": 0.1707652300596237, "identity_mean": 0.4221435546875, "margin_mean": -0.033277702331542966, "calibration_mae": 0.13120599146932363}
+{"event": "step", "epoch": 7, "step": 20, "loss": 5.052881193161011, "elapsed_seconds": 7.2231274000005214}
+{"event": "step", "epoch": 7, "step": 40, "loss": 5.101277327537536, "elapsed_seconds": 14.599854300002335}
+{"event": "step", "epoch": 7, "step": 60, "loss": 5.087422164281209, "elapsed_seconds": 21.89155799999935}
+{"event": "step", "epoch": 7, "step": 80, "loss": 5.116549962759018, "elapsed_seconds": 29.131841700000223}
+{"event": "epoch", "epoch": 7, "lr": 5.6476529721189974e-05, "backbone_frozen": false, "train_seconds": 29.132069300001604, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 2980.6494140625, "loss": 5.116549962759018, "ce": 4.7312078982591625, "triplet": 0.3277674769982696, "calibration": 0.44291672706604, "evidence": 0.0, "target_mean": 0.17695093620568514, "identity_mean": 0.4232147216796875, "margin_mean": -0.03280792236328125, "calibration_mae": 0.1293753375299275}
+{"event": "step", "epoch": 8, "step": 20, "loss": 5.289255213737488, "elapsed_seconds": 7.206346899998607}
+{"event": "step", "epoch": 8, "step": 40, "loss": 5.19599541425705, "elapsed_seconds": 14.464863400000468}
+{"event": "step", "epoch": 8, "step": 60, "loss": 5.1648228645324705, "elapsed_seconds": 21.720264499999757}
+{"event": "step", "epoch": 8, "step": 80, "loss": 5.152105250954628, "elapsed_seconds": 28.759984399999666}
+{"event": "epoch", "epoch": 8, "lr": 1.4854669814637143e-05, "backbone_frozen": false, "train_seconds": 28.760210299999017, "pk_batches": 80, "amp_skipped_updates": 0, "optimizer_updates": 80, "peak_cuda_mb": 2980.6494140625, "loss": 5.152105250954628, "ce": 4.766991439461708, "triplet": 0.3283757124096155, "calibration": 0.4418519239872694, "evidence": 0.0, "target_mean": 0.17807466443628073, "identity_mean": 0.4236846923828125, "margin_mean": -0.03257904052734375, "calibration_mae": 0.12882807347923517}
+{"event": "complete", "evaluation": {"clean": {"mAP": 51.41413081884762, "rank1": 71.0, "rank5": 88.0, "mINP": 24.037176143298762, "valid_queries": 100, "invalid_queries": 0, "gallery_size": 1476}, "synthetic_noise_0.3": {"mAP": 31.614329406467796, "rank1": 43.0, "rank5": 69.0, "mINP": 12.460347948239347, "valid_queries": 100, "invalid_queries": 0, "gallery_size": 1476}, "synthetic_noise_0.5": {"mAP": 16.860460925634484, "rank1": 24.0, "rank5": 44.0, "mINP": 6.715809574308029, "valid_queries": 100, "invalid_queries": 0, "gallery_size": 1476}}}

@@ -1,12 +1,48 @@
-/reference-paper
-/data/
-/weights/
-/runs/
-/tmp/
-/research/paper_text/
+/reference-paper/
+# Scope generated directories to project roots; vendor torchreid/data is source.
+/occluded_reid/data/
+/occluded_reid/weights/
+/occluded_reid/runs/
+/occluded_reid/tmp/
+/infrared_multimodal/data/
+/infrared_multimodal/weights/
+/infrared_multimodal/runs/
+/infrared_multimodal/tmp/
+/lightweight_occluded_reid/data/
+/lightweight_occluded_reid/weights/
+/lightweight_occluded_reid/runs/
+/lightweight_occluded_reid/tmp/
+**/research/paper_text/
 __pycache__/
 *.pyc
 # Diagnostic contact sheets contain benchmark photographs; keep them local.
-/results/diagnostic_*/diagnostic.png
-# User-provided benchmark archives stay local.
-/*.zip
+**/results/diagnostic_*/diagnostic.png
+# Datasets, checkpoints, arrays, model exports and experiment service caches.
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.npy
+*.npz
+**/wandb/
+**/lightning_logs/
+**/events.out.tfevents.*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+# Preserve curated text/JSON/CSV logs and results for research audit.

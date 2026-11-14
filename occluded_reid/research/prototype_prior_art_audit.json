@@ -1,0 +1,195 @@
+{
+  "checked_at_utc": "2026-11-14T14:55:05.860262+00:00",
+  "metadata": [
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1145/3503161.3547764",
+      "resolved_url": "https://api.openalex.org/works/https://doi.org/10.1145/3503161.3547764",
+      "status": 200,
+      "bytes": 26379,
+      "sha256": "fa520b2caa1c051c804a720165d8f20595ddc47b90ee365c9bffdf6b6c118751",
+      "doi": "10.1145/3503161.3547764",
+      "title": "Dynamic Prototype Mask for Occluded Person Re-Identification",
+      "year": 2022,
+      "authors": [
+        "Lei Tan",
+        "Pingyang Dai",
+        "Rongrong Ji",
+        "Yongjian Wu"
+      ],
+      "locations": [
+        {
+          "id": "doi:10.1145/3503161.3547764",
+          "doi": "https://doi.org/10.1145/3503161.3547764",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1145/3503161.3547764",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4363608757",
+            "display_name": "ACM International Conference on Multimedia (ACM MM)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "conference"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Proceedings of the 30th ACM International Conference on Multimedia",
+          "raw_type": "proceedings-article"
+        },
+        {
+          "id": "pmh:oai:arXiv.org:2207.09046",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2207.09046",
+          "pdf_url": "https://arxiv.org/pdf/2207.09046",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        {
+          "id": "doi:10.48550/arxiv.2207.09046",
+          "doi": "https://doi.org/10.48550/arxiv.2207.09046",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.48550/arxiv.2207.09046",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Preprint"
+        }
+      ],
+      "abstract": "Although person re-identification has achieved an impressive improvement in recent years, the common occlusion case caused by different obstacles is still an unsettled issue in real application scenarios. Existing methods mainly address this issue by employing body clues provided by an extra network to distinguish the visible part. Nevertheless, the inevitable domain gap between the assistant model and the ReID datasets has highly increased the difficulty to obtain an effective and efficient model. To escape from the extra pre-trained networks and achieve an automatic alignment in an end-to-end trainable network, we propose a novel Dynamic Prototype Mask (DPM) based on two self-evident prior knowledge. Specifically, we first devise a Hierarchical Mask Generator which utilizes the hierarchical semantic to select the visible pattern space between the high-quality holistic prototype and the feature representation of the occluded input image. Under this condition, the occluded representation could be well aligned in a selected subspace spontaneously. Then, to enrich the feature representation of the high-quality holistic prototype and provide a more complete feature space, we introduce a Head Enrich Module to encourage different heads to aggregate different patterns representation in the whole image. Extensive experimental evaluations conducted on occluded and holistic person re-identification benchmarks demonstrate the superior performance of the DPM over the state-of-the-art methods.",
+      "scope": "Metadata and indexed abstract; method claims need primary full text"
+    },
+    {
+      "url": "https://api.openalex.org/works/https://doi.org/10.1109/LSP.2024.3456007",
+      "resolved_url": "https://api.openalex.org/works/https://doi.org/10.1109/LSP.2024.3456007",
+      "status": 200,
+      "bytes": 14033,
+      "sha256": "b2d6c5657adec3052291f608df1630db30533d2d1847317ad540e6789406ff64",
+      "doi": "10.1109/LSP.2024.3456007",
+      "title": "Text-Guided Prototype Generation for Occluded Person Re-Identification",
+      "year": 2024,
+      "authors": [
+        "Min Jiang",
+        "Xinyu Liu",
+        "Jun Kong"
+      ],
+      "locations": [
+        {
+          "id": "doi:10.1109/lsp.2024.3456007",
+          "doi": "https://doi.org/10.1109/lsp.2024.3456007",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1109/lsp.2024.3456007",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S120629676",
+            "display_name": "IEEE Signal Processing Letters",
+            "issn_l": "1070-9908",
+            "issn": [
+              "1070-9908",
+              "1558-2361"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "listed_in": [
+              "anvur-scientific",
+              "ccf-c",
+              "cwts-core",
+              "dongbi-b",
+              "jufo-2",
+              "norway-1",
+              "poland-100",
+              "russia-white-list-1"
+            ],
+            "host_organization": "https://openalex.org/P4310319808",
+            "host_organization_name": "Institute of Electrical and Electronics Engineers",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319808"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Electrical and Electronics Engineers"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "IEEE Signal Processing Letters",
+          "raw_type": "journal-article"
+        }
+      ],
+      "abstract": "Occluded person re-identification (ReID) focuses on identifying persons who are partially occluded, especially in multi-camera scenarios. The majority of methods employ the background to make artificial occlusions. However, simple artificial occlusions could not effectively simulate real-world occluded scenarios, due to its lack of semantic information and its limitation in disrupting the model's attention. In this paper, we present the Text-Guided Prototype Generation (TGPG) for occluded person ReID. On the one hand, to fully employ the potential of text as priori information, the Mask Prototype Generation (MPG) strategy is presented to generate the prototypes that could capture attention in the pretrained model, similar to the realistic occlusions. On the other hand, to create a relationship between holistic person features and occluded person features, the Intra-modality Spatial Consistency (ISC) loss is introduced, enhancing the consistency and representativeness of the generated mask prototypes. Comprehensive experiments conducted on the Occluded-Duke and Occluded-ReID datasets confirm our method's superiority over state-of-the-art approaches.",
+      "scope": "Metadata and indexed abstract; method claims need primary full text"
+    }
+  ],
+  "DPM_primary_preprint": {
+    "url": "https://arxiv.org/pdf/2207.09046",
+    "resolved_url": "https://arxiv.org/pdf/2207.09046",
+    "status": 200,
+    "bytes": 1417468,
+    "sha256": "0285acc433a666d23710e57e25830582da53e761ad90eb7966f746a325eb9809",
+    "local_path": "../reference-paper/DPM_2022_arxiv_2207.09046.pdf",
+    "pages": 10,
+    "text_sha256": "69ed21208660eea5ae0def91bd58441bdfafd91210d6a818034c3279e3346185"
+  },
+  "scope": "Focused prior art check; not an exhaustive novelty assessment. TGPG full text not obtained."
+}

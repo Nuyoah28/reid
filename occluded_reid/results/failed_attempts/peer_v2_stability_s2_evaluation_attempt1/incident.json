@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-11-14T15:45:08.761313+00:00",
+  "run": "peer_v2_stability_s2",
+  "phase": "external_evaluation",
+  "attempt": 1,
+  "status": "native_process_crash_before_result_written",
+  "exit_status_decimal": 3221226505,
+  "completed_external_runs_before_failure": 8,
+  "windows_application_event": {
+    "id": 1000,
+    "time_local": "2026-11-14T23:41:37+08:00",
+    "application": "python.exe",
+    "version": "3.10.15150.1013",
+    "faulting_module": "nvcuda64.dll",
+    "module_version": "32.0.15.9282",
+    "exception_code": "0xc0000409",
+    "fault_offset": "0x00000000018fdd35",
+    "report_id": "18000486-2aa0-485b-af94-d81cb06033be"
+  },
+  "root_cause": "Not established. Windows reports the same CUDA driver DLL and exception code as the earlier training startup crash.",
+  "recovery": "Rerun the unchanged suite runner. It checks source/protocol/checkpoint/manifest hashes, reuses all 12 completed development runs and eight completed external results, then evaluates the remaining four checkpoints. No retraining, recipe change or score-based selection."
+}

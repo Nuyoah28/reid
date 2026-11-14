@@ -1,0 +1,1854 @@
+{
+  "checked_at_utc": "2026-11-14T15:44:48.056310+00:00",
+  "base_commit": "3acc4de06c3c336478e32f088ff52ef814bc5b39",
+  "status": "passed",
+  "counts": {
+    "checkout_line_endings_only": 211,
+    "identical_bytes": 19
+  },
+  "files": [
+    {
+      "original": "code/deep-person-reid/.flake8",
+      "destination": "occluded_reid/code/deep-person-reid/.flake8",
+      "git_blob": "4fc103cb101294ae7c3ad8ed536feb660ae6c0d6",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "db00beb40809db909e2efe793503fb5902703a027f15940f4217e590ee791267",
+      "working_file_sha256": "ef4f81b5e2ee90988f6c70d1c2799891adc607a8b3d6cdaa3358228390a179df"
+    },
+    {
+      "original": "code/deep-person-reid/.gitignore",
+      "destination": "occluded_reid/code/deep-person-reid/.gitignore",
+      "git_blob": "b966cd94452c8c367a7506cf165fe2cdced0c3be",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e35b9a29aa8ead25f5183ccb9e6134935b2f7f963fef9e188dd4c9199f3c7586",
+      "working_file_sha256": "ea5cc94fb23b994288a76b7cd940ec3eaad6d47226d1f1b5d7169ccf60dea863"
+    },
+    {
+      "original": "code/deep-person-reid/.isort.cfg",
+      "destination": "occluded_reid/code/deep-person-reid/.isort.cfg",
+      "git_blob": "8039326b5c5825760806cfb5e1667fc0815fc3f2",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8e1e85423ea775ea2b6c04b3bd3bcc65fc22c9a7fbe1ef473f3406d840e8fb61",
+      "working_file_sha256": "777c49ee002dda5905848cf26bace61f586ffcdf3a76daf1299c874e74eacfc8"
+    },
+    {
+      "original": "code/deep-person-reid/.style.yapf",
+      "destination": "occluded_reid/code/deep-person-reid/.style.yapf",
+      "git_blob": "29d8e52cc8d04fb2f6a71cdb400fb9e55bdeea45",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3dfd67382ca1da5c53be343871dd2d7623fdb519aeb2372e6d20c49c0a48d42b",
+      "working_file_sha256": "9ffd92064b0783814a66aa84ea5077ef28f187fc5e2e71d6d2f6230325b23223"
+    },
+    {
+      "original": "code/deep-person-reid/Dockerfile",
+      "destination": "occluded_reid/code/deep-person-reid/Dockerfile",
+      "git_blob": "b5372979b2e9021d7bf553ed4376e267a3c50351",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "05167be9f35c6e76f4019dee19c5edbde849172fc671873b37251e79feacd23a",
+      "working_file_sha256": "57ebef783777052f73c75517775b33c52f543198a95c6ff67f1ad2d96cc4c321"
+    },
+    {
+      "original": "code/deep-person-reid/LICENSE",
+      "destination": "occluded_reid/code/deep-person-reid/LICENSE",
+      "git_blob": "d2bcb88271ffbb1b7255fe202c562d590e91b533",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3ac8ce2a83d170cb1c7c84152e0c1faca1f187794303514383960d2441716247",
+      "working_file_sha256": "890cb7e08036e5c1e58dd998f29cd3536a6d698354fe7e27351234cd21c6dd6d"
+    },
+    {
+      "original": "code/deep-person-reid/Makefile",
+      "destination": "occluded_reid/code/deep-person-reid/Makefile",
+      "git_blob": "3d315a8cf5c3b9f50fcd2654961c6b63bb6ee7dc",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b2bca970a67ad5f82f8c3f706e3317c331eeca14f6b5b9da583b2864f9a1f148",
+      "working_file_sha256": "d5aba04510188c77fa208acfd77cabfd9a3b8ba7997b2b46ef9b2be000c4bf48"
+    },
+    {
+      "original": "code/deep-person-reid/README.rst",
+      "destination": "occluded_reid/code/deep-person-reid/README.rst",
+      "git_blob": "c08214cfc6efe2d2daf75a0f59b13859850612e2",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "20b769511aa854ae74f303a9e7f7281e1d9509d335df4bf3043e0151313d8b25",
+      "working_file_sha256": "e3db90d51e02c06f39de4dadb6a0ca1202a1035a35080b9a1ea82b679e900442"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_osnet_ain_x1_0_softmax_256x128_amsgrad_cosine.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_osnet_ain_x1_0_softmax_256x128_amsgrad_cosine.yaml",
+      "git_blob": "c8b63ec3ea11798edf50d3a052b87f0b5494a645",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2e4df19ff42591241af5e271fcef0608ce3e4c2bc3179f63de9b6ec321c18750",
+      "working_file_sha256": "45594579fa4e8bbfd45d475c90ef8e120294c83282ce3f116dcdf5c9ea7f4d9f"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_osnet_ibn_x1_0_softmax_256x128_amsgrad.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_osnet_ibn_x1_0_softmax_256x128_amsgrad.yaml",
+      "git_blob": "b4f89033d1337f8ab173d920bd5f3357981e350f",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "01a37031949043e7e0f89dd790b092870ba13ab5bdceee2893735b2f305570d2",
+      "working_file_sha256": "15dce795e5146cc4a1b2464eae01259fc529aa67fbea0a045df53783a325f170"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_osnet_x0_25_softmax_256x128_amsgrad.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_osnet_x0_25_softmax_256x128_amsgrad.yaml",
+      "git_blob": "d256a6b27399a6aca15ce264ae8f6853afca37c5",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "0b6291ddd82c55d2b34466e4906ad09989e7d2bede92b1087a76739a7e07257b",
+      "working_file_sha256": "369bdd35c25df3e0aedab51652cefd37b01b7df2eade51a9e467410e4aa6dd11"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_osnet_x0_5_softmax_256x128_amsgrad.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_osnet_x0_5_softmax_256x128_amsgrad.yaml",
+      "git_blob": "467305f8ba7f25d4794732ccc4ebd53de9f9927d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a4e767345c73b003ed396b06bd64b7988c76437befcd69a4f0ba583d99428777",
+      "working_file_sha256": "fbbedf0f9f33cfe907ea1230e4356b78f56174e7ea1d841c4da55a77dad995a7"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_osnet_x0_75_softmax_256x128_amsgrad.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_osnet_x0_75_softmax_256x128_amsgrad.yaml",
+      "git_blob": "04203fd0fbe7f5c4185d7d20ec251dcf1ba6398b",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "648fa6fa76cf5bc33d4786127e9f8a661bed5844a74b501e56643ac0b675c0d9",
+      "working_file_sha256": "9f67c3e1cc194d443f8f8717c008744c4e2244fe973ab666c8b7e5f0135ddbb3"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_osnet_x1_0_softmax_256x128_amsgrad.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_osnet_x1_0_softmax_256x128_amsgrad.yaml",
+      "git_blob": "f1c970fed20c7aae81b7c5424caa94bbc7bf939e",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "09a0e4193fd4ff4a5f8932c8039d06e69142d380c120ffae81bbd1fd70cfd7a4",
+      "working_file_sha256": "325443bd0d68e188d4d01b628f16df0c81b3744fb9e2b940b4026dfd28be9fa2"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_osnet_x1_0_softmax_256x128_amsgrad_cosine.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_osnet_x1_0_softmax_256x128_amsgrad_cosine.yaml",
+      "git_blob": "29750bc2e3cce5747ab703905f74fcbed74b5a57",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ee89b38ab2fd16ea05dbd091c874590eb9306e91b9c0cc2d1edb7bb3f0af4e5d",
+      "working_file_sha256": "5b7a3501cfc4b43f0c9022e711e4df53cfc9a9d0c5badad2abb063b39ebe89fd"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_r50_softmax_256x128_amsgrad.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_r50_softmax_256x128_amsgrad.yaml",
+      "git_blob": "61735898ac1f2e72220f739445a186f787dfe568",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "bacd63cda9b84aaf5ec3991c98c72e1a610dcc0b2e9db424ea31d8aecbdb54d2",
+      "working_file_sha256": "b4045beee0f675bbb5face18e95a4d98062c0c9b70c1adda456656b0096ffb25"
+    },
+    {
+      "original": "code/deep-person-reid/configs/im_r50fc512_softmax_256x128_amsgrad.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/configs/im_r50fc512_softmax_256x128_amsgrad.yaml",
+      "git_blob": "5ec2b705db03439220fb257d7e54195844b8cdef",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "199510098f1fa96ecda00f8c3c0a876fd31a7e9f8581ea37cc9309b0c3a7bbf9",
+      "working_file_sha256": "105dbd9048020ad19a58f2de1bdc5e7847e5e41d6dde06f90329ae8146d6a619"
+    },
+    {
+      "original": "code/deep-person-reid/docs/AWESOME_REID.md",
+      "destination": "occluded_reid/code/deep-person-reid/docs/AWESOME_REID.md",
+      "git_blob": "31215356af8f15f40263542167b1ced97f4f402e",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "388c79956a5f3309a15999ab9ffd466d948b6b08065b57ad06f1981d513b595c",
+      "working_file_sha256": "61fd58bc29f0e6daeee864cd97cd9f650388d7a6150d912815760007d6342568"
+    },
+    {
+      "original": "code/deep-person-reid/docs/MODEL_ZOO.md",
+      "destination": "occluded_reid/code/deep-person-reid/docs/MODEL_ZOO.md",
+      "git_blob": "8a9306fe0dccf6259add21bf1de1bdfbd5deeb7f",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "6c7efc08326beab05431e06282a8efdfb278b4c0960761cd347f96c5816491c1",
+      "working_file_sha256": "b204cb81bb3714361adcf27e0923e798ccad34e3c934d9bbfcb71f483df8ef11"
+    },
+    {
+      "original": "code/deep-person-reid/docs/Makefile",
+      "destination": "occluded_reid/code/deep-person-reid/docs/Makefile",
+      "git_blob": "298ea9e213e8c4c11f0431077510d4e325733c65",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "119280cf4eb03a1b93c4a914270423e53c1308d4a9553d96021cce565b3fa853",
+      "working_file_sha256": "e95c213dbd5b607ae0168e2763c723e5efc8896a70a1abc0bcbd5b6b223b963d"
+    },
+    {
+      "original": "code/deep-person-reid/docs/conf.py",
+      "destination": "occluded_reid/code/deep-person-reid/docs/conf.py",
+      "git_blob": "4d27eedbac1d47dd6d1226b37e846a07364a0f1c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8673d4e0f7fbfa3e0c08a76a1ed72b4bb19fead690e9d4f5f35608a7f024244c",
+      "working_file_sha256": "994d3921ea11226807096fbdbab564011cb34cb123d6d043e1a848427a0b7b36"
+    },
+    {
+      "original": "code/deep-person-reid/docs/datasets.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/datasets.rst",
+      "git_blob": "31f861133a4040e4228348e18e03cb0cd969a53a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "98288c59fc9b30170c6706b320c75b7d912586e00350cdf4431d065db99b4f55",
+      "working_file_sha256": "242e6142957d02afd017270150d7671b7ee4a467ab3638e35ef2784b20d49255"
+    },
+    {
+      "original": "code/deep-person-reid/docs/evaluation.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/evaluation.rst",
+      "git_blob": "979ec7532c738e03495e9b96bf7de0c40020547e",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e9be682ba60653a00003096594760a108f4538a1d1b52723829db7ff087816ab",
+      "working_file_sha256": "fc429c915791a7f0ca479b967f4328049bbb700da44fc254483dd192258e998a"
+    },
+    {
+      "original": "code/deep-person-reid/docs/figures/actmap.jpg",
+      "destination": "occluded_reid/code/deep-person-reid/docs/figures/actmap.jpg",
+      "git_blob": "1a0522b7e026f5c96ec5c2af21ae275a74dc5ac8",
+      "comparison": "identical_bytes",
+      "git_sha256": "b776c2ca212c7d90cd034924be976171dd7ebd1902312714d318436ccea1518d",
+      "working_file_sha256": "b776c2ca212c7d90cd034924be976171dd7ebd1902312714d318436ccea1518d"
+    },
+    {
+      "original": "code/deep-person-reid/docs/figures/ranking_results.jpg",
+      "destination": "occluded_reid/code/deep-person-reid/docs/figures/ranking_results.jpg",
+      "git_blob": "a759dfc17cac44734fe6a3ae03db58ea96485aef",
+      "comparison": "identical_bytes",
+      "git_sha256": "934a8bb440fdb241f7d8a430510d9a5791e7bd36b8ba644830d984e6fafdf475",
+      "working_file_sha256": "934a8bb440fdb241f7d8a430510d9a5791e7bd36b8ba644830d984e6fafdf475"
+    },
+    {
+      "original": "code/deep-person-reid/docs/index.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/index.rst",
+      "git_blob": "c437deaff36e09a775ec783e0a7f68c35379aaf8",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "690a5f616bc6912013b032737e98be3dd34f885e397160afce93642eba008cf4",
+      "working_file_sha256": "0a9788794eff01ab92cab9f64bbb1e3a86dbbb36f7199391daf44e40e55f531d"
+    },
+    {
+      "original": "code/deep-person-reid/docs/pkg/data.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/pkg/data.rst",
+      "git_blob": "3dc47d6ae9790042d0902b6cf1612112539886ce",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "bd8a0485c93dd2324d7d190a9308bd59280666576e2d04c9b1cc6b3f3b16a799",
+      "working_file_sha256": "277d0d27a9cf5762abce378cd53f9c6113146ae1e142a20775e49af6f1054035"
+    },
+    {
+      "original": "code/deep-person-reid/docs/pkg/engine.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/pkg/engine.rst",
+      "git_blob": "ae2bc6859c090af48304dbb3d383efebe73ea9b2",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ebca7c3f0666b4af3b477e4d6b82531dd02ef2231c3e44f9ff0feb033b1e63ec",
+      "working_file_sha256": "9afce1d039845c9dfb130b19c56c4f751e58b972d75162c91e869d78064f7d2f"
+    },
+    {
+      "original": "code/deep-person-reid/docs/pkg/losses.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/pkg/losses.rst",
+      "git_blob": "33fd9bc46fdbb141aee78cce63618dd99fc51f9d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "db05d21ba86791705176cef501e17c03481995c18e25d9e0ae87c331bf51e58e",
+      "working_file_sha256": "f888210a2e3286923c8eeba437ecde32e1927e059d26e82e68fe42cd642faa61"
+    },
+    {
+      "original": "code/deep-person-reid/docs/pkg/metrics.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/pkg/metrics.rst",
+      "git_blob": "5a52a90128a944061a609f982e21b1a9e53204e5",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "961abb115d849f9669043e9d74945c1b18217d0adea2a0a5515ccce0d1e458ba",
+      "working_file_sha256": "21687969081138932bed47a89078c123b5e42341109a6dfd5fa2e32b3450f95b"
+    },
+    {
+      "original": "code/deep-person-reid/docs/pkg/models.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/pkg/models.rst",
+      "git_blob": "685bc73e81521627b91c9f3098e26c603c3e7b41",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "c2f94434aeb84b5126c133bf98f4c80de2fedaaf8a12df990a5bdf7a24b6d862",
+      "working_file_sha256": "4eb09bec8028c3bae50fe90694359abeb2527d7cc4dd3d5199869528db3bcd10"
+    },
+    {
+      "original": "code/deep-person-reid/docs/pkg/optim.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/pkg/optim.rst",
+      "git_blob": "560162340938ab8ad4221e547154c3d923a59f8c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2af3ba5e639ea103a5f901182885da54c4a454360fbe457f9f1a3a3bbc5686c1",
+      "working_file_sha256": "12add75aff12341be3ba63b9acc5f16b21c9ad0bde5244607b52e6aaa04605b1"
+    },
+    {
+      "original": "code/deep-person-reid/docs/pkg/utils.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/pkg/utils.rst",
+      "git_blob": "1545bc29c88f98cd0a7750e42776a3fd682bd93d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "233f652441abea93ab61f7c7ffd000d30c5d14b4b5c06d6ddb41be8c0d1a31cb",
+      "working_file_sha256": "2efe9a7d636c447ff75ede0219b36cb18c1909cf1f86760bac3d8748ba730b61"
+    },
+    {
+      "original": "code/deep-person-reid/docs/requirements.txt",
+      "destination": "occluded_reid/code/deep-person-reid/docs/requirements.txt",
+      "git_blob": "b6f5d7db27b223bfed9bb617fe9fb6364f28fb40",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "adccc65582bf0370768046f06b6b0705069617a7dbda8db900a044b72ea3ccd1",
+      "working_file_sha256": "57343a170e8f1d048a89ca54a228143eb490cb097aa1b62a8f1f76eecb77f0a9"
+    },
+    {
+      "original": "code/deep-person-reid/docs/user_guide.rst",
+      "destination": "occluded_reid/code/deep-person-reid/docs/user_guide.rst",
+      "git_blob": "5415109fab92a170e87e5af1917f35d3ece76026",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "95bc2ca3f4c0f641a2b6a648c0cebf032a34abb732a722bad77c8789904b85d5",
+      "working_file_sha256": "10e8f6f9011289060b1670a3add83142b5a3f404e39cfd58ecb69849c4a62586"
+    },
+    {
+      "original": "code/deep-person-reid/linter.sh",
+      "destination": "occluded_reid/code/deep-person-reid/linter.sh",
+      "git_blob": "9db34f9f86e44fad1263758a6ccaf09eb816c11a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f718e059e9c57dd1b7cd3f4b261af8babffa750ee3c6a8416fe562620ec041cb",
+      "working_file_sha256": "765e1327e21045100d6c7edb0f2ef5b408286bbfdc85f64c337eba9cf763a1bd"
+    },
+    {
+      "original": "code/deep-person-reid/projects/DML/README.md",
+      "destination": "occluded_reid/code/deep-person-reid/projects/DML/README.md",
+      "git_blob": "e81be7fe73b201236534d2785c6b2de7a231e017",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e63e4abeee7aaec8f0f4176d14eb06e7a1dc6b78439e9dbec5778923d3fbbcb3",
+      "working_file_sha256": "149266ec937344d9b14fd51da6454382ab27d409074d3c1e8cad1127de593add"
+    },
+    {
+      "original": "code/deep-person-reid/projects/DML/default_config.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/DML/default_config.py",
+      "git_blob": "9b15e35f5e33028eac0cca3c92dee3c7a97130b7",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "01117ba3b16444ce90f0bca4abbb877ff9ea234157426d17557a6028bae6c928",
+      "working_file_sha256": "2c3632cf6f6df26d9441169bdac96a4f0d927c5008ff8c628eb5de5992eba9ce"
+    },
+    {
+      "original": "code/deep-person-reid/projects/DML/dml.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/DML/dml.py",
+      "git_blob": "546e573d6ba5d3d41bebbb51062bf9ad451d7344",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "64a2b4b39f96778d34f311d23963d5c82541996b4247eb7a464bd3b1a588b85d",
+      "working_file_sha256": "2676a20be34f5f34047c3590aa247bff66e31587e08e08f6a93a81708b48552d"
+    },
+    {
+      "original": "code/deep-person-reid/projects/DML/im_osnet_x1_0_dml_256x128_amsgrad_cosine.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/projects/DML/im_osnet_x1_0_dml_256x128_amsgrad_cosine.yaml",
+      "git_blob": "3a240b142eae2d124d98166077eb7e572a30be25",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2139ca01f31a047951a389cad7e46d961f77680e409a8b9b0f661368e37073bc",
+      "working_file_sha256": "242611f3a8ec8b7922d1e884dade3f5e4e5c8a23036508a265aaed3aa041be69"
+    },
+    {
+      "original": "code/deep-person-reid/projects/DML/main.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/DML/main.py",
+      "git_blob": "9af33d93ba16b80e56b65caeb2ad45f8ad0ac5da",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3b878a04ec1ea258828b44e59a5993160da5a39d0b17036c8879f705f61c88c2",
+      "working_file_sha256": "39eb97c6c9a84103ab05aa44995a18e8a32bca8fc0dd6a9db3e01e7a50be86c2"
+    },
+    {
+      "original": "code/deep-person-reid/projects/OSNet_AIN/README.md",
+      "destination": "occluded_reid/code/deep-person-reid/projects/OSNet_AIN/README.md",
+      "git_blob": "b3131830ef92ebfda98f13e9e3c0d0eac4b8c4a6",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a5056633f4b11833cd7f961cb5a344302c1140548369ededf6f90837676d0884",
+      "working_file_sha256": "29a4dc18ab6e7e3ec63233f163c7cbae7a1f6bcd5bb1f8e2d317a2dc1771f96f"
+    },
+    {
+      "original": "code/deep-person-reid/projects/OSNet_AIN/default_config.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/OSNet_AIN/default_config.py",
+      "git_blob": "733a9f026202eca60722963ef735341cd9368650",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8e45c69cb666163a7ecf57a3461722fd82c93614778eb4976ec81ed8133c185d",
+      "working_file_sha256": "abb26c1e76ac71056cc0e916a89b0f232af1acca179c4068f210f00fdbe28e26"
+    },
+    {
+      "original": "code/deep-person-reid/projects/OSNet_AIN/main.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/OSNet_AIN/main.py",
+      "git_blob": "f59177073dfafe1b4b712691c780af32b30fcd2c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1ae0c205045e63e357b4826172561981569e8ada779b000310177b3bc3761e60",
+      "working_file_sha256": "41467cab9e6097b7b94d847ae88cc1fc30053832f53f864e483a4b46d9131913"
+    },
+    {
+      "original": "code/deep-person-reid/projects/OSNet_AIN/nas.yaml",
+      "destination": "occluded_reid/code/deep-person-reid/projects/OSNet_AIN/nas.yaml",
+      "git_blob": "507b2ecfe44e8a7ab54d74c74aef808fea1a4951",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "088b2027ab63d4cab4c2319de3586c1357c102a29b9541a3679e21f2723e60c0",
+      "working_file_sha256": "ea9c2c5385fd25b63e9f15ed86062585c423a23a4a30acd63c93498f5b6aa73c"
+    },
+    {
+      "original": "code/deep-person-reid/projects/OSNet_AIN/osnet_child.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/OSNet_AIN/osnet_child.py",
+      "git_blob": "b47d747d03d90748fff902e67e49e05a65b82d0c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "265217afd371e3f27df4e19e049a774d29dacc5f130efea9fa7a3428c1941d9d",
+      "working_file_sha256": "7b2c56e6cde0780957643ab7b3196e0ef08b5e4cfa2e156bf861fa9952ed1416"
+    },
+    {
+      "original": "code/deep-person-reid/projects/OSNet_AIN/osnet_search.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/OSNet_AIN/osnet_search.py",
+      "git_blob": "182014489ab013bdf44a1cd213ce369deee76478",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "feeea5b9565e93aab68ba442838feaa0e0efcfc2a5abaf0ebeb052c15697c9da",
+      "working_file_sha256": "c86f8ce8c755e1d828bafdb3d700a03a258a8fd05c38d61f9ba4330d8ac87201"
+    },
+    {
+      "original": "code/deep-person-reid/projects/OSNet_AIN/softmax_nas.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/OSNet_AIN/softmax_nas.py",
+      "git_blob": "e2a03b6be4e82fabac4c89714c700c75d8cb1b23",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a87b7c88516e250708748c4b3dfc836e3a0b50eaf59b5eec40c9f49bfdf7f3cc",
+      "working_file_sha256": "0d319083326b069088bf0f98a453a60a5e0f76267b13a21da0531ca331283d96"
+    },
+    {
+      "original": "code/deep-person-reid/projects/README.md",
+      "destination": "occluded_reid/code/deep-person-reid/projects/README.md",
+      "git_blob": "fa63919ffdd31eaa0b7b6bf8032c9c589b4f233d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "210a5ac7cc4604c52c860510e11c49fdd2cddf6ef80bc1ce6325e4ef876ad789",
+      "working_file_sha256": "01f5db2457f0f1bbc25ed48328668d9530ee3b4a142dcbc3b5dea0049fdbd8b5"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/README.md",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/README.md",
+      "git_blob": "a20b6e7f1c279c065f8f2f81e078410796829951",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2fb03eed97719180989acbbc64afd2c1fe8e20d75b30da6d6d59d182b5598c5a",
+      "working_file_sha256": "24ac342ce26736a7d1202c7920f5ea9d7ca8fdeb822f60f5f5b9e83f9e8e37d9"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/datasets/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/datasets/__init__.py",
+      "git_blob": "664598c71865da78ce937605de3bbf29ef304152",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "9403d0d4a5712c556dfbb1097bd4c601f4865c37401be63a8033e56ea39f1314",
+      "working_file_sha256": "99c8f611e6c01e32bca1134468f7564d97922aa50bcdd615aa14e2d682677db4"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/datasets/dataset.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/datasets/dataset.py",
+      "git_blob": "7ce4ebff15a52140b7e713322acfbb42eb013fdc",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "740206cb47b0aa94e4671d47f1688ae87701efc19b52ee9a3739c6d21be525b5",
+      "working_file_sha256": "0dff05ce065340e681d7c36d7f52bd6f72eb75f12c0ac0312316772dad1c44ee"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/datasets/pa100k.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/datasets/pa100k.py",
+      "git_blob": "61dd26cf54eef209e3ee3a8081802a0da8a77f66",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "11501a6a707997faad35ebcbb948ad96253b0992060967e913980515bd68ea0e",
+      "working_file_sha256": "e84a56e871da38a15c59bc4e8b9dd2a1d244a10de359103ec1906dd6eb46f035"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/default_parser.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/default_parser.py",
+      "git_blob": "d19a8be9716455b15d5fdffe6b99f9a3c3d8c209",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a7d829ffd240266d9b536693eb4b4a9866d72fe1409f8702dc247f937d888145",
+      "working_file_sha256": "bde9d20dab2a6354c157f571735a2e0e47ccd227e40610f1b8edf434228da1e1"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/main.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/main.py",
+      "git_blob": "1fb423802f4c1ee5632a2e5191a5da769ccce079",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "7e8dd831af11d12a2b3bb3e2237826e645a79065110c71cf79912866096bf74f",
+      "working_file_sha256": "1f47cb73e416b0107486b6a36454574fe2a0bac4ec0fe60ba3b240bffb2bd197"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/models/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/models/__init__.py",
+      "git_blob": "ff0f0eda86c5cbc8b045a3d8469dbc7ba5a1ffcf",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2573f8627aa0396423e947d3c5f37a74cd8783707d24f0bb3abaaad5317d98a7",
+      "working_file_sha256": "105c9aa9fa84e450de70c6a41cadef85608c15916c4b9148faa992c04ee48fe1"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/models/osnet.py",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/models/osnet.py",
+      "git_blob": "12569da08eb3c7e5c99abd3100e94b01e7924189",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "10e261cd10412819bb095a84658ecd10c994db9875344f12ae17bbca8f87c18a",
+      "working_file_sha256": "468afd67c64dd942c43c56242ca75ce8a7fa03cfdb06669ce32681aba9425dc3"
+    },
+    {
+      "original": "code/deep-person-reid/projects/attribute_recognition/train.sh",
+      "destination": "occluded_reid/code/deep-person-reid/projects/attribute_recognition/train.sh",
+      "git_blob": "9080a66786671b6bf869a5ed3ed574432acf7fb7",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "48fd4b86e5fef83716bf442f49856da3f914d6f0417f18cf42595248ecad7b70",
+      "working_file_sha256": "b27c66b116549aabdecbe7d595517f437b74af6b36c097185ddc65172ba869a6"
+    },
+    {
+      "original": "code/deep-person-reid/requirements.txt",
+      "destination": "occluded_reid/code/deep-person-reid/requirements.txt",
+      "git_blob": "f3c94ffd838ee47525a65660882b2e504d48c5a1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e7e806e4c9d0e7851db06918574cc80964d55a47bd9ded0db1e4834dee6d63e2",
+      "working_file_sha256": "00c7bb169dd1223688561f125510f1c523dd8c58045c39ddf6f610b6025eb919"
+    },
+    {
+      "original": "code/deep-person-reid/scripts/default_config.py",
+      "destination": "occluded_reid/code/deep-person-reid/scripts/default_config.py",
+      "git_blob": "da448e3637521786d56482c4fa30f47f7c7f26cf",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "14c60934be200131ed92dc25ce14dd4f2833b495609814b0ed64735e10f3d0bb",
+      "working_file_sha256": "fbc587db1e37e032f5ed9528a12794aa4fca885a1b44774f2838a122fc453676"
+    },
+    {
+      "original": "code/deep-person-reid/scripts/main.py",
+      "destination": "occluded_reid/code/deep-person-reid/scripts/main.py",
+      "git_blob": "61aa49ddd3cb8ba9c9bf1e4c281b765b8d971c10",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "c91db5193010fe3f449e24c53e660220e05f49df0136dadcab31cefdb64f76d3",
+      "working_file_sha256": "92fb6e1ff05a46916ea69cd9e5e1904fd3877d6dcc9aa212f6f4a8800752913d"
+    },
+    {
+      "original": "code/deep-person-reid/setup.py",
+      "destination": "occluded_reid/code/deep-person-reid/setup.py",
+      "git_blob": "a8ee83e8fa28b7bfbde1ed817d1bb2c4f57c33f3",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e4cbde43cdea26fef45648ee803d54f6afaf926d4e536b1e85d3ceac3f6e1ef0",
+      "working_file_sha256": "29778b28bebf1eeb900ed5e44ca2a074ad707bb54c637ea7350f3ea8fc70d524"
+    },
+    {
+      "original": "code/deep-person-reid/tools/compute_mean_std.py",
+      "destination": "occluded_reid/code/deep-person-reid/tools/compute_mean_std.py",
+      "git_blob": "e0a5dbe8dfa746c164b951908fb0b105e4cadbfc",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "4cc052ea9c79ff76a77ea7aa4c1a7e68dcae1257ca291ebf7dea7d663c36203c",
+      "working_file_sha256": "32f90ec19f86dcb02a8e21e43c4a53015283672234a6707bb11c0acadad39ef9"
+    },
+    {
+      "original": "code/deep-person-reid/tools/export.py",
+      "destination": "occluded_reid/code/deep-person-reid/tools/export.py",
+      "git_blob": "28dfde283408c9a35f576007849bda369b1e1c8d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1329513f0b33d2397f15812a4bf7a490d44016b900ff03827558c6470b52f078",
+      "working_file_sha256": "9f94f64629dc9bc1583af4a3c297a1a7a7113e3e00f798e6b80eb4f1a60eb364"
+    },
+    {
+      "original": "code/deep-person-reid/tools/parse_test_res.py",
+      "destination": "occluded_reid/code/deep-person-reid/tools/parse_test_res.py",
+      "git_blob": "fd5b0189d4ef130b0e772d483cf4c1e5643dff06",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "de1e420c8e6b080edaf7f5cdc2c4090bd2129c2c363159bf20e69dbaf6e59cc9",
+      "working_file_sha256": "deed458071c5e1444f642fd591320ea69930020337e9f33917de2ee68d6cd2c8"
+    },
+    {
+      "original": "code/deep-person-reid/tools/visualize_actmap.py",
+      "destination": "occluded_reid/code/deep-person-reid/tools/visualize_actmap.py",
+      "git_blob": "ae699913caf2431f96da6584b7ddc57ac6243214",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3eb5be81273e7fef471200e51626ab05f6866d85b415726f2d9ed46d398cec0a",
+      "working_file_sha256": "abc20fd45f6889d6c6e05f39d01ce0b6ff3b997429c463d593a27c255ba7328b"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/__init__.py",
+      "git_blob": "35eeca675432d30bc360cede699ed9c655dccb80",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "664c79efeafcabe3d6a1aff3c3186d5b58e908c3e0073abdbf66a8d7ea45b6f1",
+      "working_file_sha256": "cc5aa2a746eaef1c2710f273a3b67f1a0439fea64068343f8a9e6aa13729133f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/__init__.py",
+      "git_blob": "5318a16326d671a1b5a8ba949750124fd1d6b05c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "6e3bd75e7dc350c0283cd3be3f4c723dded96aabbbf05c5ab83d4adfc916d9aa",
+      "working_file_sha256": "d43329eca32314171fef36e5c6285f574299ab7f4fb0a23628c14080020d0ef3"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datamanager.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datamanager.py",
+      "git_blob": "7ae28cbafacb935619272f56576c4c1e2c30dfec",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "90e83de919030e4616ef6358177a5da35fca0dd2da4d96af13c5ce1d8cf95c48",
+      "working_file_sha256": "eaace2f4e7d774661f959811780d96bd9339285af8403ee2de1504c166bd9dcc"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/__init__.py",
+      "git_blob": "afb02a2bf2ce740ade52cb974a862e8987222088",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3f4ef5d1fc8331c2d05efdf40c049fa607e7a7c79c87f0804176bf83745ec9c2",
+      "working_file_sha256": "72de231b984db05e30405a16e825b89baa45926eb24cad5950c8859fedca3e5c"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/dataset.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/dataset.py",
+      "git_blob": "66b1e7a6ea224e6d4fca75b9df7c0342de878553",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3d8bb2964b8b620dc3b172ad3307a592533aa68bce90df000c4d2e15443a3037",
+      "working_file_sha256": "000e1c04eb94fd5a3d6284a1f0bd36aece8b578e2706ad201e0ffb670eada7d8"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/__init__.py",
+      "git_blob": "f2216e96db061ee38f7172147778a495d3124db0",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a93406f59b921bf8ec54cfd85fc92c7a40280f953eca13bcc38c483c55b0f87a",
+      "working_file_sha256": "99574e44febc5db8d7a74b45acdcfdf79f4cc754426534096bedb92aae72e00f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/cuhk01.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/cuhk01.py",
+      "git_blob": "c4c332ef7921a8d9f501ccb6d57aa56d78a9a98a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1cd3ca05560173c88968fbe63243eb96cca3783c94333d402e801a442f24342d",
+      "working_file_sha256": "654813e0741b23c9ad00486e7b92085124c786d28221ded2c2f9aae8edfb04f2"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/cuhk02.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/cuhk02.py",
+      "git_blob": "dd92588d21fe6d48ca56e51e41d1e78f31095b38",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "57ef7c374bb6e7a900aeeb5cd15aabf0a39ae30567163412e686871a51a6f8f4",
+      "working_file_sha256": "a031ce3d4644a7847abff18c8602111a1f59e80070a84e62acfe4b987027f0aa"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/cuhk03.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/cuhk03.py",
+      "git_blob": "cd27bc2fbd5dd345352559087aa27c1d7c088fd9",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "9edd5e08f6845bc4942f0ce6483370de1076501f5278aa93eaede66cfbdc39f0",
+      "working_file_sha256": "c7b534d8d48320931c2c1b37a36c6063667d1c86c0b3d4bbda88285848a1b175"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/cuhksysu.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/cuhksysu.py",
+      "git_blob": "f6c9edd74d23732be4477c7c5b9a5e2fe1464c96",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "59532df34a89c16e188c99261682149577279283da9804870946daf5b5ded2ed",
+      "working_file_sha256": "693dc6a50b87ff9bd5cc34475fc7a459a79f696464d87b1f74ca131b1587c6f6"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/dukemtmcreid.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/dukemtmcreid.py",
+      "git_blob": "5915da51bf831824e5b2207d8938fbc3707c4e61",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b54871850121c7a208f49791e11adbc414b0d0a9b56d3916d2cd1d93ff603730",
+      "working_file_sha256": "e2a8bb4fb5103744247f78093d82b03e6c6fc2bf95743bd080f7e53b6913718c"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/grid.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/grid.py",
+      "git_blob": "96023d62ea1cbb4eae2172184e6fd48c941c81d1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "c84e4a63427b718695b453a0f1fd13481d64c6b70f5f5f5cd280434e5ae44c3f",
+      "working_file_sha256": "10cde48397a9d21ef2364a024ec3b18b27cef296d55e1a5cfa812c04bf083b70"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/ilids.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/ilids.py",
+      "git_blob": "42971b03c020fb42c23e74a64ee20699220be962",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ccb9e18fcb2b9ea2a5b8f254a443b73c0df09a5ca27edc7e8187690189dfce52",
+      "working_file_sha256": "52931b9103034c7649efe10b8d7face3958a9cadf34fee5f38fc0923c903d989"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/market1501.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/market1501.py",
+      "git_blob": "7d138d1119cf2811a2570c265849d9f74f6a721d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "9e32d2a98aabff0fd6e32fd74236a7e7bec382b70bfd97cbe508d178a131f1d0",
+      "working_file_sha256": "1f4871336a9a61d463c236e7eec332d99fb79c8a066bec8a097568785710fff1"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/msmt17.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/msmt17.py",
+      "git_blob": "c4741e61ea02f0fc58e6941f4058a76b9b4ccefc",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "4d2bb1c6445f07ea5be7a4492902cfd4b0abae2bf8cef7c8c2a6698b5d15f83c",
+      "working_file_sha256": "1b0445af1f312d77a67583294e3bd782508b41c821f64eeb18ab67f5430945ce"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/prid.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/prid.py",
+      "git_blob": "d6d6c2058ac48ccb2e793680ee34e6d8d25bcede",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f3e2643ac53c49504c93020fd2031eb6c522a1a4bfa7cfabcfeafa2fcd79c97a",
+      "working_file_sha256": "08f6cb5997b41e6eac2063781da352e7c28b78d276fc9580539e78def38364f3"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/sensereid.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/sensereid.py",
+      "git_blob": "7cf5f3246665a4b4f45275a8b2c7351b0cd4ad48",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "de200410411e359e65729c0770805cfa57d5d752f578010d5afb8f3b8192864a",
+      "working_file_sha256": "8881b6caabb8ff343f0d23e63d7fea409f4af7f63f0a3c592c59067fd982da44"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/university1652.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/university1652.py",
+      "git_blob": "ce1e386b04b904dca17fb5c0b1373e648cc995ec",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3ee06701de8de970182d2300ec5052fe6f0375a72167fb8dff52be2bdf5ec337",
+      "working_file_sha256": "472fb007e7d49c4c4130c5adb8e329b926ab2debfa23fd56f2733122e8375a7e"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/image/viper.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/image/viper.py",
+      "git_blob": "161dd99e654b43b93dcd4b46646b2d0f85a2ab1f",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "cbd06fa87f7aeb874619f83c66ee271f7e62aaad28c2861126a1cba34899e40f",
+      "working_file_sha256": "e553bfdb5ec8633b10c03c602140ce632fa7cd6bfed5d6cd6369ca8dd4ac48fe"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/video/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/video/__init__.py",
+      "git_blob": "f4e75d316d4b1763c82848490b6766bf7c662654",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "14aed02a13c2d6526c583fabcdf8926a2e5b5212ff69f86ad4a873e6ad52f5c4",
+      "working_file_sha256": "e6497830cf45bff58cdd256dc93bd195d9e4ff653821d1569974f7fd5d96791a"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/video/dukemtmcvidreid.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/video/dukemtmcvidreid.py",
+      "git_blob": "4b4c82f9e92008bdfeb6c56b79bd24b916f83922",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "55d1e431b0999ee046675df9d4763c50e5c73d2db942f91cdc84ea0692feb882",
+      "working_file_sha256": "31b8efaf3c277cae5fa0afd1c51ef9a30c050edffc2ae4dc3fa4554ca818ea3f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/video/ilidsvid.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/video/ilidsvid.py",
+      "git_blob": "c3ac1bbe6f182301f726fb8027efab6f142808c9",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a6e312392a6c12fb997de54514ad52a4a7e4c470adc50f68954218c96c97eb47",
+      "working_file_sha256": "e4144edb4a09cca45343c648faf5453b4b6f7b1a5abc4c2b87b1c97b25b9ec31"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/video/mars.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/video/mars.py",
+      "git_blob": "4128e1cbf53ca39fad8e468eed90c3d80c9310a5",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "d4588e9e33bc4450b007893b92e31b07a7a96a3a1e37b0bec9756138ed3b6f3b",
+      "working_file_sha256": "4392232e6f8a26bff07318d00a4d723ac7b8efe847389ce87cdef96e9f2c4f91"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/datasets/video/prid2011.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/datasets/video/prid2011.py",
+      "git_blob": "3af2e4d1ffd6ccc71f2b5705090c5931602f1e3e",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ca35ec81f6fdad8b90ad368cbc3da6902ed15b8569f6a53c17b639d7d2955e5f",
+      "working_file_sha256": "630fcbf4f223eb9b0a8cdd8ce309daa215ac5a5b209d5e2ace795cb099478359"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/sampler.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/sampler.py",
+      "git_blob": "f69b3e02a7f111bc88595dae7a6fe64b25e0703d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8778caa19d6091d9a7879e9accf8b878f7e35a11c31c5a04d1aa7d4428216fcb",
+      "working_file_sha256": "ad960a84547527a6c5515bb909c05c4842bc4e862472f119afb7d4ef4f4a52ed"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/data/transforms.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/data/transforms.py",
+      "git_blob": "0c09ca0ed0a0316c3a3087f1ca137fdde0c48be1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b6b578a72d97f6c450584ff7758907063183b53aad80b6402767cd38184db210",
+      "working_file_sha256": "5ac928dc08b44ea9bb2fe196e82bb28901d76ff315f698ad22f66a181c52aecc"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/__init__.py",
+      "git_blob": "a39cc7f767e5350132b5e165a87624c7ca80bf80",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "5df48d39d9769bfe0c55570b3991f0a89944b455bbeba81d184ab02c8ec094c5",
+      "working_file_sha256": "53cd7426ef79248ac1bfff8ed2307e6b88f68ed183e579a13f17edca6a924d48"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/engine.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/engine.py",
+      "git_blob": "bbc01e09ea542c4f2c08b49a78e3610627a0143a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "77a123383cfb2fce18cb764b0a658c4b5303acc851e910ba3501ccd9b34e8a65",
+      "working_file_sha256": "916d8e6584d4e8bf192c7ac32df7db2225b204281a1633584e9ab73339f6d582"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/image/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/image/__init__.py",
+      "git_blob": "08d313a53f99f1524f973f3d998f182c59950df1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "73a41c874fa5132626c1db6f05a366959a37e4fbac4dce1f6557ceafad439a8d",
+      "working_file_sha256": "c7664c1ad28d98bcd890882953b129cdd9c736ace9e5af6e55cc738ae42c4ffb"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/image/softmax.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/image/softmax.py",
+      "git_blob": "5785d4f8c612de60b82de37dfdac2820c793545e",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "fdbc8a21a1605a9f07bba4c56efce7e97caa63352744b069be2c0d05c6728f85",
+      "working_file_sha256": "9ed82d32f2eeb1b6fbac0099adee555e0bb90a62f2889c5f9210489930829565"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/image/triplet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/image/triplet.py",
+      "git_blob": "cd15cfb203cbb18244b440ac7e74f253bd1db8a8",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "9fba62790cd5efb41629287726187a8b99d35b80f24b58ee59e5f683124f2fe3",
+      "working_file_sha256": "6973b18d8dabfcecad14b1bb8b71409ca0747f837d644b4a4a7dde709a2c5d43"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/video/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/video/__init__.py",
+      "git_blob": "b818bf4d32cbb3eba1545f1900749a2dd3636af1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "37f0f5fca7c670c46125de59529749dc4d1b249e2e97f9ab63fca922fba70625",
+      "working_file_sha256": "8ff3b27e53947784107b5fc2aa44b7393b704090f702eee87e351d8d5768337e"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/video/softmax.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/video/softmax.py",
+      "git_blob": "fe92feba11935900f3c01e8591ce3eaa19bf6862",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2cc9e0a1db2d4d5db254b492ffd5f30666277bc4d860d00a37168a4b1362428c",
+      "working_file_sha256": "e3b27a8d891e1beacfa900e4a37e7dff7cff0198b998ec63f990578a38a9982d"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/engine/video/triplet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/engine/video/triplet.py",
+      "git_blob": "b2778db9b3b1cd4c44e167735062c662884e3b52",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "6b25f11a6854ae4e1e8fb2b2971798402d928d26ffe4cd143b27e0cda913d0af",
+      "working_file_sha256": "a7905755c70dd8650ad4ba052b7f0daf1f3366e50090456862a6cd9c6ebbe2ee"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/losses/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/losses/__init__.py",
+      "git_blob": "16257499c736c9f7c9ee46abd2f75c24ef10370b",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2e4171eb32b609a074cfa75cce3b09ffbaeca8b594b6c3ca6404c74a76a7b400",
+      "working_file_sha256": "e9b9854f5d5dad568f4cf929fcfeab40b0f3385b27994d7127236a4a4d54f6aa"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/losses/cross_entropy_loss.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/losses/cross_entropy_loss.py",
+      "git_blob": "4cfa5d46e41b7c7d11b95a8bd62c04903981d0c0",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "489449a83f4cbd601f429d844dea166c97b4ad727873fe0150cbcb12325aeade",
+      "working_file_sha256": "8b2c7f31838ba5c4bfec3acf1cb5e7e78dd5d725020456c01fb2e3f31806ecd7"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/losses/hard_mine_triplet_loss.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/losses/hard_mine_triplet_loss.py",
+      "git_blob": "ef9019bdcc19015b690b2b4b48674edd20c5b949",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "0d5091a40b98d9243e3c5695615ada7f1bf6b5ab2acfc1e3b0ccaacd07bafa99",
+      "working_file_sha256": "be5f097aa2a273efed80bc27e197a892f6f13a2e0c7f787941e24227b4d34752"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/__init__.py",
+      "git_blob": "5159e1e9aa07d972d2a07ef00feac341349c66b8",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "d410fc412deec3cce272f485e1eee35190fd353d0e1c67cdd31034aabf6166c6",
+      "working_file_sha256": "fd10fff3b995bfe03bbd583338ff54edd4da2b6235adc9a2568444f7e1f8511c"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/accuracy.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/accuracy.py",
+      "git_blob": "3161f7bff08acbd8f598bc1712e693009feb60c9",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "6fac2b8251cccf07cf3194200a19cd6359587c1accfd875c15d3d7f01b99b398",
+      "working_file_sha256": "ea7b3ce6c7aed988cbd08ffd24f75a3f779ea75ca3b7ad3b478f38821c486c86"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/distance.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/distance.py",
+      "git_blob": "f4fb38316c2af8ec13a5cf734eec64734ddf715f",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "7a70d56efb02372652a47f6d598044b6bf0aaff981fcd1ed35238b7a4cfa26c6",
+      "working_file_sha256": "5146331f81fa1abcb1a7203e78a127584894c62f9c66e52db39a7f6e399843a8"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/rank.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/rank.py",
+      "git_blob": "bf6205b32807fcbe4ea658f28705fdc821b22feb",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "cb11b1b4c216915c4df7fb4124e8d655ca63469125ad82ae0a1efc059bc107c0",
+      "working_file_sha256": "ef9edf514a25bf04fbea64d1a2f4443053c75266532691a422616fc25853c66d"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/rank_cylib/Makefile",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/rank_cylib/Makefile",
+      "git_blob": "d49e655f85f829cb8ccda5bad6fe2c65cccf2bf2",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8f63effd1318ca2342368cd8eab8719a9072e49db6bfffd0be0217ba7f9d2a26",
+      "working_file_sha256": "eaf29ded44856b476c904d9d3ac1f5a0a3437d932924cf48a211c35c1b5bff19"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/rank_cylib/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/rank_cylib/__init__.py",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "comparison": "identical_bytes",
+      "git_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "working_file_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/rank_cylib/rank_cy.pyx",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/rank_cylib/rank_cy.pyx",
+      "git_blob": "b4a8690e57fce4a286b49a7e822c1c6d014ba30d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f9a41fdf672fcb35e5a6be5858d3a75c451bdc3219cf80f14846feebdbb35dbf",
+      "working_file_sha256": "8128947de8f342dfdc44fce6490c646863c528f7149497c0f2d66e99a7175359"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/rank_cylib/setup.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/rank_cylib/setup.py",
+      "git_blob": "ce2aeb7376092aa53ee32671a133bb57ee5941a2",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f355729e76e9adc68cd43c7a0c5736e9066d5b1ff1905a41ec7c64c433bb5db6",
+      "working_file_sha256": "84a469ab42c2cf4ca3ea5fe2ac1ec66ae36447e7c6d54ab81a0297fce780f8b5"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/metrics/rank_cylib/test_cython.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/metrics/rank_cylib/test_cython.py",
+      "git_blob": "5d1175d70bbc22e8c98fa8c5f89e2f5e88dc9c0f",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "7c6f512554042a6b7a742055de8357c31afa80fa1a869bc40451e52e1e9f0e74",
+      "working_file_sha256": "9fa83179cb1a11bdda6cb70bad43b5aabd096eeb1a51a08316f053fbb7570f5d"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/__init__.py",
+      "git_blob": "3c60ba6f59ca7fa5ff9f3c6a4dcef1357c353dde",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f66d8a05ce496d3a6ca23d0bd18155aa02e07efb6581363ec6f0f189b99321cc",
+      "working_file_sha256": "ed52d23611a66f61416800489790f8e0d273d29a1a7446304e8d68d5eddd5796"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/densenet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/densenet.py",
+      "git_blob": "a1d9b7ef85a79cbc4c4e8a81840935531df636b8",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a681ab2026ad388a332caee0cc7766cf324d71615281983971a9dd72cf396936",
+      "working_file_sha256": "e83105867b2f539ab66419683bd6ce929252ab35d6f4c1b66fd013bd695133ad"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/hacnn.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/hacnn.py",
+      "git_blob": "f21cc82f42fe181317f9a0d89cdede95699f45a9",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "bd2d5bd4c9275d7f78c73fef320bdd31dc6528e93570c41f5f9f297fae5db98c",
+      "working_file_sha256": "502d8cfe5a16936a0401c4715c78de0f5ab2013637882d018e0ea6d09643d4c5"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/inceptionresnetv2.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/inceptionresnetv2.py",
+      "git_blob": "03e40348425a2b1bc73e6f336efae8e5525cc45c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "de17492a6c1801ae56ba989073667a1b8f1577c140be490a2a88eb60842c73ac",
+      "working_file_sha256": "55a70c06b40798aa41f086715e08d658accd29c7e4839ca0379c28a27e9bb96f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/inceptionv4.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/inceptionv4.py",
+      "git_blob": "b14916f140712298866c943ebdb4ebad67d72fc4",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "aa301ffdcdbcdd25408c65dc7fe5573de1983b7fa94e1562023f9d914dea6fde",
+      "working_file_sha256": "dd41c5317918585b849195c3a735b01e79e63a0d118d97b5e78d9e0b0ca86574"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/mlfn.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/mlfn.py",
+      "git_blob": "ac7e126b073db6a710fc41e62624127ca91ec131",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8001688066ba8bad07003b06ecd957abcdcba8b223dc8356b4126ef1a3dca690",
+      "working_file_sha256": "575df303145e67d16fd9cc29081967949ad322f299c52d26ff2ec62e07c59363"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/mobilenetv2.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/mobilenetv2.py",
+      "git_blob": "c451ef84e726ebc8d4c8e47253f335494eb801c9",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f9e1c2a3b8a469f343b47812b13367d150880d38758eab14670e52d60fa72ba3",
+      "working_file_sha256": "38de5edcc484c93a8b5922425053cdccc11cb0209edcf83ec77520d431ffba97"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/mudeep.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/mudeep.py",
+      "git_blob": "ddbca675b69fcf38523d8687d8c7b279ededd8d1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "d6069e7c13f9fb805944307bc29e2686d90e7dde075ec5570456e9e5be7a9203",
+      "working_file_sha256": "63c7544f57fedb0c4b65ae17003f4d5770a8324be6aaab51981f12b4f08897cf"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/nasnet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/nasnet.py",
+      "git_blob": "b1f31def5515c3ba464c86cde471328b50c55b14",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "20e762521082698eafe9d3db4553d1aa731a5364b15c9d217636a44a6b9bc3af",
+      "working_file_sha256": "c3c2225e22b5366adc057d34e880d004a8742933f6fc5926197d3f6120a20166"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/osnet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/osnet.py",
+      "git_blob": "b77388f13289f050da2bf2bdebd40ab4fce6f976",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "c7c1c29187d6330f859c91da229271531920464c7011aec13842a086b2263cae",
+      "working_file_sha256": "887a1365a26787fcce3e5c2f69262439e7ebf47f4e454bfc2a6387b52cd56e0f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/osnet_ain.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/osnet_ain.py",
+      "git_blob": "3f9f7bd0704502401d499fd2bfdb802522b99efe",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a43b495866a4b1645cd134a30c3011592e8c6826ba4781955a135588cf46cd25",
+      "working_file_sha256": "58783167bf76de56e0adef491f633f90a90b3c756a1284850eae692eb2bb8100"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/pcb.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/pcb.py",
+      "git_blob": "92c74148763a600ed331bb0e361588fbf3b09189",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f6f05a6a475ceb570fb4363a1b3fa8df0e622b65e80257d8aaa6332628420823",
+      "working_file_sha256": "b7f90429625a608bff13f9f6fe05a74c2d7c271e3c574bff756152d84737d633"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/resnet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/resnet.py",
+      "git_blob": "63d7f43ff43373d28c45de3930da0bdbee817b61",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "6b871338b477421bbc23bc7b3028735fc67ab4f551d979c5ae8b2edf2d02c168",
+      "working_file_sha256": "eebc374358f74e7c1feed4d38e159e60a2163eead2887a7374e8b983035ee599"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/resnet_ibn_a.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/resnet_ibn_a.py",
+      "git_blob": "d198e7c9e361c40d25bc7eb1f352b971596ee124",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8459ffb25de797b755c7ded64527ab664491b0c50aaf66c259a7cb530577ec10",
+      "working_file_sha256": "e99cbba2a0496008f353a007fb60b33e163dea643d96bfe9590c0a5e6b71d9ee"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/resnet_ibn_b.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/resnet_ibn_b.py",
+      "git_blob": "9881cc7d64e97a74bab35e6145197d6d740689ad",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b26f408850d5e6b6ad34f576536004d392db8f6c26d738b3d8e5a71ab56ca60b",
+      "working_file_sha256": "e84c5a5fc5a8000c4c9a4598fee61d43815f969b51b784b0d2259011d6028f62"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/resnetmid.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/resnetmid.py",
+      "git_blob": "017f6c62653535a7b04566227d893cb4dfa2a34c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "97886e2906f107a7fdb7913ae49db08e326e26dea3aeb76b06cba75f8e63dd83",
+      "working_file_sha256": "e9994e2eaec49b824ffb26b1f18a9e03542410f76b602281c0017e74a5f395e4"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/senet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/senet.py",
+      "git_blob": "baaf9b0acbe8577bd5e574de47d3f9ef935946db",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "062339e75c5137987371b761428c74bc7cfa3d3d219bce1f5f1ffff7e39291da",
+      "working_file_sha256": "236abed3bd9681fc46c7630c2a551d83ffe257372866b4978835e455d9a159bf"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/shufflenet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/shufflenet.py",
+      "git_blob": "bc4d34f1c4a631aa981cfb1797b036f23aed4503",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "0db745f384bee5daacce335de41a4f841a367d1302c80245d453d21ae8aa64b3",
+      "working_file_sha256": "cf5a8c8be5bff646761971a6604c63e4afeee1abdda043d72cb54acbe495187a"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/shufflenetv2.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/shufflenetv2.py",
+      "git_blob": "3ff879e8d731b4cb16a77cfa6892035656405f71",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8ce02f3e59da5db8f50ecb2af1d79d742a9499d87734a30ff53326c0fe945767",
+      "working_file_sha256": "762ddd7ef41ba4456d180f5b408a4b992054992116762c992109bda4cf56b36a"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/squeezenet.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/squeezenet.py",
+      "git_blob": "83e8dc9fc46b4e76304bf1b681a14ce5b865b993",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8d42e650ddb6a65000081bf233fd343585db422b29f4d79a16211b1d514aa94e",
+      "working_file_sha256": "d795effa93697dfcb354d826f89de4bca3bb5732916093759be05e20c4c03f3b"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/models/xception.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/models/xception.py",
+      "git_blob": "43db4ab53283daf1267f2f4cc5f7d778daf4076a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2b11ac064b1fb8dbc5ed7e900475347eb61b1376c4a8a7992188596757b1cdbf",
+      "working_file_sha256": "eeb7a3dc5ac73a65d4b2b4acd2b2d9b4dc9b11e0c6f0256040c1a2e3feaee9d4"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/optim/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/optim/__init__.py",
+      "git_blob": "1813e465741cf723c570f9dccf221bd186172dd4",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "aa003d98338c2d595dd2012a099bae76b2ecc8b30be3a0583546101890bccf79",
+      "working_file_sha256": "9709d8ebe3c7f7ecb1cca89698f957766d03184f7f7c7d1012519edc124a31cd"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/optim/lr_scheduler.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/optim/lr_scheduler.py",
+      "git_blob": "d60bd1dc237372b068f80d6867d4ca3b1709ad07",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "c8d27bfb7078e4984d2c2046a935813ee83e4e8a5904c87c11240a2013f99d9e",
+      "working_file_sha256": "b3c04f632c44769619846c2ed6a55642227c235fdc2d20ebdd5233fc8077fcaf"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/optim/optimizer.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/optim/optimizer.py",
+      "git_blob": "f57b03a0537b9596c3e072eeb8800cd6e54051ca",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "5cc8e04bc5c8a3fe68f457f96b1612784158402e309f509c523aab306d6dcfb5",
+      "working_file_sha256": "c0e2f2abb16f6f05442e40337bb33fbcb6a5eeb734408659d6c40a4a46d2ae20"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/optim/radam.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/optim/radam.py",
+      "git_blob": "f066c573f8b650a6162f0b54a1c2c100b2679f3b",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b2103d3c266271e4e94667032e6d82d1b9c22f5246aeb37d6097dc052b59549b",
+      "working_file_sha256": "5a1ae3188aff676424807ea606a63dde621e96439bd105e3977a44a2d8e9767a"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/README.md",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/README.md",
+      "git_blob": "349a9ef637309852f0628151f010058bf4f1a4cc",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "39983034836d83610534838634aa32f3a0b66fa406e63363d12d45b203ac1a37",
+      "working_file_sha256": "d0ea1f6c415dc45b4f04d7d70b8100c755c569e6c1b988f9b8901d0865cb7a81"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/adjacency_matrix/build_adjacency_matrix.cpp",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/adjacency_matrix/build_adjacency_matrix.cpp",
+      "git_blob": "4c496041e37e525af728794f11627a7e0027a267",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1723ffca84a36ee0c617e620ac147b548fecc9a79a7a9931263bd97621fc84a1",
+      "working_file_sha256": "d59f9c52486e8f9ac08b746a96532f8ac117e24357e05dea58bbe6a8ee010e7c"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/adjacency_matrix/build_adjacency_matrix_kernel.cu",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/adjacency_matrix/build_adjacency_matrix_kernel.cu",
+      "git_blob": "4973ddefeaa4253291bb9d34fbbbb50a46c32b8a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "14a6b1c3cead8a1505b3cec09626981536166ede0b32dfdfe1675d1df82269c6",
+      "working_file_sha256": "7901124f25050956b5e3101cddd09522751005d2a203bf050b67f1979a1c76d9"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/adjacency_matrix/setup.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/adjacency_matrix/setup.py",
+      "git_blob": "abd3e3a4e1fbd1db7b4bdd1d080d48381082c60a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3941b0470205a8d6e349a3c5eecb7c3eca6dd9198a997193e65acdd521bbb2d6",
+      "working_file_sha256": "f2a959850fbe771fe3ab249c11efbe2759752b50c9fe6c9ab10d609dfa9f028d"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/make.sh",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/make.sh",
+      "git_blob": "f0197ff9c964cfa7b6496a29b8411da01d323568",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ffff1b410f636db7ff6d84b374d77b911019a24d2c6c4811c07bebe64111a322",
+      "working_file_sha256": "e46dc44497a1ed6715ae1591c942bca07b0f0cee6c98e3090066cec3cdc8ab6f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/propagation/gnn_propagate.cpp",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/propagation/gnn_propagate.cpp",
+      "git_blob": "10a939ffe7fb0ed73dd450d6bfc667132448dfca",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ea34bba2587e113def08052d6364dee4abdf3a8fcb4c002a7de961aefa13b7eb",
+      "working_file_sha256": "8b4a9be7015ef54771e3c76bef54cc2de8546c193c33920e1bfec2f154466518"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/propagation/gnn_propagate_kernel.cu",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/propagation/gnn_propagate_kernel.cu",
+      "git_blob": "8bdebf1666e16f3fbdd294d374e6438e667f96a1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "23a848e05ce746f0bda2b296cfda6c75416df1b8968213da5499626009b626ae",
+      "working_file_sha256": "e5ec26681167ea6e408d09efb50078c5bf806f216ed1a470ec69f06176ca47b7"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/propagation/setup.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/extension/propagation/setup.py",
+      "git_blob": "1f7b43b42150dd8bf7ea839c51b2d8be29263310",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b810ac4628b8a937cfd263686dff86b0d9df761a21fb5c9eb77f84cb6623b8a7",
+      "working_file_sha256": "87ab73f1cc8389f2c62bd78d50fd96d82046c6667afe280855148740af09566f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/gnn_reranking.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/gnn_reranking.py",
+      "git_blob": "2c8cc53b91d4e2a384881825839b44910556ee11",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "189b46915f0eb2dbebfb7cbf853ec1640cd54e6af89d648c00b4d0ed92d1fea7",
+      "working_file_sha256": "775d74785e01e89878b0ed3c8aa17b49e617a425db842604f76fec6de1f2ad23"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/main.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/main.py",
+      "git_blob": "53ef6ac570194a136023c8b602759bc3792691db",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "0e2d60e74b2c11675702415503ee107ff85c35a1643576cfacbf50b07cdef3aa",
+      "working_file_sha256": "a1cf6099af819961663e3cf27d0d4730141ed49b24a515c2c0ab7d4e917afe49"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/utils.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/GPU-Re-Ranking/utils.py",
+      "git_blob": "5f1ed9f88a3c53a1c8ceb14c0cf3959f332fe271",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "525336b51907b00880b53ef50c8f00ad776d6d2b7d28834d7021d6ba7d6c3475",
+      "working_file_sha256": "68a8e59b9684c5ffa70db57ae5c5d827765c105995201a9a5ccbc6fa66c5e7e5"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/__init__.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/__init__.py",
+      "git_blob": "50167c3f05779b327f88e0450048730a1224e473",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ae9ebcc07d732d8aef72149abce09b0f01ffae344f97286fdd5cb20e51740249",
+      "working_file_sha256": "7f237a2c99557fdca458ee11584af916a1594db22708e6481881db78f2efa815"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/avgmeter.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/avgmeter.py",
+      "git_blob": "b62d26d4ec7d8cbe8d21a209f9af53ff16b1cc7d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f2f369cae09aa6b6c16d27abba39135043545dae2c11dc078bf986fd40df3785",
+      "working_file_sha256": "737177960c02d714f13348d0163883d368103263d8afb580249228fce91385d9"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/feature_extractor.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/feature_extractor.py",
+      "git_blob": "83635fd3fe3419d54fbe1d0c6e9b7114deb8bdf5",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "50671f5ca4a125e2c194e6e7989fa3079c995d9754f06a83a33f992699f1c923",
+      "working_file_sha256": "21823e6a808ed34a042c654adbc0fbd603d38748d9e6b87e2d44b3277d04a98d"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/loggers.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/loggers.py",
+      "git_blob": "f7fae3c57b300b76afd8e5a485439aee9fefdbbe",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "580841ef43601d8ed00cd37326184b2f22486382720e4022c1b403fd54879efa",
+      "working_file_sha256": "196c6857a37013b6ef4852b3abb319db1c943c497129266ae6b2032c090a43de"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/model_complexity.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/model_complexity.py",
+      "git_blob": "7d1dc1ed13ba747b510030a5690b81cd0d570822",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e6c6685711055471a02b7f50d5b03c5dcc801d38e8863f576997fb2170cca82f",
+      "working_file_sha256": "186e0a3bc18d12fc48d7c8cbe1595cffdd4c3a20308bd49fd9fdd12415198a6b"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/reidtools.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/reidtools.py",
+      "git_blob": "acb87602ba905062424a9ebbe524f9cad83384e3",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "9f59a063214f05290b02b55394607daa09b2bd062f782f1c03be29f19ccb75c7",
+      "working_file_sha256": "6ae3a0ed53f4d7b50ae5553149970841d74cdc2cf99412dbda73d69cc27197d9"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/rerank.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/rerank.py",
+      "git_blob": "efadf5afe26ec057bd66e161a34dea637849e7ab",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "433c75fb8c256fad834913ac48fd98dbe2d17bce23e4ef5bfe42e3bc53379ea2",
+      "working_file_sha256": "7682f09f5090162fef7ffe0fb9fb0291c43882c11f8f5c4c13b4a7e10427256b"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/tools.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/tools.py",
+      "git_blob": "2ccf63ab066fdc8132a8f2f7f7b3266de2edc845",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1233af9a08fc8038e1c2a3f9e657843918eb8fed37d0d46d8a9048b11980c44e",
+      "working_file_sha256": "e1c0f9633c29678469a5dbdf6cd96c7b363d854de2a86f8861cb6d44ffa5f75f"
+    },
+    {
+      "original": "code/deep-person-reid/torchreid/utils/torchtools.py",
+      "destination": "occluded_reid/code/deep-person-reid/torchreid/utils/torchtools.py",
+      "git_blob": "e854278d90106e64c0f0822b2fa699da05221f7c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8b13297ed070361e8b8feae599f0ec4056d26e350ce8c0d22f3823646d87a4e7",
+      "working_file_sha256": "f254e29d183353498e0fbff774a38b6738e61ec228136e874c235e94f800f6bc"
+    },
+    {
+      "original": "code/diagnose.py",
+      "destination": "occluded_reid/code/diagnose.py",
+      "git_blob": "fcfbb6647d4b9765fd9e52feb97a95574722ae24",
+      "comparison": "identical_bytes",
+      "git_sha256": "61836dc438a7a15673e8dfd541b46c1d1a79e5740a3765fc023224a765de3bde",
+      "working_file_sha256": "61836dc438a7a15673e8dfd541b46c1d1a79e5740a3765fc023224a765de3bde"
+    },
+    {
+      "original": "code/evaluate.py",
+      "destination": "occluded_reid/code/evaluate.py",
+      "git_blob": "25d9fe5b3c39ee45dcea1c63997914c5b8484db7",
+      "comparison": "identical_bytes",
+      "git_sha256": "3bd0a5818462ce6df93c6d77bcb851908f3b9317793731ab1bda8f63a5a9b2d3",
+      "working_file_sha256": "3bd0a5818462ce6df93c6d77bcb851908f3b9317793731ab1bda8f63a5a9b2d3"
+    },
+    {
+      "original": "code/profile_model.py",
+      "destination": "occluded_reid/code/profile_model.py",
+      "git_blob": "863883934b4f992ad060dca0c2ac29b2cbe1ba58",
+      "comparison": "identical_bytes",
+      "git_sha256": "8ebc5659f4524ea6a131cbaf3a9897db0d89261897d9d5a6d90b832229f53021",
+      "working_file_sha256": "8ebc5659f4524ea6a131cbaf3a9897db0d89261897d9d5a6d90b832229f53021"
+    },
+    {
+      "original": "code/reid/__init__.py",
+      "destination": "occluded_reid/code/reid/__init__.py",
+      "git_blob": "ab1ee4308ff4ab2a3f26df9af2f34d78069b505f",
+      "comparison": "identical_bytes",
+      "git_sha256": "5c5ced2e966c8f1f2172221bf5748307cc6bc02ec218b5b18211321f19e77940",
+      "working_file_sha256": "5c5ced2e966c8f1f2172221bf5748307cc6bc02ec218b5b18211321f19e77940"
+    },
+    {
+      "original": "code/reid/data.py",
+      "destination": "occluded_reid/code/reid/data.py",
+      "git_blob": "21784635e4491c216acedcf419208c5414e78d98",
+      "comparison": "identical_bytes",
+      "git_sha256": "5fbe37d101686585b3dd3c5bf799d40f10552156b0f05c7d77d732780eeab89d",
+      "working_file_sha256": "5fbe37d101686585b3dd3c5bf799d40f10552156b0f05c7d77d732780eeab89d"
+    },
+    {
+      "original": "code/reid/losses.py",
+      "destination": "occluded_reid/code/reid/losses.py",
+      "git_blob": "6b861c78722f1d0123d929614ef0f4a1ef83f858",
+      "comparison": "identical_bytes",
+      "git_sha256": "dd2f50ca8b1f70f69d8103457c4320f32e1e11d774d1baf4c89003c0c4fbf5bd",
+      "working_file_sha256": "dd2f50ca8b1f70f69d8103457c4320f32e1e11d774d1baf4c89003c0c4fbf5bd"
+    },
+    {
+      "original": "code/reid/metrics.py",
+      "destination": "occluded_reid/code/reid/metrics.py",
+      "git_blob": "a0cf7afcd863cb20e8922fa09ec401cb43d56e6d",
+      "comparison": "identical_bytes",
+      "git_sha256": "3011709aa77996f0c84a9385cf8be13281dd6283d4566b6dfd10a6f727b22872",
+      "working_file_sha256": "3011709aa77996f0c84a9385cf8be13281dd6283d4566b6dfd10a6f727b22872"
+    },
+    {
+      "original": "code/reid/model.py",
+      "destination": "occluded_reid/code/reid/model.py",
+      "git_blob": "c94772a4a6e01d1193d5d611f395bae941e25494",
+      "comparison": "identical_bytes",
+      "git_sha256": "c23038b2a4914f553bb79b46328bb553130e158b8ae004d7a1fe9957ffb64123",
+      "working_file_sha256": "c23038b2a4914f553bb79b46328bb553130e158b8ae004d7a1fe9957ffb64123"
+    },
+    {
+      "original": "code/reid/occlusion.py",
+      "destination": "occluded_reid/code/reid/occlusion.py",
+      "git_blob": "df807fce6952d238e7caa46f336816bbd5df546a",
+      "comparison": "identical_bytes",
+      "git_sha256": "a43c4aec28f76871adcc2fcce936ce6a30fe19a3da6b8acd3708a56bea4c4443",
+      "working_file_sha256": "a43c4aec28f76871adcc2fcce936ce6a30fe19a3da6b8acd3708a56bea4c4443"
+    },
+    {
+      "original": "code/requirements-research.txt",
+      "destination": "occluded_reid/code/requirements-research.txt",
+      "git_blob": "cabc6cc59e7fe1d0032cbf5e93a157d460b866d5",
+      "comparison": "identical_bytes",
+      "git_sha256": "abdb0499e8e2cba3417936c893b1a23ce3ffa1f6e807068b6862dac87d69bc9d",
+      "working_file_sha256": "abdb0499e8e2cba3417936c893b1a23ce3ffa1f6e807068b6862dac87d69bc9d"
+    },
+    {
+      "original": "code/tests/test_research.py",
+      "destination": "occluded_reid/code/tests/test_research.py",
+      "git_blob": "98fc3daa9d7e2c2a431019226057d7e5cbcc8c50",
+      "comparison": "identical_bytes",
+      "git_sha256": "74df3ed7ffa04c17961cc667f998eca00c55969b178f2b91f7d74460fdf173a8",
+      "working_file_sha256": "74df3ed7ffa04c17961cc667f998eca00c55969b178f2b91f7d74460fdf173a8"
+    },
+    {
+      "original": "code/train.py",
+      "destination": "occluded_reid/code/train.py",
+      "git_blob": "1be27822115c6c6bcceacbd2ac4e1adbd33493b5",
+      "comparison": "identical_bytes",
+      "git_sha256": "308753d701852d835bd42b3eea47a5aff252fbc860a02f1263e3d170e8e8b989",
+      "working_file_sha256": "308753d701852d835bd42b3eea47a5aff252fbc860a02f1263e3d170e8e8b989"
+    },
+    {
+      "original": "results/calibrated_dev_aug_s1/config.json",
+      "destination": "occluded_reid/results/calibrated_dev_aug_s1/config.json",
+      "git_blob": "0dbcde02c120c19a3957be285146861e2e1f2fe0",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e0e0d62d010baedb0d6828d340809c5757f6ed17c89d68bfb3b60bde25c06ea2",
+      "working_file_sha256": "c03b1d4ae1970796c4501bca862cfc317141fd9427ccd3667b6b92eebefcdede"
+    },
+    {
+      "original": "results/calibrated_dev_aug_s1/history.json",
+      "destination": "occluded_reid/results/calibrated_dev_aug_s1/history.json",
+      "git_blob": "4714e2cadef80f415b5da4ff799e20188c776752",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f663dcf353f7e2a7c19e953633d4777eb3d802c37c12a56805570f472bb1ad3c",
+      "working_file_sha256": "edd94fcf09d490e097b0df008d3c327b735d5093bae10658427e8c95d336e6e1"
+    },
+    {
+      "original": "results/calibrated_dev_aug_s1/results.json",
+      "destination": "occluded_reid/results/calibrated_dev_aug_s1/results.json",
+      "git_blob": "c29fd4b3787d6c27a1bfec3925413ab396a2e943",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "76bbb50aabff78d42730b917d3708de568ee40145a5bd929c2c07fad4f333f1b",
+      "working_file_sha256": "ea485d72403058fa49a766da7989f31017b986f6c9d0844c3e8d2a0b23c13615"
+    },
+    {
+      "original": "results/calibrated_dev_aug_s1/train.log",
+      "destination": "occluded_reid/results/calibrated_dev_aug_s1/train.log",
+      "git_blob": "4d610794033cc9eaf03e9ffae55141ba28b7d81f",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "23cc9cdb4c50c2b70439fdc3955045b687cfe1ec7ee62caa338964f7d8cb0624",
+      "working_file_sha256": "d4d1319c556a83345fbe02ef6db6d4b4ec435b89865bb99497d177e1c0356578"
+    },
+    {
+      "original": "results/calibrated_dev_clcp_s1/config.json",
+      "destination": "occluded_reid/results/calibrated_dev_clcp_s1/config.json",
+      "git_blob": "1a446c54e1097b33e3019065eb55cec33a3a26c2",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "fb4b682d6c6f44f65635a3d6bc2211c3c802231efc36b57e2d973149fed7f718",
+      "working_file_sha256": "e749fb399613849dc3000ee039347b89f83098581838d70248344230ec451c05"
+    },
+    {
+      "original": "results/calibrated_dev_clcp_s1/history.json",
+      "destination": "occluded_reid/results/calibrated_dev_clcp_s1/history.json",
+      "git_blob": "2071b1278444cf63123404ead55705d65a938b06",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "565677ee331a688ae51463555a658324fac853f52cdc2cefa2a9f6a2fb140671",
+      "working_file_sha256": "18c63cd6d3f4fff64b5e1dce194a577be22ea21edd21e621364342671d679b9c"
+    },
+    {
+      "original": "results/calibrated_dev_clcp_s1/results.json",
+      "destination": "occluded_reid/results/calibrated_dev_clcp_s1/results.json",
+      "git_blob": "75f1dd5cf10a965298b9a1a21aa7960d53682634",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b2df0b4499dac992d1867e1d4ad6c3ad94812111465f5c3da9381e409d928001",
+      "working_file_sha256": "0170bbe944ebf8524a197df44a098cb61588e1f8224f700cad76a434f2a43054"
+    },
+    {
+      "original": "results/calibrated_dev_clcp_s1/train.log",
+      "destination": "occluded_reid/results/calibrated_dev_clcp_s1/train.log",
+      "git_blob": "c145dcab1323a806c1395b7942ac219e57b7d900",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1babfbbcbed821201215a8a674488d3e0e5cfe5af2e897e9a5b5d7aa4d3a9ece",
+      "working_file_sha256": "cb6e230e4f5f50ad7e523932e5340088e986c6880481aa3cf02e0719658cd2e5"
+    },
+    {
+      "original": "results/calibrated_dev_full_s1/config.json",
+      "destination": "occluded_reid/results/calibrated_dev_full_s1/config.json",
+      "git_blob": "dc76953d248601ecec9ad23c01d54c4bd0879611",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "98df7938b4ab38daa3c4c15bac2e4df7513f26d4459c8fc8f8234aead1d9b566",
+      "working_file_sha256": "2b9e889b4c42b436533c37ed22695ba07552785d4b8c71c3e2a7e4cab6add471"
+    },
+    {
+      "original": "results/calibrated_dev_full_s1/history.json",
+      "destination": "occluded_reid/results/calibrated_dev_full_s1/history.json",
+      "git_blob": "a3559907fdad4aefe8210110b1c329a62a7616f5",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "9fd3c5fbd54f45ab1cd6242a86ee248ba98d9d04d14866dd4a6b445a88d90d6b",
+      "working_file_sha256": "c12dd1bd64f0060c46807025dd0ba984bea1288f6dd52712df4d94c8934a0d7e"
+    },
+    {
+      "original": "results/calibrated_dev_full_s1/results.json",
+      "destination": "occluded_reid/results/calibrated_dev_full_s1/results.json",
+      "git_blob": "fd8614601ed7d16a06d3b48724d715ad41654340",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "54e2e878d9bb5620b6ece40a1333160b85a44078957cc12dc343c2d258efba4f",
+      "working_file_sha256": "e1da8482446b9369e437b21d01a9e1957b7db7fed70e4ceabae6a9f6c620442e"
+    },
+    {
+      "original": "results/calibrated_dev_full_s1/train.log",
+      "destination": "occluded_reid/results/calibrated_dev_full_s1/train.log",
+      "git_blob": "b015781fa4dea2c437fb84edff4a043ca4baba54",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3731d582b44d241266bcb7d40cd6669d9882fedd598ac6d1f0224ea571f409df",
+      "working_file_sha256": "238624283151469f70f28e38397050b664f1dac5bca4e07f697b28d8933c5ab4"
+    },
+    {
+      "original": "results/calibrated_dev_visibility_s1/config.json",
+      "destination": "occluded_reid/results/calibrated_dev_visibility_s1/config.json",
+      "git_blob": "2138ad6836a2a2a52bf75e570affc9205c80f391",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "5e146afaf8ed6fb7c332a5ce208a9b730eb1c6dfe2f922fa18142bc034b1a95f",
+      "working_file_sha256": "fb591c9e34bf13f8c7784ce28fd82a16c70d01cf60fc7ceca3b23b39aaf41366"
+    },
+    {
+      "original": "results/calibrated_dev_visibility_s1/history.json",
+      "destination": "occluded_reid/results/calibrated_dev_visibility_s1/history.json",
+      "git_blob": "25a51342abd2e1ca103ac3b3691ac1a0dc8d73ed",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1d0d01a1a44f91f9c2f65aa764dbc9898339d3e4f064ba3442f2aab910df51e6",
+      "working_file_sha256": "cca0403b2f64b535f3d30ee7a11ca062bdc4c70b4b165bf86155ffcfc471b9e9"
+    },
+    {
+      "original": "results/calibrated_dev_visibility_s1/results.json",
+      "destination": "occluded_reid/results/calibrated_dev_visibility_s1/results.json",
+      "git_blob": "5ebd4693dcd3703fa2796f0138e734c984d1b2be",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1aec155d905c7a41121191261d73beb0f36bf5c57f1ffbee88f1be52aa67128a",
+      "working_file_sha256": "32683c9db28e9518c8f5265bd630ebffac18648383227d04759ade982ff2bc8c"
+    },
+    {
+      "original": "results/calibrated_dev_visibility_s1/train.log",
+      "destination": "occluded_reid/results/calibrated_dev_visibility_s1/train.log",
+      "git_blob": "2c8c8bd72edcbf5cc64062ade095cfac455af41b",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "c432197fad880a718411e84c31080aab4987e042d5b5d7f9ef977a345387dbb4",
+      "working_file_sha256": "93365e9e1265fdfa1881611e7ea04d4708030e93fae8d8abf358caadc396de88"
+    },
+    {
+      "original": "results/development_summary/comparison.png",
+      "destination": "occluded_reid/results/development_summary/comparison.png",
+      "git_blob": "add37fa3eaf24e30764ad2e99f598b96955107d3",
+      "comparison": "identical_bytes",
+      "git_sha256": "3efc8b7f45996e9aa22d57f4f016a3f1f84f71665e5037371b77882e6f9910e1",
+      "working_file_sha256": "3efc8b7f45996e9aa22d57f4f016a3f1f84f71665e5037371b77882e6f9910e1"
+    },
+    {
+      "original": "results/development_summary/metrics.csv",
+      "destination": "occluded_reid/results/development_summary/metrics.csv",
+      "git_blob": "6c124d5b636d0d723ac0776c4a40c8b8a3251f41",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "d8786318598184a5e2129939b48adf340c37c8bf7a23fe52f0b66a9c12465a25",
+      "working_file_sha256": "2754d9e8aa3b5007997e9878b149553345168828d17ba64311f963b2a8af1663"
+    },
+    {
+      "original": "results/development_summary/metrics.json",
+      "destination": "occluded_reid/results/development_summary/metrics.json",
+      "git_blob": "9001d1a9739b1b8e6e2d599bd6a254f1ecc7edda",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "732f6fd684e8fadc2a9b7599bd27cf4cce75c801fe0595bf663b5bf9be3a10a2",
+      "working_file_sha256": "365126e76ff36dd958e483f65380c53d88a3ccf1033d2a2a394214effe494098"
+    },
+    {
+      "original": "results/development_summary/table.md",
+      "destination": "occluded_reid/results/development_summary/table.md",
+      "git_blob": "c7a6a77090099c37fcddb3f9de159bc318daa5f9",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "2a378f0720e028bb0a1680ba62c2a882250b03229a3b8d119fdcf53383ee4093",
+      "working_file_sha256": "595522d10579b07878d36d277bf41b018b7180bfcbdd8e1cd570f696db838ee7"
+    },
+    {
+      "original": "results/diagnostic_aug/diagnostic.json",
+      "destination": "occluded_reid/results/diagnostic_aug/diagnostic.json",
+      "git_blob": "6209e42121da784ac0b60ad51d1a1f22226136a7",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "79374468609dd65dc73a3dd9d39534b6d91d45ebb8d34897d780fb5f362eefd4",
+      "working_file_sha256": "3b7f5cbab2b5954f56131253780274be2c773bcab92cb9a6a6923914049cde90"
+    },
+    {
+      "original": "results/diagnostic_full/diagnostic.json",
+      "destination": "occluded_reid/results/diagnostic_full/diagnostic.json",
+      "git_blob": "2806adcc405cd51ae4718911c54665c2cc33d1f5",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "8cef55258b3d8f674269605b8fef113c73feaedf96a6cc586727d3c38b46f59f",
+      "working_file_sha256": "352ceb8a10b28c02d6111b5cac16d337d9388e274ae6b41f10cd32173036dea6"
+    },
+    {
+      "original": "results/failed_recipe_note.md",
+      "destination": "occluded_reid/results/failed_recipe_note.md",
+      "git_blob": "af4bb44b1a32c589ae361e2a1d9c9834f983eb4b",
+      "comparison": "identical_bytes",
+      "git_sha256": "c7f4c735c81ae03e874b37c4f69321fc4ced467380e38cc397cc8d99e33505a3",
+      "working_file_sha256": "c7f4c735c81ae03e874b37c4f69321fc4ced467380e38cc397cc8d99e33505a3"
+    },
+    {
+      "original": "results/frozen_official_aug_s1/config.json",
+      "destination": "occluded_reid/results/frozen_official_aug_s1/config.json",
+      "git_blob": "85d4fd7c63024b35468ac7bd6cf320154fc644ef",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "5306c440100cc7cf50954f06f4f389ce6a5b45323644850fcc4d4628934aa272",
+      "working_file_sha256": "12f122b73affc7a36f47e40f118ccfcfbdb2ea31bb41831fcf071bd29891a616"
+    },
+    {
+      "original": "results/frozen_official_aug_s1/history.json",
+      "destination": "occluded_reid/results/frozen_official_aug_s1/history.json",
+      "git_blob": "bf34b9cd0d2dddb8eec3613c235fff2e55ab9200",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "e9824da19cd8e2c5273c81642732f5434eff275e2262392f521ce36e33eac748",
+      "working_file_sha256": "9b0296cd607a0970c92ba4367476c931f24bcaa2d45bb1b67b6d62145e250962"
+    },
+    {
+      "original": "results/frozen_official_aug_s1/occluded_reid.json",
+      "destination": "occluded_reid/results/frozen_official_aug_s1/occluded_reid.json",
+      "git_blob": "f2c7f1dfd39151a3448eef07e7c4bc5bef2f0322",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "899eb68d6774ca7ea2ff7dec49dec2754e3b205c858ea3709df65f0e3aa28028",
+      "working_file_sha256": "9549557700556c0495fde16eaf16d3c8ad577d7cc0c960aabc8db25fca595951"
+    },
+    {
+      "original": "results/frozen_official_aug_s1/results.json",
+      "destination": "occluded_reid/results/frozen_official_aug_s1/results.json",
+      "git_blob": "97b15ccf3a8127ea1107b39c2dde5b19786496ad",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "35fbeddab8f7dfa5cc2b6cd48719129d88ef729e06dce929061ff5d23ec0d663",
+      "working_file_sha256": "8eb1e0b27899a240c8106629a0922a1eff63ab94a1626d22ee8f71042316c305"
+    },
+    {
+      "original": "results/frozen_official_aug_s1/train.log",
+      "destination": "occluded_reid/results/frozen_official_aug_s1/train.log",
+      "git_blob": "e0b69a944e342642992aab1e3d956de18eea2493",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "65374ea2547e4a1b766e0de3c2deb8555fe352bdb2037c875e711dab536e3c6e",
+      "working_file_sha256": "fe93e7ee073c9b455949645948336e3ccb82b94fdd831e3a20e558bcbf359f07"
+    },
+    {
+      "original": "results/frozen_official_full_s1/config.json",
+      "destination": "occluded_reid/results/frozen_official_full_s1/config.json",
+      "git_blob": "2229af8e846605e3e2980af6d4c25b3ddbcc703a",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b3e5ed9f0984952914dd7a1aae0b42e4f84c45ab6489370d5be1bed31650953a",
+      "working_file_sha256": "7c19a11079fed19101007841991e8680b1ed7dbe5bd6d113fe0cdb154613112e"
+    },
+    {
+      "original": "results/frozen_official_full_s1/history.json",
+      "destination": "occluded_reid/results/frozen_official_full_s1/history.json",
+      "git_blob": "c8c55f2c14c90ea390c6e88f0df0e72e4aeeefec",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "fac8a120ee6813027b3b3bf28cc43cc63e90acead1105df80da162e01308ebd1",
+      "working_file_sha256": "bd0c2e0dec0afea71caaa25e8b17e7f3705f3af1a4127176dbc5b9d5074dea7f"
+    },
+    {
+      "original": "results/frozen_official_full_s1/occluded_reid.json",
+      "destination": "occluded_reid/results/frozen_official_full_s1/occluded_reid.json",
+      "git_blob": "b1b2a4b5585b34b7ca03bbfd53e440b40c78e21c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "d6a5768728566a34ee2bc974368b1353f703420058001b0ffb8bd83ff6003400",
+      "working_file_sha256": "a8455ca5b04960c1b2cc91d03b917cea76067fbb84a3f264ebef05966083234b"
+    },
+    {
+      "original": "results/frozen_official_full_s1/results.json",
+      "destination": "occluded_reid/results/frozen_official_full_s1/results.json",
+      "git_blob": "f725323fc819fddc318c8ba6693c8ddd81a5eaca",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a70ab176b7276c18602afe64eca0f9fff1b0876274a57776d47c9cc40f9fcb9b",
+      "working_file_sha256": "dcbc64c360be1a8fd6d2051025ab7290eded5330afd009c8674525c8fbf032ab"
+    },
+    {
+      "original": "results/frozen_official_full_s1/train.log",
+      "destination": "occluded_reid/results/frozen_official_full_s1/train.log",
+      "git_blob": "5bc712aed3f52f5587b83b103364f3f46c9c242c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "a1dc6eea655136d269b77ab33fda491c32f17d33dff1d245b7706f6a240f23b4",
+      "working_file_sha256": "d56a65bcbd9c85aba1fd8465f927a3b7b9f8e48acb2c0c5506352bcc518dc87e"
+    },
+    {
+      "original": "results/frozen_official_plain_s1/config.json",
+      "destination": "occluded_reid/results/frozen_official_plain_s1/config.json",
+      "git_blob": "60926b9ad2440fd6b69b44127fcf4be13cbab27c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "201d95eec810fbb27ae2f1b034471abeef549d6ad4b7f9f9a4fa53fd0012c2eb",
+      "working_file_sha256": "624188c45c4ba3d468754f13825134bb5fabab8893f563713bdde117b5b9d1e8"
+    },
+    {
+      "original": "results/frozen_official_plain_s1/history.json",
+      "destination": "occluded_reid/results/frozen_official_plain_s1/history.json",
+      "git_blob": "5debe8cd7d1f7cf1f65880b69d4d03597e664215",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "09013e42785def1a17d986726ed23f79c145fa65efab3fb03806f6ba963f12e9",
+      "working_file_sha256": "7bc397224f601848d1e8537cd7a4d3cfbb3cbeca072fc11b1661bb1bb9c36d8c"
+    },
+    {
+      "original": "results/frozen_official_plain_s1/occluded_reid.json",
+      "destination": "occluded_reid/results/frozen_official_plain_s1/occluded_reid.json",
+      "git_blob": "111cf8e7bf1a77ad6233e92617df35981fa4cee1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "d385e14bd843fb328536d23e6a183f7ccb85f856d7dc5f8b0371a4e65ee6baa3",
+      "working_file_sha256": "2794a503cad7fdde7eba37bc0907fd91c57994d9b8b64adb84810f36f909b795"
+    },
+    {
+      "original": "results/frozen_official_plain_s1/results.json",
+      "destination": "occluded_reid/results/frozen_official_plain_s1/results.json",
+      "git_blob": "fb9319cb23db5b91117906b180e0f9fb10c593fb",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "4a187e904b76e6bfe93378c3ed658aa48e6f3e7a5d6ad60edf393d0f7c8f0ca6",
+      "working_file_sha256": "078dbd150a23988789533ae9c7dd5f5b00a31aaf981670aaae8ed018c3ea71a7"
+    },
+    {
+      "original": "results/frozen_official_plain_s1/train.log",
+      "destination": "occluded_reid/results/frozen_official_plain_s1/train.log",
+      "git_blob": "2e6b04392bfd6cdc939a164ec11480e09d073592",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "4b54badcc01f0110da8adb2a8a877d128b01755daf79f8c30d7fa70fbcf40f30",
+      "working_file_sha256": "2792d0f037b3229ceadc0f276b96bc32683e07e1c0f2253564af34620f0634a6"
+    },
+    {
+      "original": "results/frozen_official_visibility_s1/config.json",
+      "destination": "occluded_reid/results/frozen_official_visibility_s1/config.json",
+      "git_blob": "a5e92cbaed7993c283944b68db7f38262aaf2fd9",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "fe0c458251bda802f81eca5b2ca5518d9032abab0903756ebf1c8f8adb78790a",
+      "working_file_sha256": "124593e8ec4ba0752d696e1c45561cc4c000c4f4a587a0484251635e23c8838c"
+    },
+    {
+      "original": "results/frozen_official_visibility_s1/history.json",
+      "destination": "occluded_reid/results/frozen_official_visibility_s1/history.json",
+      "git_blob": "4c7446c4c8aa9b5f62b806b7e8b89574e07c1308",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "ed70fac078740028143b597976a7ff7d324881df7d75c819692b6c862dc44845",
+      "working_file_sha256": "da980f16be7b75ea6aa876b25bc4f447f412c311a810001d45aac29c6b154321"
+    },
+    {
+      "original": "results/frozen_official_visibility_s1/occluded_reid.json",
+      "destination": "occluded_reid/results/frozen_official_visibility_s1/occluded_reid.json",
+      "git_blob": "258308a629c336bc5a923e62374bdf39bd4ee891",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "6fd9dffee58a0114adfa4ae6a863f39a0839fca7dbfceb749a863e4328890ac9",
+      "working_file_sha256": "001ab4694ec6baa157cd2d3aba3a2df83d997df6a0a6251c83fd4c6b9077adce"
+    },
+    {
+      "original": "results/frozen_official_visibility_s1/results.json",
+      "destination": "occluded_reid/results/frozen_official_visibility_s1/results.json",
+      "git_blob": "d3852f757b03eb64e20f1bfec266357a70a8574b",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f6d1a0ea39cc704109e2952f948fcbbbb6d8690b50dcbf8b738ee52c3d709353",
+      "working_file_sha256": "f44405a5a65549e361f1f400113acdffb99770537e4d5cebe61db0121dc8c0fb"
+    },
+    {
+      "original": "results/frozen_official_visibility_s1/train.log",
+      "destination": "occluded_reid/results/frozen_official_visibility_s1/train.log",
+      "git_blob": "3f2553b1a02e808bbe8679f4aca2802fd167670c",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1df42d4b72da2511b7ef254df3422e659491f01253a1ca7e03bbe32ad47faef4",
+      "working_file_sha256": "08668102a404348030cbad145d6345f1b4bb62378dd7ab7414ecbeb7528b4402"
+    },
+    {
+      "original": "results/official_summary/comparison.png",
+      "destination": "occluded_reid/results/official_summary/comparison.png",
+      "git_blob": "00810cc533dc3673a416e1c8f2d650813fb524f0",
+      "comparison": "identical_bytes",
+      "git_sha256": "590cf072dfa50ad13a4c62fd84c3fbb223ef7749adab23a543e82993b7894b5c",
+      "working_file_sha256": "590cf072dfa50ad13a4c62fd84c3fbb223ef7749adab23a543e82993b7894b5c"
+    },
+    {
+      "original": "results/official_summary/metrics.csv",
+      "destination": "occluded_reid/results/official_summary/metrics.csv",
+      "git_blob": "11d9a6c2536defb8f4befb46c2655b45a3ff880d",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "0fb6983169be47af4640b68b5270d7033fae3cb76d39872a658801b7340bb818",
+      "working_file_sha256": "e77327e1ff388e535a364b4ecc7ac5b853f18fb5c66492b3c1ae81fd3fd02340"
+    },
+    {
+      "original": "results/official_summary/metrics.json",
+      "destination": "occluded_reid/results/official_summary/metrics.json",
+      "git_blob": "b5226d8153ff1028046fae7f921d936c1101a079",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "acf8a19172bc5ba96b1dbf28e3b76d2d8d4f74275aaa0290cae0587eb49fe304",
+      "working_file_sha256": "3130bf3a7ce4dee345b4a601e6e5a612d4ff4d747e36158a9234c534f49916c8"
+    },
+    {
+      "original": "results/official_summary/table.md",
+      "destination": "occluded_reid/results/official_summary/table.md",
+      "git_blob": "5eb8f7a964bf588c01df0da6cc076821811a8d61",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "fa17095712c554b92977a7f3af5ad7f4490ceeb84945811869c38f57fc99cf84",
+      "working_file_sha256": "140fe306935a1f3fe0a7a6445b6ef109edb249e4ad3456948aa649af5ca3a121"
+    },
+    {
+      "original": "results/pilot_dev_aug_s1/config.json",
+      "destination": "occluded_reid/results/pilot_dev_aug_s1/config.json",
+      "git_blob": "aff0e0043f2f7658ee434fffc885306ad09ea0e1",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "6b8faa7925208016617ddcb22cbc25bbbbe5e8127121446432461a45da986823",
+      "working_file_sha256": "5e4c990a1cfa1313b4bce8ff7ba09cd201b5462c6e835e2052dbf4dcbb41e372"
+    },
+    {
+      "original": "results/pilot_dev_aug_s1/history.json",
+      "destination": "occluded_reid/results/pilot_dev_aug_s1/history.json",
+      "git_blob": "ba2cfff2d0fe5484684677bd42ad1fe4af2d2436",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b976d3f27a72871a400a162c980ec43c9e494e86501bc586eb7997a8f5a812f4",
+      "working_file_sha256": "235b4e5156fb04e28d5300f4b638b3b1310988336693ee032c7964a1e47ab16c"
+    },
+    {
+      "original": "results/pilot_dev_aug_s1/results.json",
+      "destination": "occluded_reid/results/pilot_dev_aug_s1/results.json",
+      "git_blob": "8fe86bab918145e03d3a07103f3c50a2846b19aa",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3ff26f74dea4f49a1dc40ed5240baea470770235f14f974c7f6e7b8108274442",
+      "working_file_sha256": "8388df8ff072403ec432fe896139c6a1a5aa4c2b137e3980e24d7f1ef4d04f13"
+    },
+    {
+      "original": "results/pilot_dev_aug_s1/train.log",
+      "destination": "occluded_reid/results/pilot_dev_aug_s1/train.log",
+      "git_blob": "ae57b7e957bbaffd9aee452c1a0eb597a18a163b",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "39730b6525d65d00a2c646bb8e72b28742e30675b44547a33b582ab67cfef78c",
+      "working_file_sha256": "06caeb546a3544fff7c5a2037ebb4cb72f23bc5524fac5b43b07d2cc169a9f5e"
+    },
+    {
+      "original": "results/pilot_dev_visibility_s1/train.log",
+      "destination": "occluded_reid/results/pilot_dev_visibility_s1/train.log",
+      "git_blob": "582cbcc72d4c8045d2e80883f44d721faa932296",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "d7e7b98f38dacda5ce7ecc0e87a7614bb10f70e77565864af9a056a282928d74",
+      "working_file_sha256": "34c06ce96c3219460004e83685a478d8ac2522d5990a7e79607b5c015fd5682c"
+    },
+    {
+      "original": "results/profile_4060.json",
+      "destination": "occluded_reid/results/profile_4060.json",
+      "git_blob": "73a793e8c120eef6f475b811ad7d3593c3b546b7",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "1b0767115ac3fac4defc57daf594d92e58adc0b2feabc382fddf60a6aac65def",
+      "working_file_sha256": "b1a3cc58116980486cc625e07337e4d41d6900c4505ca9284a0d180c9af598d7"
+    },
+    {
+      "original": "results/recipe_check_dev_aug_s1/config.json",
+      "destination": "occluded_reid/results/recipe_check_dev_aug_s1/config.json",
+      "git_blob": "554c9f9453edc041f49a719ffb3965eb4e327e90",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "adf6fbb135b2c81353adc3de7e7b058019b99469835048e5d29ef35987940ea1",
+      "working_file_sha256": "5f2b0edecde2cbfcf41a850f274546b9858b8e72f965ee219aece9bae7deb3ea"
+    },
+    {
+      "original": "results/recipe_check_dev_aug_s1/history.json",
+      "destination": "occluded_reid/results/recipe_check_dev_aug_s1/history.json",
+      "git_blob": "1ba2f4c5e30f22cced47c4cbd63f15d916ef03fb",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "3ba76001a054e72042581f5fb815117e7e2845f068ced7201e6833c7427188e7",
+      "working_file_sha256": "7d9fbb2721804aeeb86cf77d8e1a20b77d9a7f63c1311e879cf6d5801b313463"
+    },
+    {
+      "original": "results/recipe_check_dev_aug_s1/results.json",
+      "destination": "occluded_reid/results/recipe_check_dev_aug_s1/results.json",
+      "git_blob": "fe48ae1265fd620c394f290477e1ef2c0f7fe7e0",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "b612c15c273b13541494c406ac0b64ace097c81dc35355aa81b1d3280c8a635b",
+      "working_file_sha256": "0ee5a4bdc7ac277181e21c4abcfb00ea46682f3c08ac25c6dcce55440d937ae0"
+    },
+    {
+      "original": "results/summary/comparison.png",
+      "destination": "occluded_reid/results/summary/comparison.png",
+      "git_blob": "b58c28407e253ba6c8dcadf317254e9942414896",
+      "comparison": "identical_bytes",
+      "git_sha256": "848232437c15d48de051ebb6f1038607cf8b63a292976d9bbd3c64cd73476086",
+      "working_file_sha256": "848232437c15d48de051ebb6f1038607cf8b63a292976d9bbd3c64cd73476086"
+    },
+    {
+      "original": "results/summary/metrics.csv",
+      "destination": "occluded_reid/results/summary/metrics.csv",
+      "git_blob": "8b52b7d4c73f06b2f58ed18daca36e324197a8e3",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "f85fb66e1e14a097aa8d786dee140b827db1b81680ad7631390f60dbd35134b1",
+      "working_file_sha256": "14cb68452eaad59d4c431357cae685bd3857a7744e155e95a66db1d5c5ab8fdf"
+    },
+    {
+      "original": "results/summary/metrics.json",
+      "destination": "occluded_reid/results/summary/metrics.json",
+      "git_blob": "9e52c51a5f1ec891cc726c8ff095ec02ab923071",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "81b9776c38cdee49feb114bf46401d7662e18a74e2271da702d1b59c4510f013",
+      "working_file_sha256": "bfea4edc098af86301ff3830ec6b3969ee83c0bf2056c766f81ab1db90b70513"
+    },
+    {
+      "original": "results/summary/table.md",
+      "destination": "occluded_reid/results/summary/table.md",
+      "git_blob": "9b1d9e3eb31c4840a482e0d3ef7b0ce4cef1e6f8",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "88aedd7a496aadbdc94f5422bfe77a153e8c1dec30b357ecc665b97018b4a521",
+      "working_file_sha256": "a6774b3185e951deaa7cf100601646e343d36c0efdb78fb486e77c856be4e284"
+    },
+    {
+      "original": "results/unit_tests.log",
+      "destination": "occluded_reid/results/unit_tests.log",
+      "git_blob": "8f59fa4a7bc605bb147d499d1388f1037c9dfe60",
+      "comparison": "checkout_line_endings_only",
+      "git_sha256": "65d3d99246c21c722593a9083a1cb859abcd663dd6508f5ecfab342ac83158b9",
+      "working_file_sha256": "cb885c52b72e484e9f730a11de3024a591102d531fdf2c8469f7fdff842c47c0"
+    }
+  ],
+  "scope": "All previously tracked v1 code and result files moved to occluded_reid. New v2 files and intentionally edited documentation/tools are outside this comparison.",
+  "interpretation": "Git blobs are LF-normalized; this Windows checkout uses core.autocrlf=true. Initial strict blob-to-working-file byte comparison reported these checkout differences. This audit separately reports exact bytes and UTF-8 text differing ONLY by CRLF/LF; it does not rewrite files. Raw source hashes recorded by v1/v2 experiments are checked by their experiment verifiers.",
+  "limitation": "The Git tree is not a pre-migration working-directory byte snapshot. Content equivalence to Git is verified; historical working-file bytes are established only where experiment hashes exist."
+}

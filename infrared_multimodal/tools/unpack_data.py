@@ -10,7 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     records = []
     for pattern, name in [('RegDB*.zip', 'regdb_archive'), ('SYSU-MM01.zip', 'sysu_archive')]:
-        paths = list(ROOT.parent.glob(pattern))
+        paths = list((ROOT/'data/archives').glob(pattern))
+        if not paths:
+            paths = list(ROOT.parent.glob(pattern))  # Compatibility with pre-reorganization checkouts.
         if len(paths) != 1:
             raise ValueError(f'Expected one {pattern}, got {paths}')
         source = paths[0]

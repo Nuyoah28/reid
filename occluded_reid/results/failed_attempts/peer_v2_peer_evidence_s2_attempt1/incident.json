@@ -1,0 +1,28 @@
+{
+  "recorded_at_utc": "2026-11-14T15:34:45.002966+00:00",
+  "run": "peer_v2_peer_evidence_s2",
+  "attempt": 1,
+  "status": "process_crash_before_first_saved_epoch",
+  "preserved_files": [
+    "config.json",
+    "train.log"
+  ],
+  "saved_epochs": 0,
+  "saved_checkpoints": 0,
+  "partial_step_count": "Unknown: no step or epoch record was emitted; do not claim zero executed operations.",
+  "windows_application_event": {
+    "id": 1000,
+    "time_local": "2026-11-14T23:30:31+08:00",
+    "application": "python.exe",
+    "version": "3.10.15150.1013",
+    "faulting_module": "nvcuda64.dll",
+    "module_version": "32.0.15.9282",
+    "exception_code": "0xc0000409",
+    "fault_offset": "0x00000000018fdd35",
+    "report_id": "d09a2f15-52cd-42ca-884f-bbf30eabbe76"
+  },
+  "root_cause": "Not established. Windows reports a native crash in the CUDA driver DLL; no Python exception in the training log.",
+  "recovery": "Preserve failed config/log and local run directory; restart this same variant/seed from ImageNet with unchanged source, protocol, seed and budget. No checkpoint exists to resume. Completed 11 development runs are reused; external evaluation has not started.",
+  "source_and_protocol_sha256_verified_unchanged": true,
+  "failed_attempt_config_sha256": "a21aebaef590f9797f32ef04692bdc7b4b191962128aa0c0025a26881511feca"
+}

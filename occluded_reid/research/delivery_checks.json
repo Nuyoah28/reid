@@ -1,0 +1,12 @@
+{
+  "checked_at_utc": "2026-11-14T15:51:07.052290+00:00",
+  "status": "passed",
+  "document_count": 9,
+  "local_links_checked": 80,
+  "tracked_file_count": 481,
+  "failures": [],
+  "forbidden_assets": [],
+  "files_over_10MiB": [],
+  "unexpected_photograph_files": [],
+  "scope": "Current documentation local link destinations and staged file inventory; external URLs are outside this check."
+}

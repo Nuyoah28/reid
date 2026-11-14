@@ -1,0 +1,21 @@
+{
+  "dataset": "Occluded-REID",
+  "variant": "repeat3",
+  "seed": 1,
+  "epochs": 8,
+  "train_ids": 651,
+  "checkpoint_sha256": "265b5069471ee29d3f31f68c8eef1f46bb890f2090fc13f741b582f056957afb",
+  "manifest_sha256": "449aaa42aa23c1898d19586d8314b1fbdd2bfecae8162c49c6c581d125a4983d",
+  "evaluated_at_utc": "2026-11-14T15:39:30.158594+00:00",
+  "evaluation": {
+    "mAP": 42.333796208781834,
+    "rank1": 49.4,
+    "rank5": 68.89999999999999,
+    "mINP": 25.693382887269898,
+    "valid_queries": 1000,
+    "invalid_queries": 0,
+    "gallery_size": 1000
+  },
+  "protocol": "All 1000 occluded query / 1000 whole gallery, 200 target IDs. No reranking, flip, target training or selection. All pre-registered candidates evaluated.",
+  "limitation": "Exploratory transfer: v1 target-domain scores were already inspected. 651-ID/640-batch training, not comparable to v1 751-ID/2000-batch scores."
+}

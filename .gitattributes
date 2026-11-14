@@ -1,0 +1,20 @@
+# Preserve the byte conventions used by the v2 experiment SHA256 records.
+# Research sources were written as LF; upstream OSNet was checked out as CRLF.
+/occluded_reid/code/reid/*.py text eol=lf
+/occluded_reid/code/occlusion_v2/*.py text eol=lf
+/occluded_reid/code/train.py text eol=lf
+/occluded_reid/code/train_occlusion_v2.py text eol=lf
+/occluded_reid/code/evaluate_occlusion_v2.py text eol=lf
+/occluded_reid/tools/run_occlusion_v2.py text eol=lf
+/occluded_reid/code/deep-person-reid/torchreid/models/osnet.py text eol=crlf
+/occluded_reid/research/occlusion_v2_protocol.json text eol=lf
+/occluded_reid/research/occlusion_v2_evaluation_source_freeze.json text eol=crlf
+# JSON/log records are emitted by Python text I/O on Windows.
+/occluded_reid/results/peer_v2_*/config.json text eol=crlf
+/occluded_reid/results/peer_v2_*/history.json text eol=crlf
+/occluded_reid/results/peer_v2_*/results.json text eol=crlf
+/occluded_reid/results/peer_v2_*/train.log text eol=crlf
+/occluded_reid/results/peer_v2_*/occluded_reid.json text eol=crlf
+/occluded_reid/results/peer_v2_summary/external_freeze_manifest.json text eol=crlf
+/occluded_reid/results/failed_attempts/**/*.json text eol=crlf
+/occluded_reid/results/failed_attempts/**/*.log text eol=crlf

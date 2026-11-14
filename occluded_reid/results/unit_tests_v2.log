@@ -1,0 +1,26 @@
+test_anchor_image_excluded_including_its_repeated_draws (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_auxiliary_backprop_and_single_image_inference (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_geometry_and_invalid_batch (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_inverse_multiplicity_gives_each_source_one_vote (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_pessimistic_two_intervention_support (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_same_reliability_architecture_for_all_target_ablations (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_self_exclusion_and_stop_gradient (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_small_pool_sampling_never_loses_other_image (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_support_distinguishes_identity_from_shared_stability (test_occlusion_v2.PeerEvidenceTests) ... ok
+test_average_precision_and_invalid_query (test_research.ResearchTests) ... ok
+test_calibration_isolates_backbone_but_retrieval_can_train_it (test_research.ResearchTests) ... ok
+test_cross_camera_filter_and_junk (test_research.ResearchTests) ... ok
+test_evidence_ignores_regions_without_support (test_research.ResearchTests) ... ok
+test_evidence_teacher_detached (test_research.ResearchTests) ... ok
+test_identical_intervention_reduces_to_geometry (test_research.ResearchTests) ... ok
+test_occlusion_target_detects_pollution_outside_mask (test_research.ResearchTests) ... ok
+test_paired_intervention_preserves_visible_pixels (test_research.ResearchTests) ... ok
+test_pk_positive_negative_composition (test_research.ResearchTests) ... ok
+test_pooling_matches_official_when_disabled (test_research.ResearchTests) ... ok
+test_triplet_separates_ids (test_research.ResearchTests) ... ok
+test_zero_evidence_is_finite (test_research.ResearchTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 2.871s
+
+OK

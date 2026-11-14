@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "variants": [
+    {
+      "variant": "repeat3",
+      "selection_and_active_modules": "passed"
+    },
+    {
+      "variant": "paste3",
+      "selection_and_active_modules": "passed"
+    },
+    {
+      "variant": "stability",
+      "selection_and_active_modules": "passed"
+    },
+    {
+      "variant": "peer",
+      "selection_and_active_modules": "passed"
+    },
+    {
+      "variant": "peer_stability",
+      "selection_and_active_modules": "passed"
+    },
+    {
+      "variant": "peer_evidence",
+      "selection_and_active_modules": "passed"
+    }
+  ],
+  "screenshots": [
+    "tmp/v2_atlas_top.png",
+    "tmp/v2_atlas_training.png",
+    "tmp/v2_atlas_blocks.png"
+  ]
+}

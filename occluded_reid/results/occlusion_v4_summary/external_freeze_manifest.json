@@ -1,0 +1,44 @@
+{
+  "frozen_at_utc": "2026-11-15T05:47:24.053886+00:00",
+  "protocol_sha256": "b216c587298def8f041ae53f57e40d6e0dc19e01f3a64c135ece53ec997d210e",
+  "source_sha256": {
+    "code/reid/__init__.py": "5c5ced2e966c8f1f2172221bf5748307cc6bc02ec218b5b18211321f19e77940",
+    "code/reid/data.py": "5fbe37d101686585b3dd3c5bf799d40f10552156b0f05c7d77d732780eeab89d",
+    "code/reid/losses.py": "dd2f50ca8b1f70f69d8103457c4320f32e1e11d774d1baf4c89003c0c4fbf5bd",
+    "code/reid/metrics.py": "3011709aa77996f0c84a9385cf8be13281dd6283d4566b6dfd10a6f727b22872",
+    "code/reid/model.py": "c23038b2a4914f553bb79b46328bb553130e158b8ae004d7a1fe9957ffb64123",
+    "code/reid/occlusion.py": "a43c4aec28f76871adcc2fcce936ce6a30fe19a3da6b8acd3708a56bea4c4443",
+    "code/occlusion_v4/__init__.py": "72427ff99a43184134ff906bcbf5d36cd156fc7df625c40a9eb5d8088b4daca7",
+    "code/occlusion_v4/mdta.py": "a5066312fccc62634b9a0394cb77fd399972cb85a6e1331ab41c8074c30bb35a",
+    "code/occlusion_v4/model.py": "46b250afe3a2d621bd2597e2de8f91da2922aad29273ae836819837ea4dec9a1",
+    "code/train_occlusion_v4.py": "56c45f432d9ed78c5e5bb3f0ba01141729b5e81c4a55d68614094ee32dc3b206",
+    "code/train.py": "308753d701852d835bd42b3eea47a5aff252fbc860a02f1263e3d170e8e8b989",
+    "code/evaluate_occlusion_v4.py": "59e4f89b2785810eff9c8a2b99b8a9f3684eac8c5ea9bfb74fdcd68aabf6fd32",
+    "code/deep-person-reid/torchreid/models/osnet.py": "887a1365a26787fcce3e5c2f69262439e7ebf47f4e454bfc2a6387b52cd56e0f",
+    "code/occlusion_v3/model.py": "f0d5c33d968aacd4620993335fb8a66ec4576cbc355618f2f2fddb5ab6443bd0",
+    "code/train_occlusion_v3.py": "7ccfce202baf638c77367bc7a2aa448dfdab24484bb2ac35b5c7ca94594acb61",
+    "code/evaluate_occlusion_v3.py": "b587efe74ca841332bb3effe6560854f369dc5bf51fea0b0bba3db358b0e8676",
+    "tools/run_occlusion_v4.py": "e6b5d678cf9e5e607a69a5232d20873e8323fa23d0c41033b734b4442ba2bef4",
+    "tools/verify_occlusion_v4.py": "7f3da5ffb4d0d726ef7f1fee33d464d96b9a8a2f837a6c92666ddf975413ae5c"
+  },
+  "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+  "runs": [
+    {
+      "run": "occlusion_v4_mdta_s1",
+      "variant": "mdta",
+      "seed": 1,
+      "checkpoint": "runs/occlusion_v4_mdta_s1/last.pt",
+      "checkpoint_sha256": "8dead0da94360104e6043118e66add650a9419d0e1ba584a6ed1f326982150a7",
+      "development_result_sha256": "51dcbf82bd644c99aaaee789dd307e588621daf6a04b9e7ffc54870c58c431cd"
+    },
+    {
+      "run": "occlusion_v4_mdta_s2",
+      "variant": "mdta",
+      "seed": 2,
+      "checkpoint": "runs/occlusion_v4_mdta_s2/last.pt",
+      "checkpoint_sha256": "cf1c873b2ec10605804e7513a43b566a81b15fc87e4c0212daa99994eb92d906",
+      "development_result_sha256": "db54bfe670f512248fef82527d49281796c4e9b840ae8dc3c182b609fa43a7c3"
+    }
+  ],
+  "rule": "All registered development runs completed before freeze. Evaluate all frozen checkpoints; never tune against Occluded-REID."
+}

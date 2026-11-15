@@ -1,0 +1,41 @@
+{
+  "registered_date": "2026-11-15",
+  "registration_stage": "Before v4 adapter training and target evaluation",
+  "research_direction": "RGB occluded person ReID channel-affinity adapter screening",
+  "hypothesis": "Global channel-to-channel correlations computed over the stride-16 OSNet map may complement local multi-scale OSBlocks and improve occlusion robustness.",
+  "variant": "mdta",
+  "seeds": [1, 2],
+  "epochs": 8,
+  "pk_steps_per_epoch": 80,
+  "batch_size": 24,
+  "instances": 4,
+  "image_size": [256, 128],
+  "initialization": "Official OSNet x1.0 ImageNet pretrained weights; the MDTA adapter is seed-controlled.",
+  "identity_split": "Same deterministic Market-1501 training identity split as v3: 651 train IDs and 100 held-out development IDs.",
+  "optimizer": "Adam AMSGrad, backbone lr 0.0003, adapter/FC/classifier lr 0.0015, weight decay 0.0005, cosine schedule, first two epochs freeze OSNet feature extractor, AMP, gradient clip 10.",
+  "loss": "Single-view label-smoothed cross entropy (0.1) + 0.5 batch-hard triplet (margin 0.3). No v2 reliability, peer-prototype, or evidence-consistency losses.",
+  "primary_development_metric": "Mean of synthetic 30% and 50% horizontal-band query occlusion mAP; report each seed and paired delta to v3 baseline.",
+  "external_plan": "Train all adapter seeds first, freeze their checkpoint SHA256s and the target record SHA256, then evaluate both frozen checkpoints on all 1000 Occluded-REID occluded queries against all 1000 whole gallery images. No target training, reranking, flip, or model selection.",
+  "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+  "external_prior_exposure": "Occluded-REID was inspected in v1-v3; results remain exploratory transfer evidence and will not guide v4 tuning.",
+  "comparison_scope": "Use the exact v3 OSNet baseline checkpoint from the same seed as the reference. The adapter has the same source data, identity split, ImageNet initialization, optimizer, loss, update budget, development protocol, and external evaluation.",
+  "baseline_references": [
+    {
+      "run": "occlusion_v3_baseline_s1",
+      "checkpoint_sha256": "c85947753b4895a41e42143aa6f5c29c86c4e6332a64e20e2eb393fe9e04496b",
+      "development_map": 11.89403180634316,
+      "external_map": 40.14336078700506,
+      "external_rank1": 47.2
+    },
+    {
+      "run": "occlusion_v3_baseline_s2",
+      "checkpoint_sha256": "5405c54202a4e17f112b2f9872a3f9a676f37f1bdf5123e1f188b59e8237b341",
+      "development_map": 11.982527457812317,
+      "external_map": 39.12874505723082,
+      "external_rank1": 46.2
+    }
+  ],
+  "decision_rule": "Retain both registered seeds, report signed paired differences and actual AMP updates. Two seeds and eight epochs are only a feasibility screen, not significance, convergence, or SOTA evidence.",
+  "literature_boundary": "MDTA is adapted from Restormer (Zamir et al., CVPR 2022, DOI 10.1109/CVPR52688.2022.01167). This experiment isolates one channel-affinity adapter and omits GDFN; it is not an originality claim. The local catalogue lists Occlusion-Aware Transformer With Second-Order Attention (TIP 2024, DOI 10.1109/TIP.2024.3393360) but the full text was not obtained, so exact overlap is unresolved.",
+  "architecture": "OSNet feature map [B,512,16,8] -> channel-wise LayerNorm2d -> 1x1 QKV projections -> depthwise 3x3 Q/K/V -> four heads -> spatially normalized QK channel affinity [B,4,128,128] -> learned temperature and softmax -> channel mixing of V -> 1x1 output projection -> residual with initial scale 0.05 -> GAP -> shared OSNet FC and 512-d embedding."
+}

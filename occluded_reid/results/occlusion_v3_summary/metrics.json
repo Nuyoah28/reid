@@ -1,0 +1,206 @@
+{
+  "status": "complete",
+  "verification": "passed",
+  "units": "Scores are percentages; deltas are percentage points; SD is across two seeds, not CI.",
+  "runs": [
+    {
+      "variant": "baseline",
+      "seed": 1,
+      "clean_map": 55.12195542787319,
+      "noise30_map": 18.50990688725491,
+      "noise50_map": 5.278156725431409,
+      "development_map": 11.89403180634316,
+      "external_map": 40.14336078700506,
+      "external_rank1": 47.199999999999996,
+      "external_rank5": 66.2,
+      "external_minp": 23.887634550410354,
+      "optimizer_updates": 639,
+      "amp_skips": 1,
+      "train_seconds": 205.54681269999946,
+      "peak_cuda_mb": 1076.14892578125,
+      "inference_parameters": 2169508
+    },
+    {
+      "variant": "baseline",
+      "seed": 2,
+      "clean_map": 55.95583500277961,
+      "noise30_map": 18.47589903229445,
+      "noise50_map": 5.489155883330186,
+      "development_map": 11.982527457812317,
+      "external_map": 39.12874505723082,
+      "external_rank1": 46.2,
+      "external_rank5": 64.3,
+      "external_minp": 24.316582339010502,
+      "optimizer_updates": 640,
+      "amp_skips": 0,
+      "train_seconds": 144.04762650000066,
+      "peak_cuda_mb": 1076.14892578125,
+      "inference_parameters": 2169508
+    },
+    {
+      "variant": "transformer",
+      "seed": 1,
+      "clean_map": 55.82563859401607,
+      "noise30_map": 17.237128002377816,
+      "noise50_map": 5.030729075209059,
+      "development_map": 11.133928538793437,
+      "external_map": 34.81179595509259,
+      "external_rank1": 41.0,
+      "external_rank5": 58.599999999999994,
+      "external_minp": 20.69923524459664,
+      "optimizer_updates": 640,
+      "amp_skips": 0,
+      "train_seconds": 112.54537670000082,
+      "peak_cuda_mb": 1130.4189453125,
+      "inference_parameters": 4338852
+    },
+    {
+      "variant": "transformer",
+      "seed": 2,
+      "clean_map": 57.99087161600384,
+      "noise30_map": 14.380163648203045,
+      "noise50_map": 4.2611919400428855,
+      "development_map": 9.320677794122965,
+      "external_map": 35.71014718545295,
+      "external_rank1": 41.8,
+      "external_rank5": 59.8,
+      "external_minp": 21.626109632980306,
+      "optimizer_updates": 640,
+      "amp_skips": 0,
+      "train_seconds": 112.70644510000147,
+      "peak_cuda_mb": 1130.4189453125,
+      "inference_parameters": 4338852
+    },
+    {
+      "variant": "semantic_detail",
+      "seed": 1,
+      "clean_map": 54.74091080078246,
+      "noise30_map": 16.526267288490864,
+      "noise50_map": 3.9540649880478536,
+      "development_map": 10.240166138269359,
+      "external_map": 39.85594317357183,
+      "external_rank1": 47.3,
+      "external_rank5": 64.4,
+      "external_minp": 24.16703877783491,
+      "optimizer_updates": 640,
+      "amp_skips": 0,
+      "train_seconds": 109.52043950000007,
+      "peak_cuda_mb": 1082.52685546875,
+      "inference_parameters": 2432678
+    },
+    {
+      "variant": "semantic_detail",
+      "seed": 2,
+      "clean_map": 57.602003883770834,
+      "noise30_map": 21.87607555532635,
+      "noise50_map": 7.684695027820458,
+      "development_map": 14.780385291573403,
+      "external_map": 40.82032499027583,
+      "external_rank1": 49.7,
+      "external_rank5": 68.0,
+      "external_minp": 23.701093977225913,
+      "optimizer_updates": 640,
+      "amp_skips": 0,
+      "train_seconds": 108.4857318000013,
+      "peak_cuda_mb": 1082.52685546875,
+      "inference_parameters": 2432678
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "comparison": "transformer - baseline",
+      "metric": "development_map",
+      "seed_deltas": [
+        -0.7601032675497219,
+        -2.6618496636893525
+      ],
+      "mean_delta": -1.7109764656195372,
+      "sample_std": 1.344737772807411
+    },
+    {
+      "comparison": "transformer - baseline",
+      "metric": "external_map",
+      "seed_deltas": [
+        -5.331564831912466,
+        -3.4185978717778696
+      ],
+      "mean_delta": -4.375081351845168,
+      "sample_std": 1.3526719096969892
+    },
+    {
+      "comparison": "transformer - baseline",
+      "metric": "external_rank1",
+      "seed_deltas": [
+        -6.199999999999996,
+        -4.400000000000006
+      ],
+      "mean_delta": -5.300000000000001,
+      "sample_std": 1.2727922061357786
+    },
+    {
+      "comparison": "semantic_detail - baseline",
+      "metric": "development_map",
+      "seed_deltas": [
+        -1.6538656680738004,
+        2.7978578337610855
+      ],
+      "mean_delta": 0.5719960828436426,
+      "sample_std": 3.147843876114972
+    },
+    {
+      "comparison": "semantic_detail - baseline",
+      "metric": "external_map",
+      "seed_deltas": [
+        -0.28741761343322736,
+        1.6915799330450056
+      ],
+      "mean_delta": 0.7020811598058891,
+      "sample_std": 1.3993625850662983
+    },
+    {
+      "comparison": "semantic_detail - baseline",
+      "metric": "external_rank1",
+      "seed_deltas": [
+        0.10000000000000142,
+        3.5
+      ],
+      "mean_delta": 1.8000000000000007,
+      "sample_std": 2.4041630560342604
+    },
+    {
+      "comparison": "semantic_detail - transformer",
+      "metric": "development_map",
+      "seed_deltas": [
+        -0.8937624005240785,
+        5.459707497450438
+      ],
+      "mean_delta": 2.2829725484631798,
+      "sample_std": 4.492581648922383
+    },
+    {
+      "comparison": "semantic_detail - transformer",
+      "metric": "external_map",
+      "seed_deltas": [
+        5.044147218479239,
+        5.110177804822875
+      ],
+      "mean_delta": 5.077162511651057,
+      "sample_std": 0.0466906753693091
+    },
+    {
+      "comparison": "semantic_detail - transformer",
+      "metric": "external_rank1",
+      "seed_deltas": [
+        6.299999999999997,
+        7.900000000000006
+      ],
+      "mean_delta": 7.100000000000001,
+      "sample_std": 1.131370849898482
+    }
+  ],
+  "limitations": [
+    "8x80 short-budget feasibility screen.",
+    "Occluded-REID was viewed in v1/v2; exploratory transfer only.",
+    "No significance, convergence, or SOTA claim."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-15T05:22:21.339249+00:00",
+  "runs": [
+    {
+      "run": "occlusion_v3_baseline_s1",
+      "updates": 639,
+      "amp_skips": 1,
+      "checkpoint_verified_locally": true
+    },
+    {
+      "run": "occlusion_v3_transformer_s1",
+      "updates": 640,
+      "amp_skips": 0,
+      "checkpoint_verified_locally": true
+    },
+    {
+      "run": "occlusion_v3_semantic_detail_s1",
+      "updates": 640,
+      "amp_skips": 0,
+      "checkpoint_verified_locally": true
+    },
+    {
+      "run": "occlusion_v3_baseline_s2",
+      "updates": 640,
+      "amp_skips": 0,
+      "checkpoint_verified_locally": true
+    },
+    {
+      "run": "occlusion_v3_transformer_s2",
+      "updates": 640,
+      "amp_skips": 0,
+      "checkpoint_verified_locally": true
+    },
+    {
+      "run": "occlusion_v3_semantic_detail_s2",
+      "updates": 640,
+      "amp_skips": 0,
+      "checkpoint_verified_locally": true
+    }
+  ],
+  "checks": [
+    "complete registered matrix",
+    "fixed source/protocol/data/init and matched training recipe",
+    "disjoint train/development identities",
+    "history/log/update agreement",
+    "all development completed before checkpoint freeze",
+    "all external evaluations use frozen checkpoints",
+    "query/gallery counts and metrics present"
+  ],
+  "limitations": [
+    "Two seeds are not a significance test.",
+    "Occluded-REID was viewed in earlier stages; exploratory transfer only.",
+    "Audit checks recorded consistency, not novelty, causality, convergence, or SOTA."
+  ]
+}

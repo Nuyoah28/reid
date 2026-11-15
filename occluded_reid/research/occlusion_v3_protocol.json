@@ -1,0 +1,28 @@
+{
+  "registered_date": "2026-11-15",
+  "registration_stage": "Before v3 training or v3 evaluation",
+  "research_direction": "RGB occluded person ReID structural adapter study",
+  "hypothesis": "A global OSNet feature query can identify identity-relevant high-frequency feature locations and route their detail through a residual gate; this may improve robustness to occlusion without an external parser.",
+  "variants_in_order": ["baseline", "transformer", "semantic_detail"],
+  "seeds": [1, 2],
+  "epochs": 8,
+  "pk_steps_per_epoch": 80,
+  "batch_size": 24,
+  "instances": 4,
+  "image_size": [256, 128],
+  "initialization": "Official OSNet x1.0 ImageNet pretrained weights; newly added context modules are randomly initialized and seed controlled.",
+  "identity_split": "Reuse the deterministic Market-1501 training identity split from training_split(seed=2026): 651 train IDs and 100 held-out development IDs.",
+  "optimizer": "Adam AMSGrad, backbone lr 0.0003, new adapter/FC/classifier lr 0.0015, weight decay 0.0005, cosine schedule, first two epochs freeze OSNet feature extractor, AMP, gradient clip 10.",
+  "loss": "Single-view label-smoothed cross entropy (0.1) + 0.5 batch-hard triplet (margin 0.3). No v2 reliability, peer-prototype, or evidence-consistency losses.",
+  "primary_development_metric": "Mean of synthetic 30% and 50% horizontal-band query occlusion mAP, averaged over both seeds.",
+  "external_plan": "After all six development runs finish, freeze all checkpoint SHA256s and evaluate every checkpoint on all 1000 Occluded-REID occluded queries against all 1000 whole gallery images. No target training, reranking, flip, or model selection.",
+  "external_prior_exposure": "Occluded-REID results were inspected in v1 and v2; v3 results are exploratory transfer evidence, not a blind benchmark.",
+  "comparison_scope": "All variants use the same OSNet x1.0, identities, source images, sampler, ImageNet initialization, optimizer, updates, development protocol, and external evaluation. The structural adapter is the intended treatment.",
+  "decision_rule": "Retain all variants and both seeds, report signed paired differences and actual AMP updates. Two seeds and eight epochs are a feasibility screen, not significance, full convergence, or SOTA evidence.",
+  "literature_boundary": "Transformer context is an established family. Semantic high-frequency selection is inspired by Adaptive High-Frequency Transformer for Diverse Wildlife Re-Identification (ECCV 2024). This implementation adapts global-query scoring to OSNet maps and adds gated residual fusion; it does not reproduce that paper's ViT, FFT augmentation, or feature-equilibrium objective. Mamba/ReIDMamba/TE-VMamba are acknowledged prior art; no Mamba module is claimed here.",
+  "architecture": {
+    "baseline": "Official OSNet feature map [B,512,16,8] -> GAP -> FC/BN/ReLU -> L2-normalized 512-d embedding.",
+    "transformer": "One pre-LN 8-head Transformer encoder block, width 512, learned 16x8 positions, MLP ratio 2, LayerScale 0.1, before GAP.",
+    "semantic_detail": "3x3 local-average high-pass residual; GAP of the low-frequency map forms a global query; cosine attention selects the top 50% of 128 low-frequency keys; selected high-frequency values are fused and broadcast through a learned spatial residual gate with initial scale 0.1."
+  }
+}

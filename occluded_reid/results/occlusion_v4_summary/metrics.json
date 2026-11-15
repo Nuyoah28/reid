@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "verification": "passed",
+  "units": "Metrics are percent; differences are percentage points; SD is across two seeds, not CI.",
+  "runs": [
+    {
+      "seed": 1,
+      "clean_map": 55.011877096418225,
+      "noise30_map": 21.32259325767099,
+      "noise50_map": 6.1989583712292005,
+      "development_map": 13.760775814450096,
+      "external_map": 40.58746757293361,
+      "external_rank1": 47.599999999999994,
+      "external_rank5": 67.4,
+      "external_minp": 24.556203269679916,
+      "inference_parameters": 3232937,
+      "optimizer_updates": 638,
+      "amp_skips": 2,
+      "peak_cuda_mb": 1113.07421875,
+      "development_delta_vs_baseline": 1.8667440081069362,
+      "external_map_delta_vs_baseline": 0.4441067859285539,
+      "external_rank1_delta_vs_baseline": 0.3999999999999986
+    },
+    {
+      "seed": 2,
+      "clean_map": 58.27511339616702,
+      "noise30_map": 17.08962822838952,
+      "noise50_map": 6.283590020482671,
+      "development_map": 11.686609124436094,
+      "external_map": 38.501429692116616,
+      "external_rank1": 45.300000000000004,
+      "external_rank5": 65.10000000000001,
+      "external_minp": 23.605538477147263,
+      "inference_parameters": 3232937,
+      "optimizer_updates": 637,
+      "amp_skips": 3,
+      "peak_cuda_mb": 1113.802734375,
+      "development_delta_vs_baseline": -0.295918333376223,
+      "external_map_delta_vs_baseline": -0.6273153651142067,
+      "external_rank1_delta_vs_baseline": -0.8999999999999986
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "seed": 1,
+      "baseline_run": "occlusion_v3_baseline_s1",
+      "baseline_checkpoint_sha256": "c85947753b4895a41e42143aa6f5c29c86c4e6332a64e20e2eb393fe9e04496b",
+      "mdta_checkpoint_sha256": "8dead0da94360104e6043118e66add650a9419d0e1ba584a6ed1f326982150a7",
+      "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+      "development_delta": 1.8667440081069362,
+      "external_map_delta": 0.4441067859285539,
+      "external_rank1_delta": 0.3999999999999986
+    },
+    {
+      "seed": 2,
+      "baseline_run": "occlusion_v3_baseline_s2",
+      "baseline_checkpoint_sha256": "5405c54202a4e17f112b2f9872a3f9a676f37f1bdf5123e1f188b59e8237b341",
+      "mdta_checkpoint_sha256": "cf1c873b2ec10605804e7513a43b566a81b15fc87e4c0212daa99994eb92d906",
+      "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+      "development_delta": -0.295918333376223,
+      "external_map_delta": -0.6273153651142067,
+      "external_rank1_delta": -0.8999999999999986
+    }
+  ],
+  "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+  "limitations": [
+    "8x80 short-budget feasibility screen.",
+    "Occluded-REID was viewed in v1-v3; exploratory transfer only.",
+    "The TIP 2024 second-order attention paper is not available locally; exact novelty overlap is unresolved.",
+    "No significance, convergence, or SOTA claim."
+  ]
+}

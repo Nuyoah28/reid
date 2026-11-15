@@ -1,0 +1,71 @@
+{
+  "frozen_at_utc": "2026-11-15T05:19:40.318548+00:00",
+  "protocol_sha256": "6176d9ae1fffb37992d5b834e2d54489c74e36d77eb58b6c7ee2d828c974de58",
+  "source_sha256": {
+    "code/reid/__init__.py": "5c5ced2e966c8f1f2172221bf5748307cc6bc02ec218b5b18211321f19e77940",
+    "code/reid/data.py": "5fbe37d101686585b3dd3c5bf799d40f10552156b0f05c7d77d732780eeab89d",
+    "code/reid/losses.py": "dd2f50ca8b1f70f69d8103457c4320f32e1e11d774d1baf4c89003c0c4fbf5bd",
+    "code/reid/metrics.py": "3011709aa77996f0c84a9385cf8be13281dd6283d4566b6dfd10a6f727b22872",
+    "code/reid/model.py": "c23038b2a4914f553bb79b46328bb553130e158b8ae004d7a1fe9957ffb64123",
+    "code/reid/occlusion.py": "a43c4aec28f76871adcc2fcce936ce6a30fe19a3da6b8acd3708a56bea4c4443",
+    "code/occlusion_v3/__init__.py": "ebd5609cd19962fed38889d78b136bc9222ffcfd6aa5ae13aceb15863b090146",
+    "code/occlusion_v3/model.py": "f0d5c33d968aacd4620993335fb8a66ec4576cbc355618f2f2fddb5ab6443bd0",
+    "code/train_occlusion_v3.py": "7ccfce202baf638c77367bc7a2aa448dfdab24484bb2ac35b5c7ca94594acb61",
+    "code/train.py": "308753d701852d835bd42b3eea47a5aff252fbc860a02f1263e3d170e8e8b989",
+    "code/evaluate_occlusion_v3.py": "b587efe74ca841332bb3effe6560854f369dc5bf51fea0b0bba3db358b0e8676",
+    "code/deep-person-reid/torchreid/models/osnet.py": "887a1365a26787fcce3e5c2f69262439e7ebf47f4e454bfc2a6387b52cd56e0f",
+    "tools/run_occlusion_v3.py": "290610b02b73b339ea7bfd6e417de60d586e52238073eb7d6124548466fc57dc",
+    "tools/verify_occlusion_v3.py": "796b9787ac9f01bca07496d55c9a77b688e508ad2ad57744c0bc0e72917b0b34"
+  },
+  "runs": [
+    {
+      "run": "occlusion_v3_baseline_s1",
+      "variant": "baseline",
+      "seed": 1,
+      "checkpoint": "runs/occlusion_v3_baseline_s1/last.pt",
+      "checkpoint_sha256": "c85947753b4895a41e42143aa6f5c29c86c4e6332a64e20e2eb393fe9e04496b",
+      "development_result_sha256": "c94272026944d4a43009bf8eb45522a2258463557e85bf8de05b8b6b24ab9512"
+    },
+    {
+      "run": "occlusion_v3_transformer_s1",
+      "variant": "transformer",
+      "seed": 1,
+      "checkpoint": "runs/occlusion_v3_transformer_s1/last.pt",
+      "checkpoint_sha256": "1e89611fe3236df991596161205115f2df97d5846622d5e99a8c733dedc8d7fe",
+      "development_result_sha256": "435a18aa21b55ce7d382fe05badcf8e8dfe58fc5acc64bc4473a38d612e6d9ee"
+    },
+    {
+      "run": "occlusion_v3_semantic_detail_s1",
+      "variant": "semantic_detail",
+      "seed": 1,
+      "checkpoint": "runs/occlusion_v3_semantic_detail_s1/last.pt",
+      "checkpoint_sha256": "f5bf502c869ddf47fa5b0e0ba1c42e55ce1e44f16383e73d1ea3ab3f453d79d0",
+      "development_result_sha256": "bf72aeaf7084c1bfffe4ce7279eba29807c509a9b1673333e39be94d128b6452"
+    },
+    {
+      "run": "occlusion_v3_baseline_s2",
+      "variant": "baseline",
+      "seed": 2,
+      "checkpoint": "runs/occlusion_v3_baseline_s2/last.pt",
+      "checkpoint_sha256": "5405c54202a4e17f112b2f9872a3f9a676f37f1bdf5123e1f188b59e8237b341",
+      "development_result_sha256": "f7feaf6023125759aab49011e32ff9b8fc01b028be461cb941de2700e5739585"
+    },
+    {
+      "run": "occlusion_v3_transformer_s2",
+      "variant": "transformer",
+      "seed": 2,
+      "checkpoint": "runs/occlusion_v3_transformer_s2/last.pt",
+      "checkpoint_sha256": "264f7488b0d44839ce0187d9912d41aeb6f0c758f4ca85e64e37006974d10d1b",
+      "development_result_sha256": "a4c771cdd9b4f48f3b079a868a8b9233456e090cf51907068b4f7ba8dfe51da4"
+    },
+    {
+      "run": "occlusion_v3_semantic_detail_s2",
+      "variant": "semantic_detail",
+      "seed": 2,
+      "checkpoint": "runs/occlusion_v3_semantic_detail_s2/last.pt",
+      "checkpoint_sha256": "2ef59c65d9d850b44a31d9bb65b041021b5bdb2fda8669b11412aa77e22f765a",
+      "development_result_sha256": "1bfe51c5dec540772cb708d46e50b247890d1d461dc58120c53068093f90862a"
+    }
+  ],
+  "rule": "All registered development runs completed before freeze. Evaluate all frozen checkpoints; never tune against Occluded-REID."
+}

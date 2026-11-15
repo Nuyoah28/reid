@@ -1,0 +1,98 @@
+[
+  {
+    "epoch": 1,
+    "lr": 0.0003,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 10.265185600000223,
+    "peak_cuda_mb": 188.0986328125,
+    "loss": 7.389593988656998,
+    "ce": 7.198186177015304,
+    "triplet": 0.3828157339245081
+  },
+  {
+    "epoch": 2,
+    "lr": 0.0003,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 8.313652900000307,
+    "peak_cuda_mb": 188.0986328125,
+    "loss": 6.394048076868057,
+    "ce": 6.20720351934433,
+    "triplet": 0.3736891210079193
+  },
+  {
+    "epoch": 3,
+    "lr": 0.0002851453301853628,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 16.166485400000056,
+    "peak_cuda_mb": 1082.52685546875,
+    "loss": 5.822614708542824,
+    "ce": 5.660788762569427,
+    "triplet": 0.3236518679186702
+  },
+  {
+    "epoch": 4,
+    "lr": 0.00024352347027881003,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 15.124309999999241,
+    "peak_cuda_mb": 1042.1376953125,
+    "loss": 5.069251736998558,
+    "ce": 4.940287232398987,
+    "triplet": 0.2579290375113487
+  },
+  {
+    "epoch": 5,
+    "lr": 0.00018337814009344714,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 14.612583000000086,
+    "peak_cuda_mb": 1042.1376953125,
+    "loss": 4.4002359300851825,
+    "ce": 4.289356580376625,
+    "triplet": 0.2217587328515947
+  },
+  {
+    "epoch": 6,
+    "lr": 0.00011662185990655284,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 15.049549800000023,
+    "peak_cuda_mb": 1042.1376953125,
+    "loss": 3.783138969540596,
+    "ce": 3.6810912132263183,
+    "triplet": 0.20409546410664917
+  },
+  {
+    "epoch": 7,
+    "lr": 5.6476529721189974e-05,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 15.13710329999958,
+    "peak_cuda_mb": 1042.1376953125,
+    "loss": 3.6196277111768724,
+    "ce": 3.5197427451610563,
+    "triplet": 0.1997699593193829
+  },
+  {
+    "epoch": 8,
+    "lr": 1.4854669814637143e-05,
+    "pk_batches": 80,
+    "optimizer_updates": 80,
+    "amp_skipped_updates": 0,
+    "train_seconds": 14.85156950000055,
+    "peak_cuda_mb": 1042.1376953125,
+    "loss": 3.3779494613409042,
+    "ce": 3.2775130361318587,
+    "triplet": 0.20087286876514554
+  }
+]

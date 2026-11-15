@@ -1,0 +1,38 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "variants": [
+    {
+      "variant": "baseline",
+      "loss_finite": true,
+      "feature_shape": [
+        24,
+        512
+      ],
+      "trainable_parameters": 2172586,
+      "peak_cuda_mb": 986.712890625,
+      "forward_backward_seconds": 2.51192809999975
+    },
+    {
+      "variant": "transformer",
+      "loss_finite": true,
+      "feature_shape": [
+        24,
+        512
+      ],
+      "trainable_parameters": 4341930,
+      "peak_cuda_mb": 1071.40625,
+      "forward_backward_seconds": 2.3589946000001873
+    },
+    {
+      "variant": "semantic_detail",
+      "loss_finite": true,
+      "feature_shape": [
+        24,
+        512
+      ],
+      "trainable_parameters": 2435756,
+      "peak_cuda_mb": 1005.6865234375,
+      "forward_backward_seconds": 0.3930515000001833
+    }
+  ]
+}

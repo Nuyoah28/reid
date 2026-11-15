@@ -6,6 +6,23 @@
 
 **实测结论：本轮新候选没有真实遮挡优势，暂不能作为最终论文方案。** 普通 OSNet 对照的真实 Occluded-REID mAP / Rank-1 为 **43.94% / 51.50%**（两种子均值）。`peer`、`peer_stability`、`peer_evidence` 的真实 mAP 分别为 **37.35%、36.45%、36.34%**；联合目标虽提高合成开发指标，却未转化为真实提升。完整负结果、每个 seed 和配对比较均已保留。
 
+## 第三阶段结构对照
+
+v3 固定同一 OSNet x1.0 骨干、单视图 CE+Triplet 配方与训练身份划分，对照 `baseline`、一层 8-head 空间 Transformer，以及借鉴 ECCV 2024 高频筛选思路并加入自设空间残差门控的 `semantic_detail`。**普通 Transformer 两种子都低于 baseline；semantic_detail 的两种子真实 mAP 均值为 40.34%，较 baseline 的 39.64% 高 0.70 个百分点，但配对方向随 seed 改变，不能据此认定有效。** 所以它仍是待验证候选，不是已确认的论文创新。
+
+- [v3 实验报告：逐 seed 结果、配对差值和研究决策](research/第三阶段结构实验报告.md)
+- [v3 完整网络图：baseline、OSBlock 卷积／采样细节、两个结构分支与论文来源](research/architecture/occlusion_v3_network.html)
+- [冻结设计与来源边界](research/occlusion_v3_design.md)、[预注册协议](research/occlusion_v3_protocol.json)
+- [六组原始结果、对照图和配对汇总](results/occlusion_v3_summary/table.md)、[档案核验](results/occlusion_v3_summary/verification.json)
+
+## 第四阶段 MDTA 对照
+
+v4 只把 Restormer 启发的单层 MDTA 通道注意力用于结构对照；相对同 seed v3 baseline，真实 mAP 两 seed 平均差值为 **−0.09 个百分点**，Rank-1 平均差值为 **−0.25**，两 seed 方向相反。**本轮不保留 MDTA 为方法候选，也不把其论文模块移植算作原创贡献。** 相关 TIP 2024 二阶注意力论文全文尚未取得，具体机制重合仍不确定。
+
+- [v4 MDTA 实验报告与来源边界](research/第四阶段MDTA实验报告.md)
+- [v4 两 seed 配对结果](results/occlusion_v4_summary/table.md)、[档案核验](results/occlusion_v4_summary/verification.json)
+- [v4 预注册协议](research/occlusion_v4_protocol.json)、[RTX 4060 smoke test](research/occlusion_v4_smoke.json)
+
 - [第二阶段实验报告：结果、负结果和研究决策](research/第二阶段实验报告.md)
 - [方法与来源：公式、梯度及逐项原创边界](research/第二阶段方法与来源.md)
 - [完整网络图：baseline、各卷积／采样块及新训练分支](research/architecture/第二阶段网络图.html)

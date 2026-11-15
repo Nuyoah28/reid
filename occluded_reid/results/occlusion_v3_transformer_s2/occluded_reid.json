@@ -1,0 +1,22 @@
+{
+  "dataset": "Occluded-REID",
+  "variant": "transformer",
+  "seed": 2,
+  "epochs": 8,
+  "train_ids": 651,
+  "checkpoint_sha256": "264f7488b0d44839ce0187d9912d41aeb6f0c758f4ca85e64e37006974d10d1b",
+  "manifest_sha256": "0b82f1b27b344d272f45d8a557e64f1334412c5b0333a1c5d16d3b0fcca0ed5f",
+  "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+  "evaluated_at_utc": "2026-11-15T05:21:34.428102+00:00",
+  "evaluation": {
+    "mAP": 35.71014718545295,
+    "rank1": 41.8,
+    "rank5": 59.8,
+    "mINP": 21.626109632980306,
+    "valid_queries": 1000,
+    "invalid_queries": 0,
+    "gallery_size": 1000
+  },
+  "protocol": "All 1000 occluded queries against all 1000 whole gallery images; no reranking, flip, target training, or selection.",
+  "limitation": "Exploratory transfer only: this dataset was inspected in v1/v2."
+}

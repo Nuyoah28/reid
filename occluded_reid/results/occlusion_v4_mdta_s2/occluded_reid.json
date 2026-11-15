@@ -1,0 +1,22 @@
+{
+  "dataset": "Occluded-REID",
+  "variant": "mdta",
+  "seed": 2,
+  "epochs": 8,
+  "train_ids": 651,
+  "checkpoint_sha256": "cf1c873b2ec10605804e7513a43b566a81b15fc87e4c0212daa99994eb92d906",
+  "manifest_sha256": "44b54e0bff99382ada5771b70b86fa6c4c5a4b15ef998b767514ec36e1558e26",
+  "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+  "evaluated_at_utc": "2026-11-15T05:47:59.372958+00:00",
+  "evaluation": {
+    "mAP": 38.501429692116616,
+    "rank1": 45.300000000000004,
+    "rank5": 65.10000000000001,
+    "mINP": 23.605538477147263,
+    "valid_queries": 1000,
+    "invalid_queries": 0,
+    "gallery_size": 1000
+  },
+  "protocol": "All 1000 occluded queries against all 1000 whole gallery images; no reranking, flip, target training, or selection.",
+  "limitation": "Exploratory transfer only: this dataset was inspected in v1-v3."
+}

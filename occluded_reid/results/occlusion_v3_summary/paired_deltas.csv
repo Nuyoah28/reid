@@ -1,0 +1,10 @@
+﻿comparison,metric,seed_deltas,mean_delta,sample_std
+transformer - baseline,development_map,"-0.7601,-2.6618",-1.7109764656195372,1.344737772807411
+transformer - baseline,external_map,"-5.3316,-3.4186",-4.375081351845168,1.3526719096969892
+transformer - baseline,external_rank1,"-6.2000,-4.4000",-5.300000000000001,1.2727922061357786
+semantic_detail - baseline,development_map,"-1.6539,+2.7979",0.5719960828436426,3.147843876114972
+semantic_detail - baseline,external_map,"-0.2874,+1.6916",0.7020811598058891,1.3993625850662983
+semantic_detail - baseline,external_rank1,"+0.1000,+3.5000",1.8000000000000007,2.4041630560342604
+semantic_detail - transformer,development_map,"-0.8938,+5.4597",2.2829725484631798,4.492581648922383
+semantic_detail - transformer,external_map,"+5.0441,+5.1102",5.077162511651057,0.0466906753693091
+semantic_detail - transformer,external_rank1,"+6.3000,+7.9000",7.100000000000001,1.131370849898482

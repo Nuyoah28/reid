@@ -1,0 +1,13 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "variant": "mdta",
+  "loss_finite": true,
+  "feature_shape": [
+    24,
+    512
+  ],
+  "trainable_parameters": 3236015,
+  "adapter_parameters": 1063429,
+  "peak_cuda_mb": 1057.75830078125,
+  "forward_backward_seconds": 1.6734573000003365
+}

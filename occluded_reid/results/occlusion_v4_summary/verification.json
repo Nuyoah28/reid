@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-11-15T05:53:08.657644+00:00",
+  "runs": [
+    {
+      "run": "occlusion_v4_mdta_s1",
+      "updates": 638,
+      "amp_skips": 2,
+      "checkpoint_verified_locally": true
+    },
+    {
+      "run": "occlusion_v4_mdta_s2",
+      "updates": 637,
+      "amp_skips": 3,
+      "checkpoint_verified_locally": true
+    }
+  ],
+  "target_data_record_sha256": "0c5ca34bc0cd6a68a8bed65b4e8f9e5cb4d38433cfa7280310f7d38e5f0d1104",
+  "checks": [
+    "baseline checkpoint and metric references match v3",
+    "protocol, source and target record hashes frozen",
+    "split, recipe, epoch logs and optimizer updates match registration",
+    "external evaluations use frozen MDTA checkpoints and identical target records"
+  ],
+  "limitations": [
+    "Two seeds are not a significance test.",
+    "Occluded-REID was previously inspected; exploratory transfer only.",
+    "Audit checks recorded consistency, not novelty or causality."
+  ]
+}

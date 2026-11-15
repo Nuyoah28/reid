@@ -13,6 +13,7 @@ Occluded-Duke 通常使用该数据集的训练集训练和测试。Occluded-REI
 | 方法和发表状态 | 视觉骨干和主要特点 | Occluded-Duke Rank-1 / mAP | Market→Occluded-REID Rank-1 / mAP | Market-1501 Rank-1 / mAP |
 |---|---|---:|---:|---:|
 | [COPE，CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Sun_COPE_Consistent_Occlusion_and_Prompt_Enhancement_Network_for_Occluded_Person_CVPR_2026_paper.html)，Table 1 | CLIP ViT；遮挡增强、前景提示和利用库中近邻的 PSS 检索 | 82.1 / 75.4 | 88.7 / 88.2 | 96.2 / 93.0 |
+| [FLaN-Net，IJCAI 2025](../../reference-paper/R0513_B_2025_IJCAI_Categorical_Attention_Fine_grained_Language_guided_Noise_Filtering_Network_for_Occluded_Person_Re_Identification.pdf)，Table 1 | CLIP ViT-B/16 + CLIP text；主体、可见属性、遮挡物 categorical prompts 与不确定性加权 | 75.2 / 65.5 | 92.6 / 89.5 | — |
 | 同一论文 COPE* | 重叠滑窗设定，论文 Table 1 带星号结果 | 82.4 / 76.4 | 90.9 / 90.7 | 96.3 / 93.3 |
 | [DPM++，2026-05-07 arXiv 预印本](https://arxiv.org/abs/2605.06637)，Table 1–2 | CLIP ViT-B/16；动态掩码度量及显著性引导的遮挡合成；作者使用四张 RTX 3090 | 76.9 / 67.2 | 95.4 / 91.8 | 96.1 / 91.2 |
 | [DPL-ReID，2026-05-19 arXiv 预印本](https://arxiv.org/abs/2605.19527)，Table 2–3 | CLIP ViT-B/16 与 LSNet-T；双提示、遮挡增强和门控融合 | 76.3 / 67.2 | 94.9 / 91.3* | — |

@@ -1,0 +1,7 @@
+{"event": "start", "variant": "plain", "seed": 11, "epochs": 20, "steps": 100, "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU"}
+Traceback (most recent call last):
+  File "E:\论文\occluded_reid\code\train_occlusion_v5.py", line 256, in <module>
+    main()
+  File "E:\论文\occluded_reid\code\train_occlusion_v5.py", line 210, in main
+    loss = ce + .5*triplet + protocol['pairwise_weight']*pairwise + \
+KeyError: 'pairwise_weight'

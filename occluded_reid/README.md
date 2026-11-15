@@ -1,6 +1,25 @@
 # 遮挡行人重识别：跨图身份证据与可靠性校准
 
-当前唯一主线为**遮挡 ReID**。具体问题是：外观对遮挡物变化保持稳定的区域，不一定有助于区分身份；能否用同身份其他图像提供的证据，改进空间可靠性监督，并迁移到真实遮挡？轻量化不作为研究目标或贡献。
+当前唯一主线为**遮挡 ReID**。轻量化只保留历史归档，不作为研究目标或贡献。
+
+## 第五阶段：交叉因子反事实遮挡（待实验）
+
+前序结果没有证实可靠性、剩余证据一致性或结构适配器对真实遮挡有稳定优势。当前注册的可证伪假设是：固定矩形遮挡几何，对两个目标身份复用相同的两种跨图 donor patch，显式压低“身份 × donor patch 内容”的差分交互项。patch 未分割，包含人体或背景内容，不等同纯遮挡物。该 2×2 目标是项目待检验设计；COPE、跨图 patch 增强与 counterfactual ReID 都是邻近先例，现有检索未发现完全同式实现，但不能称作原创贡献或有效方法。
+
+- [v5 研究设计与失败判据](research/occlusion_v5_design.md)
+- [v5 固定协议、种子与比较组](research/occlusion_v5_protocol.json)
+- [首次启动失败记录（零 optimizer update）](research/occlusion_v5_startup_incident.md)
+
+矩阵含 4 个对照、5 个配对 seed、每组 2,000 optimizer steps。开发集用 Market 留出身份和固定 donor patch 遮挡；Occluded-REID 在全部模型完成训练并冻结 source/data/checkpoint hashes 后统一评测，仅作探索性迁移证据。正式启动：
+
+```powershell
+python tools/run_occlusion_v5.py --print-plan
+python tools/run_occlusion_v5.py
+python tools/verify_occlusion_v5.py --require-checkpoints
+python tools/summarize_occlusion_v5.py
+```
+
+首轮 runner 调用发现协议权重字段缺失，未进入第一步训练；失败配置和日志留档，正式矩阵使用新 tag `occlusion_v5b`，避免覆盖。
 
 第二阶段 v2 新增“排除自身源图的身份原型 margin＋双干预最小支持”监督候选，沿用 OSNet 骨干与 v1 可靠性头。六变体、两种子的有限预算实验已全部完成；全部开发训练完成后冻结 checkpoint 清单，再统一外测全部变体。
 
@@ -8,7 +27,7 @@
 
 ## 第三阶段结构对照
 
-v3 固定同一 OSNet x1.0 骨干、单视图 CE+Triplet 配方与训练身份划分，对照 `baseline`、一层 8-head 空间 Transformer，以及借鉴 ECCV 2024 高频筛选思路并加入自设空间残差门控的 `semantic_detail`。**普通 Transformer 两种子都低于 baseline；semantic_detail 的两种子真实 mAP 均值为 40.34%，较 baseline 的 39.64% 高 0.70 个百分点，但配对方向随 seed 改变，不能据此认定有效。** 所以它仍是待验证候选，不是已确认的论文创新。
+v3 固定同一 OSNet x1.0 骨干、单视图 CE+Triplet 配方与训练身份划分，对照 `baseline`、一层 8-head 空间 Transformer，以及借鉴 ECCV 2024 高频筛选思路并加入自设空间残差门控的 `semantic_detail`。**普通 Transformer 两种子都低于 baseline；semantic_detail 的两种子真实 mAP 均值为 40.34%，较 baseline 的 39.64% 高 0.70 个百分点，但配对方向随 seed 改变，且 AHT/DPEFormer 已有相近的全局引导局部筛选机制。** 该支线仅保留作机制分析，不再作为清晰的论文原创候选。
 
 - [v3 实验报告：逐 seed 结果、配对差值和研究决策](research/第三阶段结构实验报告.md)
 - [v3 完整网络图：baseline、OSBlock 卷积／采样细节、两个结构分支与论文来源](research/architecture/occlusion_v3_network.html)

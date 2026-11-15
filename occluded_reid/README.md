@@ -19,7 +19,7 @@ python tools/verify_occlusion_v5.py --require-checkpoints
 python tools/summarize_occlusion_v5.py
 ```
 
-首轮 runner 调用发现协议权重字段缺失，未进入第一步训练；失败配置和日志留档，正式矩阵使用新 tag `occlusion_v5b`，避免覆盖。
+两次启动故障已留档：首个 tag 因协议权重字段缺失而零更新退出；`v5b` 的 s11 完成训练但因开发评测漏导入指标函数而未产出结果。正式矩阵使用新 tag `occlusion_v5c`，重新运行所有组以保证同一源码版本，失败配置、history、日志和 checkpoint 均保留。
 
 第二阶段 v2 新增“排除自身源图的身份原型 margin＋双干预最小支持”监督候选，沿用 OSNet 骨干与 v1 可靠性头。六变体、两种子的有限预算实验已全部完成；全部开发训练完成后冻结 checkpoint 清单，再统一外测全部变体。
 

@@ -19,6 +19,7 @@ from train import seed_all, seed_worker, extract
 from reid.data import Images, PKSampler, scan_market, training_split
 from reid.factorial_occlusion import factorial_occlusion, interaction_penalty
 from reid.losses import batch_hard
+from reid.metrics import evaluate_rank
 from reid.occlusion import paired_occlusion
 from occlusion_v5.model import build_model
 

@@ -1,6 +1,6 @@
 {
   "registered_date": "2026-11-15",
-  "run_tag": "occlusion_v5b",
+  "run_tag": "occlusion_v5c",
   "research_direction": "RGB occluded person ReID; identity-by-donor-patch content interaction study",
   "hypothesis": "Under fixed occlusion geometry, changing cross-image donor-patch content may perturb identity features differently for different target identities. Penalizing the 2x2 difference-in-differences may reduce identity-conditioned interference while allowing a shared additive donor-patch effect.",
   "status_and_novelty_boundary": "A testable project-specific hypothesis, not an established novel contribution. Factorial invariance, interaction suppression, counterfactual ReID and donor-patch augmentation have broader prior art; no priority or novelty claim is permitted without a dedicated search and independent confirmation.",
